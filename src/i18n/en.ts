@@ -300,7 +300,7 @@ export const en: Dict = {
     eyebrow: "Journal",
     empty: "No articles published yet.",
     emptyEn: "English articles are on the way. Korean articles are listed below — each ends with an English summary.",
-    readTranslation: "한국어 보기",
+    readTranslation: "Read in Korean",
     otherLangNote: "This article is written in Korean.",
     otherLangNoteEn: "This article is written in Korean. An English summary is at the end.",
     backToList: "Back to list",
