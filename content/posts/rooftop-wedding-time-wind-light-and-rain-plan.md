@@ -42,6 +42,8 @@ thumbnail: /images/small-wedding-rooftop-01.jpg
 
 조명은 밝히는 것보다 남기는 것이 중요합니다. 야경이 배경이라면 무대 조명을 지나치게 올리지 않아야 뒤의 도시가 사진에 남습니다. 사진가와 조명 담당이 미리 밝기를 맞춰 두는 것이 좋습니다.
 
+![해가 지기 전에 켜 두는 전구 — 흰 꽃 위로 이어지는 스트링 라이트 (사진: Migaro studio)](/images/string-lights-white-flowers.jpg)
+
 ![해가 진 직후의 루프탑 — 노을이 남은 하늘과 데크 조명, 테이블 위의 작은 캔들 (서울 한강의 한 웨딩홀 루프탑)](/images/vista-rooftop-sunset-01.jpg)
 
 ## 실내 전환: 결정하는 날을 먼저 정한다
