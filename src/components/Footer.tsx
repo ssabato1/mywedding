@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 border-t border-line">
       <div className="container-page flex flex-col gap-2 py-10 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
-        <Image src="/images/logo-white.png" alt={siteConfig.company.name} width={544} height={518} className="h-10 w-auto opacity-80" />
+        <Image src="/images/logo-white.png" alt={siteConfig.company.name} width={544} height={518} className="h-10 w-auto shrink-0 self-start opacity-80" style={{ width: "auto" }} />
         <div className="flex flex-wrap gap-4">
           {links.map(([name, href]) => (
             <a key={name} href={href} target="_blank" rel="noreferrer" className="hover:text-primary">

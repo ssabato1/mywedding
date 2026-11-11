@@ -21,7 +21,7 @@ export default async function Header() {
           />
         </Link>
         <div className="flex min-w-0 items-center gap-3 sm:gap-6">
-          <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 text-xs text-ink-sub sm:gap-6 sm:text-sm">
+          <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 whitespace-nowrap text-xs text-ink-sub sm:gap-6 sm:text-sm">
             <Link href="/about" className="hover:text-primary">{t.nav.about}</Link>
             <Link href="/convention-wedding" className="hover:text-primary">{t.nav.convention}</Link>
             <Link href="/outdoor-wedding" className="hover:text-primary">{t.nav.outdoor}</Link>
