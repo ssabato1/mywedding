@@ -28,6 +28,26 @@ In the 1600s, as weddings took on a more religious character, the veil became a 
 
 Who What Wear goes a step further, naming wide-brimmed hats, pillbox hats, lace gloves and neck scarves among its [2026 bridal accessory trends](https://www.whowhatwear.com/uk/living/wedding/bridal-accessory-trends-2026) in place of the veil. The veil has become one option among several.
 
+**Types of veil.** Veils are named by their length and the way they are worn. Knowing the names below makes it easier to describe what you want at a fitting.
+
+| Type | Length and form | Works for |
+| --- | --- | --- |
+| Birdcage | A short net veil covering about half the face | Short dresses, small weddings, the after-party |
+| Blusher | A short single layer worn over the face and lifted during the ceremony | A classic entrance, sometimes layered with a long veil |
+| Shoulder and elbow | From the shoulder to the elbow | When you want the waistline and back detail to show |
+| Fingertip | To the fingertips | The most versatile length, easy to manage indoors and out |
+| Chapel | Just brushing the floor | Halls with an aisle, dresses with a short train |
+| Cathedral | The longest, trailing beyond the hem | Large halls with a high ceiling and a long aisle |
+| Mantilla | A single rounded piece edged with lace, laid over the head | Plain satin gowns, a classic mood |
+| Juliet cap | Fitted over the head like a cap and falling behind | Vintage dresses, updos |
+| Bubble or pouf veil | Several layers of tulle gathered for volume | Editorial photographs, dresses with a simple silhouette |
+
+There are three things to weigh.
+
+- **Balance with the dress**: with a heavily decorated dress, choose plain tulle. With a simple dress, add interest with lace, pearls or a bow on the veil.
+- **Venue and floor**: a long veil is at its best in a wide indoor hall. Outdoors on grass and decking a trailing length catches easily, so fingertip or chapel is easier to manage, and on a windy rooftop use plenty of pins.
+- **Running order**: many brides wear a long veil for the ceremony and remove it, or change to a short one, for the reception and after-party. Ask for it to be pinned where it is easy to take off.
+
 ![A tiara and long veil — a bride at an autumn garden wedding (a wedding venue on the Han River in Seoul)](/images/marinapark-ceremony-04.jpg)
 
 ![A blusher veil worn over the face with a bow headpiece — satin gown](/images/veil-blusher-bow-01.jpg)
