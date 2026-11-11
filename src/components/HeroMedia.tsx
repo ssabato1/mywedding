@@ -17,10 +17,10 @@ export default function HeroMedia() {
     <div className="absolute inset-0 -z-10 overflow-hidden" style={{ backgroundColor: "#5f58ab" }}>
       {/* 사진 위쪽 하늘을 위로 늘인 그라디언트 */}
       <div
-        className="absolute inset-x-0 top-0 h-[46%]"
+        className="absolute inset-x-0 top-0 h-[46%] md:h-[56%]"
         style={{ background: "linear-gradient(to bottom, #4b4790 0%, #5f58ab 55%, #625bae 100%)" }}
       />
-      <div className="absolute inset-x-0 bottom-0 h-[62%]">
+      <div className="absolute inset-x-0 bottom-0 h-[62%] md:h-[52%]">
         {video ? (
           <video
             autoPlay
