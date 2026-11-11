@@ -6,11 +6,11 @@ import CtaSlot from "@/components/CtaSlot";
 export default async function Hero() {
   const { t } = await i18n();
   return (
-    <section className="relative flex min-h-[88vh] items-start overflow-hidden">
+    <section className="relative flex min-h-[100vh] items-start overflow-hidden">
       <HeroMedia />
       {/* 가독성 오버레이 */}
       <div className="absolute inset-0 -z-10 bg-black/25" />
-      <div className="container-page pt-16 pb-24 sm:pt-20">
+      <div className="container-page flex min-h-[52vh] flex-col justify-center pt-10 pb-10 sm:min-h-[54vh]">
         <p className="mb-4 text-sm font-bold tracking-[0.2em] text-accent-light">
           {siteConfig.company.name}
         </p>

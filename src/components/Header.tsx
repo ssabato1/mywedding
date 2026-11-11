@@ -8,7 +8,7 @@ export default async function Header() {
   const { lang, t } = await i18n();
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-canvas/85 backdrop-blur">
-      <div className="container-page flex min-h-[64px] items-center justify-between gap-3 py-2 sm:min-h-[72px]">
+      <div className="container-page flex min-h-[96px] items-center justify-between gap-3 py-3 sm:min-h-[108px]">
         <Link href="/" className="flex shrink-0 items-center" aria-label={siteConfig.company.name}>
           <Image
             src="/images/logo-white.png"
@@ -16,7 +16,7 @@ export default async function Header() {
             width={544}
             height={518}
             priority
-            className="h-10 w-auto shrink-0 sm:h-12"
+            className="h-14 w-auto shrink-0 sm:h-[72px]"
             style={{ width: "auto" }}
           />
         </Link>
