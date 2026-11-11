@@ -18,6 +18,10 @@ thumbnail: https://images.unsplash.com/photo-1708569177086-2710ef4b1620?w=1600&q
 
 [The Knot의 2025 아이디어 모음](https://www.theknot.com/content/ways-to-make-your-cocktail-hour-more-fun)과 [Martha Stewart Weddings의 실제 사례](https://www.marthastewart.com/7869869/cocktail-hour-ideas-real-weddings)는 라이브 음악, 폴라로이드, 게임, 시그니처 음료 같은 장치를 제안합니다. 핵심은 프로그램을 많이 넣는 것이 아니라 먹을 것·마실 것·앉을 곳·다음 이동 신호가 도착 즉시 보이게 하는 것입니다.
 
+![카나페 리셉션 — 웰컴 드링크와 핑거푸드를 도착 즉시 집어 들 수 있게 (서울 한강의 한 웨딩홀 루프탑)](/images/canape-reception-01.jpg)
+
+![카나페 리셉션 — 한입 크기 카나페는 서서 대화하며 먹는 칵테일 아워의 기본입니다](/images/canape-reception-02.jpg)
+
 ## 리셉션: 공식 순간 사이에 호흡을 둔다
 
 [Brides의 2026 웨딩 타임라인](https://www.brides.com/best-wedding-day-timeline-11806394)은 입장과 퍼스트 댄스, 식사, 짧은 토스트, 가족 댄스, 오픈 댄스 플로어 순으로 에너지를 높입니다. 토스트를 짧게 하고 마지막 공식 댄스 직후 빠른 음악을 붙이면, 구경하던 하객이 자연스럽게 참여하게 됩니다.
@@ -29,6 +33,8 @@ thumbnail: https://images.unsplash.com/photo-1708569177086-2710ef4b1620?w=1600&q
 [Brides의 애프터 파티 사례](https://www.brides.com/wedding-after-party-ideas-8741697)와 [Vogue의 계획·에티켓 가이드](https://www.vogue.com/article/a-guide-to-wedding-after-party-planning-and-etiquette)는 리셉션 뒤에 더 빠른 음악, 야식, 편한 조명으로 다른 분위기를 만들되 필수 행사는 아니라고 설명합니다. 같은 장소나 가까운 공간일수록 이동 중 에너지가 줄지 않으며, 외부 이동이면 셔틀과 귀가편까지 계획해야 합니다.
 
 [Hitched의 2025 가이드](https://www.hitched.co.uk/wedding-planning/ceremony-and-reception/wedding-after-party-ideas)는 같은 장소 연장, 가까운 바나 프라이빗 룸, 야외 텐트 등을 선택지로 들고 물·야식·현실적인 종료 시각을 강조합니다. 모든 하객이 남는다고 가정하지 말고 공식 마무리와 작별 인사를 먼저 제공한 뒤 자유 참석으로 전환하는 편이 안전합니다.
+
+![해가 진 뒤의 루프탑 바 — 애프터 파티는 조명이 켜진 바 하나로 장면이 바뀝니다](/images/canape-reception-03.jpg)
 
 ## 한국식 뒤풀이와 무엇이 다른가
 

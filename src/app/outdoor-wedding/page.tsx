@@ -66,6 +66,20 @@ export default async function OutdoorWeddingPage() {
             </ul>
           )}
 
+          {!s.marina && (
+            <div className="mt-16">
+              <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{o.canape.title}</h3>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.canape.body}</p>
+              <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+                {["/images/canape-reception-01.jpg", "/images/canape-reception-02.jpg", "/images/canape-reception-03.jpg"].map((src, i) => (
+                  <li key={src}>
+                    <ImageSlot ratio="3/2" label={o.canape.photos[i]} src={src} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {s.marina && (
             <>
               <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
