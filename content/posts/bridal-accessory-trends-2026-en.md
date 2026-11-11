@@ -5,10 +5,12 @@ date: 2026-12-03
 lang: en
 translationOf: bridal-accessory-trends-2026
 tags: [Style, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/veil-pearl-net-01.jpg
+thumbnail: /images/veil-tulle-tiara-01.jpg
 ---
 
 In 2026 the veil, the tiara and the shoes are all moving away from a single right answer. Here are the directions named by overseas media, with guidance on choosing for your venue. Where the veil and the tiara began is covered in [The Bridal Veil: Its Origins and Its Types](/blog/bridal-veil-history-and-types-en) and [The Tiara: From a King's Headdress to the Bride's](/blog/tiara-history-and-how-to-wear-en). (As of December 2026)
+
+![A full tulle veil, a tiara and shoes showing beneath the dress — all three accessories in one frame](/images/veil-tulle-tiara-01.jpg)
 
 ## The veil: longer, layered and tinted
 
@@ -23,8 +25,6 @@ In 2026 the veil, the tiara and the shoes are all moving away from a single righ
 - **The return of the blusher**: a short veil over the face, lifted during the ceremony.
 
 Who What Wear goes a step further, naming wide-brimmed hats, pillbox hats, lace gloves and neck scarves among its [2026 bridal accessory trends](https://www.whowhatwear.com/uk/living/wedding/bridal-accessory-trends-2026) in place of the veil. The veil has become one option among several.
-
-![A net veil dotted with pearls — the birdcage style drawn out long](/images/veil-pearl-net-01.jpg)
 
 ## Tiaras and headpieces: nothing that competes with the dress
 

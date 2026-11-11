@@ -3,10 +3,12 @@ title: "베일·티아라·웨딩슈즈: 2026 트렌드"
 description: "2026년에는 긴 베일과 블러셔가 돌아오고, 티아라는 가벼워지며, 구두는 사진에 나오는 물건이 되었습니다. 세 가지 액세서리의 흐름과 홀에 맞춰 고르는 기준을 정리했습니다."
 date: 2026-12-03
 tags: [스타일, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/veil-pearl-net-01.jpg
+thumbnail: /images/veil-tulle-tiara-01.jpg
 ---
 
 베일과 티아라와 구두는 2026년에 셋 모두 "정해진 답"에서 벗어나는 중입니다. 해외 매체들이 꼽은 흐름을 정리하고, 홀에 맞춰 고르는 기준을 덧붙였습니다. 베일과 티아라가 어디에서 시작되었는지는 [베일의 유래와 종류](/blog/bridal-veil-history-and-types)와 [티아라의 유래](/blog/tiara-history-and-how-to-wear)에서 다뤘습니다. (2026년 12월 기준)
+
+![풍성하게 부풀린 튤 베일과 티아라, 드레스 아래로 보이는 구두 — 세 가지 액세서리가 한 장에](/images/veil-tulle-tiara-01.jpg)
 
 ## 베일: 길어지고, 겹치고, 색이 생기다
 
@@ -21,8 +23,6 @@ thumbnail: /images/veil-pearl-net-01.jpg
 - **블러셔의 귀환**: 얼굴을 덮었다가 식 중에 올리는 짧은 베일.
 
 Who What Wear는 한 걸음 더 나가 [2026 브라이덜 액세서리 트렌드](https://www.whowhatwear.com/uk/living/wedding/bridal-accessory-trends-2026)에서 베일 대신 챙 넓은 모자, 필박스 햇, 레이스 장갑, 목에 두르는 스카프를 꼽았습니다. 베일이 필수가 아니라 선택지 중 하나가 된 것입니다.
-
-![진주를 단 네트 베일 — 버드케이지 스타일을 길게 풀어낸 디자인](/images/veil-pearl-net-01.jpg)
 
 ## 티아라와 머리 장식: 드레스와 겹치지 않게
 

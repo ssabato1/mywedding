@@ -5,10 +5,12 @@ date: 2026-12-03
 lang: en
 translationOf: bridal-veil-history-and-types
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/veil-blusher-bow-01.jpg
+thumbnail: /images/veil-pearl-net-01.jpg
 ---
 
 After the dress, nothing shapes the look of a bride as much as the veil. Yet the veil did not begin as decoration. It was a cloth to cover the bride, to protect her, and sometimes to check who she was. Here is where the veil came from, the meanings it passed through, and the types there are today. The story of the tiara is in [The Tiara: From a King's Headdress to the Bride's](/blog/tiara-history-and-how-to-wear-en), and this year's direction is in [Veil, Tiara and Wedding Shoes: The 2026 Trends](/blog/bridal-accessory-trends-2026-en).
+
+![A net veil dotted with pearls — the birdcage style drawn out long](/images/veil-pearl-net-01.jpg)
 
 ## Antiquity: a cloth to cover and protect the bride
 
