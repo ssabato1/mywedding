@@ -114,9 +114,15 @@ export function estimate(input: EstimateInput): Estimate | null {
     ? en ? "waived in Jan, Feb, Jul, Aug" : "1·2·7·8월 면제"
     : sunday && PRICING.sundayVenueFeeWaived
       ? en ? "waived on Sundays" : "일요일 면제"
-      : benefit && P.venueFeeWaivedOnWeekday
+      : benefit
         ? en ? "waived on weekdays" : "평일 예식 면제"
         : null;
+  // 식사비 10% 할인: 평일 예식 또는 1·2·7·8월 (중복 적용 없음)
+  const mealDiscountReason = offSeason
+    ? en ? "Meal discount (Jan, Feb, Jul, Aug)" : "식사비 할인 (1·2·7·8월)"
+    : benefit
+      ? en ? "Meal discount (weekday wedding)" : "식사비 할인 (평일 예식)"
+      : null;
   const feeWaived = feeWaivedReason !== null;
   const extrasFree = benefit && P.weekdayFreeExtras;
   const free = en ? "weekday benefit — complimentary" : "평일 혜택 서비스";
@@ -127,9 +133,9 @@ export function estimate(input: EstimateInput): Estimate | null {
       detail: `${won(P.coursePerGuest)} × ${guests}`,
       amount: P.coursePerGuest * guests,
     },
-    ...(offSeason
+    ...(mealDiscountReason
       ? [{
-          label: en ? "Meal discount (Jan, Feb, Jul, Aug)" : "식사비 할인 (1·2·7·8월)",
+          label: mealDiscountReason,
           detail: `−${PRICING.offSeasonMealDiscount * 100}%`,
           amount: -Math.round(P.coursePerGuest * guests * PRICING.offSeasonMealDiscount),
         }]
@@ -185,7 +191,7 @@ export function estimate(input: EstimateInput): Estimate | null {
     }
   }
   if (!pd) {
-    notes.push(en ? "Choose a date to apply date-based benefits: venue fee waived on Sundays and in Jan, Feb, Jul and Aug; 10% off the meal in those months." : "날짜를 고르면 날짜별 혜택이 적용됩니다: 일요일과 1·2·7·8월은 대관료 면제, 1·2·7·8월은 식사비 10% 할인.");
+    notes.push(en ? "Choose a date to apply date-based benefits: venue fee waived on weekdays, Sundays and in Jan, Feb, Jul and Aug; 10% off the meal on weekdays and in those months." : "날짜를 고르면 날짜별 혜택이 적용됩니다: 평일·일요일·1·2·7·8월은 대관료 면제, 평일과 1·2·7·8월은 식사비 10% 할인.");
   }
   notes.push(
     en
