@@ -3,14 +3,12 @@ title: "웨딩 파티 문화: 칵테일 아워부터 애프터 파티까지"
 description: "칵테일 아워, 리셉션, 애프터 파티의 흐름과 한국식 뒤풀이의 차이, 하객 경험을 지키는 공간·이동·야식 조건을 정리했습니다."
 date: 2026-11-23
 tags: ["웨딩 문화", "플로팅아일랜드", "플로팅아일랜드웨딩", "세빛섬웨딩", "세빛섬"]
-thumbnail: https://images.unsplash.com/photo-1708569177086-2710ef4b1620?w=1600&q=80&auto=format&fit=crop
+thumbnail: /images/after-party-bar-01.jpg
 ---
 
 칵테일 아워부터 애프터 파티까지의 웨딩 파티는 시간을 늘리는 장치가 아니라 하객의 긴장과 에너지를 단계적으로 바꾸는 설계입니다. (2026년 11월 기준)
 
-![댄스 플로어의 두 사람](https://images.unsplash.com/photo-1708569177086-2710ef4b1620?w=1600&q=80&auto=format&fit=crop)
-
-*사진: [Kari Bjorn Photography](https://unsplash.com/photos/a-man-and-a-woman-dancing-on-a-dance-floor-bXoOQpB4MTg) / [Unsplash](https://unsplash.com)*
+![애프터 파티 — 조명 바 위에 줄지어 놓인 와인 글라스 (서울 한강의 한 웨딩홀 루프탑)](/images/after-party-bar-01.jpg)
 
 ## 칵테일 아워: 기다림이 아닌 첫 번째 파티
 
@@ -36,7 +34,7 @@ thumbnail: https://images.unsplash.com/photo-1708569177086-2710ef4b1620?w=1600&q
 
 ![해가 진 뒤의 루프탑 바 — 애프터 파티는 조명이 켜진 바 하나로 장면이 바뀝니다](/images/canape-reception-03.jpg)
 
-![애프터 파티 — 조명 바 위에 줄지어 놓인 와인 글라스 (서울 한강의 한 웨딩홀 루프탑)](/images/after-party-bar-01.jpg)
+![애프터 파티 — 바텐더와 칵테일 바 앞의 하객들](/images/after-party-bar-02.jpg)
 
 ![애프터 파티 카나페 — 조명 아래 크랩 브루스케타](/images/after-party-canape-01.jpg)
 
