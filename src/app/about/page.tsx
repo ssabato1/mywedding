@@ -147,6 +147,13 @@ export default async function AboutPage() {
             </li>
           ))}
         </ul>
+        <div className="mt-10 grid items-center gap-10 md:grid-cols-5">
+          <ImageSlot ratio="16/9" label={a.engagementLabel} src="/images/engagement-table-01.jpg" className="md:col-span-3" />
+          <div className="md:col-span-2">
+            <h3 className="font-display text-2xl font-semibold text-gold">{a.engagementTitle}</h3>
+            <p className="mt-4 text-lg leading-relaxed text-ink-sub">{a.engagementBody}</p>
+          </div>
+        </div>
       </section>
 
       {/* 오시는 길 */}
