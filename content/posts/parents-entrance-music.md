@@ -3,10 +3,14 @@ title: "혼주 입장곡 고르는 법: 예식의 첫 장면을 여는 음악"
 description: "혼주 입장은 예식에서 가장 먼저 음악이 필요한 순간입니다. 걷는 속도와 곡의 길이, 양가 어머니의 촛불 점화까지 이어지는 흐름에 맞춰 클래식 곡을 고르는 기준을 정리했습니다."
 date: 2026-11-16
 tags: [웨딩 음악, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/convention-wedding-bw.jpg
+thumbnail: /images/artm-parents-processional-cover.jpg
 ---
 
 예식이 시작되면 가장 먼저 걷는 사람은 신랑도 신부도 아닌 혼주입니다. 양가 부모님이 버진로드를 걸어 들어오는 1~2분이 그날 음악의 첫인상을 정합니다. 그런데 신부 입장곡은 몇 주를 고민하면서 혼주 입장곡은 "홀에서 틀어 주는 것"으로 넘기는 경우가 많습니다. 클래식 편곡 음원을 직접 제작하는 아트엠 스튜디오 사운즈(ArtM Studio Sounds)의 예식 음악 구성을 참고해 혼주 입장곡을 고르는 기준을 정리했습니다. (2026년 11월 기준)
+
+![ArtM Studio Sounds 「Parents' Processional」 — 혼주 입장을 위한 웨딩 음악 10곡](/images/artm-parents-processional-cover.jpg)
+
+*음악: ArtM Studio Sounds — [유튜브 @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [홈페이지 artmstudiosounds.com](https://artmstudiosounds.com)*
 
 ## 혼주 입장곡이 하는 일
 
