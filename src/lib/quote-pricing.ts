@@ -60,6 +60,9 @@ export const PRICING = {
   vatRate: 0.1,
   /** 신부대기실 플라워 커스터마이징(컬러 선택) — 100만원부터 */
   bridalRoomFlowerFrom: 1_000_000,
+  /** 잔치국수·떡 — 1인당 */
+  noodlesPerGuest: 3_000,
+  riceCakePerGuest: 3_000,
   /** 부케 */
   bouquet: 200_000,
   /** 비수기(1·2·7·8월): 대관료 면제 + 식사비 할인 */
@@ -127,6 +130,8 @@ export type EstimateInput = {
   cake: boolean;
   bridalFlower?: boolean;
   bouquet?: boolean;
+  noodles?: boolean;
+  riceCake?: boolean;
   lang: string;
 };
 
@@ -207,6 +212,8 @@ export function estimate(input: EstimateInput): Estimate | null {
       amount: drink * guests,
     },
   ];
+  if (input.noodles) lines.push({ section: "fnb", label: en ? "Janchi-guksu (banquet noodles)" : "잔치국수", qty: guests, unit: PRICING.noodlesPerGuest, amount: PRICING.noodlesPerGuest * guests });
+  if (input.riceCake) lines.push({ section: "fnb", label: en ? "Tteok (rice cake)" : "떡", qty: guests, unit: PRICING.riceCakePerGuest, amount: PRICING.riceCakePerGuest * guests });
   if (input.wine && P.winePerBottle > 0) {
     const bottles = Math.ceil(guests / P.guestsPerWineBottle);
     lines.push({
