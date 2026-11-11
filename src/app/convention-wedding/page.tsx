@@ -36,6 +36,10 @@ export default async function ConventionWeddingPage() {
           <ImageSlot ratio="3/4" label={t.convention.subcutLabel} src="/images/night-candle-petals.jpg" />
         </div>
         <ImageSlot ratio="16/9" label={t.convention.subcut2Label} src="/images/bride-veil-subcut.jpg" className="mx-auto mt-6 max-w-3xl" />
+        <div className="mx-auto mt-6 grid max-w-4xl items-start gap-6 md:grid-cols-3">
+          <ImageSlot ratio="1284/833" label={t.convention.veilLabels[0]} src="/images/convention-bride-veil-flowers-01.jpg" className="md:col-span-2" />
+          <ImageSlot ratio="1284/1563" label={t.convention.veilLabels[1]} src="/images/convention-bride-veil-flowers-02.jpg" />
+        </div>
       </section>
 
       <section className="container-page border-t border-line py-16">

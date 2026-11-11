@@ -236,6 +236,7 @@ export const ko = {
   convention: {
     title: "컨벤션 웨딩",
     subcutLabel: "한강 야경을 배경으로 — 캔들과 꽃잎의 버진로드",
+    veilLabels: ["길게 펼친 베일과 라벤더·화이트 플라워 — 컨벤션홀 버진로드", "흰 꽃나무 아치 아래의 신부 — 피치·핑크 플라워와 캔들"],
     subcut2Label: "긴 베일의 신부 — 조명과 안개 속 버진로드",
     grandLabel: "플로팅아일랜드 500석 동시 웨딩 — 13미터 층고의 웅장한 실내",
     flowerTitle: "컨벤션 웨딩 플라워",

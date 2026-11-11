@@ -238,6 +238,7 @@ export const en: Dict = {
   convention: {
     title: "Convention Wedding",
     subcutLabel: "Against the Han River night view — an aisle of candles and petals",
+    veilLabels: ["A long veil spread across the aisle, with lavender and white florals — Convention Hall", "The bride beneath an arch of white blossom — peach and pink florals and candles"],
     subcut2Label: "A bride in a long veil — the aisle in light and mist",
     grandLabel: "Floating Island — a ceremony and banquet for 500 seated guests beneath a 13-metre ceiling",
     flowerTitle: "Convention wedding florals",
