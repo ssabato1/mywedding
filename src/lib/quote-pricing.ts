@@ -218,8 +218,12 @@ export function estimate(input: EstimateInput): Estimate | null {
       ? en ? "Meal discount (weekday wedding)" : "식사비 할인 (평일 예식)"
       : null;
   const feeWaived = feeWaivedReason !== null;
-  const extrasFree = benefit && P.weekdayFreeExtras;
-  const free = en ? "weekday benefit — complimentary" : "평일 혜택 서비스";
+  // 모든 일요일 저녁(18:00) 예식: 웨딩 케이크·건배용 샴페인 무료
+  const sundayEvening = sunday && (input.time ?? "").startsWith("18:00");
+  const extrasFree = (benefit && P.weekdayFreeExtras) || sundayEvening;
+  const free = sundayEvening
+    ? en ? "Sunday evening — complimentary" : "일요일 저녁 예식 무료"
+    : en ? "weekday benefit — complimentary" : "평일 혜택 서비스";
 
   const menu = MENUS.find((m) => m.key === input.menu) ?? MENUS.find((m) => m.key === DEFAULT_MENU[venue])!;
   const mealPerGuest: number = menu.price;
@@ -314,6 +318,7 @@ export function estimate(input: EstimateInput): Estimate | null {
   } else if (parsed < minGuests) {
     notes.push(en ? `Calculated at the minimum guarantee of ${minGuests} guests.` : `최소 보증인원 ${minGuests}명 기준으로 계산했습니다.`);
   }
+  if (sundayEvening && (input.cake || input.champagne)) notes.push(en ? "Sunday evening weddings: the wedding cake and champagne for the toast are complimentary." : "일요일 저녁 예식은 웨딩 케이크와 건배용 샴페인을 무료로 드립니다.");
   if (promo) {
     notes.push(en ? "Sunday 18:00 weddings in January, February, July and August: available from 250 guests, wedding production fee waived." : "1·2·7·8월 일요일 저녁 6시 예식 특전을 적용했습니다: 250명부터 가능, 웨딩연출료 면제.");
   }
