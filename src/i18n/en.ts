@@ -96,7 +96,7 @@ export const en: Dict = {
     values: [
       { name: "Time", body: "A generous slot of three hours or more. No rush from the previous wedding, no crowding from the next." },
       { name: "Your way", body: "You set the running order, music, staging and menu. When the ceremony ends, the after-party begins in the same place." },
-      { name: "Hospitality", body: "English-language coordination, halal and vegetarian menus, a shuttle from Express Bus Terminal and parking for 800+ cars for overseas guests and international couples." },
+      { name: "Hospitality", body: "English-language coordination, halal and vegetarian menus, a shuttle from Express Bus Terminal and parking for 900 cars for overseas guests and international couples." },
       { name: "The view", body: "The Han River and Banpo Bridge's Rainbow Fountain as your backdrop — river and sky by day, city lights by night." },
     ],
     spacesEyebrow: "Spaces",
@@ -115,7 +115,7 @@ export const en: Dict = {
     address: "Some Sevit, 650 Banpo-dong, Seocho-gu, Seoul, Korea",
     phone: "Tel",
     email: "Email",
-    accessNote: "Shuttle from Express Bus Terminal. Parking for 800+ cars, coaches welcome.",
+    accessNote: "Shuttle from Express Bus Terminal. Parking for 900 cars, coaches welcome.",
     accessIntro: "Sevit Island sits inside Banpo Hangang Park at the south end of Banpo Bridge. Whether you come by subway, shuttle, bus or car, Express Bus Terminal is the landmark.",
     accessWays: [
       {
@@ -139,7 +139,7 @@ export const en: Dict = {
         lines: [
           "Navigation: search “Banpo Hangang Park Parking Lot 2” or “Some Sevit”",
           "Olympic-daero → Banpo Hangang Park entrance → Jamsu Bridge roundabout → past the toll booth, keep right",
-          "Banpo Hangang Park Lots 2 & 3 and Seorae Naru lot (800+ spaces). Guests park free for 3 hours, the couple's parents for 6",
+          "Banpo Hangang Park Lots 2 & 3 and Seorae Naru lot (900 spaces). Guests park free for 3 hours, the couple's parents for 6",
           "Coaches for group guests are welcome — confirm the drop-off point with your coordinator in advance",
         ],
       },
