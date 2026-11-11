@@ -24,7 +24,7 @@ Zola의 [2026 First Look Report](https://www.zola.com/expert-advice/the-first-lo
 
 트렌드 매거진 THE WED의 [50 Major Wedding Trends for 2026](https://thewed.com/magazine/major-wedding-trends-for-2026)은 "비선형 타임라인"을 꼽았습니다. 서약이 식사와 댄스 사이에 들어가기도 하고, 세리모니를 짧게 끝내고 리셉션을 길게 가져가기도 합니다. The Knot 조사에서는 커플의 61%가 서약문을 직접 썼고, 32%가 종교·민족·문화 요소를 식에 넣었습니다.
 
-한국에 가져올 것: 식순을 두 사람이 정한다는 원칙입니다. 다만 조건이 있습니다. 정해진 식순과 시간표를 바꿀 수 없는 홀에서는 애초에 불가능합니다. 예를 들어 마리나파크 가든처럼 하루 한 커플만 받는 단독홀은 세리모니 → 칵테일 → 디너 → 애프터 파티 순서를 커플이 직접 정할 수 있지만, 회전식 홀에서는 식순 변경 자체가 안 되는 경우가 많습니다. 홀을 고를 때 "식순을 바꿀 수 있는지"를 먼저 물어보는 것이 좋습니다.
+한국에 가져올 것: 식순을 두 사람이 정한다는 원칙입니다. 다만 조건이 있습니다. 정해진 식순과 시간표를 바꿀 수 없는 홀에서는 애초에 불가능합니다. 예를 들어 마리나파크 가든처럼 예식 시간이 여유 있는 단독홀은 세리모니 → 칵테일 → 디너 → 애프터 파티 순서를 커플이 직접 정할 수 있지만, 회전식 홀에서는 식순 변경 자체가 안 되는 경우가 많습니다. 홀을 고를 때 "식순을 바꿀 수 있는지"를 먼저 물어보는 것이 좋습니다.
 
 ## 4. 형식적인 이벤트는 퇴장, 단 세대에 따라 다르다
 
@@ -73,4 +73,4 @@ THE WED는 2026년 사진 트렌드로 다큐멘터리 스타일, 필름과 캠�
 
 ---
 
-*In English:* 2026 wedding reports from The Knot, Zola, Hitched and Belmond point in one direction — fewer guests, more time. Couples are cutting guest lists, stretching the celebration across a weekend, rewriting the running order and bringing their own values (plant-based menus, alcohol-free bars) into the day. For couples marrying in Korea, the key question to ask any venue is whether it hosts one wedding a day and lets you set your own timeline.
+*In English:* 2026 wedding reports from The Knot, Zola, Hitched and Belmond point in one direction — fewer guests, more time. Couples are cutting guest lists, stretching the celebration across a weekend, rewriting the running order and bringing their own values (plant-based menus, alcohol-free bars) into the day. For couples marrying in Korea, the key question to ask any venue is whether it gives you a generous time slot and lets you set your own timeline.

@@ -60,14 +60,14 @@ thumbnail: https://floatingisland.co.kr/images/2649b2_0a45731667d6441a83649c17c5
 
 | 확인할 것 | 왜 중요한가 |
 | --- | --- |
-| 하루 한 커플만 받는지 | 2부 리셉션이 다음 예식에 밀리지 않습니다 |
+| 예식 시간이 여유 있는지 | 2부 리셉션이 다음 예식에 밀리지 않습니다 |
 | 대관 시간이 3시간 이상인지 | 1부 40분 + 2부 2시간 + 전환 시간이 필요합니다 |
 | 식순·시간표를 커플이 정할 수 있는지 | 회전식 홀은 식순 변경 자체가 안 되는 경우가 많습니다 |
 | 영어 진행 또는 이중 언어 사회가 가능한지 | 사회자 섭외 범위가 달라집니다 |
 | 할랄·채식·무알코올이 기본인지 | 추가 비용과 준비 기한을 미리 압니다 |
 | 해외 하객 이동 수단 | 공항·고속터미널에서 오는 셔틀, 대형버스 주차 |
 
-예를 들어 서울 한강의 세빛섬 컨벤션홀은 하루 한 커플만 받고 세리모니와 리셉션을 같은 홀에서 세 시간 이상 이어서 진행하며, 영어 진행과 할랄·채식 대체 메뉴, 고속터미널 셔틀을 기본으로 둡니다. 이런 조건이 갖춰진 홀이라면 위의 1부·2부 구조를 그대로 옮길 수 있습니다.
+예를 들어 서울 한강의 세빛섬 컨벤션홀은 세리모니와 리셉션을 같은 홀에서 세 시간 이상 여유 있게 이어서 진행하며, 영어 진행과 할랄·채식 대체 메뉴, 고속터미널 셔틀을 기본으로 둡니다. 이런 조건이 갖춰진 홀이라면 위의 1부·2부 구조를 그대로 옮길 수 있습니다.
 
 ## 체크리스트
 
@@ -75,10 +75,10 @@ thumbnail: https://floatingisland.co.kr/images/2649b2_0a45731667d6441a83649c17c5
 - [ ] 1부에 넣을 가족 순서(혼주 입장·촛불·인사)를 정했다
 - [ ] 서약은 각자 모국어, 번역은 식순표·자막으로 정했다
 - [ ] 축사자 2~3명을 양쪽에서 고르고 번역본을 미리 받았다
-- [ ] 홀이 하루 한 커플, 3시간 이상, 식순 변경 가능인지 확인했다
+- [ ] 홀이 3시간 이상 여유 있는 예식 시간, 식순 변경 가능인지 확인했다
 - [ ] 할랄·채식·무알코올 대체가 기본인지 확인했다
 - [ ] 해외 하객 안내문(숙소·이동·드레스 코드)을 영문으로 보냈다
 
 ---
 
-*In English:* When two families expect two different weddings, do not blend them into one running order — split the day. Part one is a 40-minute ceremony with the family rituals Korean parents expect; part two is a two-hour-plus reception with the toasts, first dance and after-party overseas guests expect. The one venue condition that makes this work: a hall that hosts a single couple a day and lets you set your own timeline.
+*In English:* When two families expect two different weddings, do not blend them into one running order — split the day. Part one is a 40-minute ceremony with the family rituals Korean parents expect; part two is a two-hour-plus reception with the toasts, first dance and after-party overseas guests expect. The one venue condition that makes this work: a hall that gives you a generous time slot and lets you set your own timeline.

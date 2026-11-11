@@ -17,11 +17,11 @@ export default function Home() {
           <div>
             <p className="eyebrow mb-3">{siteConfig.company.name}</p>
             <h2 className="font-display text-3xl font-bold leading-snug text-primary">
-              하루 한 커플, 세&nbsp;시간&nbsp;이상의 결혼식
+              여유 있는 예식 시간, 세&nbsp;시간&nbsp;이상의 결혼식
             </h2>
             <p className="mt-5 leading-relaxed text-ink-sub">
               한국 웨딩홀 대부분은 한두 시간 단위로 예식을 회전시킵니다.
-              세빛섬과 마리나파크는 하루 한 커플만 맞아 세리모니부터 애프터 파티까지
+              세빛섬과 마리나파크는 여유 있는 예식 시간으로 세리모니부터 애프터 파티까지
               두 사람이 정한 흐름대로 여유 있게 진행합니다. 국제결혼과 해외 웨딩 트렌드,
               예식 준비의 모든 것을 이 블로그에 기록합니다.
             </p>
