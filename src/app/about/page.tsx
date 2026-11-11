@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@config";
+import { INSTAGRAM } from "@/lib/instagram";
 import { i18n } from "@/i18n";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
@@ -9,16 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const { t } = await i18n();
   return { title: t.about.title };
 }
-
-const INSTAGRAM = [
-  "floatingislandwedding",
-  "marinaparkwedding",
-  "marinaparkevent",
-  "marinapark.cafe",
-  "anniversaryhall",
-  "anniversaryflower",
-  "artmstudiosounds",
-];
 
 export default async function AboutPage() {
   const { t } = await i18n();
