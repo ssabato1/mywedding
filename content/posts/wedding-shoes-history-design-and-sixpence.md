@@ -53,6 +53,18 @@ thumbnail: /images/veil-tulle-tiara-01.jpg
 
 색도 흰색에 머물지 않습니다. 노랫말 속 "푸른 것 하나"를 구두로 채우는 신부가 많고, 밑창이나 안감에만 색을 넣기도 합니다. THE WED는 [2026 브라이덜 슈즈 트렌드](https://thewed.com/magazine/major-bridal-shoe-trends-for-2026)로 입체 플라워 장식, 망사 소재, 크리스털이나 금속으로 깎은 조형적인 굽을 꼽았습니다.
 
+![발목을 잡아 주는 스트랩과 굵은 굽 — 오래 서 있어도 편한 블록 힐 샌들](https://images.unsplash.com/photo-1562616441-69265b948285?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*사진: [Katelyn MacMillan](https://unsplash.com/photos/white-open-toe-ankle-strap-heels-beside-flower-vase-ExjpauryqzA) / [Unsplash](https://unsplash.com)*
+
+![크리스털을 점점이 놓은 아이보리 T스트랩 — 낮은 굽의 클래식](https://images.unsplash.com/photo-1521632617300-1e0d873a69a3?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*사진: [Thomas William](https://unsplash.com/photos/pair-of-womens-white-kitten-heels-Mjz4YVIy69Y) / [Unsplash](https://unsplash.com)*
+
+![흰 슬링백에 더한 한 줄의 색 — 포인트 컬러와 투명한 굽](https://images.unsplash.com/photo-1670938258821-2956d4ce9c9b?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*사진: [Jean Jacobs](https://unsplash.com/photos/a-pair-of-white-high-heel-shoes-on-a-bed-RPVspeDIxXI) / [Unsplash](https://unsplash.com)*
+
 ![얇은 베일 아래 놓인 구두 — 드레스만큼 공들여 고르는 물건이 되었습니다](/images/veil-sheer-bw-01.jpg)
 
 ## 하루를 편하게 걷는 요령

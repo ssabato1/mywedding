@@ -55,6 +55,18 @@ For a long time wedding shoes were covered by a floor-length dress, and the rule
 
 Colour no longer stops at white. Many brides let their shoes be the "something blue" of the rhyme, or put colour only on the sole or lining. THE WED names three-dimensional florals, mesh, and sculptural heels cut from crystal or metal among its [bridal shoe trends for 2026](https://thewed.com/magazine/major-bridal-shoe-trends-for-2026).
 
+![An ankle strap and a broad heel — block-heel sandals that stay comfortable through a long day](https://images.unsplash.com/photo-1562616441-69265b948285?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*Photo: [Katelyn MacMillan](https://unsplash.com/photos/white-open-toe-ankle-strap-heels-beside-flower-vase-ExjpauryqzA) / [Unsplash](https://unsplash.com)*
+
+![Ivory T-straps dotted with crystals — a low-heeled classic](https://images.unsplash.com/photo-1521632617300-1e0d873a69a3?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*Photo: [Thomas William](https://unsplash.com/photos/pair-of-womens-white-kitten-heels-Mjz4YVIy69Y) / [Unsplash](https://unsplash.com)*
+
+![A line of colour on white slingbacks — an accent colour and a clear heel](https://images.unsplash.com/photo-1670938258821-2956d4ce9c9b?w=1200&h=800&q=80&auto=format&fit=crop)
+
+*Photo: [Jean Jacobs](https://unsplash.com/photos/a-pair-of-white-high-heel-shoes-on-a-bed-RPVspeDIxXI) / [Unsplash](https://unsplash.com)*
+
 ![Shoes resting beneath a sheer veil — now chosen with as much care as the dress](/images/veil-sheer-bw-01.jpg)
 
 ## Walking comfortably through the day
