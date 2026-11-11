@@ -74,7 +74,7 @@ export default async function AboutPage() {
               </li>
             ))}
           </ol>
-          <ImageSlot ratio="4/5" label={a.imageLabel} src="/images/hero-poster.jpg" className="hidden md:flex" />
+          <ImageSlot ratio="4/5" label={a.imageLabel} src="/images/hero-poster.jpg" className="hidden md:block" />
         </div>
       </section>
 

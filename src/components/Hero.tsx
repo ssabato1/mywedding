@@ -26,7 +26,20 @@ export default async function Hero() {
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary/80">
           {t.company.description}
         </p>
-        <CtaSlot className="mt-10" />
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <CtaSlot />
+          <a href={`tel:${siteConfig.contact.phoneIntl}`} className="font-sans text-lg font-semibold tracking-wide text-primary hover:text-gold">
+            {siteConfig.contact.phone}
+          </a>
+          <a
+            href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
+            className="font-sans text-sm text-primary/75 hover:text-gold"
+          >
+            WhatsApp {siteConfig.contact.whatsappDisplay}
+          </a>
+        </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] text-primary/55">
         {t.hero.scroll}

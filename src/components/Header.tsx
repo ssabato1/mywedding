@@ -26,6 +26,7 @@ export default async function Header() {
             <Link href="/convention-wedding" className="hover:text-primary">{t.nav.convention}</Link>
             <Link href="/outdoor-wedding" className="hover:text-primary">{t.nav.outdoor}</Link>
             <Link href="/blog" className="hover:text-primary">{t.nav.blog}</Link>
+            <Link href="/contact" className="font-semibold text-gold hover:text-gold-dark">{t.nav.contact}</Link>
           </nav>
           <LangSwitch current={lang} />
         </div>

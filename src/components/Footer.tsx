@@ -14,7 +14,16 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p>© {new Date().getFullYear()} {siteConfig.company.name}</p>
+        <div className="flex flex-col gap-1 sm:items-end">
+          <p>
+            <a href={`tel:${siteConfig.contact.phoneIntl}`} className="hover:text-primary">{siteConfig.contact.phone}</a>
+            {" · "}
+            <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-primary">{siteConfig.contact.email}</a>
+            {" · "}
+            <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-primary">WhatsApp {siteConfig.contact.whatsappDisplay}</a>
+          </p>
+          <p>© {new Date().getFullYear()} {siteConfig.company.name}</p>
+        </div>
       </div>
     </footer>
   );

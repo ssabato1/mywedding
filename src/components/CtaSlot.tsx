@@ -11,7 +11,7 @@ export default function CtaSlot({ className = "" }: { className?: string }) {
     <div className={className}>
       <a
         href={siteConfig.cta.href}
-        className="inline-block rounded-ui bg-primary px-5 py-2.5 text-sm font-bold text-card hover:bg-primary-dark"
+        className="inline-block rounded-ui bg-gold px-5 py-2.5 text-sm font-bold text-canvas hover:bg-gold-dark"
       >
         {siteConfig.cta.label}
       </a>

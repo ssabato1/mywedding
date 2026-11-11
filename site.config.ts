@@ -6,6 +6,8 @@
 export interface SiteConfig {
   company: { name: string; tagline: string; description: string };
   links: Record<string, string>;
+  /** 상담 문의 연락처. 견적 요청 폼(/contact)과 푸터에서 사용합니다. */
+  contact: { email: string; phone: string; phoneIntl: string; whatsapp: string; whatsappDisplay: string };
   cta: { enabled: boolean; label: string; href: string };
   /** 홈 히어로 배경. video 가 있으면 영상, 없으면(null) poster 이미지로 렌더됩니다. */
   hero: { video: string | null; poster: string };
@@ -27,11 +29,18 @@ export const siteConfig: SiteConfig = {
     instagram: "https://instagram.com/marinaparkwedding",
     youtube: "https://youtube.com/@artmstudiosounds",
   },
+  contact: {
+    email: "ficonvention@gmail.com",
+    phone: "02-537-2440",
+    phoneIntl: "+82-2-537-2440",
+    whatsapp: "821067153458",
+    whatsappDisplay: "+82 10-6715-3458",
+  },
   cta: {
     // 6.3 「Bluekiwi 하네스 도구 소개 (SNS발행)」에서 구현·활성화하는 확장 슬롯
-    enabled: false,
-    label: "",
-    href: "",
+    enabled: true,
+    label: "견적 받기",
+    href: "/contact",
   },
   hero: {
     // 6.5 「모션그래픽 생성 — 히어로 모션」 실습 슬롯.

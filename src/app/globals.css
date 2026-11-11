@@ -57,7 +57,7 @@ p { text-wrap: pretty; }
 .post-body .post-figure { @apply my-10 mx-0; }
 .post-body .post-figure img { @apply w-full h-auto rounded-ui; }
 .post-body .post-figure.is-portrait img { @apply w-auto max-h-[80vh] mx-auto; }
-.post-body .post-figure figcaption { @apply mt-3 text-center text-[13px] leading-relaxed text-ink-muted; }
+.post-body .post-figure figcaption { @apply mt-3 font-sans text-center text-[13px] leading-relaxed text-ink-muted; }
 .post-body img { @apply max-w-full h-auto rounded-ui my-6; }
 
 /* 에디토리얼 레이아웃 헬퍼 (rev2) */
