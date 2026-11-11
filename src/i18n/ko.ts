@@ -161,6 +161,7 @@ export const ko = {
   },
   convention: {
     title: "컨벤션 웨딩",
+    subcutLabel: "한강 야경을 배경으로 — 캔들과 꽃잎의 버진로드",
     flowerTitle: "컨벤션 웨딩 플라워",
     flowerBody: "13미터 층고 아래 꽃길로 채운 버진로드. 블루 수국, 라벤더, 블루 & 화이트까지 두 사람의 컬러로 연출합니다.",
     flowerAlts: ["Blue Hydrangea — 블루 수국으로 채운 꽃길", "Purple Aisle — 보랏빛으로 물든 버진로드", "Something Blue — 블루 & 화이트 연출", "Lavender Dream — 라벤더 빛 웨딩 플라워"],

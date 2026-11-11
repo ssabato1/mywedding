@@ -163,6 +163,7 @@ export const en: Dict = {
   },
   convention: {
     title: "Convention Wedding",
+    subcutLabel: "Against the Han River night view — an aisle of candles and petals",
     flowerTitle: "Convention wedding florals",
     flowerBody: "An aisle lined with flowers beneath a 13-metre ceiling — blue hydrangea, lavender, blue and white, styled in the couple's own colours.",
     flowerAlts: ["Blue Hydrangea — an aisle of blue hydrangea", "Purple Aisle — an aisle in shades of purple", "Something Blue — blue and white styling", "Lavender Dream — lavender wedding florals"],
