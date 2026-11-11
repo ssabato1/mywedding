@@ -37,7 +37,9 @@ THE WED의 [Major Bridal Beauty Trends for 2026](https://thewed.com/magazine/maj
 
 네일은 크리스털을 점처럼 올린 디자인, 진주 테두리나 가는 선으로 바꾼 프렌치, 금박과 크롬의 메탈릭 아트가 실렸습니다. 반지를 낀 손이 가까이에서 찍히는 사진을 생각하면 드레스와 반지의 톤에 맞추는 것이 기준이 됩니다.
 
-![흰 바탕 위의 레이스 — 드레스의 질감이 섬세할수록 메이크업은 가볍게](/images/sposabella-dress-01.jpg)
+![누드 핑크 바탕에 금박 포인트를 얹은 네일 — 반지와 톤을 맞춥니다](https://images.unsplash.com/photo-1641814280326-d74ea2300067?w=1200&h=900&q=80&auto=format&fit=crop)
+
+*사진: [Julee Juu](https://unsplash.com/photos/a-womans-hands-with-manicured-nails-and-a-ring-HnhhJAat9Eg) / [Unsplash](https://unsplash.com)*
 
 ## 홀과 시간대에 맞춰 고르기
 

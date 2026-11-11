@@ -39,7 +39,9 @@ The biggest change is that growing your hair is no longer assumed.
 
 For nails the article shows crystals placed like pinpoints, French manicures reworked with pearl edges or fine lines, and metallic art in gold leaf and chrome. Since the hand with the ring is photographed up close, the measure is the tone of the dress and the ring.
 
-![Lace on white — the finer the texture of the dress, the lighter the make-up](/images/sposabella-dress-01.jpg)
+![Nude pink nails with a touch of gold leaf — matched to the tone of the rings](https://images.unsplash.com/photo-1641814280326-d74ea2300067?w=1200&h=900&q=80&auto=format&fit=crop)
+
+*Photo: [Julee Juu](https://unsplash.com/photos/a-womans-hands-with-manicured-nails-and-a-ring-HnhhJAat9Eg) / [Unsplash](https://unsplash.com)*
 
 ## Choosing for the venue and the hour
 
