@@ -273,6 +273,7 @@ export const en: Dict = {
       title: "Canapé reception",
       body: "After the ceremony, cocktail hour begins on the same rooftop with welcome drinks and bite-sized canapés — finger food guests can eat standing and talking, and a lit bar that carries the evening into the after-party once the sun goes down.",
       photos: ["Welcome drink table", "Bite-sized canapés", "Rooftop bar at dusk", "After-party wine bar", "After-party canapés — crab bruschetta", "Overseas guests in conversation", "At the bar, lights changed", "Standing conversation is the heart of the after-party", "Bartender and cocktail bar"],
+      morePhotos: ["The first dance of the after-party — DJ booth and lights", "The bride in her second dress, raising a glass with guests", "Beer on ice by the window, with the night view behind", "A candle and canapés — the table as the night goes on"],
     },
     vista: {
       eyebrow: "After Party · 4F",

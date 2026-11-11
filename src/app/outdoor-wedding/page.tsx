@@ -21,6 +21,13 @@ const CANAPE_GALLERY = [
   "/images/after-party-bar-02.jpg",
 ];
 
+const AFTER_PARTY_MORE = [
+  "/images/after-party-dance-01.jpg",
+  "/images/after-party-guests-04.jpg",
+  "/images/after-party-beer-01.jpg",
+  "/images/after-party-candle-01.jpg",
+];
+
 const MARINA_GALLERY = [
   "/images/marinapark-ceremony-01.jpg",
   "/images/marinapark-ceremony-02.jpg",
@@ -92,6 +99,13 @@ export default async function OutdoorWeddingPage() {
                 {CANAPE_GALLERY.map((src, i) => (
                   <li key={src}>
                     <ImageSlot ratio="3/2" label={o.canape.photos[i]} src={src} />
+                  </li>
+                ))}
+              </ul>
+              <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {AFTER_PARTY_MORE.map((src, i) => (
+                  <li key={src}>
+                    <ImageSlot ratio="3/2" label={o.canape.morePhotos[i]} src={src} />
                   </li>
                 ))}
               </ul>
