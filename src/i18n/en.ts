@@ -38,6 +38,7 @@ export const en: Dict = {
     ],
     uniqueFlyer: "A premier unique venue representing Seoul — Floating Island",
     panoramaLabel: "Sevit Island at night, mirrored on the Han River — Gabit and Chaebit",
+    conceptLabel: "Concept rendering of the artificial island — three islands floating on the Han River off Banpo, in southern Seoul",
     historyEyebrow: "History",
     historyTitle: "The story of Sevit Island",
     history: [
@@ -177,6 +178,9 @@ export const en: Dict = {
       "2022 Galderma Korea · Merck Life Science",
       "2023 Prudential Indonesia",
     ],
+    proposalTitle: "Proposal events",
+    proposalBody: "At the hour when the Han River sunset turns its deepest red, we set a terrace with a floral arch and lanterns for a proposal just for two — the first scene of a wedding, in the place where the ceremony will be held.",
+    proposalLabel: "Proposal event — a floral arch against the Han River sunset",
     accessEyebrow: "Getting here",
     accessTitle: "South end of Banpo Bridge, beside the Rainbow Fountain",
     address: "Some Sevit, 650 Banpo-dong, Seocho-gu, Seoul, Korea",

@@ -76,6 +76,7 @@ export default async function AboutPage() {
           </ol>
           <div className="hidden space-y-6 md:block">
             <ImageSlot ratio="4/5" label={a.imageLabel} src="/images/hero-poster.jpg" />
+            <ImageSlot ratio="3/2" label={a.conceptLabel} src="/images/sevit-concept-rendering.jpg" />
             <ImageSlot ratio="5/2" label={a.panoramaLabel} src="/images/sevit-night-panorama.jpg" />
           </div>
         </div>
@@ -99,6 +100,7 @@ export default async function AboutPage() {
             <p className="mt-4 text-sm font-semibold text-gold">{a.glanceParking}</p>
           </div>
           <div className="rounded-card border border-line bg-card p-6">
+            <ImageSlot ratio="16/9" label={a.glanceFountainTitle} src="/images/rainbow-fountain-night.jpg" caption={false} className="mb-5" />
             <h3 className="font-display text-lg font-semibold text-gold">{a.glanceFountainTitle}</h3>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink-sub">
               {a.glanceFountainBody.map((p) => (
@@ -162,6 +164,13 @@ export default async function AboutPage() {
             <li><ImageSlot ratio="3/2" label={a.riveGaucheLabels[1]} src="/images/rive-gauche-small-wedding-02.jpg" /></li>
           </ul>
           <ImageSlot ratio="1242/1218" label={a.riveGaucheGreenery} src="/images/rive-gauche-greenery.jpg" className="mx-auto mt-6 max-w-2xl" />
+        </div>
+        <div className="mt-14 grid items-center gap-10 md:grid-cols-5">
+          <div className="md:col-span-2">
+            <h3 className="font-display text-2xl font-semibold text-gold">{a.proposalTitle}</h3>
+            <p className="mt-4 text-lg leading-relaxed text-ink-sub">{a.proposalBody}</p>
+          </div>
+          <ImageSlot ratio="1046/751" label={a.proposalLabel} src="/images/proposal-sunset-01.jpg" className="md:col-span-3" />
         </div>
       </section>
 

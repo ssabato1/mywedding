@@ -36,6 +36,7 @@ export const ko = {
     ],
     uniqueFlyer: "서울을 대표하는 유니크 베뉴 — 플로팅아일랜드",
     panoramaLabel: "한강에 비친 세빛섬의 밤 — 가빛섬과 채빛섬",
+    conceptLabel: "한강 위 인공섬 구상도 — 서울 남쪽, 반포 앞 한강에 띄운 세 개의 섬",
     historyEyebrow: "히스토리",
     historyTitle: "세빛섬이 걸어온 길",
     history: [
@@ -175,6 +176,9 @@ export const ko = {
       "2022 갈더마 코리아 · 머크 라이프사이언스",
       "2023 푸르덴셜 인도네시아",
     ],
+    proposalTitle: "프러포즈 이벤트",
+    proposalBody: "한강의 노을이 가장 붉어지는 시간, 꽃 아치와 랜턴으로 꾸민 테라스에서 두 사람만의 프러포즈를 준비합니다. 결혼식의 첫 장면을 예식과 같은 자리에서 시작할 수 있습니다.",
+    proposalLabel: "프러포즈 이벤트 — 한강 노을 앞의 플라워 아치",
     accessEyebrow: "오시는 길",
     accessTitle: "반포대교 남단, 무지개분수 옆",
     address: "서울 서초구 반포동 650번지 세빛섬",
