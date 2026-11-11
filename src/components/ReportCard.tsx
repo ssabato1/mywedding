@@ -32,7 +32,7 @@ export default function ReportCard({ report }: { report: ContentMeta }) {
           )}
           <time className="text-ink-muted">{report.date}</time>
         </div>
-        <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-primary">{report.title}</h3>
+        <h3 className="mt-3 font-display text-lg font-semibold text-gold group-hover:text-gold">{report.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-ink-sub">{report.description}</p>
         <div className="mt-5 grid grid-cols-3 gap-2">
           {metrics.map((metric) => (

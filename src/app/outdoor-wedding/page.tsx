@@ -40,7 +40,7 @@ export default async function OutdoorWeddingPage() {
     <div className="pb-16">
       <div className="container-page py-24">
         <p className="eyebrow mb-4">{siteConfig.company.name}</p>
-        <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight text-primary sm:text-5xl">
+        <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-gold sm:text-5xl">
           {o.title}
         </h1>
       </div>
@@ -49,7 +49,7 @@ export default async function OutdoorWeddingPage() {
         <section key={s.title} className="container-page border-t border-line py-16">
           <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
-              <h2 className="max-w-3xl font-display text-3xl font-bold text-primary sm:text-4xl">{s.title}</h2>
+              <h2 className="max-w-3xl font-display text-3xl font-semibold text-gold sm:text-4xl">{s.title}</h2>
               <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-ink-sub">
                 {s.paras.map((p) => (
                   <p key={p}>{p}</p>
@@ -59,7 +59,7 @@ export default async function OutdoorWeddingPage() {
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-block text-sm font-semibold text-accent hover:text-primary"
+                className="mt-8 inline-block text-sm font-semibold text-gold hover:text-gold-dark"
               >
                 {s.link}
               </a>
@@ -80,7 +80,7 @@ export default async function OutdoorWeddingPage() {
 
           {!s.marina && (
             <div className="mt-16">
-              <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{o.canape.title}</h3>
+              <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.canape.title}</h3>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.canape.body}</p>
               <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {CANAPE_GALLERY.map((src, i) => (
@@ -114,7 +114,7 @@ export default async function OutdoorWeddingPage() {
                   />
                 </div>
                 <div className="md:col-span-3">
-                  <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{o.marinaAfterParty.title}</h3>
+                  <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.marinaAfterParty.title}</h3>
                   <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.marinaAfterParty.body}</p>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default async function OutdoorWeddingPage() {
                   </div>
                 </div>
                 <div className="md:order-1 md:col-span-3">
-                  <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{o.marinaNight.title}</h3>
+                  <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.marinaNight.title}</h3>
                   <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.marinaNight.body}</p>
                 </div>
               </div>

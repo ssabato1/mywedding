@@ -34,7 +34,7 @@ export default async function ReportPage(
           )}
           <time className="text-ink-muted">{report.date}</time>
         </div>
-        <h1 className="mt-3 font-display text-3xl font-bold leading-snug text-primary sm:text-4xl">{report.title}</h1>
+        <h1 className="mt-3 font-display text-3xl font-semibold leading-snug text-gold sm:text-4xl">{report.title}</h1>
         <p className="mt-4 text-lg text-ink-sub">{report.description}</p>
       </header>
       {report.dashboardUrl && <DashboardEmbed url={report.dashboardUrl} title={`${report.title} 대시보드`} />}

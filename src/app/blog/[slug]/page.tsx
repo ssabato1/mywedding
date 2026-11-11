@@ -37,7 +37,7 @@ export default async function PostPage(
       {showNote && (
         <p className="mb-8 rounded-card border border-line bg-card px-4 py-3 text-sm text-ink-sub">
           {translationSlug ? (
-            <Link href={`/blog/${translationSlug}`} className="font-semibold text-accent hover:text-primary">
+            <Link href={`/blog/${translationSlug}`} className="font-semibold text-gold hover:text-gold-dark">
               {t.blog.readTranslation} →
             </Link>
           ) : (
@@ -48,7 +48,7 @@ export default async function PostPage(
       <header className="mb-12">
         <div className="flex items-center gap-3 text-xs text-ink-muted">
           <time>{post.date}</time>
-          {post.tags[0] && <span className="text-accent">{post.tags[0]}</span>}
+          {post.tags[0] && <span className="text-gold-dark">{post.tags[0]}</span>}
         </div>
         <h1 className="mt-4 font-display text-3xl font-semibold leading-snug text-gold sm:text-[2.6rem] sm:leading-[1.25]">{post.title}</h1>
         <p className="mt-5 text-[17px] leading-relaxed text-ink-sub">{post.description}</p>

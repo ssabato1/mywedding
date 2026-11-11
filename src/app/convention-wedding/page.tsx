@@ -16,7 +16,7 @@ export default async function ConventionWeddingPage() {
         <div className="grid items-center gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
             <p className="eyebrow mb-4">{siteConfig.company.name}</p>
-            <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight text-primary sm:text-5xl">
+            <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-gold sm:text-5xl">
               {t.convention.title}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-sub">{t.convention.body}</p>

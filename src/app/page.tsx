@@ -20,7 +20,7 @@ export default async function Home() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <p className="eyebrow mb-3">{siteConfig.company.name}</p>
-            <h2 className="font-display text-3xl font-bold leading-snug text-primary">{t.home.introTitle}</h2>
+            <h2 className="font-display text-3xl font-semibold leading-snug text-gold">{t.home.introTitle}</h2>
             <p className="mt-5 leading-relaxed text-ink-sub">{t.home.introBody}</p>
           </div>
           <ImageSlot ratio="4/5" label={t.home.imageLabel} src="/images/hero-poster.jpg" />

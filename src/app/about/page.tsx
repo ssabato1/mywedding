@@ -22,7 +22,7 @@ export default async function AboutPage() {
       {/* 슬로건 */}
       <section className="container-page py-24">
         <p className="eyebrow mb-4">{siteConfig.company.name}</p>
-        <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight text-primary sm:text-5xl">
+        <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-gold sm:text-5xl">
           {t.company.tagline}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-sub">{t.company.description}</p>
@@ -64,11 +64,11 @@ export default async function AboutPage() {
           <ol className="space-y-8">
             {a.history.map((h) => (
               <li key={h.title} className="flex gap-6 border-t border-line pt-6">
-                <span className="w-28 shrink-0 font-display text-2xl font-bold leading-tight text-accent">
+                <span className="w-28 shrink-0 font-display text-2xl font-semibold leading-tight text-gold-dark">
                   {h.year}
                 </span>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-ink">{h.title}</h3>
+                  <h3 className="font-display text-lg font-semibold text-gold">{h.title}</h3>
                   <p className="mt-1 text-ink-sub">{h.body}</p>
                 </div>
               </li>
@@ -84,7 +84,7 @@ export default async function AboutPage() {
         <p className="-mt-4 mb-10 max-w-2xl text-lg leading-relaxed text-ink-sub">{a.glanceIntro}</p>
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="rounded-card border border-line bg-card p-6">
-            <h3 className="font-display text-lg font-bold text-primary">{a.glanceLocationTitle}</h3>
+            <h3 className="font-display text-lg font-semibold text-gold">{a.glanceLocationTitle}</h3>
             <dl className="mt-4 divide-y divide-line text-sm">
               {a.glanceLocationRows.map((r) => (
                 <div key={r.label} className="flex justify-between gap-4 py-2">
@@ -93,10 +93,10 @@ export default async function AboutPage() {
                 </div>
               ))}
             </dl>
-            <p className="mt-4 text-sm font-semibold text-accent">{a.glanceParking}</p>
+            <p className="mt-4 text-sm font-semibold text-gold">{a.glanceParking}</p>
           </div>
           <div className="rounded-card border border-line bg-card p-6">
-            <h3 className="font-display text-lg font-bold text-primary">{a.glanceFountainTitle}</h3>
+            <h3 className="font-display text-lg font-semibold text-gold">{a.glanceFountainTitle}</h3>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink-sub">
               {a.glanceFountainBody.map((p) => (
                 <p key={p}>{p}</p>
@@ -104,7 +104,7 @@ export default async function AboutPage() {
             </div>
           </div>
           <div className="rounded-card border border-line bg-card p-6">
-            <h3 className="font-display text-lg font-bold text-primary">{a.glanceSpacesTitle}</h3>
+            <h3 className="font-display text-lg font-semibold text-gold">{a.glanceSpacesTitle}</h3>
             <ul className="mt-4 space-y-4 text-sm">
               {a.glanceSpaces.map((s) => (
                 <li key={s.name}>
@@ -123,7 +123,7 @@ export default async function AboutPage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {a.values.map((v) => (
             <div key={v.name} className="rounded-card border border-line bg-card p-6">
-              <h3 className="font-display text-lg font-bold text-primary">{v.name}</h3>
+              <h3 className="font-display text-lg font-semibold text-gold">{v.name}</h3>
               <p className="mt-2 text-ink-sub">{v.body}</p>
             </div>
           ))}
@@ -137,7 +137,7 @@ export default async function AboutPage() {
           {a.spaces.map((s) => (
             <li key={s.name} className="rounded-card border border-line bg-card p-5">
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-display text-lg font-bold text-ink">{s.name}</h3>
+                <h3 className="font-display text-lg font-semibold text-gold">{s.name}</h3>
                 <span className="text-xs text-ink-muted">{s.floor}</span>
               </div>
               <p className="mt-2 text-sm text-ink-sub">{s.body}</p>
@@ -153,11 +153,11 @@ export default async function AboutPage() {
         <ul className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {a.accessWays.map((w) => (
             <li key={w.title} className="rounded-card border border-line bg-card p-5">
-              <h3 className="font-display text-lg font-bold text-primary">{w.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-gold">{w.title}</h3>
               <ol className="mt-3 space-y-2 text-sm leading-relaxed text-ink-sub">
                 {w.lines.map((line, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="shrink-0 text-accent">{i + 1}.</span>
+                    <span className="shrink-0 text-gold-dark">{i + 1}.</span>
                     <span>{line}</span>
                   </li>
                 ))}
