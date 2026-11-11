@@ -14,6 +14,23 @@ When a Korean ceremony begins, the first people to walk are neither the groom no
 
 *Music: ArtM Studio Sounds — [YouTube @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [artmstudiosounds.com](https://artmstudiosounds.com)*
 
+**The ten tracks — click a title to hear it on YouTube from that point.**
+
+| No. | Piece | Starts at | Single track |
+| --- | --- | --- | --- |
+| 01 | [Mendelssohn, "Spring Song", Songs Without Words Op. 62 No. 6](https://youtu.be/fbmkcnU5rdI?t=0) | 0:00 | [Listen](https://youtu.be/6935kpJJ32I) |
+| 02 | [Saint-Saëns, "The Swan" (The Carnival of the Animals)](https://youtu.be/fbmkcnU5rdI?t=153) | 2:33 | [Listen](https://youtu.be/d1HEVtWogj4) |
+| 03 | [Dvořák, Largo from the "New World" Symphony](https://youtu.be/fbmkcnU5rdI?t=321) | 5:21 | [Listen](https://youtu.be/zJWwAWi1oQc) |
+| 04 | [Bach, "Air on the G String"](https://youtu.be/fbmkcnU5rdI?t=473) | 7:53 | — |
+| 05 | [Mozart, Clarinet Concerto K. 622, second movement](https://youtu.be/fbmkcnU5rdI?t=625) | 10:25 | — |
+| 06 | [Elgar, "Salut d'Amour" Op. 12](https://youtu.be/fbmkcnU5rdI?t=772) | 12:52 | — |
+| 07 | [Mascagni, Intermezzo from "Cavalleria rusticana"](https://youtu.be/fbmkcnU5rdI?t=947) | 15:47 | — |
+| 08 | [Bach, "Arioso" BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | — |
+| 09 | [Brahms, Waltz Op. 39 No. 15](https://youtu.be/fbmkcnU5rdI?t=1286) | 21:26 | [Listen](https://youtu.be/0K8aSvmfCUw) |
+| 10 | [Pachelbel, Canon in D](https://youtu.be/fbmkcnU5rdI?t=1442) | 24:02 | [Listen](https://youtu.be/MefXga9itA0) |
+
+Full playlist: [ten pieces for the parents' entrance, continuous play (YouTube)](https://youtu.be/fbmkcnU5rdI) — the ten tracks play twice, about 54 minutes. Each is arranged to begin on the first note, ready to use at the ceremony.
+
 ## What this piece does
 
 It does three things: it draws the guests' attention to the aisle, it gives the parents a pulse to walk to without nerves, and it sets up a contrast with the entrances that follow. A good piece here **does not sound like the main event**. Warm and dignified, but one degree cooler than the bride's entrance.
@@ -38,8 +55,8 @@ From the repertoire ArtM Studio Sounds covers in its ["21 pieces in ceremony ord
 | --- | --- | --- |
 | Bach, "Jesu, Joy of Man's Desiring" | A gently flowing line, steady pulse | The safest choice. It fades naturally anywhere |
 | Handel, "Largo" | Slow and stately | A high-ceilinged large hall, a formal ceremony |
-| Elgar, "Salut d'Amour" | Warm and affectionate | A small wedding; both sets of parents entering together |
-| Pachelbel, Canon in D | Calmly building harmony | A long entrance through to the candle lighting (if not used for the bride) |
+| [Elgar, "Salut d'Amour"](https://youtu.be/fbmkcnU5rdI?t=772) | Warm and affectionate | A small wedding; both sets of parents entering together |
+| [Pachelbel, Canon in D](https://youtu.be/fbmkcnU5rdI?t=1442) | Calmly building harmony | A long entrance through to the candle lighting (if not used for the bride) |
 | Bach, Prelude in C from The Well-Tempered Clavier | Clear and composed | Outdoor and garden weddings; spaces that suit a single piano |
 | A short piece in the vein of Schumann's "Träumerei" | Quiet and lyrical | A ceremony without an officiant, a small hall |
 
@@ -83,5 +100,6 @@ For example, at Sevit Island on the Han River in Seoul, ArtM Studio Sounds, part
 
 - [ArtM Studio Sounds website](https://artmstudiosounds.com)
 - [ArtM Studio Sounds, 21 pieces in ceremony order (YouTube)](https://youtu.be/ckgocda-R2Q)
+- [ArtM Studio Sounds, ten pieces for the parents' entrance (YouTube)](https://youtu.be/fbmkcnU5rdI)
 - [ArtM Studio Sounds on YouTube](https://www.youtube.com/@artmstudiosounds)
 - [ArtM Studio Sounds on Instagram (@artmstudiosounds)](https://www.instagram.com/artmstudiosounds/)

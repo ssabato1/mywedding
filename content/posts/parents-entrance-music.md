@@ -12,6 +12,23 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 
 *음악: ArtM Studio Sounds — [유튜브 @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [홈페이지 artmstudiosounds.com](https://artmstudiosounds.com)*
 
+**수록곡 10곡 — 곡명을 누르면 유튜브에서 그 곡부터 들을 수 있습니다.**
+
+| 번호 | 곡명 | 시작 | 한 곡만 듣기 |
+| --- | --- | --- | --- |
+| 01 | [멘델스존 「봄노래」 무언가 Op.62 No.6](https://youtu.be/fbmkcnU5rdI?t=0) | 0:00 | [듣기](https://youtu.be/6935kpJJ32I) |
+| 02 | [생상스 「백조」 (동물의 사육제)](https://youtu.be/fbmkcnU5rdI?t=153) | 2:33 | [듣기](https://youtu.be/d1HEVtWogj4) |
+| 03 | [드보르작 「신세계」 2악장 라르고](https://youtu.be/fbmkcnU5rdI?t=321) | 5:21 | [듣기](https://youtu.be/zJWwAWi1oQc) |
+| 04 | [바흐 「G선상의 아리아」](https://youtu.be/fbmkcnU5rdI?t=473) | 7:53 | — |
+| 05 | [모차르트 클라리넷 협주곡 K.622 2악장](https://youtu.be/fbmkcnU5rdI?t=625) | 10:25 | — |
+| 06 | [엘가 「사랑의 인사」 Op.12](https://youtu.be/fbmkcnU5rdI?t=772) | 12:52 | — |
+| 07 | [마스카니 「카발레리아 루스티카나」 간주곡](https://youtu.be/fbmkcnU5rdI?t=947) | 15:47 | — |
+| 08 | [바흐 「아리오소」 BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | — |
+| 09 | [브람스 「왈츠」 Op.39 No.15](https://youtu.be/fbmkcnU5rdI?t=1286) | 21:26 | [듣기](https://youtu.be/0K8aSvmfCUw) |
+| 10 | [파헬벨 「캐논」 D장조](https://youtu.be/fbmkcnU5rdI?t=1442) | 24:02 | [듣기](https://youtu.be/MefXga9itA0) |
+
+전체 듣기: [혼주 입장곡 10곡 연속 재생 (YouTube)](https://youtu.be/fbmkcnU5rdI) — 10곡을 두 번 반복해 약 54분입니다. 모든 곡은 예식에서 바로 쓸 수 있도록 첫 음부터 시작하게 편곡되어 있습니다.
+
 ## 혼주 입장곡이 하는 일
 
 혼주 입장곡은 세 가지를 합니다. 웅성거리던 하객의 시선을 버진로드로 모으고, 부모님이 긴장하지 않고 걸을 수 있는 박자를 주고, 뒤이어 나올 신랑·신부 입장곡과 대비를 만듭니다. 그래서 좋은 혼주 입장곡은 **주인공처럼 들리지 않는 곡**입니다. 따뜻하고 품위 있되, 신부 입장곡보다 한 단계 낮은 온도여야 합니다.
@@ -36,8 +53,8 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 | --- | --- | --- |
 | 바흐 「예수, 인간 소망의 기쁨」 | 잔잔하게 흐르는 선율, 일정한 박자 | 가장 무난한 선택. 어디서 줄여도 자연스럽습니다 |
 | 헨델 「라르고」 | 느리고 장중함 | 층고가 높은 대형 홀, 격식 있는 예식 |
-| 엘가 「사랑의 인사」 | 따뜻하고 다정함 | 소규모 예식, 양가 부모님이 함께 입장할 때 |
-| 파헬벨 「캐논 D장조」 | 차분히 쌓이는 화음 | 촛불 점화까지 길게 이어질 때 (신부 입장에 쓰지 않는다면) |
+| [엘가 「사랑의 인사」](https://youtu.be/fbmkcnU5rdI?t=772) | 따뜻하고 다정함 | 소규모 예식, 양가 부모님이 함께 입장할 때 |
+| [파헬벨 「캐논 D장조」](https://youtu.be/fbmkcnU5rdI?t=1442) | 차분히 쌓이는 화음 | 촛불 점화까지 길게 이어질 때 (신부 입장에 쓰지 않는다면) |
 | 바흐 「평균율 전주곡 C장조」 | 맑고 단정함 | 야외·가든 예식, 피아노 한 대의 소리가 어울리는 공간 |
 | 슈만 「트로이메라이」 계열의 소품 | 조용하고 서정적 | 주례 없는 예식, 작은 홀 |
 
@@ -81,5 +98,6 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 
 - [ArtM Studio Sounds 홈페이지](https://artmstudiosounds.com)
 - [ArtM Studio Sounds, 70분 예식 순서별 음악 21곡 (YouTube)](https://youtu.be/ckgocda-R2Q)
+- [ArtM Studio Sounds, 혼주 입장곡 10곡 (YouTube)](https://youtu.be/fbmkcnU5rdI)
 - [ArtM Studio Sounds 유튜브 채널](https://www.youtube.com/@artmstudiosounds)
 - [ArtM Studio Sounds 인스타그램 (@artmstudiosounds)](https://www.instagram.com/artmstudiosounds/)
