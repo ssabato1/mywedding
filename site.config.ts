@@ -13,13 +13,19 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   company: {
-    name: "MAGMA",
-    tagline: "유행은 지나가도, 기본은 남습니다",
+    name: "Floating Island Wedding",
+    tagline: "한강 위에서, 세계의 결혼식을",
     description:
-      "과장보다 단정함을, 유행보다 오래 입을 옷을. 3040 남성을 위해 시간이 지나도 유효한 기본을 만듭니다.",
+      "국제결혼과 해외 웨딩 트렌드, 예식 준비의 모든 것. 서울 한강 세빛섬에서 두 문화가 만나는 결혼식을 함께 준비합니다.",
   },
   links: {
-    github: "https://github.com/dandacompany",
+    floatingisland: "https://www.floatingisland.co.kr",
+    marinapark: "https://www.marinapark.co.kr",
+    sposabella: "https://www.sposabella.co.kr",
+    anniversaryflower: "https://www.anniversaryflower.co.kr",
+    artmstudio: "https://artmstudiosounds.com",
+    instagram: "https://instagram.com/marinaparkwedding",
+    youtube: "https://youtube.com/@artmstudiosounds",
   },
   cta: {
     // 6.3 「Bluekiwi 하네스 도구 소개 (SNS발행)」에서 구현·활성화하는 확장 슬롯
