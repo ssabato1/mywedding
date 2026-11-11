@@ -87,6 +87,8 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
     estimate ? estimateToText(estimate) : "",
     ...(estimate ? estimate.notes.map((n) => `※ ${n}`) : []),
     "",
+    en ? "★ Couples who receive a self quote and go on to sign a contract receive a special benefit." : "★ 셀프 견적으로 견적을 받고 계약까지 진행하시는 커플께는 특별 혜택을 드립니다.",
+    "",
     depositText(q.venueKey, q.lang),
     "",
     termsToText(q.lang),

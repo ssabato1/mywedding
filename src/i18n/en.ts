@@ -407,6 +407,7 @@ export const en: Dict = {
       pickOptions: "3. Choose guests, flowers and menu",
       guestUnit: "",
       guestLocked: "250 guests is available only for Sunday 18:00 weddings in January, February, July and August.",
+      selfQuoteBenefit: "Couples who receive a self quote and go on to sign a contract receive a special benefit.",
       guestHint: "Type a number or choose below. The minimum guarantee is {min} guests.",
       flowerCards: [
         { name: "Standard", price: "KRW 8,000,000", sub: "Seasonal colours" },

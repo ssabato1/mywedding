@@ -166,6 +166,7 @@ function Sheet({ f, e, dateLabel, id }: { f: F; e: Estimate; dateLabel: string; 
       <ul className="mt-4 space-y-1 text-xs leading-relaxed text-ink-muted">
         {e.notes.map((n) => <li key={n}>{n}</li>)}
       </ul>
+      <p className="mt-5 rounded-card border border-gold/40 px-5 py-4 text-center text-sm leading-relaxed text-gold">{f.selfQuoteBenefit}</p>
     </div>
   );
 }
