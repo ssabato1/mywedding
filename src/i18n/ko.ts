@@ -162,6 +162,8 @@ export const ko = {
   convention: {
     title: "컨벤션 웨딩",
     subcutLabel: "한강 야경을 배경으로 — 캔들과 꽃잎의 버진로드",
+    subcut2Label: "긴 베일의 신부 — 조명과 안개 속 버진로드",
+    grandLabel: "플로팅아일랜드 500석 동시 웨딩 — 13미터 층고의 웅장한 실내",
     flowerTitle: "컨벤션 웨딩 플라워",
     flowerBody: "13미터 층고 아래 꽃길로 채운 버진로드. 블루 수국, 라벤더, 블루 & 화이트까지 두 사람의 컬러로 연출합니다.",
     flowerAlts: ["Blue Hydrangea — 블루 수국으로 채운 꽃길", "Purple Aisle — 보랏빛으로 물든 버진로드", "Something Blue — 블루 & 화이트 연출", "Lavender Dream — 라벤더 빛 웨딩 플라워"],
@@ -203,6 +205,7 @@ export const ko = {
       "가을 가든 웨딩 — 팜파스와 옐로우 톤 플라워",
       "노을이 지는 시간의 세리모니",
     ],
+    marinaGalleryWide: "마리나파크 가든 — 파스텔 플라워와 꽃잎이 깔린 버진로드, 열린 하늘",
     marinaWhiteGreen: {
       title: "화이트 & 그린 플라워 웨딩",
       body: "흰 꽃과 초록 잎으로만 채운 버진로드, 그 끝에 한강과 하늘이 열립니다. 한강이 그대로 배경이 되는 마리나파크는 드라마 속 예식 장면의 촬영지로도 여러 차례 등장했습니다.",

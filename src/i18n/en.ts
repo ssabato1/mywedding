@@ -164,6 +164,8 @@ export const en: Dict = {
   convention: {
     title: "Convention Wedding",
     subcutLabel: "Against the Han River night view — an aisle of candles and petals",
+    subcut2Label: "A bride in a long veil — the aisle in light and mist",
+    grandLabel: "Floating Island — a ceremony and banquet for 500 seated guests beneath a 13-metre ceiling",
     flowerTitle: "Convention wedding florals",
     flowerBody: "An aisle lined with flowers beneath a 13-metre ceiling — blue hydrangea, lavender, blue and white, styled in the couple's own colours.",
     flowerAlts: ["Blue Hydrangea — an aisle of blue hydrangea", "Purple Aisle — an aisle in shades of purple", "Something Blue — blue and white styling", "Lavender Dream — lavender wedding florals"],
@@ -205,6 +207,7 @@ export const en: Dict = {
       "Autumn garden wedding — pampas grass and yellow-toned florals",
       "A ceremony at sunset",
     ],
+    marinaGalleryWide: "Marina Park Garden — pastel florals, a petal-strewn aisle and open sky",
     marinaWhiteGreen: {
       title: "White & green floral wedding",
       body: "An aisle filled only with white blooms and green leaves, opening onto the Han River and the sky. With the river as its natural backdrop, Marina Park has appeared many times as the wedding location in Korean dramas.",

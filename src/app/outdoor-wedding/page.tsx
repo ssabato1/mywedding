@@ -100,6 +100,9 @@ export default async function OutdoorWeddingPage() {
                     <ImageSlot ratio={i === 1 ? "2/3" : "3/2"} label={o.marinaGallery[i]} src={src} />
                   </li>
                 ))}
+                <li className="sm:col-span-2 lg:col-span-3">
+                  <ImageSlot ratio="21/9" label={o.marinaGalleryWide} src="/images/marinapark-ceremony-06.jpg" />
+                </li>
               </ul>
 
               <div className="mt-16 grid items-start gap-10 md:grid-cols-5">

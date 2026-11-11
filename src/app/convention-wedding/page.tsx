@@ -26,11 +26,16 @@ export default async function ConventionWeddingPage() {
         </div>
       </section>
 
+      <section className="container-page pb-12">
+        <ImageSlot ratio="3/2" label={t.convention.grandLabel} src="/images/convention-wedding-bw.jpg" className="mx-auto max-w-4xl" />
+      </section>
+
       <section className="container-page pb-8">
         <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           <ImageSlot ratio="3/4" label={t.convention.title} src="/images/convention-wedding-01.jpg" />
           <ImageSlot ratio="3/4" label={t.convention.subcutLabel} src="/images/night-candle-petals.jpg" />
         </div>
+        <ImageSlot ratio="16/9" label={t.convention.subcut2Label} src="/images/bride-veil-subcut.jpg" className="mx-auto mt-6 max-w-3xl" />
       </section>
 
       <section className="container-page border-t border-line py-16">
