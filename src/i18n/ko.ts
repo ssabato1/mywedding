@@ -232,6 +232,7 @@ export const ko = {
     hoursLabel: "상담 시간",
     hours: "매일 10:00 – 19:00 (예식 진행 중에는 통화가 어려울 수 있습니다)",
     flowerBoardCaption: "신부대기실 플라워도 커스터마이징할 수 있습니다. 컬러 선택은 100만원부터 — 애니버셔리플라워",
+    menuPhotoCaption: "양식 A 코스 — 아뮤즈 부쉬, 관자·새우 전채, 단호박 수프, 샐러드, 안심 스테이크와 왕새우, 초콜릿 무스 케이크, 커피",
     formTitle: "셀프 견적서",
     formIntro: "아래 내용을 보내 주시면 담당자가 확인 후 선호하시는 연락 방법으로 답변드립니다.",
     f: {
@@ -247,6 +248,8 @@ export const ko = {
       venue: "관심 있는 공간",
       venueOptions: ["미정", "플로팅아일랜드 컨벤션홀 (실내·대규모)", "마리나파크", "세빛섬 루프탑 가든", "애니버셔리홀·프라이빗홀", "파티·리셉션만"],
       venueKeys: ["undecided", "convention", "marina", "rooftop", "anniversary", "party"],
+      menu: "식사 메뉴 (1인, 부가세 별도)",
+      menuHint: "식사는 1인 100,000원부터입니다. 채식·생선 대체는 같은 등급 단가로 준비합니다.",
       flower: "플라워 데코레이션",
       flowerOptions: ["Standard — 기본 (시즌 컬러)", "Luxury — 컬러 선택, 업그레이드", "Special — 플로리스트 미팅, 커스터마이징"],
       video: "영상 촬영",

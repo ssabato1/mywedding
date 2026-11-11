@@ -49,6 +49,39 @@ export const PRICING = {
   sundayVenueFeeWaived: true,
 } as const;
 
+/** 식사 메뉴 등급표 (1인, 부가세 별도) — 2026 공식 메뉴표 기준 */
+export const MENUS = [
+  { key: "western-a", group: "western", ko: "양식 코스 A", en: "Western course A", price: 100_000 },
+  { key: "western-b", group: "western", ko: "양식 코스 B", en: "Western course B", price: 110_000 },
+  { key: "western-c", group: "western", ko: "양식 코스 C", en: "Western course C", price: 120_000 },
+  { key: "western-d", group: "western", ko: "양식 코스 D", en: "Western course D", price: 130_000 },
+  { key: "western-e", group: "western", ko: "양식 코스 E", en: "Western course E", price: 150_000 },
+  { key: "western-f", group: "western", ko: "양식 코스 F", en: "Western course F", price: 180_000 },
+  { key: "korean-a", group: "korean", ko: "한식 코스 A", en: "Korean course A", price: 110_000 },
+  { key: "korean-b", group: "korean", ko: "한식 코스 B", en: "Korean course B", price: 130_000 },
+  { key: "korean-c", group: "korean", ko: "한식 코스 C", en: "Korean course C", price: 150_000 },
+  { key: "korean-d", group: "korean", ko: "한식 코스 D", en: "Korean course D", price: 170_000 },
+  { key: "korean-e", group: "korean", ko: "한식 코스 E", en: "Korean course E", price: 180_000 },
+  { key: "korean-f", group: "korean", ko: "한식 코스 F", en: "Korean course F", price: 200_000 },
+  { key: "halal-a", group: "halal", ko: "할랄 코스 A", en: "Halal course A", price: 110_000 },
+  { key: "halal-b", group: "halal", ko: "할랄 코스 B", en: "Halal course B", price: 130_000 },
+  { key: "halal-c", group: "halal", ko: "할랄 코스 C", en: "Halal course C", price: 150_000 },
+  { key: "halal-d", group: "halal", ko: "할랄 코스 D", en: "Halal course D", price: 170_000 },
+  { key: "halal-e", group: "halal", ko: "할랄 코스 E", en: "Halal course E", price: 180_000 },
+  { key: "halal-f", group: "halal", ko: "할랄 코스 F", en: "Halal course F", price: 200_000 },
+  { key: "buffet-s", group: "buffet", ko: "뷔페 S", en: "Buffet S", price: 110_000 },
+  { key: "buffet-a", group: "buffet", ko: "뷔페 A", en: "Buffet A", price: 130_000 },
+  { key: "buffet-b", group: "buffet", ko: "뷔페 B", en: "Buffet B", price: 150_000 },
+  { key: "buffet-c", group: "buffet", ko: "뷔페 C", en: "Buffet C", price: 180_000 },
+] as const;
+export const MENU_GROUPS = [
+  { key: "western", ko: "양식 코스", en: "Western course" },
+  { key: "korean", ko: "한식 코스", en: "Korean course" },
+  { key: "halal", ko: "할랄 코스", en: "Halal course" },
+  { key: "buffet", ko: "뷔페", en: "Buffet" },
+] as const;
+export const DEFAULT_MENU: Record<string, string> = { convention: "buffet-a", marina: "western-c" };
+
 /** 공간별 예식 시작 시간 */
 export const CEREMONY_TIMES: Record<string, string[]> = {
   convention: ["11:30", "15:00", "18:00"],
@@ -74,6 +107,7 @@ export type EstimateInput = {
   guests: string;
   date: string;
   flower: string;
+  menu?: string;
   video: boolean;
   wine: boolean;
   champagne: boolean;
@@ -130,17 +164,19 @@ export function estimate(input: EstimateInput): Estimate | null {
   const extrasFree = benefit && P.weekdayFreeExtras;
   const free = en ? "weekday benefit — complimentary" : "평일 혜택 서비스";
 
+  const menu = MENUS.find((m) => m.key === input.menu) ?? MENUS.find((m) => m.key === DEFAULT_MENU[venue])!;
+  const mealPerGuest: number = menu.price;
   const lines: EstimateLine[] = [
     {
-      label: venue === "convention" ? (en ? "Wedding course (buffet)" : "웨딩 코스 (뷔페)") : en ? "Wedding course (Western)" : "웨딩 코스 (양식)",
-      detail: `${won(P.coursePerGuest)} × ${guests}`,
-      amount: P.coursePerGuest * guests,
+      label: `${en ? "Meal" : "식사"} — ${en ? menu.en : menu.ko}`,
+      detail: `${won(mealPerGuest)} × ${guests}`,
+      amount: mealPerGuest * guests,
     },
     ...(mealDiscountReason
       ? [{
           label: mealDiscountReason,
           detail: `−${PRICING.offSeasonMealDiscount * 100}%`,
-          amount: -Math.round(P.coursePerGuest * guests * PRICING.offSeasonMealDiscount),
+          amount: -Math.round(mealPerGuest * guests * PRICING.offSeasonMealDiscount),
         }]
       : []),
     {

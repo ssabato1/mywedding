@@ -41,6 +41,17 @@ export default async function ContactPage() {
             </div>
             <figure className="m-0">
               <Image
+                src="/images/menu-course-a.jpg"
+                alt={c.menuPhotoCaption}
+                width={1333}
+                height={887}
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="h-auto w-full rounded-card border border-line"
+              />
+              <figcaption className="mt-2 font-sans text-[13px] leading-snug text-ink-muted">{c.menuPhotoCaption}</figcaption>
+            </figure>
+            <figure className="m-0">
+              <Image
                 src="/images/bridal-room-flower-board.jpg"
                 alt={c.flowerBoardCaption}
                 width={730}

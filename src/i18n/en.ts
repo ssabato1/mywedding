@@ -234,6 +234,7 @@ export const en: Dict = {
     hoursLabel: "Hours",
     hours: "Daily 10:00 – 19:00 KST (calls may go unanswered during ceremonies)",
     flowerBoardCaption: "Bridal room flowers can be customised too. Colour choice from KRW 1,000,000 — Anniversary Flower",
+    menuPhotoCaption: "Western course A — amuse-bouche, scallop and shrimp, pumpkin soup, salad, beef tenderloin with prawn, chocolate mousse cake, coffee",
     formTitle: "Self quote",
     formIntro: "Send the details below and we will reply by the contact method you prefer.",
     f: {
@@ -249,6 +250,8 @@ export const en: Dict = {
       venue: "Space of interest",
       venueOptions: ["Undecided", "Floating Island Convention Hall (indoor, large)", "Marina Park", "Sevit Island Rooftop Garden", "Anniversary Hall / private halls", "Party or reception only"],
       venueKeys: ["undecided", "convention", "marina", "rooftop", "anniversary", "party"],
+      menu: "Meal (per guest, VAT excluded)",
+      menuHint: "Meals start at KRW 100,000 per guest. Vegetarian and fish alternatives are prepared at the same tier price.",
       flower: "Flower decoration",
       flowerOptions: ["Standard — seasonal colours", "Luxury — colour choice, upgraded", "Special — florist meeting, fully customised"],
       video: "Video",

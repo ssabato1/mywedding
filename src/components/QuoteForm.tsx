@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import type { Dict, Lang } from "@/i18n";
-import { CEREMONY_TIMES, estimate as calcEstimate, isEstimableVenue, type Estimate } from "@/lib/quote-pricing";
+import { CEREMONY_TIMES, DEFAULT_MENU, MENUS, MENU_GROUPS, estimate as calcEstimate, isEstimableVenue, type Estimate } from "@/lib/quote-pricing";
 
 type F = Dict["contact"]["f"];
 
@@ -23,7 +23,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     setVenueKey(d.venueKey);
     setEstimate(
       calcEstimate({
-        venueKey: d.venueKey, guests: d.guests ?? "", date: d.date ?? "", flower: d.flower ?? "standard",
+        venueKey: d.venueKey, guests: d.guests ?? "", date: d.date ?? "", flower: d.flower ?? "standard", menu: d.venueKey === venueKey ? d.menu : undefined,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on", bridalFlower: d.bridalFlower === "on", lang,
       }),
     );
@@ -85,6 +85,22 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
 
       {estimable && (
         <>
+          <div className="sm:col-span-2">
+            <label className={label}>{f.menu}
+              <select key={venueKey} name="menu" defaultValue={DEFAULT_MENU[venueKey]} className={input}>
+                {MENU_GROUPS.map((g) => (
+                  <optgroup key={g.key} label={lang === "en" ? g.en : g.ko}>
+                    {MENUS.filter((m) => m.group === g.key).map((m) => (
+                      <option key={m.key} value={m.key}>
+                        {lang === "en" ? m.en : m.ko} — {m.price.toLocaleString("ko-KR")} {f.estWon}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            </label>
+            <p className={hint}>{f.menuHint}</p>
+          </div>
           <label className={label}>{f.flower}
             <select name="flower" defaultValue="standard" className={input}>
               {f.flowerOptions.map((o, i) => <option key={o} value={["standard", "luxury", "special"][i]}>{o}</option>)}
