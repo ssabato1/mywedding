@@ -381,7 +381,6 @@ export const en: Dict = {
       drinkMarina: "Free drink (wine, beer, soft drinks) — KRW 15,000 per guest",
       noodles: "Janchi-guksu (banquet noodles) — KRW 3,000 per guest",
       riceCake: "Tteok (rice cake) — KRW 3,000 per guest",
-      bridalFlower: "Bridal room flowers, custom colours — from KRW 1,000,000",
       wine: "House wine — French, KRW 70,000 per bottle (1 bottle per 5 guests)",
       champagne: "Champagne for the toast",
       cake: "Wedding cake",

@@ -409,7 +409,6 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 </select>
               </label>
               <label className={check}><input type="checkbox" name="bouquet" className={box} />{f.bouquet}</label>
-              <label className={check}><input type="checkbox" name="bridalFlower" className={box} />{f.bridalFlower}</label>
             </div>
           </fieldset>
         </div>
