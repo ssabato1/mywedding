@@ -30,7 +30,7 @@ export const siteConfig: SiteConfig = {
     marinacafe: "https://marinapark.cafe",
     anniversarymuseum: "https://www.anniversarymuseum.com",
     artmstudio: "https://artmstudiosounds.com",
-    instagram: "https://instagram.com/marinaparkwedding",
+    instagram: "https://www.instagram.com/floatingislandwedding/",
     youtube: "https://youtube.com/@artmstudiosounds",
   },
   contact: {

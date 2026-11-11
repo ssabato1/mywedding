@@ -39,6 +39,14 @@ export default async function Hero() {
           >
             WhatsApp {siteConfig.contact.whatsappDisplay}
           </a>
+          <a
+            href={siteConfig.links.instagram}
+            target="_blank"
+            rel="me noopener noreferrer"
+            className="font-sans text-sm text-primary/75 hover:text-gold"
+          >
+            Instagram @floatingislandwedding
+          </a>
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] text-primary/55">

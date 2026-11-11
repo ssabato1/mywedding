@@ -45,6 +45,8 @@ export default async function Footer() {
             <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-primary">{siteConfig.contact.email}</a>
             {" · "}
             <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-primary">WhatsApp {siteConfig.contact.whatsappDisplay}</a>
+            {" · "}
+            <a href={siteConfig.links.instagram} target="_blank" rel="me noopener noreferrer" className="hover:text-primary">Instagram @floatingislandwedding</a>
           </p>
           <p>© {new Date().getFullYear()} {siteConfig.company.name}</p>
         </div>
