@@ -102,7 +102,6 @@ export const en: Dict = {
       {
         title: "From Incheon Airport",
         lines: [
-          "Airport limousine bus 6020 or 6000 to Express Bus Terminal, then the shuttle (about 70–90 minutes)",
           "By taxi about 60 minutes — show the driver “세빛섬, 서초구 올림픽대로 2085-14”",
         ],
       },
