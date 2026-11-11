@@ -348,7 +348,6 @@ export const en: Dict = {
     whatsappLabel: "WhatsApp (international weddings & parties)",
     hoursLabel: "Hours",
     hours: "Weekdays 10:00 – 19:00 KST · phone consultations are not available on weekends",
-    flowerBoardCaption: "Bridal room flowers can be customised too. Colour choice from KRW 1,000,000 — Anniversary Flower",
     menuPhotoCaption: "Western course A — amuse-bouche, scallop and shrimp, pumpkin soup, salad, beef tenderloin with prawn, chocolate mousse cake, coffee",
     contactNotes: ["Phone consultations are not available on weekends — please leave an email or a message.", "Zoom meetings are available for overseas clients."],
     formTitle: "Self quote",

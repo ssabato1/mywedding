@@ -346,7 +346,6 @@ export const ko = {
     whatsappLabel: "WhatsApp (외국인 예식·파티)",
     hoursLabel: "상담 시간",
     hours: "평일 10:00 – 19:00 · 주말에는 전화 상담이 어렵습니다",
-    flowerBoardCaption: "신부대기실 플라워도 커스터마이징할 수 있습니다. 컬러 선택은 100만원부터 — 애니버셔리플라워",
     menuPhotoCaption: "양식 A 코스 — 아뮤즈 부쉬, 관자·새우 전채, 단호박 수프, 샐러드, 안심 스테이크와 왕새우, 초콜릿 무스 케이크, 커피",
     contactNotes: ["주말에는 전화 상담이 어렵습니다. 메일이나 메시지를 남겨 주세요.", "해외 고객은 줌(Zoom) 미팅이 가능합니다."],
     formTitle: "셀프 견적서",
