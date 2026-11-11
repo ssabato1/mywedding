@@ -24,6 +24,8 @@ thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q
 
 재현할 때는 국내 계절 가지와 잎을 기본으로 두고, 희귀 수입 꽃은 촬영 중심점에만 씁니다. 커플의 상징도 장식처럼 따로 붙이기보다 색과 반복 패턴 안에 섞는 편이 자연스럽습니다.
 
+![땅에서 자란 듯한 장면 — 느슨하게 묶은 봄 부케](/images/bouquet-06.jpg)
+
 ## 3. 레이철 조: 비대칭과 한 종류의 힘
 
 레이철 조는 [Brides의 2025 플라워 트렌드](https://www.brides.com/wedding-flower-trends-2025-8755099)에서 비대칭 아치가 움직임과 공기감을 만들고, 한 종류의 꽃도 느슨하고 유기적으로 배열하면 강한 장면이 된다고 설명했습니다. 공식 계정은 [@rachelchofloral](https://www.instagram.com/rachelchofloral/)입니다.
@@ -35,6 +37,8 @@ thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q
 The Knot은 [2025 Ones to Watch](https://www.theknot.com/content/ones-to-watch)에서 매디 헤일리의 Absūna를 불규칙한 성장과 움직임에서 출발하는 ‘살아 있는 조각’으로 소개했습니다. 플로럴 폼 대신 재사용 구조와 지역 재배 꽃을 우선하는 방식도 함께 언급했습니다. 공식 계정은 [@absuna__](https://www.instagram.com/absuna__/)입니다.
 
 꽃 이름만 적은 무드보드 대신 ‘왼쪽으로 흐르는 선’, ‘의도적인 빈 공간’, ‘불규칙한 높낮이’처럼 형태 언어를 정합니다. 견적 단계에서는 국내 농가의 제철 꽃, 재사용 프레임, 플로럴 폼 사용 여부를 함께 확인해야 합니다.
+
+![살아 있는 조각 — 수국·델피늄 플라워 아치 (서울 한강의 한 웨딩홀)](/images/sevit-garden-02.jpg)
 
 ## 5. 나오미 아즈리엘: 감정으로 만든 정물화
 
@@ -51,6 +55,8 @@ The Knot은 [2025 Ones to Watch](https://www.theknot.com/content/ones-to-watch)�
 | 지속가능성 | 플로럴 폼, 재사용 프레임, 행사 뒤 꽃의 이동 방법을 묻는다 |
 | 공간 비율 | 사진만 보지 말고 버진로드 폭과 천장 높이에 맞춰 크기를 조정한다 |
 | 예식 시간 | 세빛섬 같은 대형 공간에서는 설치·전환·철거 시간을 식순과 분리해 계산한다 |
+
+![한 종류의 힘 — 들러리 부케](/images/bridesmaids-bouquets-01.jpg)
 
 ## 요약
 

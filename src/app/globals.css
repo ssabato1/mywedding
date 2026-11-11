@@ -15,6 +15,8 @@
   --color-ink-muted: var(--brand-text-muted);
   --color-line: var(--brand-border);
   --color-line-dark: var(--brand-border-dark);
+  --color-gold: var(--brand-gold);
+  --color-gold-dark: var(--brand-gold-dark);
   --radius-card: var(--brand-radius-card);
   --radius-ui: var(--brand-radius-ui);
   --font-sans: var(--font-inter), var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
@@ -33,20 +35,30 @@ h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 
 /* 글 본문(remark-html 출력) 최소 스타일 — 의존성 최소 원칙으로 타이포그래피 플러그인 대신 직접 정의 */
-.post-body { @apply leading-relaxed text-[15px]; }
-.post-body h2 { @apply font-display text-xl font-bold mt-10 mb-3 text-primary; }
-.post-body h3 { @apply text-lg font-bold mt-8 mb-2; }
-.post-body p { @apply my-4; }
-.post-body ul { @apply my-4 pl-6 list-disc; }
-.post-body ol { @apply my-4 pl-6 list-decimal; }
-.post-body a { @apply text-primary underline underline-offset-2; }
-.post-body blockquote { @apply border-l-2 border-line-dark pl-4 text-ink-sub my-6; }
+.post-body { @apply text-[17px] leading-[1.95] text-ink; }
+.post-body h2 { @apply font-display text-2xl font-semibold mt-14 mb-4 text-gold leading-snug tracking-tight; }
+.post-body h3 { @apply font-display text-xl font-semibold mt-10 mb-3 text-gold; }
+.post-body p { @apply my-5; }
+.post-body ul { @apply my-5 pl-6 list-disc; }
+.post-body ol { @apply my-5 pl-6 list-decimal; }
+.post-body li { @apply my-1.5; }
+.post-body strong { @apply font-semibold text-primary; }
+.post-body a { @apply text-gold underline underline-offset-4 decoration-gold/40 hover:decoration-gold; }
+.post-body blockquote { @apply border-l-2 border-gold/60 pl-5 text-ink-sub my-8 font-display text-[17px] leading-[1.9]; }
 .post-body code { @apply text-[13px] bg-card border border-line rounded px-1 py-0.5; }
 .post-body pre { @apply bg-card border border-line rounded-ui p-4 overflow-x-auto my-6; }
 .post-body pre code { @apply border-0 bg-transparent p-0; }
-.post-body img { @apply max-w-full rounded-ui my-6; }
-.post-body table { @apply w-full my-6 text-sm; }
-.post-body th, .post-body td { @apply border border-line px-3 py-2 text-left; }
+.post-body hr { @apply border-line my-12; }
+.post-body table { @apply w-full my-8 text-[15px] leading-relaxed; }
+.post-body th { @apply bg-card font-semibold text-gold; }
+.post-body th, .post-body td { @apply border border-line px-3 py-2.5 text-left align-top; }
+.post-body em { @apply text-ink-sub not-italic text-[14px]; }
+/* 본문 사진: alt 를 캡션으로, 세로 사진은 폭을 줄여 가운데에 */
+.post-body .post-figure { @apply my-10 mx-0; }
+.post-body .post-figure img { @apply w-full h-auto rounded-ui; }
+.post-body .post-figure.is-portrait img { @apply w-auto max-h-[80vh] mx-auto; }
+.post-body .post-figure figcaption { @apply mt-3 text-center text-[13px] leading-relaxed text-ink-muted; }
+.post-body img { @apply max-w-full h-auto rounded-ui my-6; }
 
 /* 에디토리얼 레이아웃 헬퍼 (rev2) */
 .container-page { @apply w-full max-w-[1080px] mx-auto px-5 sm:px-8; }

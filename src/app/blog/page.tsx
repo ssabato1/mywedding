@@ -16,7 +16,7 @@ export default async function BlogPage() {
   return (
     <div className="container-page py-20">
       <p className="eyebrow mb-2">{t.blog.eyebrow}</p>
-      <h1 className="mb-12 font-display text-3xl font-bold text-primary sm:text-4xl">{t.blog.title}</h1>
+      <h1 className="mb-12 font-display text-3xl font-semibold text-gold sm:text-4xl">{t.blog.title}</h1>
       {shown.length === 0 ? (
         <p className="text-sm text-ink-muted">{t.blog.empty}</p>
       ) : (

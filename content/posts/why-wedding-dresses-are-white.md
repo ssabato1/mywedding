@@ -22,6 +22,8 @@ thumbnail: /images/sposabella-dress-02.jpg
 
 선택 이유를 ‘순결’ 하나로 줄이면 중요한 맥락이 빠집니다. [V&A](https://www.vam.ac.uk/articles/the-victoria-connection)는 흰 바탕이 호니턴 레이스를 잘 드러냈고 침체한 영국 레이스 산업을 지원하려는 뜻도 있었다고 설명하며, [Smithsonian](https://www.smithsonianmag.com/smart-news/one-of-britains-most-beloved-royal-couples-wed-on-this-day-in-1840-180985978/)도 스피털필즈 실크와 수제 레이스 선택을 확인합니다.
 
+![흰 바탕 위의 레이스 — 스포사벨라](/images/sposabella-dress-01.jpg)
+
 ## 왕실 사진이 ‘전통’이 되기까지
 
 신문, 패션 플레이트, 광고와 기념 인쇄물은 흰 드레스와 레이스 베일을 반복했습니다. [V&A](https://www.vam.ac.uk/articles/the-victoria-connection)와 [Britannica](https://www.britannica.com/story/why-do-brides-wear-white)는 처음에는 세탁과 재착용이 어려운 흰 옷을 감당할 수 있는 계층이 왕실 이미지를 따랐고, 이후 더 넓은 계층으로 확산했다고 설명합니다.
@@ -33,6 +35,8 @@ thumbnail: /images/sposabella-dress-02.jpg
 2026 컬렉션은 흰색을 버리기보다 구조를 바꿉니다. [Brides의 Spring 2026 분석](https://www.brides.com/bridal-fashion-week-trends-spring-2026-11715182)과 [Vogue의 뉴욕 브라이덜 패션위크 정리](https://www.vogue.com/article/wedding-dress-trends-new-york-bridal-fashion-week-spring-2026)는 겹친 레이스, 노출 보닝, 바스크 웨이스트, 입체적인 실루엣을 공통 흐름으로 짚습니다.
 
 동시에 한 벌만 고집하지 않습니다. [Martha Stewart의 2026 드레스 트렌드](https://www.marthastewart.com/wedding-dress-trends-2026-11829544)는 탈착 소매·오버스커트·코르셋처럼 다시 조합할 수 있는 요소를, [Junebug Weddings의 2026 전망](https://junebugweddings.com/wedding-blog/2026-wedding-trend-forecast-immersive-venues-intimate-gatherings-end-of-tradition/)은 건축적 드레이핑과 선명한 형태를 강조합니다.
+
+![색은 남고 형태는 달라진다 — 라일락 드레스와 화이트 드레스 (서울 한강의 한 웨딩홀)](/images/marinapark-ceremony-02.jpg)
 
 ## 한국에서 적용할 때 확인할 조건
 

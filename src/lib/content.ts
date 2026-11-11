@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
+import { getLocalImageSize } from "./image-size";
 
 export type Collection = "posts" | "reports";
 export const COLLECTIONS: Collection[] = ["posts", "reports"];
@@ -55,7 +56,25 @@ export function getOne(collection: Collection, slug: string): ContentDoc | null 
 /** 마크다운 → HTML. GFM 지원, raw HTML 은 안전하게 제거. */
 export async function renderMarkdown(md: string): Promise<string> {
   const out = await remark().use(remarkGfm).use(remarkHtml, { sanitize: true }).process(md);
-  return String(out);
+  return decorateImages(String(out));
+}
+
+/**
+ * 본문 이미지를 figure 로 감싼다: alt 를 캡션으로 보여 주고, 가로/세로 비율에 따라
+ * 세로 사진은 폭을 줄여 가운데 놓아 찌그러지거나 화면을 가득 채우지 않게 한다.
+ * 로컬 이미지는 width/height 를 넣어 레이아웃 흔들림을 막는다.
+ */
+function decorateImages(html: string): string {
+  return html.replace(/<p>(<img\s+[^>]*>)<\/p>/g, (_m, imgTag: string) => {
+    const src = /src="([^"]*)"/.exec(imgTag)?.[1] ?? "";
+    const alt = /alt="([^"]*)"/.exec(imgTag)?.[1] ?? "";
+    const size = getLocalImageSize(src);
+    const portrait = size ? size.height > size.width * 1.1 : false;
+    const dims = size ? ` width="${size.width}" height="${size.height}"` : "";
+    const img = `<img src="${src}" alt="${alt}"${dims} loading="lazy" decoding="async">`;
+    const caption = alt ? `<figcaption>${alt}</figcaption>` : "";
+    return `<figure class="post-figure${portrait ? " is-portrait" : ""}">${img}${caption}</figure>`;
+  });
 }
 
 function readDoc(collection: Collection, filename: string): ContentDoc | null {

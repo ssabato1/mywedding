@@ -50,8 +50,8 @@ export default async function PostPage(
           <time>{post.date}</time>
           {post.tags[0] && <span className="text-accent">{post.tags[0]}</span>}
         </div>
-        <h1 className="mt-3 font-display text-3xl font-bold leading-snug text-primary sm:text-4xl">{post.title}</h1>
-        <p className="mt-4 text-lg text-ink-sub">{post.description}</p>
+        <h1 className="mt-4 font-display text-3xl font-semibold leading-snug text-gold sm:text-[2.6rem] sm:leading-[1.25]">{post.title}</h1>
+        <p className="mt-5 text-[17px] leading-relaxed text-ink-sub">{post.description}</p>
       </header>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
       {post.tags.length > 0 && (
