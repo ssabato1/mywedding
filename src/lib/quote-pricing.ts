@@ -76,6 +76,8 @@ export const PRICING = {
   offSeasonMealDiscount: 0.1,
   /** 일요일: 대관료 면제 */
   sundayVenueFeeWaived: true,
+  /** 마리나파크는 일요일 예식 100명 이상일 때 대관료 면제 */
+  marinaSundayWaiverMinGuests: 100,
   /** 대관료를 뺀 견적 소계(부가세 별도)가 이 금액을 넘으면 대관료 면제 */
   venueFeeWaivedOver: 50_000_000,
   /** 마리나파크는 3,000만원 이상이면 면제 */
@@ -214,8 +216,10 @@ export function estimate(input: EstimateInput): Estimate | null {
   const drink = benefit ? P.drinkPerGuestWeekday : P.drinkPerGuestStandard;
   const feeWaivedReason = offSeason
     ? en ? "waived in Jan, Feb, Jul, Aug" : "1·2·7·8월 면제"
-    : sunday && PRICING.sundayVenueFeeWaived
-      ? en ? "waived on Sundays" : "일요일 면제"
+    : sunday && PRICING.sundayVenueFeeWaived && (venue !== "marina" || guests >= PRICING.marinaSundayWaiverMinGuests)
+      ? venue === "marina"
+        ? en ? "waived on Sundays, 100 guests or more" : "일요일 100명 이상 면제"
+        : en ? "waived on Sundays" : "일요일 면제"
       : benefit
         ? en ? "waived on weekdays" : "평일 예식 면제"
         : null;
