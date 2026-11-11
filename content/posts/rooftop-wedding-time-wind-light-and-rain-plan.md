@@ -44,8 +44,6 @@ thumbnail: /images/small-wedding-rooftop-01.jpg
 
 ![해가 지기 전에 켜 두는 전구 — 흰 꽃 위로 이어지는 스트링 라이트 (사진: Migaro studio)](/images/string-lights-white-flowers.jpg)
 
-![해가 진 직후의 루프탑 — 노을이 남은 하늘과 데크 조명, 테이블 위의 작은 캔들 (서울 한강의 한 웨딩홀 루프탑)](/images/vista-rooftop-sunset-01.jpg)
-
 ## 실내 전환: 결정하는 날을 먼저 정한다
 
 옥상에는 지붕이 없습니다. The Knot의 가이드는 날씨에 따른 결정을 예식이 있는 주에 내리고, 텐트를 치거나 행사 전체 또는 일부를 실내로 옮기는 계획을 미리 세워 두라고 권합니다. Giggster는 예식 2주쯤 전에 날씨 계획을 업체들과 다시 확인하라고 덧붙입니다.
