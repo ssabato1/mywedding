@@ -9,6 +9,18 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t.outdoor.title };
 }
 
+const CANAPE_GALLERY = [
+  "/images/canape-reception-01.jpg",
+  "/images/canape-reception-02.jpg",
+  "/images/canape-reception-03.jpg",
+  "/images/after-party-bar-01.jpg",
+  "/images/after-party-canape-01.jpg",
+  "/images/after-party-guests-01.jpg",
+  "/images/after-party-guests-02.jpg",
+  "/images/after-party-guests-03.jpg",
+  "/images/after-party-bar-02.jpg",
+];
+
 const MARINA_GALLERY = [
   "/images/marinapark-ceremony-01.jpg",
   "/images/marinapark-ceremony-02.jpg",
@@ -70,8 +82,8 @@ export default async function OutdoorWeddingPage() {
             <div className="mt-16">
               <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{o.canape.title}</h3>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.canape.body}</p>
-              <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {["/images/canape-reception-01.jpg", "/images/canape-reception-02.jpg", "/images/canape-reception-03.jpg", "/images/after-party-bar-01.jpg"].map((src, i) => (
+              <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {CANAPE_GALLERY.map((src, i) => (
                   <li key={src}>
                     <ImageSlot ratio="3/2" label={o.canape.photos[i]} src={src} />
                   </li>

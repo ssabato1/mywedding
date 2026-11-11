@@ -191,7 +191,7 @@ export const en: Dict = {
     canape: {
       title: "Canapé reception",
       body: "After the ceremony, cocktail hour begins on the same rooftop with welcome drinks and bite-sized canapés — finger food guests can eat standing and talking, and a lit bar that carries the evening into the after-party once the sun goes down.",
-      photos: ["Welcome drink table", "Bite-sized canapés", "Rooftop bar at dusk", "After-party wine bar"],
+      photos: ["Welcome drink table", "Bite-sized canapés", "Rooftop bar at dusk", "After-party wine bar", "After-party canapés — crab bruschetta", "Overseas guests in conversation", "At the bar, lights changed", "Standing conversation is the heart of the after-party", "Bartender and cocktail bar"],
     },
     marinaGallery: [
       "Garden ceremony — stone arch, coral and white florals, the ridgeline beyond the Han",
