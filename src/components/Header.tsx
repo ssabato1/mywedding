@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@config";
 import { i18n } from "@/i18n";
+import NavLinks from "@/components/NavLinks";
 import LangSwitch from "@/components/LangSwitch";
 
 export default async function Header() {
@@ -21,13 +22,15 @@ export default async function Header() {
           />
         </Link>
         <div className="flex min-w-0 items-center gap-3 sm:gap-6">
-          <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 whitespace-nowrap text-xs text-ink-sub sm:gap-6 sm:text-sm">
-            <Link href="/about" className="hover:text-primary">{t.nav.about}</Link>
-            <Link href="/convention-wedding" className="hover:text-primary">{t.nav.convention}</Link>
-            <Link href="/outdoor-wedding" className="hover:text-primary">{t.nav.outdoor}</Link>
-            <Link href="/blog" className="hover:text-primary">{t.nav.blog}</Link>
-            <Link href="/contact" className="font-semibold text-gold hover:text-gold-dark">{t.nav.contact}</Link>
-          </nav>
+          <NavLinks
+            items={[
+              { href: "/about", label: t.nav.about },
+              { href: "/convention-wedding", label: t.nav.convention },
+              { href: "/outdoor-wedding", label: t.nav.outdoor },
+              { href: "/blog", label: t.nav.blog },
+              { href: "/contact", label: t.nav.contact },
+            ]}
+          />
           <LangSwitch current={lang} />
         </div>
       </div>

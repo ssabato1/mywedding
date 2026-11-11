@@ -27,7 +27,7 @@ export default async function Hero() {
           {t.company.description}
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <CtaSlot />
+          <CtaSlot label={t.nav.contact} />
           <a href={`tel:${siteConfig.contact.phoneIntl}`} className="font-sans text-lg font-semibold tracking-wide text-primary hover:text-gold">
             {siteConfig.contact.phone}
           </a>
