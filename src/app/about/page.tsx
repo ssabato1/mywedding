@@ -10,6 +10,16 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t.about.title };
 }
 
+const INSTAGRAM = [
+  "floatingislandwedding",
+  "marinaparkwedding",
+  "marinaparkevent",
+  "marinapark.cafe",
+  "anniversaryhall",
+  "anniversaryflower",
+  "artmstudiosounds",
+];
+
 export default async function AboutPage() {
   const { t } = await i18n();
   const a = t.about;
@@ -328,6 +338,21 @@ export default async function AboutPage() {
                     className="inline-block rounded-full border border-line px-4 py-2 text-sm text-ink transition-colors hover:border-line-dark hover:text-primary"
                   >
                     {l.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="eyebrow mb-3 mt-8">Instagram</p>
+            <ul className="flex flex-wrap gap-3">
+              {INSTAGRAM.map((id) => (
+                <li key={id}>
+                  <a
+                    href={`https://www.instagram.com/${id}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full border border-line px-4 py-2 text-sm text-ink transition-colors hover:border-line-dark hover:text-primary"
+                  >
+                    @{id}
                   </a>
                 </li>
               ))}
