@@ -3,7 +3,7 @@ title: "국제결혼 예식 준비: 두 가족이 모두 편한 식순 만들기
 description: "양가 부모님이 서로 다른 나라 분이라면 식순부터 막힙니다. 격식 있는 세리모니와 자유로운 리셉션을 한 흐름으로 묶는 방법을 정리했습니다."
 date: 2026-11-09
 tags: [국제결혼, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/convention-wedding-01.jpg
+thumbnail: /images/international-first-dance-01.jpg
 ---
 
 양가 부모님이 서로 다른 나라 분이라면 결혼 준비는 식순에서 처음 막힙니다. 한쪽은 "혼주 입장과 양가 인사가 당연히 있어야" 하고, 다른 쪽은 "세리모니는 20분이면 충분하고 파티가 본편"이라고 생각합니다. 둘 다 맞습니다. 문제는 순서가 아니라 구조입니다.
@@ -16,7 +16,9 @@ thumbnail: /images/convention-wedding-01.jpg
 
 해외 조사도 이 차이를 보여 줍니다. The Knot의 [2026 Real Weddings Study](https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study)에서 미국 커플의 61%가 서약문을 직접 썼고, 32%가 종교·민족·문화 요소를 식에 넣었습니다. 서약은 두 사람의 말로, 문화는 가족의 몫으로 나누는 구조입니다.
 
-![두 문화가 함께하는 세리모니 — 브라이드와 브라이드메이드 (서울 한강의 한 웨딩홀)](/images/marinapark-ceremony-02.jpg)
+![서약을 기다리는 신부 — 두 나라의 하객이 지켜보는 세리모니 (서울 한강의 한 웨딩홀)](/images/international-bride-hairpiece-01.jpg)
+
+![한국의 풍물 공연이 더해진 리셉션 — 두 문화가 한 홀에서 만납니다 (서울 한강의 한 웨딩홀)](/images/international-reception-pungmul-01.jpg)
 
 ## 해법은 "격식 있는 세리모니 + 자유로운 리셉션"
 
@@ -39,7 +41,9 @@ thumbnail: /images/convention-wedding-01.jpg
 
 이렇게 나누면 한국 어른들은 1부에서 익숙한 격식의 결혼식을 보고, 해외 가족은 2부에서 익숙한 파티를 즐깁니다. 어느 쪽도 자신이 아는 결혼식을 포기하지 않습니다.
 
-![격식 있는 세리모니 뒤의 자유로운 리셉션 (서울 한강의 한 웨딩홀)](/images/after-party-bar-02.jpg)
+![양가 부모님께 드리는 인사 — 큰절 대신 포옹으로 (서울 한강의 한 웨딩홀)](/images/international-parents-embrace-01.jpg)
+
+![퍼스트 댄스 — 하객이 둘러앉은 2부 리셉션 (서울 한강의 한 웨딩홀)](/images/international-first-dance-01.jpg)
 
 ## 언어는 "둘 다"가 아니라 "번갈아"
 
@@ -50,7 +54,7 @@ thumbnail: /images/convention-wedding-01.jpg
 - **서약은 모국어로**: 번역은 식순표나 화면 자막으로 처리합니다. 상대 언어로 한 문장만 덧붙이면 충분히 감동적입니다.
 - **축사는 사전에 번역본을 받아** 화면에 띄웁니다. 즉석 통역은 리듬을 끊습니다.
 
-![번갈아 진행되는 두 언어의 저녁 (서울 한강의 한 웨딩홀)](/images/after-party-guests-02.jpg)
+![하객과 함께 추는 춤 — 리셉션은 함께 즐기는 시간입니다 (서울 한강의 한 웨딩홀)](/images/international-reception-dance-01.jpg)
 
 ## 식사와 음료는 "기본"으로 준비되어야 한다
 
