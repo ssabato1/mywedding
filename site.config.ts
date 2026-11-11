@@ -39,6 +39,6 @@ export const siteConfig: SiteConfig = {
     // 홈 배경이 영상으로 바뀝니다 (HeroMedia.tsx 컴포넌트는 손대지 않습니다).
     // null 로 두면 poster 이미지로 완전히 동작합니다.
     video: null,
-    poster: "/images/magma-hero-poster.png",
+    poster: "/images/hero-poster.jpg",
   },
 };

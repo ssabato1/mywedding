@@ -10,8 +10,9 @@ export default function Header() {
         </Link>
         <nav className="flex gap-6 text-sm text-ink-sub">
           <Link href="/about" className="hover:text-primary">회사소개</Link>
+          <Link href="/convention-wedding" className="hover:text-primary">컨벤션 웨딩</Link>
+          <Link href="/outdoor-wedding" className="hover:text-primary">야외 웨딩</Link>
           <Link href="/blog" className="hover:text-primary">블로그</Link>
-          <Link href="/reports" className="hover:text-primary">실적</Link>
         </nav>
       </div>
     </header>
