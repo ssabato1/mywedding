@@ -253,6 +253,7 @@ export const en: Dict = {
     hours: "Daily 10:00 – 19:00 KST (calls may go unanswered during ceremonies)",
     flowerBoardCaption: "Bridal room flowers can be customised too. Colour choice from KRW 1,000,000 — Anniversary Flower",
     menuPhotoCaption: "Western course A — amuse-bouche, scallop and shrimp, pumpkin soup, salad, beef tenderloin with prawn, chocolate mousse cake, coffee",
+    contactNotes: ["Calls are hard to answer on weekends — please leave an email or a message if you can.", "Zoom meetings are available for overseas clients."],
     formTitle: "Self quote",
     formIntro: "Send the details below and we will reply by the contact method you prefer.",
     f: {

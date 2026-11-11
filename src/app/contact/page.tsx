@@ -35,6 +35,11 @@ export default async function ContactPage() {
               </a>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-ink-muted">{c.hoursLabel}</p>
               <p className="mt-1 text-sm text-ink-sub">{c.hours}</p>
+              <ul className="mt-4 space-y-1.5 border-t border-line pt-4 text-sm text-ink">
+                {c.contactNotes.map((n) => (
+                  <li key={n}>{n}</li>
+                ))}
+              </ul>
             </div>
             <div className="rounded-card border border-line bg-card p-6 text-sm text-ink-sub">
               <p>{t.about.address}</p>
