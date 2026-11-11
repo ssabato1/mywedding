@@ -227,6 +227,7 @@ export const ko = {
     whatsappLabel: "WhatsApp (외국인 예식·파티)",
     hoursLabel: "상담 시간",
     hours: "매일 10:00 – 19:00 (예식 진행 중에는 통화가 어려울 수 있습니다)",
+    flowerBoardCaption: "신부대기실 플라워도 커스터마이징할 수 있습니다. 컬러 선택은 100만원부터 — 애니버셔리플라워",
     formTitle: "셀프 견적서",
     formIntro: "아래 내용을 보내 주시면 담당자가 확인 후 선호하시는 연락 방법으로 답변드립니다.",
     f: {
@@ -245,6 +246,7 @@ export const ko = {
       flower: "플라워 데코레이션",
       flowerOptions: ["Standard — 기본 (시즌 컬러)", "Luxury — 컬러 선택, 업그레이드", "Special — 플로리스트 미팅, 커스터마이징"],
       video: "영상 촬영",
+      bridalFlower: "신부대기실 플라워 커스터마이징 — 컬러 선택, 100만원부터",
       wine: "하우스 와인 (5인당 1병)",
       champagne: "건배용 샴페인",
       cake: "웨딩 케이크",

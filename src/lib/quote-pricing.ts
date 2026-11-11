@@ -40,6 +40,8 @@ export const PRICING = {
     weekdayFreeExtras: true, // 평일: 샴페인·케이크 서비스
   },
   vatRate: 0.1,
+  /** 신부대기실 플라워 커스터마이징(컬러 선택) — 100만원부터 */
+  bridalRoomFlowerFrom: 1_000_000,
   /** 비수기(1·2·7·8월): 대관료 면제 + 식사비 할인 */
   offSeasonMonths: [1, 2, 7, 8],
   offSeasonMealDiscount: 0.1,
@@ -76,6 +78,7 @@ export type EstimateInput = {
   wine: boolean;
   champagne: boolean;
   cake: boolean;
+  bridalFlower?: boolean;
   lang: string;
 };
 
@@ -173,6 +176,13 @@ export function estimate(input: EstimateInput): Estimate | null {
     { label: `${en ? "Flower decoration" : "플라워 데코레이션"} — ${cap(tier)}`, amount: P.flower[tier] },
     { label: en ? "Ceremony photography (2 photographers)" : "본식 사진 (2인 촬영)", amount: P.photo },
   );
+  if (input.bridalFlower) {
+    lines.push({
+      label: en ? "Bridal room flowers — custom colours" : "신부대기실 플라워 커스터마이징 (컬러 선택)",
+      detail: en ? "from" : "부터",
+      amount: PRICING.bridalRoomFlowerFrom,
+    });
+  }
   if (input.video) lines.push({ label: en ? "Video" : "영상 촬영", amount: P.video });
 
   const subtotal = lines.reduce((s, l) => s + l.amount, 0);

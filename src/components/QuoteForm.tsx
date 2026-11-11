@@ -24,7 +24,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     setEstimate(
       calcEstimate({
         venueKey: d.venueKey, guests: d.guests ?? "", date: d.date ?? "", flower: d.flower ?? "standard",
-        video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on", lang,
+        video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on", bridalFlower: d.bridalFlower === "on", lang,
       }),
     );
   }
@@ -99,6 +99,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
               <label className={check}><input type="checkbox" name="champagne" defaultChecked className={box} />{f.champagne}</label>
               <label className={check}><input type="checkbox" name="cake" defaultChecked className={box} />{f.cake}</label>
               <label className={check}><input type="checkbox" name="video" className={box} />{f.video}</label>
+              <label className={check}><input type="checkbox" name="bridalFlower" className={box} />{f.bridalFlower}</label>
             </div>
           </fieldset>
         </>

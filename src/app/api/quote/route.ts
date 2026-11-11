@@ -6,10 +6,10 @@ export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; venueKey: string; flower: string; video: string; wine: string; champagne: string; cake: string; method: string; budget: string; message: string; lang: string;
+  time: string; venue: string; venueKey: string; flower: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; method: string; budget: string; message: string; lang: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "video", "wine", "champagne", "cake", "method", "budget", "message", "lang"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "video", "wine", "champagne", "cake", "bridalFlower", "method", "budget", "message", "lang"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
   // 자동 예상 견적: 단가를 알고 있는 공간(플로팅아일랜드 컨벤션·마리나파크)만 계산한다.
   const estimate = calcEstimate({
     venueKey: q.venueKey, guests: q.guests, date: q.date, flower: q.flower,
-    video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", lang: q.lang,
+    video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", bridalFlower: q.bridalFlower === "on", lang: q.lang,
   });
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");

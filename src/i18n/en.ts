@@ -229,6 +229,7 @@ export const en: Dict = {
     whatsappLabel: "WhatsApp (international weddings & parties)",
     hoursLabel: "Hours",
     hours: "Daily 10:00 – 19:00 KST (calls may go unanswered during ceremonies)",
+    flowerBoardCaption: "Bridal room flowers can be customised too. Colour choice from KRW 1,000,000 — Anniversary Flower",
     formTitle: "Self quote",
     formIntro: "Send the details below and we will reply by the contact method you prefer.",
     f: {
@@ -247,6 +248,7 @@ export const en: Dict = {
       flower: "Flower decoration",
       flowerOptions: ["Standard — seasonal colours", "Luxury — colour choice, upgraded", "Special — florist meeting, fully customised"],
       video: "Video",
+      bridalFlower: "Bridal room flowers, custom colours — from KRW 1,000,000",
       wine: "House wine (1 bottle per 5 guests)",
       champagne: "Champagne for the toast",
       cake: "Wedding cake",
