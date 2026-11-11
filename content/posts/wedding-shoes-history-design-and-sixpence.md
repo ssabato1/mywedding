@@ -3,7 +3,7 @@ title: "웨딩슈즈 이야기: 유래와 디자인, 그리고 신발 속 동전
 description: "신부의 구두에는 오래된 풍습이 숨어 있습니다. 아버지가 넣어 주는 은화 한 닢, 신발에 얽힌 여러 나라의 전통, 지금의 디자인과 하루를 편하게 걷는 요령까지 정리했습니다."
 date: 2026-12-03
 tags: [웨딩 문화, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/veil-tulle-tiara-01.jpg
+thumbnail: /images/wedding-shoes-lace-peeptoe-01.jpg
 ---
 
 드레스 자락에 가려 잘 보이지 않지만, 신부의 하루를 처음부터 끝까지 함께 걷는 것은 구두입니다. 대기실에서 버진로드로, 버진로드에서 하객의 테이블로, 그리고 마지막 춤까지. 그래서인지 서양의 결혼 풍습에는 유독 신발에 얽힌 이야기가 많습니다. 그 가운데 가장 사랑받는 것은 신부의 구두 속에 넣는 동전 한 닢입니다. 베일과 티아라의 이야기는 [베일의 유래와 종류](/blog/bridal-veil-history-and-types), [티아라의 유래](/blog/tiara-history-and-how-to-wear)에, 올해의 구두 디자인은 [2026 트렌드](/blog/bridal-accessory-trends-2026)에 따로 실었습니다.

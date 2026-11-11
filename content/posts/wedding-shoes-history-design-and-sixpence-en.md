@@ -5,7 +5,7 @@ date: 2026-12-03
 lang: en
 translationOf: wedding-shoes-history-design-and-sixpence
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/veil-tulle-tiara-01.jpg
+thumbnail: /images/wedding-shoes-lace-peeptoe-01.jpg
 ---
 
 Hidden by the hem and rarely seen, the shoes are what walk with the bride from the start of the day to the end: from the bridal room to the aisle, from the aisle to the guests' tables, and on to the last dance. Perhaps that is why so many Western wedding customs are about shoes. The best loved of them is a single coin placed in the bride's shoe. The stories of the veil and the tiara are in [The Bridal Veil: Its Origins and Its Types](/blog/bridal-veil-history-and-types-en) and [The Tiara: From a King's Headdress to the Bride's](/blog/tiara-history-and-how-to-wear-en), and this year's shoe designs are in [The 2026 Trends](/blog/bridal-accessory-trends-2026-en).
