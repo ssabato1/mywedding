@@ -24,7 +24,7 @@ In Britain there is also the saying that a bride should begin married life "walk
 
 The sixpence is no longer in circulation, so, as the British bridal shoe brand The Perfect Bridal Company notes, [brides today keep the custom with a penny or another coin](https://www.theperfectbridalcompany.com/blog/bridal-shoe-traditions). Some choose a coin minted in the year of the wedding, keep it, and one day pass it on to a daughter.
 
-![A petal-strewn aisle — where the bride's first step begins ](/images/marinapark-ceremony-06.jpg)
+![A petal-strewn aisle — where the bride's first step begins (a wedding venue on the Han River, Seoul)](/images/marinapark-ceremony-06.jpg)
 
 ## Shoe customs from several countries
 
@@ -67,7 +67,7 @@ Colour no longer stops at white. Many brides let their shoes be the "something b
 - **If you carry a coin, secure it.** A thin coin under the insole, or taped in place, will not move as you walk. If it will not fit in the shoe, fix it to the sole or tie it to the bouquet handle. The meaning is the same.
 - **Pack a small kit.** Heel pads, plasters and spare insoles in your bridal room bag.
 
-![A garden of grass and stone — block heels or wedges are safer than thin heels ](/images/sevit-garden-01.jpg)
+![A garden of grass and stone — block heels or wedges are safer than thin heels (a wedding venue on the Han River, Seoul)](/images/sevit-garden-01.jpg)
 
 ## What to check when applying this in Korea
 
