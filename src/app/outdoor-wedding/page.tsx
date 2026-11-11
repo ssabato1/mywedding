@@ -34,6 +34,15 @@ const MARINA_GALLERY = [
   "/images/marinapark-ceremony-03.jpg",
   "/images/marinapark-ceremony-04.jpg",
   "/images/marinapark-ceremony-05.jpg",
+  "/images/marinapark-garden-pink-01.jpg",
+  "/images/marinapark-garden-pink-02.jpg",
+  "/images/marinapark-garden-ceremony-07.jpg",
+  "/images/marinapark-garden-pink-03.jpg",
+  "/images/marinapark-garden-pink-04.jpg",
+  "/images/marinapark-garden-white-01.jpg",
+  "/images/marinapark-garden-white-02.jpg",
+  "/images/marinapark-garden-white-03.jpg",
+  "/images/marinapark-exterior-01.jpg",
 ];
 
 const MARINA_GALLERY_MORE = [
