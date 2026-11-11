@@ -20,8 +20,6 @@ In The Knot's [guide to wedding venue contracts](https://www.theknot.com/content
 - **Capacity**: that your guest count is permitted in that space.
 - **House rules**: whether petals, candles or sparklers are allowed.
 
-A promise made in conversation is only a promise once it is in the contract. If you were told that something would be included as a courtesy, ask for it to be written in the remarks.
-
 ![The aisle of a 500-seat hall — the contract should state the spaces and the hours (a wedding venue on the Han River, Seoul)](/images/convention-wedding-bw.jpg)
 
 ## The guaranteed number: you pay on this figure, not on attendance
@@ -87,7 +85,6 @@ The Knot recommends getting the full list of additional fees in writing. Overtim
 | Conditions for changing the date, and whether benefits are kept | Terms can change after a reschedule |
 | Rules on outside vendors and items brought in | Your photography and flower plans depend on them |
 | Rain plan and force majeure | The safeguard for an outdoor wedding |
-| Verbal promises written into the contract | It is a promise once it is written |
 
 Some venues now email the full contract conditions together with the quote. Asking for time to read them at home before you sign is not impolite.
 
@@ -96,7 +93,6 @@ Some venues now email the full contract conditions together with the quote. Aski
 - Look first not at the price but at what you receive, when and where.
 - Meals are charged on the guaranteed number. Check the cut-off date and how over and under are settled.
 - Copy the cancellation and change terms into a table of dates and percentages.
-- Ask for anything promised in conversation to be written into the contract.
 
 ## Sources
 
