@@ -173,6 +173,14 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [venueKey, setVenueKey] = useState<VenueKey>("convention");
   const [date, setDate] = useState("");
   const [tick, setTick] = useState(0);
+  const [guests, setGuests] = useState("");
+  const [flower, setFlower] = useState("standard");
+  const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
+  const cuisine = menuKey.split("-")[0];
+  const tierOf = (k: string) => k.split("-")[1];
+  const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTick((t) => t + 1); };
+  const min = PRICING[venueKey].minGuests;
+  const guestSteps = { convention: [300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey];
 
   const read = (): Record<string, string> =>
     formRef.current ? (Object.fromEntries(new FormData(formRef.current).entries()) as Record<string, string>) : {};
@@ -184,14 +192,14 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     const d = read();
     setEstimate(
       calcEstimate({
-        venueKey, date, guests: d.guests ?? "", flower: d.flower ?? "standard", menu: d.menu ?? DEFAULT_MENU[venueKey],
+        venueKey, date, guests, flower, menu: menuKey,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
         bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", lang,
       }),
     );
     setDateLabel(date ? `${date}${d.time && d.time !== f.timeOptions[0] ? ` ${d.time}` : ""}` : f.calNone);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [venueKey, date, tick, lang]);
+  }, [venueKey, date, tick, lang, guests, flower, menuKey]);
 
   function downloadExcel() {
     const table = document.getElementById("quote-sheet");
@@ -240,6 +248,12 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const box = "h-4 w-4 accent-[var(--brand-gold)]";
   const step = "font-display text-lg font-semibold text-gold";
   const req = <span className="ml-1 text-xs font-normal text-gold">({f.required})</span>;
+  const chip = "rounded-full border px-4 py-1.5 text-sm transition-colors";
+  const chipOn = "border-gold bg-gold/10 font-semibold text-gold";
+  const chipOff = "border-line bg-card text-ink hover:border-gold/60";
+  const card = "rounded-card border p-4 text-left transition-colors";
+  const cardOn = "border-gold bg-gold/10";
+  const cardOff = "border-line bg-card hover:border-gold/60";
   const btn = "rounded-ui border border-gold/60 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold hover:text-canvas";
 
   return (
@@ -258,7 +272,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 key={v.key}
                 type="button"
                 aria-pressed={on}
-                onClick={() => { setVenueKey(v.key as VenueKey); setTick((t) => t + 1); }}
+                onClick={() => pickVenue(v.key as VenueKey)}
                 className={`rounded-card border p-4 text-left transition-colors ${on ? "border-gold bg-gold/10" : "border-line bg-card hover:border-gold/60"}`}
               >
                 <span className={`block font-display text-base font-semibold ${on ? "text-gold" : "text-ink"}`}>{v.name}</span>
@@ -292,26 +306,68 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       <section>
         <h3 className={step}>{f.pickOptions}</h3>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
-          <label className={label}>{f.guests}<input name="guests" type="text" inputMode="numeric" placeholder={String(PRICING[venueKey].minGuests)} className={input} /></label>
-          <label className={label}>{f.flower}
-            <select name="flower" defaultValue="standard" className={input}>
-              {f.flowerOptions.map((o, i) => <option key={o} value={["standard", "luxury", "special"][i]}>{o}</option>)}
-            </select>
-          </label>
+          {/* 인원 */}
           <div className="sm:col-span-2">
-            <label className={label}>{f.menu}
-              <select key={venueKey} name="menu" defaultValue={DEFAULT_MENU[venueKey]} className={input}>
-                {MENU_GROUPS.map((g) => (
-                  <optgroup key={g.key} label={lang === "en" ? g.en : g.ko}>
-                    {MENUS.filter((m) => m.group === g.key).map((m) => (
-                      <option key={m.key} value={m.key}>
-                        {lang === "en" ? m.en : m.ko} — {num(m.price)} {f.estWon}
-                      </option>
-                    ))}
-                  </optgroup>
-                ))}
-              </select>
+            <label className={label}>{f.guests}
+              <input name="guests" type="text" inputMode="numeric" value={guests} onChange={(e) => setGuests(e.target.value.replace(/[^0-9]/g, ""))} placeholder={String(min)} className={`${input} block sm:max-w-xs`} />
             </label>
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {guestSteps.map((n) => {
+                const on = guests === String(n);
+                return (
+                  <button key={n} type="button" aria-pressed={on} onClick={() => setGuests(String(n))} className={`${chip} ${on ? chipOn : chipOff}`}>
+                    {n}{f.guestUnit}
+                  </button>
+                );
+              })}
+            </div>
+            <p className={hint}>{f.guestHint.replace("{min}", String(min))}</p>
+          </div>
+
+          {/* 꽃장식 */}
+          <div className="sm:col-span-2">
+            <p className={label}>{f.flower}</p>
+            <input type="hidden" name="flower" value={flower} />
+            <div className="mt-2.5 grid gap-3 sm:grid-cols-3">
+              {f.flowerCards.map((c, i) => {
+                const key = ["standard", "luxury", "special"][i];
+                const on = flower === key;
+                return (
+                  <button key={key} type="button" aria-pressed={on} onClick={() => setFlower(key)} className={`${card} ${on ? cardOn : cardOff}`}>
+                    <span className={`block font-display text-base font-semibold ${on ? "text-gold" : "text-ink"}`}>{c.name}</span>
+                    <span className="mt-1 block text-sm tabular-nums text-ink">{c.price}</span>
+                    <span className="mt-1 block text-xs text-ink-muted">{c.sub}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 식사 메뉴 */}
+          <div className="sm:col-span-2">
+            <p className={label}>{f.menu}</p>
+            <input type="hidden" name="menu" value={menuKey} />
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {MENU_GROUPS.map((g) => {
+                const on = cuisine === g.key;
+                return (
+                  <button key={g.key} type="button" aria-pressed={on} onClick={() => setMenuKey(`${g.key}-${tierOf(menuKey)}`)} className={`${chip} ${on ? chipOn : chipOff}`}>
+                    {lang === "en" ? g.en : g.ko}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-5">
+              {MENUS.filter((m) => m.group === cuisine).map((m) => {
+                const on = menuKey === m.key;
+                return (
+                  <button key={m.key} type="button" aria-pressed={on} onClick={() => setMenuKey(m.key)} className={`${card} ${on ? cardOn : cardOff}`}>
+                    <span className={`block font-display text-base font-semibold ${on ? "text-gold" : "text-ink"}`}>{tierOf(m.key).toUpperCase()}</span>
+                    <span className="mt-1 block text-sm tabular-nums text-ink">{num(m.price)} {f.estWon}</span>
+                  </button>
+                );
+              })}
+            </div>
             <p className={hint}>{f.menuHint}</p>
           </div>
           <fieldset className="sm:col-span-2">
