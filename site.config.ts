@@ -23,7 +23,7 @@ export const siteConfig: SiteConfig = {
   links: {
     floatingisland: "https://www.floatingisland.co.kr",
     marinapark: "https://www.marinapark.co.kr",
-    sposabella: "https://www.sposabella.co.kr",
+    sposabella: "https://sposabella.kr",
     anniversaryflower: "https://www.anniversaryflower.co.kr",
     anniversaryhall: "https://anniversaryhall.com",
     vista: "https://vistapub.co.kr",

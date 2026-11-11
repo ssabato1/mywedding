@@ -1,5 +1,6 @@
 export const INSTAGRAM = [
   "floatingislandwedding",
+  "floatingisland.official",
   "marinaparkwedding",
   "marinaparkevent",
   "marinapark.cafe",
