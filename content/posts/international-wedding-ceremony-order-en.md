@@ -22,6 +22,8 @@ Overseas surveys show the same split. In The Knot's [2026 Real Weddings Study](h
 
 ![A reception with a Korean pungmul performance — two cultures meeting in one hall (a wedding venue on the Han River, Seoul)](/images/international-reception-pungmul-01.jpg)
 
+*Where these photographs were taken: Villa de Noche, on the 2nd floor of the Sevit Island convention building. Villa de Noche takes bookings for Friday evening weddings only, and the running order and staging can be customised.*
+
 ## The answer: a formal ceremony, then a relaxed reception
 
 Blend both expectations into one running order and both sides feel awkward. Instead, **split the day in two.**
