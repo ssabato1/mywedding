@@ -6,6 +6,7 @@ export const INSTAGRAM = [
   "sposabella.official",
   "vista.sevit",
   "anniversaryhall",
+  "anniversary.museum",
   "anniversaryflower",
   "artmstudiosounds",
 ];
