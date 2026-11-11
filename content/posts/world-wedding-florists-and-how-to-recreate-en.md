@@ -5,14 +5,12 @@ date: 2026-11-21
 lang: en
 translationOf: world-wedding-florists-and-how-to-recreate
 tags: [Overseas Trends, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop
+thumbnail: /images/floral-aisle-concept-01.jpg
 ---
 
 In the work of five florists featured by the overseas wedding press since 2025, what carries over to a wedding in Korea is less a list of flowers than a way of reading the place and designing form. (As of November 2026)
 
-![A reception table dressed with flowers](https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop)
-
-*Photo: [Hồng Xuân Văn](https://unsplash.com/photos/a-beautiful-wedding-table-decorated-with-flowers-P_BkpLj5hTM) / [Unsplash](https://unsplash.com)*
+![An aisle filled with flowers and candles — concept image](/images/floral-aisle-concept-01.jpg)
 
 ## 1. Gabriela Salazar: a scene that seems to have grown there
 
@@ -26,7 +24,7 @@ At [a wedding in Hawaii featured in Vogue](https://www.vogue.com/slideshow/alexa
 
 To recreate this, build on local seasonal branches and foliage and use rare imported flowers only at the focal point for photographs. A couple's symbol sits more naturally woven into colour and repeated pattern than attached as a separate decoration.
 
-![A scene that seems to have grown there — a loosely tied spring bouquet](/images/bouquet-06.jpg)
+![The power of one colour — a floral arch built from white blooms alone (concept image)](/images/floral-arch-concept-01.jpg)
 
 ## 3. Rachel Cho: asymmetry and the power of one variety
 
@@ -58,7 +56,7 @@ In Korea, choose one word first — abundance, calm or festivity — then mix fl
 | Proportion | Do not rely on photographs; scale to the aisle width and ceiling height |
 | Time | In a large space such as Sevit Island, plan installation, changeover and removal separately from the running order |
 
-![The power of one variety — bridesmaids' bouquets](/images/bridesmaids-bouquets-01.jpg)
+![Orchids, roses and hydrangeas layered in the arch, in detail (concept image)](/images/floral-arch-concept-02.jpg)
 
 ## Summary
 

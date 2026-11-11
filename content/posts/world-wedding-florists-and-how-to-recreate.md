@@ -3,14 +3,12 @@ title: "세계의 웨딩 플로리스트 5인: 그들의 스타일과 한국에�
 description: "Vogue, Brides, The Knot이 2025년 이후 소개한 플로리스트 5인의 설계 원리와 국내 제철 꽃·공간 조건에 맞춘 재현법을 정리했습니다."
 date: 2026-11-21
 tags: ["해외 트렌드", "플로팅아일랜드", "플로팅아일랜드웨딩", "세빛섬웨딩", "세빛섬"]
-thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop
+thumbnail: /images/floral-aisle-concept-01.jpg
 ---
 
 해외 웨딩 매체가 2025년 이후 소개한 다섯 플로리스트의 작업에서, 한국 예식에 옮길 수 있는 것은 꽃의 목록보다 장소를 읽고 형태를 설계하는 방법입니다. (2026년 11월 기준)
 
-![꽃으로 꾸민 리셉션 테이블](https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop)
-
-*사진: [Hồng Xuân Văn](https://unsplash.com/photos/a-beautiful-wedding-table-decorated-with-flowers-P_BkpLj5hTM) / [Unsplash](https://unsplash.com)*
+![꽃과 캔들로 채운 버진로드 — 콘셉트 이미지](/images/floral-aisle-concept-01.jpg)
 
 ## 1. 가브리엘라 살라자르: 땅에서 자란 듯한 장면
 
@@ -24,7 +22,7 @@ thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q
 
 재현할 때는 국내 계절 가지와 잎을 기본으로 두고, 희귀 수입 꽃은 촬영 중심점에만 씁니다. 커플의 상징도 장식처럼 따로 붙이기보다 색과 반복 패턴 안에 섞는 편이 자연스럽습니다.
 
-![땅에서 자란 듯한 장면 — 느슨하게 묶은 봄 부케](/images/bouquet-06.jpg)
+![한 가지 색의 힘 — 흰 꽃만으로 세운 플라워 아치 (콘셉트 이미지)](/images/floral-arch-concept-01.jpg)
 
 ## 3. 레이철 조: 비대칭과 한 종류의 힘
 
@@ -56,7 +54,7 @@ The Knot은 [2025 Ones to Watch](https://www.theknot.com/content/ones-to-watch)�
 | 공간 비율 | 사진만 보지 말고 버진로드 폭과 천장 높이에 맞춰 크기를 조정한다 |
 | 예식 시간 | 세빛섬 같은 대형 공간에서는 설치·전환·철거 시간을 식순과 분리해 계산한다 |
 
-![한 종류의 힘 — 들러리 부케](/images/bridesmaids-bouquets-01.jpg)
+![난초·장미·수국을 겹겹이 쌓은 아치의 디테일 (콘셉트 이미지)](/images/floral-arch-concept-02.jpg)
 
 ## 요약
 
