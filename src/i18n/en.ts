@@ -65,7 +65,7 @@ export const en: Dict = {
       {
         year: "2026",
         title: "Floating Island Wedding",
-        body: "We launched this journal on international marriage and overseas wedding trends — planning weddings where two cultures meet, on the Han River.",
+        body: "We launched this journal on overseas wedding trends for couples in Korea and abroad. Floating Island is with you for the finest moment of your lives.",
       },
     ],
     imageLabel: "Sevit Island at night",
