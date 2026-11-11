@@ -98,6 +98,25 @@ export default async function OutdoorWeddingPage() {
             </div>
           )}
 
+          {!s.marina && (
+            <div className="mt-16">
+              <p className="eyebrow mb-3">{o.vista.eyebrow}</p>
+              <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.vista.title}</h3>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.vista.body}</p>
+              <ul className="mt-8 grid gap-4 md:grid-cols-7">
+                <li className="md:col-span-7">
+                  <ImageSlot ratio="16/9" label={o.vista.photos[0]} src="/images/vista-rooftop-03.jpg" />
+                </li>
+                <li className="md:col-span-4">
+                  <ImageSlot ratio="16/9" label={o.vista.photos[1]} src="/images/vista-rooftop-01.jpg" />
+                </li>
+                <li className="md:col-span-3">
+                  <ImageSlot ratio="4/3" label={o.vista.photos[2]} src="/images/vista-rooftop-02.jpg" />
+                </li>
+              </ul>
+            </div>
+          )}
+
           {s.marina && (
             <>
               <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

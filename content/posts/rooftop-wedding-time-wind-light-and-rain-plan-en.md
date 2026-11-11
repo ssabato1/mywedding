@@ -44,6 +44,8 @@ After sunset a rooftop gets dark quickly and the temperature drops. Giggster's c
 
 With lighting, what you leave dark matters as much as what you light. If the night view is your backdrop, stage lighting that is too bright will erase the city behind you in the photographs. Ask your photographer and the lighting operator to agree on levels in advance.
 
+![The rooftop just after sunset — the last colour in the sky, deck lighting and a small candle on the table (a wedding venue rooftop on the Han River, Seoul)](/images/vista-rooftop-sunset-01.jpg)
+
 ## Moving indoors: fix the decision day first
 
 A rooftop has no roof. The Knot's guide recommends making the weather decision in the week of the wedding and planning in advance for a tent, or for moving all or part of the event indoors. Giggster adds that you should review the weather plan with your vendors about two weeks ahead.

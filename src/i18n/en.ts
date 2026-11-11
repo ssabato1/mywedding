@@ -274,6 +274,16 @@ export const en: Dict = {
       body: "After the ceremony, cocktail hour begins on the same rooftop with welcome drinks and bite-sized canapés — finger food guests can eat standing and talking, and a lit bar that carries the evening into the after-party once the sun goes down.",
       photos: ["Welcome drink table", "Bite-sized canapés", "Rooftop bar at dusk", "After-party wine bar", "After-party canapés — crab bruschetta", "Overseas guests in conversation", "At the bar, lights changed", "Standing conversation is the heart of the after-party", "Bartender and cocktail bar"],
     },
+    vista: {
+      eyebrow: "After Party · 4F",
+      title: "An after-party on the 4th-floor Vista Rooftop, Terrace on the Bay",
+      body: "If you would like the evening to last a little longer, how about Terrace on the Bay, the Vista Rooftop on the 4th floor? The rainbow fountain of Banpo Bridge and the lights of the Han River open out gently below you, as if the whole city were celebrating your night.",
+      photos: [
+        "Banpo Bridge's rainbow fountain and the Han River at night, from the 4th-floor Vista Rooftop",
+        "Vista Rooftop — the bar and deck",
+        "Terrace on the Bay — rooftop seating facing the fountain",
+      ],
+    },
     marinaGallery: [
       "Garden ceremony — stone arch, coral and white florals, the ridgeline beyond the Han",
       "Bride and bridesmaids in front of the garden arch",
