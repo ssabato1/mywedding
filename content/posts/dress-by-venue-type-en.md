@@ -5,10 +5,12 @@ date: 2026-11-14
 lang: en
 translationOf: dress-by-venue-type
 tags: [Style, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/sposabella-dress-01.jpg
+thumbnail: /images/dress-classic-salon-01.jpg
 ---
 
 The first question at a Korean dress consultation is about your figure; the first question overseas bridal shops ask is where the wedding will be. The same dress looks different on grass and under a chandelier, and it moves differently with the wind, the floor and the lighting. Here are the guides from Kleinfeld in New York, Azazie and Joy, matched to the types of venue found in Korea.
+
+![In a classical interior, lustrous satin and a sculpted train — the dress carries as much weight as the room](/images/dress-classic-salon-01.jpg)
 
 ## 1. Outdoor garden and deck: light, shorter, mindful of the wind
 
