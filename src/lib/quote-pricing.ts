@@ -63,6 +63,10 @@ export const PRICING = {
   /** 잔치국수·떡 — 1인당 */
   noodlesPerGuest: 3_000,
   riceCakePerGuest: 3_000,
+  /** 사회자 · 연주 */
+  mc: { part1: 200_000, both: 300_000 },
+  maleQuartet: 600_000,
+  stringQuartet: 600_000,
   /** 부케 */
   bouquet: 200_000,
   /** 비수기(1·2·7·8월): 대관료 면제 + 식사비 할인 */
@@ -142,6 +146,9 @@ export type EstimateInput = {
   cake: boolean;
   bridalFlower?: boolean;
   bouquet?: boolean;
+  mc?: string;
+  maleQuartet?: boolean;
+  stringQuartet?: boolean;
   drink?: boolean;
   noodles?: boolean;
   riceCake?: boolean;
@@ -265,6 +272,10 @@ export function estimate(input: EstimateInput): Estimate | null {
     });
   }
   if (input.bouquet) lines.push({ section: "flower", label: en ? "Bridal bouquet" : "부케", amount: PRICING.bouquet });
+  if (input.mc === "part1") lines.push({ section: "others", label: en ? "MC — part 1 (ceremony)" : "사회자 — 1부", detail: en ? "optional" : "선택", amount: PRICING.mc.part1 });
+  if (input.mc === "both") lines.push({ section: "others", label: en ? "MC — parts 1 and 2" : "사회자 — 1부 + 2부", detail: en ? "optional" : "선택", amount: PRICING.mc.both });
+  if (input.maleQuartet) lines.push({ section: "others", label: en ? "Male vocal quartet" : "남성 4중주", detail: en ? "optional" : "선택", amount: PRICING.maleQuartet });
+  if (input.stringQuartet) lines.push({ section: "others", label: en ? "String quartet" : "현악 4중주", detail: en ? "optional" : "선택", amount: PRICING.stringQuartet });
   if (input.video) lines.push({ section: "others", label: en ? "Video" : "영상 촬영", detail: en ? "optional" : "선택", amount: P.video });
 
   const subtotal = lines.reduce((s, l) => s + l.amount, 0);

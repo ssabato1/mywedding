@@ -7,10 +7,10 @@ export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; drink: string; noodles: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string;
+  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; mc: string; maleQuartet: string; stringQuartet: string; drink: string; noodles: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "drink", "noodles", "riceCake", "method", "budget", "message", "lang", "sendCopy"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "method", "budget", "message", "lang", "sendCopy"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -115,7 +115,7 @@ export async function POST(req: Request) {
   if (clean(raw.website)) return NextResponse.json({ ok: true, via: "honeypot" });
 
   const q = Object.fromEntries(FIELDS.map((k) => [k, clean(raw[k], k === "message" ? 2000 : 200)])) as Quote;
-  if (!q.groom || !q.bride || !q.phone) {
+  if (!q.groom || !q.bride || !q.phone || !EMAIL_RE.test(q.email)) {
     return NextResponse.json({ ok: false, error: "missing required" }, { status: 400 });
   }
 
@@ -123,7 +123,7 @@ export async function POST(req: Request) {
   // 자동 예상 견적: 단가를 알고 있는 공간(플로팅아일랜드 컨벤션·마리나파크)만 계산한다.
   const estimate = calcEstimate({
     venueKey: q.venueKey, guests: q.guests, date: q.date, flower: q.flower, menu: q.menu,
-    video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", bridalFlower: q.bridalFlower === "on", bouquet: q.bouquet === "on", drink: q.drink === "on", noodles: q.noodles === "on", riceCake: q.riceCake === "on", lang: q.lang,
+    video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", bridalFlower: q.bridalFlower === "on", bouquet: q.bouquet === "on", mc: q.mc, maleQuartet: q.maleQuartet === "on", stringQuartet: q.stringQuartet === "on", drink: q.drink === "on", noodles: q.noodles === "on", riceCake: q.riceCake === "on", lang: q.lang,
   });
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");

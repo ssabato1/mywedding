@@ -197,7 +197,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       calcEstimate({
         venueKey, date, guests, flower, menu: menuKey,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
-        bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", drink: d.drink === "on", noodles: d.noodles === "on", riceCake: d.riceCake === "on", lang,
+        bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", mc: d.mc ?? "", maleQuartet: d.maleQuartet === "on", stringQuartet: d.stringQuartet === "on", drink: d.drink === "on", noodles: d.noodles === "on", riceCake: d.riceCake === "on", lang,
       }),
     );
     setDateLabel(date ? `${date}${time ? ` ${time}` : ""}` : f.calNone);
@@ -398,6 +398,16 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
               <label className={check}><input type="checkbox" name="champagne" defaultChecked className={box} />{f.champagne}</label>
               <label className={check}><input type="checkbox" name="cake" defaultChecked className={box} />{f.cake}</label>
               <label className={check}><input type="checkbox" name="video" className={box} />{f.video}</label>
+              <label className={check}><input type="checkbox" name="maleQuartet" className={box} />{f.maleQuartet}</label>
+              <label className={check}><input type="checkbox" name="stringQuartet" className={box} />{f.stringQuartet}</label>
+              <label className={`${check} sm:col-span-2`}>
+                <span className="shrink-0">{f.mc}</span>
+                <select name="mc" defaultValue="" className="rounded-ui border border-line bg-card px-3 py-1.5 text-sm text-ink">
+                  <option value="">{f.mcOptions[0]}</option>
+                  <option value="part1">{f.mcOptions[1]}</option>
+                  <option value="both">{f.mcOptions[2]}</option>
+                </select>
+              </label>
               <label className={check}><input type="checkbox" name="bouquet" className={box} />{f.bouquet}</label>
               <label className={check}><input type="checkbox" name="bridalFlower" className={box} />{f.bridalFlower}</label>
             </div>
@@ -424,7 +434,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           <label className={label}>{f.bride}{req}<input name="bride" required className={input} /></label>
           <label className={label}>{f.phone}{req}<input name="phone" type="tel" required className={input} /></label>
           <div>
-            <label className={label}>{f.email}<input name="email" type="email" className={input} /></label>
+            <label className={label}>{f.email}{req}<input name="email" type="email" required className={input} /></label>
             <label className={`${check} mt-2.5`}><input type="checkbox" name="sendCopy" defaultChecked className={box} />{f.sendCopy}</label>
           </div>
           <label className={label}>{f.method}
