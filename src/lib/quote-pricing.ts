@@ -240,7 +240,7 @@ export function estimate(input: EstimateInput): Estimate | null {
       detail: feeWaivedReason ?? undefined,
       amount: feeWaived ? 0 : P.venueFee,
     },
-    { section: "ceremony", label: en ? "Wedding ceremony package" : "웨딩 세레모니 (연출·세팅)", amount: P.ceremony },
+    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", amount: P.ceremony },
     { section: "flower", label: `${en ? "Flower decoration" : "플라워 장식"} — ${en ? cap(tier) : { standard: "스탠다드", luxury: "럭셔리", special: "스페셜" }[tier]}`, detail: tier === "special" ? (en ? "from" : "부터") : undefined, amount: P.flower[tier] },
     { section: "others", label: en ? "Photography — formal portraits and snapshots, 2 photographers, original files on CD" : "사진 — 원판·스냅, 2인 촬영, 원본 CD 포함", detail: en ? "required" : "필수", amount: P.photo },
   );

@@ -378,7 +378,7 @@ export const ko = {
       sheetEvent: "예식 일시",
       sheetGuests: "지불 보증인원",
       sheetCols: ["항목", "수량", "단가", "금액", "비고"],
-      sheetSections: { fnb: "§ 식음료", venue: "§ 전관독점 사용료", ceremony: "§ 웨딩 세레모니", flower: "§ 플라워 장식", others: "§ 기타" },
+      sheetSections: { fnb: "§ 식음료", venue: "§ 전관독점 사용료", ceremony: "§ 웨딩연출", flower: "§ 플라워 장식", others: "§ 기타" },
       sheetSub: "소계",
       sheetTotal: "합계 금액",
       sheetTotalVat: "합계 금액 (부가세 포함)",

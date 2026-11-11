@@ -380,7 +380,7 @@ export const en: Dict = {
       sheetEvent: "Date & time",
       sheetGuests: "Guaranteed guests",
       sheetCols: ["Item", "Qty", "Unit price", "Amount", "Remarks"],
-      sheetSections: { fnb: "§ Food & beverage", venue: "§ Exclusive venue fee", ceremony: "§ Wedding ceremony", flower: "§ Flower decoration", others: "§ Others" },
+      sheetSections: { fnb: "§ Food & beverage", venue: "§ Exclusive venue fee", ceremony: "§ Wedding production", flower: "§ Flower decoration", others: "§ Others" },
       sheetSub: "Subtotal",
       sheetTotal: "Total",
       sheetTotalVat: "Total (VAT included)",
