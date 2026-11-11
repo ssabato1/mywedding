@@ -15,7 +15,13 @@ export default async function Hero() {
           {siteConfig.company.name}
         </p>
         <h1 className="max-w-3xl font-display text-4xl font-bold leading-tight text-primary sm:text-6xl">
-          {t.company.tagline}
+          {t.company.tagline.split(/,\s*/).map((line, i, arr) => (
+            <span key={i}>
+              {line}
+              {i < arr.length - 1 ? "," : ""}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ))}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary/80">
           {t.company.description}
