@@ -3,7 +3,7 @@ title: "Famous Wedding Venues Abroad, Part 2: Rooftops and City Venues in the US
 description: "New York rooftops and Sydney harbour venues use the city itself as the backdrop. Capacities, how they run, and the rain, wind and heating conditions every rooftop wedding needs."
 date: 2026-11-27
 lang: en
-translationOf: rooftop-and-city-wedding-venues-us-australia
+translationOf: us-australia-rooftop-city-wedding-venues
 tags: [Overseas Trends, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
 thumbnail: /images/canape-reception-03.jpg
 ---

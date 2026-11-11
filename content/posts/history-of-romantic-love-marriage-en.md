@@ -3,7 +3,7 @@ title: "Where the Romantic Wedding Began: A Short History of Marrying for Love"
 description: "Marrying for love is a newer idea than it sounds. How marriage moved from an alliance of families to a promise between two people, and what that shift left in today's running order."
 date: 2026-11-25
 lang: en
-translationOf: history-of-marrying-for-love
+translationOf: history-of-romantic-love-marriage
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
 thumbnail: /images/proposal-sunset-01.jpg
 ---

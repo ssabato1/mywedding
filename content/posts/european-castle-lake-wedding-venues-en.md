@@ -3,7 +3,7 @@ title: "Famous Wedding Venues Abroad, Part 1: Europe's Castles and Lakes"
 description: "French châteaux, villas on Lake Como, Irish castles. What Europe's best-known wedding venues have in common, and what to check when you visit a venue in Korea."
 date: 2026-11-24
 lang: en
-translationOf: europe-castle-and-lake-wedding-venues
+translationOf: european-castle-lake-wedding-venues
 tags: [Overseas Trends, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
 thumbnail: /images/sevit-dusk-01.jpg
 ---

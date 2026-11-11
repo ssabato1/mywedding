@@ -3,7 +3,7 @@ title: "How to Build a Wedding Budget: Shares by Category and a 10% Reserve"
 description: "Build the budget in percentages before amounts. The category shares found in overseas surveys, what changes when you apply them to a wedding in Korea, and how to hold a reserve."
 date: 2026-11-28
 lang: en
-translationOf: wedding-budget-by-percentage
+translationOf: wedding-budget-percentages-and-contingency
 tags: [Planning, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
 thumbnail: /images/menu-course-a.jpg
 ---

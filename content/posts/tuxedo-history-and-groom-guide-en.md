@@ -3,7 +3,7 @@ title: "The Tuxedo: Its Origins, Its Design and How to Choose the Groom's Suit"
 description: "The tuxedo began at a London tailor in 1865 and took its name from Tuxedo Park, New York. Lapels, colours, and how to choose the groom's outfit for the venue and the hour."
 date: 2026-11-26
 lang: en
-translationOf: tuxedo-history-and-how-to-choose
+translationOf: tuxedo-history-and-groom-guide
 tags: [Style, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
 thumbnail: /images/marinapark-ceremony-03.jpg
 ---
