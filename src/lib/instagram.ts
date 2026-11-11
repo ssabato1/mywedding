@@ -3,6 +3,7 @@ export const INSTAGRAM = [
   "marinaparkwedding",
   "marinaparkevent",
   "marinapark.cafe",
+  "sposabella.official",
   "anniversaryhall",
   "anniversaryflower",
   "artmstudiosounds",
