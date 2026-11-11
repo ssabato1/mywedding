@@ -18,6 +18,8 @@ export interface ContentMeta {
   date: string; // YYYY-MM-DD
   tags: string[];
   thumbnail?: string;
+  lang: "ko" | "en"; // 글 언어 (frontmatter lang, 기본 ko)
+  translationOf?: string; // 같은 글의 원문 slug
   period?: string; // reports 전용 — 보고 기간 라벨
   dashboardUrl?: string; // reports 전용 — BI 대시보드 iframe URL
   draft: boolean;
@@ -32,15 +34,15 @@ export function contentHref(collection: Collection, slug: string): string {
   return `/${collection === "posts" ? "blog" : "reports"}/${slug}`;
 }
 
-/** 컬렉션 발행 항목 — draft 제외, 날짜 역순(동률이면 slug 역순). 깨진 파일은 스킵. */
-export function getAll(collection: Collection): ContentMeta[] {
+/** 컬렉션 발행 항목 — draft 제외, 날짜 역순(동률이면 slug 역순). 깨진 파일은 스킵. lang 을 주면 그 언어 글만. */
+export function getAll(collection: Collection, lang?: "ko" | "en"): ContentMeta[] {
   const dir = path.join(CONTENT_ROOT, collection);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md"))
     .map((f) => readDoc(collection, f))
-    .filter((d): d is ContentDoc => d !== null && !d.draft)
+    .filter((d): d is ContentDoc => d !== null && !d.draft && (lang === undefined || d.lang === lang))
     .sort((a, b) => (a.date === b.date ? (a.slug < b.slug ? 1 : -1) : a.date < b.date ? 1 : -1))
     .map(toMeta);
 }
@@ -73,6 +75,8 @@ function readDoc(collection: Collection, filename: string): ContentDoc | null {
       date: toDateString(data.date),
       tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
       thumbnail: typeof data.thumbnail === "string" ? data.thumbnail : undefined,
+      lang: data.lang === "en" ? "en" : "ko",
+      translationOf: typeof data.translationOf === "string" ? data.translationOf : undefined,
       period: typeof data.period === "string" ? data.period : undefined,
       dashboardUrl: typeof data.dashboardUrl === "string" ? data.dashboardUrl : undefined,
       draft: data.draft === true,
@@ -98,6 +102,8 @@ function toMeta(doc: ContentDoc): ContentMeta {
     date: doc.date,
     tags: doc.tags,
     thumbnail: doc.thumbnail,
+    lang: doc.lang,
+    translationOf: doc.translationOf,
     period: doc.period,
     dashboardUrl: doc.dashboardUrl,
     draft: doc.draft,

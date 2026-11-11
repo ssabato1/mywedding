@@ -1,0 +1,118 @@
+export const ko = {
+  htmlLang: "ko",
+  company: {
+    tagline: "한강 위에서, 세계의 결혼식을",
+    description:
+      "국제결혼과 해외 웨딩 트렌드, 예식 준비의 모든 것. 서울 한강 세빛섬에서 두 문화가 만나는 결혼식을 함께 준비합니다.",
+  },
+  nav: { about: "회사소개", convention: "컨벤션 웨딩", outdoor: "야외 웨딩", blog: "블로그" },
+  lang: { ko: "한국어", en: "English", switchTo: "English" },
+  hero: { scroll: "SCROLL" },
+  home: {
+    introTitle: "여유 있는 예식 시간, 세 시간 이상의 결혼식",
+    introBody:
+      "한국 웨딩홀 대부분은 한두 시간 단위로 예식을 회전시킵니다. 세빛섬과 마리나파크는 여유 있는 예식 시간으로 세리모니부터 애프터 파티까지 두 사람이 정한 흐름대로 진행합니다. 국제결혼과 해외 웨딩 트렌드, 예식 준비의 모든 것을 이 블로그에 기록합니다.",
+    imageLabel: "세빛섬 야경",
+    journal: "저널",
+    latest: "최신 글",
+    allPosts: "블로그 전체",
+    noPosts: "아직 발행된 글이 없습니다.",
+  },
+  about: {
+    title: "회사소개",
+    historyEyebrow: "히스토리",
+    historyTitle: "세빛섬이 걸어온 길",
+    history: [
+      {
+        year: "한강 르네상스",
+        title: "한강 위에 섬을 띄우다",
+        body: "한강 위에 문화 랜드마크를 만들자는 계획으로 반포대교 남단, 무지개분수 옆에 세 개의 인공섬(가빛섬·채빛섬·솔빛섬)이 세워졌습니다.",
+      },
+      {
+        year: "2014",
+        title: "세빛섬 개장",
+        body: "서울을 대표하는 MICE 유니크 베뉴로 문을 열었습니다. 플로팅아일랜드 컨벤션은 첫 번째 섬인 가빛섬에 자리합니다.",
+      },
+      {
+        year: "확장",
+        title: "웨딩·연회 공간의 확장",
+        body: "컨벤션홀(2층), 마리나파크, 애니버셔리홀, 비스타(3층), 리브고쉬, 빌라드노체, 4층 가든, 5층 루프탑까지 규모와 분위기가 다른 공간을 갖추었습니다. 스포사벨라(드레스)·애니버셔리플라워(플라워)·ArtM Studio(음악)가 패밀리 브랜드로 함께합니다.",
+      },
+      {
+        year: "2026",
+        title: "Floating Island Wedding",
+        body: "국제결혼과 해외 웨딩 트렌드를 다루는 정보 블로그를 시작했습니다. 두 문화가 만나는 결혼식을 한강 위에서 준비합니다.",
+      },
+    ],
+    imageLabel: "세빛섬 야경",
+    valuesEyebrow: "가치",
+    valuesTitle: "우리가 지키는 것",
+    values: [
+      { name: "여유", body: "3시간 이상 여유 있는 예식 시간으로 진행합니다. 앞뒤 예식에 쫓기지 않고 하객이 붐비지 않습니다." },
+      { name: "맞춤", body: "식순·음악·연출·메뉴를 두 사람이 직접 정합니다. 세리모니가 끝나면 같은 자리에서 애프터 파티로 이어집니다." },
+      { name: "환대", body: "해외 하객과 국제 커플을 위해 영어 진행, 할랄·채식 메뉴, 고속터미널 셔틀과 800대 이상 주차를 준비합니다." },
+      { name: "전망", body: "한강과 반포대교 무지개분수를 배경으로, 낮에는 강과 하늘, 밤에는 도시의 불빛이 예식의 배경이 됩니다." },
+    ],
+    spacesEyebrow: "공간",
+    spacesTitle: "규모와 분위기가 다른 일곱 공간",
+    spaces: [
+      { name: "컨벤션홀", floor: "2층", body: "최대 600명. 대형 LED와 로비를 갖춘 컨벤션 웨딩" },
+      { name: "마리나파크", floor: "가든·루프탑", body: "요트 마리나를 배경으로 한 야외 예식과 애프터 파티" },
+      { name: "애니버셔리홀", floor: "채빛섬", body: "최대 200명. 무대·조명·LED를 갖춘 연회장" },
+      { name: "비스타", floor: "3층", body: "한강 전망의 웨딩·컨퍼런스 홀, 야외 테라스 포함" },
+      { name: "리브고쉬 · 빌라드노체", floor: "2–3층", body: "프라이빗 연회와 VIP 리셉션" },
+      { name: "4층 가든", floor: "야외", body: "칵테일 리셉션과 웰컴 파티" },
+      { name: "5층 루프탑", floor: "야외", body: "한강 야경을 배경으로 한 루프탑 가든 웨딩과 파티" },
+    ],
+    accessEyebrow: "오시는 길",
+    accessTitle: "반포대교 남단, 무지개분수 옆",
+    address: "서울 서초구 올림픽대로 2085-14 세빛섬",
+    phone: "전화",
+    email: "이메일",
+    accessNote: "고속터미널에서 셔틀 운행, 주차 800대 이상. 대형버스 주차 가능.",
+    partners: "패밀리 브랜드",
+    partnerNames: {
+      floatingisland: "플로팅아일랜드",
+      marinapark: "마리나파크",
+      sposabella: "스포사벨라",
+      anniversaryflower: "애니버셔리플라워",
+      artmstudio: "ArtM Studio",
+    } as Record<string, string>,
+  },
+  convention: {
+    title: "컨벤션 웨딩",
+    body: "한강 위 세빛섬 컨벤션홀에서 열리는 대형 예식. 500명 이상의 하객을 한 공간에 모시고, 대형 LED와 로비까지 여유 있는 예식 시간 동안 온전히 사용합니다. 격식 있는 세리모니와 여유로운 피로연이 한 흐름으로 이어집니다.",
+  },
+  outdoor: {
+    title: "야외 웨딩",
+    rooftop: {
+      title: "세빛섬 5층 루프탑 가든 웨딩",
+      paras: [
+        "한강 야경을 배경으로 세빛섬 5층 루프탑 가든에서 진행하는 야외 예식입니다.",
+        "3시간 이상 여유 있게 단독으로 진행해 정해진 틀보다 두 사람의 흐름에 맞춘 구성이 가능합니다.",
+        "세리모니가 끝난 뒤 같은 공간에서 자연스럽게 애프터 파티로 이어지는 커스터마이징 가능한 스페셜 웨딩입니다.",
+      ],
+      link: "세빛섬 사이트 보기",
+    },
+    marina: {
+      title: "마리나파크 가든 웨딩",
+      paras: [
+        "요트 마리나를 배경으로 마리나파크 가든에서 진행하는 야외 예식입니다.",
+        "하객이 붐비지 않는 여유로운 진행으로 세리모니의 순간과 대화를 충분히 나눌 수 있습니다.",
+        "예식의 분위기와 순서에 맞춰 파티 웨딩을 접목할 수 있어 한 공간에서 자연스럽게 다음 순서로 이어집니다.",
+      ],
+      link: "마리나파크 사이트 보기",
+    },
+  },
+  blog: {
+    title: "블로그",
+    eyebrow: "저널",
+    empty: "아직 발행된 글이 없습니다.",
+    emptyEn: "영문 글을 준비하고 있습니다. 한국어 글은 아래에서 읽을 수 있습니다.",
+    readTranslation: "English version",
+    otherLangNote: "이 글은 한국어로 작성되었습니다.",
+    otherLangNoteEn: "This article is written in Korean. An English summary is at the end.",
+    backToList: "목록으로",
+  },
+  footer: { rights: "All rights reserved." },
+};

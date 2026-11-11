@@ -61,6 +61,8 @@ interface ValidInput {
   slug?: string;
   date?: string;
   thumbnail?: string;
+  lang?: "ko" | "en";
+  translationOf?: string;
   period?: string;
   dashboardUrl?: string;
   draft: boolean;
@@ -89,6 +91,9 @@ function validate(input: unknown): ValidInput {
   if (b.dashboardUrl !== undefined && (typeof b.dashboardUrl !== "string" || !isDashboardUrl(b.dashboardUrl)))
     errors.dashboardUrl = "http(s) URL 또는 로컬 개발 URL";
   if (b.draft !== undefined && typeof b.draft !== "boolean") errors.draft = "true 또는 false";
+  if (b.lang !== undefined && b.lang !== "ko" && b.lang !== "en") errors.lang = "ko 또는 en";
+  if (b.translationOf !== undefined && (typeof b.translationOf !== "string" || !SLUG_RE.test(b.translationOf)))
+    errors.translationOf = "원문 글의 slug";
   if (Object.keys(errors).length > 0) throw new PublishError(422, { error: "검증 실패", fields: errors });
 
   return {
@@ -100,6 +105,8 @@ function validate(input: unknown): ValidInput {
     slug: b.slug as string | undefined,
     date: b.date as string | undefined,
     thumbnail: b.thumbnail as string | undefined,
+    lang: b.lang as "ko" | "en" | undefined,
+    translationOf: b.translationOf as string | undefined,
     period: b.period as string | undefined,
     dashboardUrl: b.dashboardUrl as string | undefined,
     draft: b.draft === true,
@@ -143,6 +150,8 @@ function buildMarkdown(p: Omit<ValidInput, "slug" | "date"> & { date: string }):
     `date: ${p.date}`,
     p.tags.length > 0 ? `tags: [${p.tags.map((t) => JSON.stringify(t)).join(", ")}]` : null,
     p.thumbnail ? `thumbnail: ${JSON.stringify(p.thumbnail)}` : null,
+    p.lang && p.lang !== "ko" ? `lang: ${p.lang}` : null,
+    p.translationOf ? `translationOf: ${JSON.stringify(p.translationOf)}` : null,
     p.period ? `period: ${JSON.stringify(p.period)}` : null,
     p.dashboardUrl ? `dashboardUrl: ${JSON.stringify(p.dashboardUrl)}` : null,
     p.draft ? "draft: true" : null,

@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@config";
+import { i18n } from "@/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.company.name} — ${siteConfig.company.tagline}`,
-    template: `%s | ${siteConfig.company.name}`,
-  },
-  description: siteConfig.company.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await i18n();
+  return {
+    title: {
+      default: `${siteConfig.company.name} — ${t.company.tagline}`,
+      template: `%s | ${siteConfig.company.name}`,
+    },
+    description: t.company.description,
+  };
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { t } = await i18n();
   return (
-    <html lang="ko">
+    <html lang={t.htmlLang}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

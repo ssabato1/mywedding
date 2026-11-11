@@ -2,7 +2,7 @@
 title: "웨딩 체크리스트: D-180부터 D-1까지 한 장으로"
 description: "홀 예약부터 예식 전날 리허설까지, 6개월 동안 무엇을 언제 정해야 하는지 시점별로 정리한 체크리스트입니다."
 date: 2026-11-10
-tags: [준비]
+tags: [준비, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
 thumbnail: https://floatingisland.co.kr/images/2649b2_0c38784a7be548199fa50e6c66e9b4ea.jpg
 ---
 
