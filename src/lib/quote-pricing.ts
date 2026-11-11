@@ -8,8 +8,8 @@ export const PRICING = {
   convention: {
     minGuests: 300,
     coursePerGuest: 130_000, // Wedding Course C
-    drinkPerGuestWeekday: 1_000, // Free Drink: soft drink + juice + beer
-    drinkPerGuestStandard: 1_000,
+    drinkPerGuestWeekday: 15_000, // 프리 드링크: 맥주·주스·콜라·사이다
+    drinkPerGuestStandard: 15_000,
     venueFee: 3_000_000, // 전관독점 사용료
     venueFeeWaivedOnWeekday: false,
     ceremony: 2_200_000, // 영상·조명연출·혼구용품·메뉴카드·웰컴드링크·플라워 세레모니·웨딩카·1부 전문사회
@@ -26,8 +26,8 @@ export const PRICING = {
   rooftop: {
     minGuests: 100,
     coursePerGuest: 130_000, // Wedding Course C
-    drinkPerGuestWeekday: 1_000, // Free Drink: soft drink + juice + beer
-    drinkPerGuestStandard: 1_000,
+    drinkPerGuestWeekday: 15_000, // 프리 드링크: 맥주·주스·콜라·사이다
+    drinkPerGuestStandard: 15_000,
     venueFee: 3_000_000, // 전관독점 사용료
     venueFeeWaivedOnWeekday: false,
     ceremony: 2_200_000, // 영상·조명연출·혼구용품·메뉴카드·웰컴드링크·플라워 세레모니·웨딩카·1부 전문사회
@@ -130,6 +130,7 @@ export type EstimateInput = {
   cake: boolean;
   bridalFlower?: boolean;
   bouquet?: boolean;
+  drink?: boolean;
   noodles?: boolean;
   riceCake?: boolean;
   lang: string;
@@ -201,16 +202,16 @@ export function estimate(input: EstimateInput): Estimate | null {
           amount: -Math.round(mealPerGuest * guests * PRICING.offSeasonMealDiscount),
         }]
       : []),
-    {
-      section: "fnb",
+    ...(input.drink === false ? [] : [{
+      section: "fnb" as const,
       qty: guests,
       unit: drink,
       label:
         venue !== "marina"
-          ? en ? "Free drink (soft drinks, juice, beer)" : "프리 드링크 (소프트드링크·주스·맥주)"
+          ? en ? "Free drink (beer, juice, cola, lemon-lime soda)" : "프리 드링크 (맥주·주스·콜라·사이다)"
           : en ? "Free drink (wine, beer, soft drinks)" : "프리 드링크 (와인·맥주·소프트드링크)",
       amount: drink * guests,
-    },
+    }]),
   ];
   if (input.noodles) lines.push({ section: "fnb", label: en ? "Janchi-guksu (banquet noodles)" : "잔치국수", qty: guests, unit: PRICING.noodlesPerGuest, amount: PRICING.noodlesPerGuest * guests });
   if (input.riceCake) lines.push({ section: "fnb", label: en ? "Tteok (rice cake)" : "떡", qty: guests, unit: PRICING.riceCakePerGuest, amount: PRICING.riceCakePerGuest * guests });

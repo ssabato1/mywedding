@@ -343,6 +343,8 @@ export const en: Dict = {
       flowerOptions: ["Standard — KRW 8,000,000 (seasonal colours)", "Luxury — KRW 10,000,000 (colour choice, upgraded)", "Special — from KRW 12,000,000 (florist meeting, fully customised)"],
       video: "Video — KRW 800,000",
       bouquet: "Bridal bouquet — KRW 200,000",
+      drink: "Free drink (beer, juice, cola, lemon-lime soda) — KRW 15,000 per guest",
+      drinkMarina: "Free drink (wine, beer, soft drinks) — KRW 15,000 per guest, KRW 12,000 on weekdays",
       noodles: "Janchi-guksu (banquet noodles) — KRW 3,000 per guest",
       riceCake: "Tteok (rice cake) — KRW 3,000 per guest",
       bridalFlower: "Bridal room flowers, custom colours — from KRW 1,000,000",
