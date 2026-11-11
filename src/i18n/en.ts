@@ -91,13 +91,6 @@ export const en: Dict = {
         ],
       },
       {
-        title: "City bus",
-        lines: [
-          "Bus 405 or 740 to the Banpo Hangang Park stop",
-          "Walk down toward the river and cross the footbridge to Sevit Island",
-        ],
-      },
-      {
         title: "By car · parking",
         lines: [
           "Navigation: search “Banpo Hangang Park Parking Lot 2” or “Some Sevit”",
