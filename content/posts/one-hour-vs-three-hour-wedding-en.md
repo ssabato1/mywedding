@@ -5,7 +5,7 @@ date: 2026-12-01
 lang: en
 translationOf: one-hour-vs-three-hour-wedding
 tags: [Overseas Trends, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/marinapark-ceremony-05.jpg
+thumbnail: /images/villa-de-noche-hall-01.jpg
 ---
 
 Weddings in Korea are often kept concise, at around an hour. It is a format considerate of busy guests and has its own strengths. Overseas, a wedding is thought of as an event that takes up an evening. Here is how the same day differs at one hour and at three or more, set against overseas timetables. (As of December 2026)
@@ -29,7 +29,7 @@ The Knot's [reception timeline guide](https://www.theknot.com/content/wedding-re
 
 Zola's [guide to reception length](https://www.zola.com/expert-advice/how-long-is-a-wedding-reception-an-hourly-breakdown-of-your-wedding-night) reaches the same conclusion: most receptions run five to seven hours and **should not be shorter than four**, because dinner alone takes an hour and a half to two hours.
 
-![A ceremony at sunset — with time to spare, the ceremony can be set to the sunset (a wedding venue on the Han River in Seoul)](/images/marinapark-ceremony-05.jpg)
+![The pre-ceremony reception room — where arriving guests are served refreshments (a wedding venue on the Han River, Seoul)](/images/villa-de-noche-reception-01.jpg)
 
 ## What is missed when time is short
 
@@ -53,6 +53,12 @@ Three hours is short by overseas standards, but it is the length at which gaps b
 | 1:30–2:40 | Meal | Toasts and cake fit between courses |
 | 2:40–3:00+ | Table greetings, leading into the after-party | The couple sits down at every table |
 
+A welcome reception works best in a room separate from the ceremony hall. While guests take refreshments and greet one another, the hall can be finished, and those who arrive early are not left waiting.
+
+![A reception hall of chandeliers and wooden furniture — where refreshments are prepared before the ceremony (a wedding venue on the Han River, Seoul)](/images/villa-de-noche-hall-01.jpg)
+
+![Teacups and flowers on a long table — the pre-ceremony refreshment setting (a wedding venue on the Han River, Seoul)](/images/villa-de-noche-table-01.jpg)
+
 The key is **the last twenty minutes**. It is the time guests remember as having talked with the couple.
 
 ![Conversation after the meal — what guests remember is this time, not the running order (a wedding venue on the Han River in Seoul)](/images/after-party-guests-03.jpg)
@@ -62,6 +68,10 @@ The key is **the last twenty minutes**. It is the time guests remember as having
 Zola warns of the other side too. Dancing beyond about two hours starts to tire, and a party is better ended while guests still want more. The same applies to guests in Korea. A structure that closes **part one with the meal**, so older guests can leave when it ends, and keeps **part two (the after-party)** for those who wish to stay, puts no strain on anyone.
 
 ![The Han River at dusk — an evening wedding takes in both the sunset and the night view](/images/hangang-sunset-01.jpg)
+
+![Doors from the reception hall to the terrace — guests can step outside with their refreshments (a wedding venue on the Han River, Seoul)](/images/villa-de-noche-terrace-01.jpg)
+
+![Afternoon light through the windows and the chandeliers (a wedding venue on the Han River, Seoul)](/images/villa-de-noche-chandelier-01.jpg)
 
 ## What to check when applying this in Korea
 
