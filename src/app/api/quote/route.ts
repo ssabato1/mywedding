@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
-import { estimate as calcEstimate, estimateToText } from "@/lib/quote-pricing";
+import { estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
+import { DEPOSIT, termsToText } from "@/lib/quote-terms";
 
 export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; drink: string; noodles: string; riceCake: string; method: string; budget: string; message: string; lang: string;
+  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; drink: string; noodles: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "drink", "noodles", "riceCake", "method", "budget", "message", "lang"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "drink", "noodles", "riceCake", "method", "budget", "message", "lang", "sendCopy"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -38,6 +39,62 @@ export function buildBody(q: Quote): string {
     q.message || "(없음)",
     "",
     `언어: ${q.lang || "ko"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
+  ].join("\n");
+}
+
+const won = (n: number) => n.toLocaleString("ko-KR");
+const EMAIL_RE = /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+$/;
+
+/**
+ * 계약금 입금 계좌. 저장소가 공개이므로 계좌번호는 코드에 적지 않고 환경변수에서만 읽는다.
+ * DEPOSIT_ACCOUNT_FLOATING (플로팅아일랜드 컨벤션·루프탑 가든), DEPOSIT_ACCOUNT_MARINA (마리나파크)
+ * 예: "하나은행 000-000000-00000 (예금주 ㈜FIC)"
+ */
+function depositText(venueKey: string, lang: string): string {
+  const en = lang === "en";
+  const marina = venueKey === "marina";
+  const account = (marina ? process.env.DEPOSIT_ACCOUNT_MARINA : process.env.DEPOSIT_ACCOUNT_FLOATING)?.trim();
+  const name = marina ? (en ? "Marina Park" : "마리나파크") : (en ? "Floating Island" : "플로팅아일랜드");
+  return en
+    ? [
+        "■ Deposit",
+        `Deposit: KRW ${won(DEPOSIT)}. Your date is confirmed once the deposit is received.`,
+        account ? `Account for ${name}: ${account}` : `Account for ${name}: your coordinator will send it with the contract.`,
+        "Please check the date with your coordinator before sending the deposit.",
+      ].join("\n")
+    : [
+        "■ 계약금 안내",
+        `계약금: ${won(DEPOSIT)}원 — 계약금 입금이 확인되면 예식일이 확정됩니다.`,
+        account ? `${name} 입금 계좌: ${account}` : `${name} 입금 계좌: 담당자가 계약서와 함께 안내해 드립니다.`,
+        "입금 전에 담당자와 예식 날짜·시간이 가능한지 먼저 확인해 주세요.",
+      ].join("\n");
+}
+
+/** 고객에게 보내는 견적서 메일 본문 (견적 + 계약금·계좌 + 계약 규정) */
+export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
+  const en = q.lang === "en";
+  const c = siteConfig.contact;
+  return [
+    en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
+    "",
+    en
+      ? "Thank you for your interest in Floating Island Wedding. Here is the self quote you created."
+      : "Floating Island Wedding 셀프 견적서를 이용해 주셔서 감사합니다. 작성하신 견적서를 보내 드립니다.",
+    "",
+    en ? `Date: ${q.date || "undecided"}${q.time ? ` ${q.time}` : ""}` : `예식 일시: ${q.date || "미정"}${q.time ? ` ${q.time}` : ""}`,
+    en ? `Space: ${q.venue}` : `공간: ${q.venue}`,
+    "",
+    estimate ? estimateToText(estimate) : "",
+    ...(estimate ? estimate.notes.map((n) => `※ ${n}`) : []),
+    "",
+    depositText(q.venueKey, q.lang),
+    "",
+    termsToText(q.lang),
+    "",
+    en
+      ? `Questions: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`
+      : `문의: ${c.phone} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
+    "Floating Island Wedding — https://www.floatingislandwedding.com",
   ].join("\n");
 }
 
@@ -70,6 +127,11 @@ export async function POST(req: Request) {
   });
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");
+  const wantsCopy = q.sendCopy === "on" && EMAIL_RE.test(q.email);
+  const customerSubject = q.lang === "en"
+    ? `[Floating Island Wedding] Your self quote — ${q.date || "date undecided"}`
+    : `[Floating Island Wedding] 셀프 견적서 — ${q.date || "날짜 미정"}`;
+  const customerText = buildCustomerText(q, estimate);
   const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
 
   // 1) Resend
@@ -86,7 +148,24 @@ export async function POST(req: Request) {
           text,
         }),
       });
-      if (r.ok) return NextResponse.json({ ok: true, via: "resend", estimate });
+      if (r.ok) {
+        let copy: "sent" | "failed" | "none" = "none";
+        if (wantsCopy) {
+          const c = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+            body: JSON.stringify({
+              from: process.env.QUOTE_FROM || "Floating Island Wedding <onboarding@resend.dev>",
+              to: [q.email],
+              reply_to: to,
+              subject: customerSubject,
+              text: customerText,
+            }),
+          }).catch(() => null);
+          copy = c?.ok ? "sent" : "failed";
+        }
+        return NextResponse.json({ ok: true, via: "resend", copy, estimate });
+      }
     } catch {
       /* fall through */
     }
@@ -101,12 +180,14 @@ export async function POST(req: Request) {
         _subject: subject,
         _template: "box",
         _replyto: q.email || undefined,
+        ...(wantsCopy ? { _cc: q.email } : {}),
         희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
         선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
         자동견적: estimate ? estimateToText(estimate) : "해당 없음",
+        ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
       }),
     });
-    if (r.ok) return NextResponse.json({ ok: true, via: "formsubmit", estimate });
+    if (r.ok) return NextResponse.json({ ok: true, via: "formsubmit", copy: wantsCopy ? "requested" : "none", estimate });
   } catch {
     /* fall through */
   }

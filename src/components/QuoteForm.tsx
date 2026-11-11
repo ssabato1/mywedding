@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Dict, Lang } from "@/i18n";
+import { TERMS_KO, TERMS_EN, TERMS_EN_NOTE } from "@/lib/quote-terms";
 import {
   CEREMONY_TIMES,
   DEFAULT_MENU,
@@ -170,7 +171,7 @@ function Sheet({ f, e, dateLabel, id }: { f: F; e: Estimate; dateLabel: string; 
 
 export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const formRef = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<"idle" | "sending" | "done" | "mail" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "copied" | "requested" | "mail" | "error">("idle");
   const [venueKey, setVenueKey] = useState<VenueKey>("convention");
   const [date, setDate] = useState("");
   const [tick, setTick] = useState(0);
@@ -232,8 +233,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, lang }),
       });
-      const j = (await r.json()) as { ok: boolean; mailto?: string };
-      if (j.ok) setStatus("done");
+      const j = (await r.json()) as { ok: boolean; mailto?: string; copy?: string };
+      if (j.ok) setStatus(j.copy === "sent" ? "copied" : j.copy === "requested" ? "requested" : "done");
       else if (j.mailto) {
         setStatus("mail");
         window.location.href = j.mailto;
@@ -422,7 +423,10 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           <label className={label}>{f.groom}{req}<input name="groom" required className={input} /></label>
           <label className={label}>{f.bride}{req}<input name="bride" required className={input} /></label>
           <label className={label}>{f.phone}{req}<input name="phone" type="tel" required className={input} /></label>
-          <label className={label}>{f.email}<input name="email" type="email" className={input} /></label>
+          <div>
+            <label className={label}>{f.email}<input name="email" type="email" className={input} /></label>
+            <label className={`${check} mt-2.5`}><input type="checkbox" name="sendCopy" defaultChecked className={box} />{f.sendCopy}</label>
+          </div>
           <label className={label}>{f.method}
             <select name="method" className={input}>
               {f.methodOptions.map((o) => <option key={o} value={o}>{o}</option>)}
@@ -436,6 +440,19 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <label className={label}>{f.message}<textarea name="message" rows={4} className={input} /></label>
             <p className={hint}>{f.messageHint}</p>
           </div>
+          <details className="sm:col-span-2 rounded-card border border-line bg-card p-5">
+            <summary className="cursor-pointer text-sm font-semibold text-gold">{f.termsTitle}</summary>
+            <p className="mt-3 text-sm text-ink">{f.depositNote}</p>
+            <div className="mt-4 space-y-4 text-sm leading-relaxed text-ink-sub">
+              {(lang === "en" ? TERMS_EN : TERMS_KO).map((c) => (
+                <div key={c.title}>
+                  <p className="font-semibold text-ink">{c.title}</p>
+                  {c.body.map((b) => <p key={b} className="mt-1">{b}</p>)}
+                </div>
+              ))}
+              {lang === "en" && <p className="text-xs text-ink-muted">{TERMS_EN_NOTE}</p>}
+            </div>
+          </details>
           <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
               type="submit"
@@ -445,6 +462,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
               {status === "sending" ? f.sending : f.submit}
             </button>
             {status === "done" && <p className="text-sm text-gold">{f.success}</p>}
+            {status === "copied" && <p className="text-sm text-gold">{f.successCopy}</p>}
+            {status === "requested" && <p className="text-sm text-gold">{f.successCopyRequested}</p>}
             {status === "mail" && <p className="text-sm text-ink-sub">{f.successMail}</p>}
             {status === "error" && <p className="text-sm text-accent-light">{f.error}</p>}
           </div>
