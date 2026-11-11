@@ -67,8 +67,6 @@ Colour no longer stops at white. Many brides let their shoes be the "something b
 - **If you carry a coin, secure it.** A thin coin under the insole, or taped in place, will not move as you walk. If it will not fit in the shoe, fix it to the sole or tie it to the bouquet handle. The meaning is the same.
 - **Pack a small kit.** Heel pads, plasters and spare insoles in your bridal room bag.
 
-![A garden of grass and stone — block heels or wedges are safer than thin heels (a wedding venue on the Han River, Seoul)](/images/sevit-garden-01.jpg)
-
 ## What to check when applying this in Korea
 
 | What to check | Why it matters |

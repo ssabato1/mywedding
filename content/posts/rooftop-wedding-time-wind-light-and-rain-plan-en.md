@@ -65,6 +65,8 @@ A rooftop has no roof. The Knot's guide recommends making the weather decision i
 - Whether the railings are high enough, especially if children are attending.
 - The capacity of the roof, and weight limits for large installations.
 
+![The rooftop garden and deck — grass and stone underfoot, the Han River beyond the railing (a wedding venue on the Han River, Seoul)](/images/sevit-garden-01.jpg)
+
 ## What to check when applying this in Korea
 
 | What to check | Why it matters |
