@@ -29,6 +29,12 @@ const MARINA_GALLERY = [
   "/images/marinapark-ceremony-05.jpg",
 ];
 
+const MARINA_GALLERY_MORE = [
+  "/images/marinapark-ceremony-07.jpg",
+  "/images/marinapark-garden-banquet-01.jpg",
+  "/images/marinapark-aisle-urns-01.jpg",
+];
+
 export default async function OutdoorWeddingPage() {
   const { t } = await i18n();
   const o = t.outdoor;
@@ -103,6 +109,11 @@ export default async function OutdoorWeddingPage() {
                 <li className="sm:col-span-2 lg:col-span-3">
                   <ImageSlot ratio="21/9" label={o.marinaGalleryWide} src="/images/marinapark-ceremony-06.jpg" />
                 </li>
+                {MARINA_GALLERY_MORE.map((src, i) => (
+                  <li key={src}>
+                    <ImageSlot ratio="3/2" label={o.marinaGalleryMore[i]} src={src} />
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-16 grid items-start gap-10 md:grid-cols-5">

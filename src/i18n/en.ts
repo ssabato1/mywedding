@@ -281,6 +281,11 @@ export const en: Dict = {
       "Autumn garden wedding — pampas grass and yellow-toned florals",
       "A ceremony at sunset",
     ],
+    marinaGalleryMore: [
+      "Vows at sunset — the couple in white suits under a pastel floral arch",
+      "A garden banquet facing the Han River — pink-ribboned chairs, round tables and the city beyond the bridge",
+      "Stone urns along the aisle — peach, pink and white florals",
+    ],
     marinaGalleryWide: "Marina Park Garden — pastel florals, a petal-strewn aisle and open sky",
     marinaWhiteGreen: {
       title: "White & green floral wedding",
