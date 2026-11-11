@@ -78,6 +78,8 @@ export const PRICING = {
   sundayVenueFeeWaived: true,
   /** 대관료를 뺀 견적 소계(부가세 별도)가 이 금액을 넘으면 대관료 면제 */
   venueFeeWaivedOver: 50_000_000,
+  /** 마리나파크는 3,000만원 이상이면 면제 */
+  venueFeeWaivedFromMarina: 30_000_000,
 } as const;
 
 /** 식사 메뉴 등급표 (1인, 부가세 별도) — 2026 공식 메뉴표 기준 */
@@ -313,16 +315,18 @@ export function estimate(input: EstimateInput): Estimate | null {
   // 총 비용 5,000만원 초과 시 대관료 면제 (대관료를 뺀 소계, 부가세 별도 기준)
   const feeLine = lines.find((l) => l.section === "venue");
   const beforeFee = lines.reduce((s, l) => s + (l === feeLine ? 0 : l.amount), 0);
-  const waivedByTotal = !!feeLine && feeLine.amount > 0 && beforeFee > PRICING.venueFeeWaivedOver;
+  const waiveAt = venue === "marina" ? PRICING.venueFeeWaivedFromMarina : PRICING.venueFeeWaivedOver;
+  const waiveLabel = venue === "marina" ? (en ? "KRW 30,000,000 or more" : "3,000만원 이상") : (en ? "over KRW 50,000,000" : "5,000만원 초과");
+  const waivedByTotal = !!feeLine && feeLine.amount > 0 && (venue === "marina" ? beforeFee >= waiveAt : beforeFee > waiveAt);
   if (feeLine && waivedByTotal) {
     feeLine.amount = 0;
-    feeLine.detail = en ? "waived — total over KRW 50,000,000" : "총 비용 5,000만원 초과 면제";
+    feeLine.detail = en ? `waived — total ${waiveLabel}` : `총 비용 ${waiveLabel} 면제`;
   }
   const subtotal = lines.reduce((s, l) => s + l.amount, 0);
   const vat = Math.round(subtotal * PRICING.vatRate);
   const notes: string[] = [];
-  if (waivedByTotal) notes.push(en ? "The exclusive venue fee is waived because the total (excluding the venue fee and VAT) exceeds KRW 50,000,000." : "대관료를 제외한 총 비용(부가세 별도)이 5,000만원을 넘어 대관료를 면제했습니다.");
-  else if (feeLine && feeLine.amount > 0) notes.push(en ? `The exclusive venue fee is waived when the total (excluding the venue fee and VAT) exceeds KRW 50,000,000 — KRW ${won(Math.max(0, PRICING.venueFeeWaivedOver - beforeFee))} more to go.` : `대관료를 제외한 총 비용(부가세 별도)이 5,000만원을 넘으면 대관료가 면제됩니다 — 현재 ${won(Math.max(0, PRICING.venueFeeWaivedOver - beforeFee))}원 부족.`);
+  if (waivedByTotal) notes.push(en ? `The exclusive venue fee is waived because the total (excluding the venue fee and VAT) is ${waiveLabel}.` : `대관료를 제외한 총 비용(부가세 별도)이 ${waiveLabel}이어서 대관료를 면제했습니다.`);
+  else if (feeLine && feeLine.amount > 0) notes.push(en ? `The exclusive venue fee is waived when the total (excluding the venue fee and VAT) is ${waiveLabel} — KRW ${won(Math.max(0, waiveAt - beforeFee))} more to go.` : `대관료를 제외한 총 비용(부가세 별도)이 ${waiveLabel}이면 대관료가 면제됩니다 — 현재 ${won(Math.max(0, waiveAt - beforeFee))}원 부족.`);
   if (!hasGuests) {
     notes.push(en ? `No guest count given — calculated for ${guests} guests.` : `하객 수가 없어 ${guests}명 기준으로 계산했습니다.`);
   } else if (parsed < minGuests) {
