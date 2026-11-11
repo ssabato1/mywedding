@@ -338,7 +338,7 @@ export const en: Dict = {
       venueOptions: ["Undecided", "Floating Island Convention Hall (indoor, large)", "Marina Park", "Sevit Island Rooftop Garden", "Anniversary Hall / private halls", "Party or reception only"],
       venueKeys: ["undecided", "convention", "marina", "rooftop", "anniversary", "party"],
       menu: "Meal (per guest, VAT excluded)",
-      menuHint: "Meals start at KRW 100,000 per guest. Vegetarian and fish alternatives are prepared at the same tier price.",
+      menuHint: "Meals start at KRW 100,000 per guest. Western, Korean, halal, vegetarian and fish courses cost the same at the same tier.",
       flower: "Flower decoration",
       flowerOptions: ["Standard — KRW 8,000,000 (seasonal colours)", "Luxury — KRW 10,000,000 (colour choice, upgraded)", "Special — from KRW 12,000,000 (florist meeting, fully customised)"],
       video: "Video — KRW 800,000",

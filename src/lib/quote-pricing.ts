@@ -89,11 +89,23 @@ export const MENUS = [
   { key: "halal-c", group: "halal", ko: "할랄 코스 C", en: "Halal course C", price: 130_000 },
   { key: "halal-d", group: "halal", ko: "할랄 코스 D", en: "Halal course D", price: 150_000 },
   { key: "halal-e", group: "halal", ko: "할랄 코스 E", en: "Halal course E", price: 180_000 },
+  { key: "vegetarian-a", group: "vegetarian", ko: "베지테리언 코스 A", en: "Vegetarian course A", price: 100_000 },
+  { key: "vegetarian-b", group: "vegetarian", ko: "베지테리언 코스 B", en: "Vegetarian course B", price: 110_000 },
+  { key: "vegetarian-c", group: "vegetarian", ko: "베지테리언 코스 C", en: "Vegetarian course C", price: 130_000 },
+  { key: "vegetarian-d", group: "vegetarian", ko: "베지테리언 코스 D", en: "Vegetarian course D", price: 150_000 },
+  { key: "vegetarian-e", group: "vegetarian", ko: "베지테리언 코스 E", en: "Vegetarian course E", price: 180_000 },
+  { key: "fish-a", group: "fish", ko: "피시 코스 A", en: "Fish course A", price: 100_000 },
+  { key: "fish-b", group: "fish", ko: "피시 코스 B", en: "Fish course B", price: 110_000 },
+  { key: "fish-c", group: "fish", ko: "피시 코스 C", en: "Fish course C", price: 130_000 },
+  { key: "fish-d", group: "fish", ko: "피시 코스 D", en: "Fish course D", price: 150_000 },
+  { key: "fish-e", group: "fish", ko: "피시 코스 E", en: "Fish course E", price: 180_000 },
 ];
 export const MENU_GROUPS = [
   { key: "western", ko: "양식 코스", en: "Western course" },
   { key: "korean", ko: "한식 코스", en: "Korean course" },
   { key: "halal", ko: "할랄 코스", en: "Halal course" },
+  { key: "vegetarian", ko: "베지테리언 코스", en: "Vegetarian course" },
+  { key: "fish", ko: "피시 코스", en: "Fish course" },
 ];
 export const DEFAULT_MENU: Record<string, string> = { convention: "western-c", rooftop: "western-c", marina: "western-c" };
 
