@@ -5,7 +5,7 @@ date: 2026-12-07
 lang: en
 translationOf: bridal-hair-and-makeup-trends-2026
 tags: [Style, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/bride-veil-subcut.jpg
+thumbnail: /images/bridal-hair-flowers-profile-01.jpg
 ---
 
 Until a few years ago the test of bridal make-up was that it would not move. In 2026 the test is that it looks like skin. Using THE WED's round-up of 2026 bridal beauty trends, here are the directions in make-up and hair, and how to choose for the venue. (As of December 2026)
@@ -21,7 +21,7 @@ These are the directions in THE WED's [Major Bridal Beauty Trends for 2026](http
 
 All four share a thin base. Nothing is heavily covered, and there is only one point of emphasis.
 
-![A bride in a long veil — the closer the photograph, the more the skin shows](/images/bride-veil-subcut.jpg)
+![A thin base and an accented lip — a low bun dressed with fresh flowers](/images/bridal-hair-flowers-profile-01.jpg)
 
 ## Hair: sculpted and neat, or short
 

@@ -3,7 +3,7 @@ title: "신부 헤어·메이크업 트렌드 2026: 스킨 퍼스트"
 description: "2026년 신부 메이크업의 중심은 피부입니다. 해외 매체가 꼽은 메이크업과 헤어의 흐름을 정리하고, 홀의 조명과 예식 시간에 맞춰 고르는 기준을 덧붙였습니다."
 date: 2026-12-07
 tags: [스타일, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/bride-veil-subcut.jpg
+thumbnail: /images/bridal-hair-flowers-profile-01.jpg
 ---
 
 몇 해 전까지 신부 메이크업은 "무너지지 않는 것"이 기준이었습니다. 2026년의 기준은 "피부처럼 보이는 것"입니다. THE WED가 정리한 2026년 브라이덜 뷰티 트렌드를 중심으로 메이크업과 헤어의 흐름을 살펴보고, 홀에 맞춰 고르는 방법을 정리했습니다. (2026년 12월 기준)
@@ -19,7 +19,7 @@ THE WED의 [Major Bridal Beauty Trends for 2026](https://thewed.com/magazine/maj
 
 네 가지의 공통점은 베이스가 얇다는 것입니다. 두껍게 덮지 않고, 포인트는 한 곳에만 둡니다.
 
-![긴 베일의 신부 — 가까이에서 찍히는 사진일수록 피부 표현이 드러납니다](/images/bride-veil-subcut.jpg)
+![얇은 베이스와 포인트 립 — 생화로 장식한 로우 번](/images/bridal-hair-flowers-profile-01.jpg)
 
 ## 헤어: 단정하게 조각하거나, 짧게
 
