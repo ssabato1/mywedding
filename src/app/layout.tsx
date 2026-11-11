@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     verification: {
       google: v.GOOGLE_SITE_VERIFICATION,
       other: {
-        ...(v.NAVER_SITE_VERIFICATION ? { "naver-site-verification": v.NAVER_SITE_VERIFICATION } : {}),
+        "naver-site-verification": v.NAVER_SITE_VERIFICATION || "5a55dc907062c1b6715acc1d5f02f0dc9a6a62a3",
       },
     },
   };
