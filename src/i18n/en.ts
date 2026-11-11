@@ -58,7 +58,7 @@ export const en: Dict = {
     spacesEyebrow: "Spaces",
     spacesTitle: "Seven spaces, seven moods",
     spaces: [
-      { name: "Convention Hall", floor: "2F", body: "Up to 600 guests. Large LED wall and lobby for convention weddings" },
+      { name: "Convention Hall", floor: "2F", body: "13 m ceiling, 500 seated for one wedding. Large LED wall and lobby" },
       { name: "Marina Park", floor: "Garden · Rooftop", body: "Outdoor ceremonies and after-parties against the yacht marina" },
       { name: "Anniversary Hall", floor: "Chaebit Island", body: "Up to 200 guests. Banquet hall with stage, lighting and LED" },
       { name: "Vista", floor: "3F", body: "Wedding and conference hall with river views and an outdoor terrace" },
@@ -118,7 +118,7 @@ export const en: Dict = {
   },
   convention: {
     title: "Convention Wedding",
-    body: "A grand wedding in the Sevit Island Convention Hall on the Han River. Host 500 or more guests in one space, with the large LED wall and lobby entirely yours for a generous time slot. A formal ceremony flows into a relaxed reception.",
+    body: "A grand wedding in the Floating Island Convention Hall on Sevit Island. Under a 13-metre ceiling, 500 guests are seated together for one ceremony, with the large LED wall and lobby entirely yours for a generous time slot. A formal ceremony flows into a relaxed reception.",
   },
   outdoor: {
     title: "Outdoor Wedding",
