@@ -35,6 +35,7 @@ export const ko = {
       "낮의 세빛섬 — 반포한강공원에서 바라본 모습",
     ],
     uniqueFlyer: "서울을 대표하는 유니크 베뉴 — 플로팅아일랜드",
+    panoramaLabel: "한강에 비친 세빛섬의 밤 — 가빛섬과 채빛섬",
     historyEyebrow: "히스토리",
     historyTitle: "세빛섬이 걸어온 길",
     history: [

@@ -37,6 +37,7 @@ export const en: Dict = {
       "Sevit Island by day, seen from Banpo Hangang Park",
     ],
     uniqueFlyer: "A premier unique venue representing Seoul — Floating Island",
+    panoramaLabel: "Sevit Island at night, mirrored on the Han River — Gabit and Chaebit",
     historyEyebrow: "History",
     historyTitle: "The story of Sevit Island",
     history: [
