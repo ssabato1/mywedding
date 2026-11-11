@@ -118,6 +118,7 @@ export const en: Dict = {
     ],
     engagementTitle: "Engagements at Villa de Noche, 2F",
     engagementBody: "An engagement ceremony at one long table in Villa de Noche on the second floor, with the Han River beyond the glass wall — a private setting of candles and flowers where both families sit together.",
+    engagementNote: "Villa de Noche takes wedding bookings for Friday evenings only, and the running order and staging can be customised.",
     engagementLabel: "Engagement table setting — Villa de Noche, 2F",
     riveGaucheTitle: "Small weddings at Rive Gauche, 3F",
     riveGaucheBody: "Rive Gauche is a separate banquet room tucked inside Vista on the third floor of Floating Island. Light comes through the glass wall, and every guest sits at one long table for a small wedding. The ceremony and the meal happen in the same place.",

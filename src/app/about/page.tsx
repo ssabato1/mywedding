@@ -155,6 +155,7 @@ export default async function AboutPage() {
           <div className="md:col-span-2">
             <h3 className="font-display text-2xl font-semibold text-gold">{a.engagementTitle}</h3>
             <p className="mt-4 text-lg leading-relaxed text-ink-sub">{a.engagementBody}</p>
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted">{a.engagementNote}</p>
           </div>
         </div>
         <div className="mt-14">

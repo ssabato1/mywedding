@@ -16,9 +16,9 @@ thumbnail: /images/international-first-dance-01.jpg
 
 해외 조사도 이 차이를 보여 줍니다. The Knot의 [2026 Real Weddings Study](https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study)에서 미국 커플의 61%가 서약문을 직접 썼고, 32%가 종교·민족·문화 요소를 식에 넣었습니다. 서약은 두 사람의 말로, 문화는 가족의 몫으로 나누는 구조입니다.
 
-![서약을 기다리는 신부 — 두 나라의 하객이 지켜보는 세리모니 (서울 한강의 한 웨딩홀)](/images/international-bride-hairpiece-01.jpg)
+![서약을 기다리는 신부 — 두 나라의 하객이 지켜보는 세리모니 (세빛섬 2층 빌라드노체)](/images/international-bride-hairpiece-01.jpg)
 
-![한국의 풍물 공연이 더해진 리셉션 — 두 문화가 한 홀에서 만납니다 (서울 한강의 한 웨딩홀)](/images/international-reception-pungmul-01.jpg)
+![한국의 풍물 공연이 더해진 리셉션 — 두 문화가 한 홀에서 만납니다 (세빛섬 2층 빌라드노체)](/images/international-reception-pungmul-01.jpg)
 
 *사진 속 장소: 세빛섬 컨벤션 2층 빌라드노체. 빌라드노체는 금요일 저녁 예식만 예약을 받으며, 식순과 연출을 커스터마이징할 수 있습니다.*
 
@@ -43,9 +43,9 @@ thumbnail: /images/international-first-dance-01.jpg
 
 이렇게 나누면 한국 어른들은 1부에서 익숙한 격식의 결혼식을 보고, 해외 가족은 2부에서 익숙한 파티를 즐깁니다. 어느 쪽도 자신이 아는 결혼식을 포기하지 않습니다.
 
-![양가 부모님께 드리는 인사 — 큰절 대신 포옹으로 (서울 한강의 한 웨딩홀)](/images/international-parents-embrace-01.jpg)
+![양가 부모님께 드리는 인사 — 큰절 대신 포옹으로 (세빛섬 2층 빌라드노체)](/images/international-parents-embrace-01.jpg)
 
-![퍼스트 댄스 — 하객이 둘러앉은 2부 리셉션 (서울 한강의 한 웨딩홀)](/images/international-first-dance-01.jpg)
+![퍼스트 댄스 — 하객이 둘러앉은 2부 리셉션 (세빛섬 2층 빌라드노체)](/images/international-first-dance-01.jpg)
 
 ## 언어는 "둘 다"가 아니라 "번갈아"
 
@@ -56,7 +56,7 @@ thumbnail: /images/international-first-dance-01.jpg
 - **서약은 모국어로**: 번역은 식순표나 화면 자막으로 처리합니다. 상대 언어로 한 문장만 덧붙이면 충분히 감동적입니다.
 - **축사는 사전에 번역본을 받아** 화면에 띄웁니다. 즉석 통역은 리듬을 끊습니다.
 
-![하객과 함께 추는 춤 — 리셉션은 함께 즐기는 시간입니다 (서울 한강의 한 웨딩홀)](/images/international-reception-dance-01.jpg)
+![하객과 함께 추는 춤 — 리셉션은 함께 즐기는 시간입니다 (세빛섬 2층 빌라드노체)](/images/international-reception-dance-01.jpg)
 
 ## 식사와 음료는 "기본"으로 준비되어야 한다
 

@@ -18,9 +18,9 @@ A Western wedding centres on **the couple and their guests**. The ceremony is sh
 
 Overseas surveys show the same split. In The Knot's [2026 Real Weddings Study](https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study), 61% of US couples wrote their own vows and 32% included religious, ethnic or cultural elements. The vows are the couple's words; the culture is the family's part.
 
-![The bride waiting for the vows — a ceremony watched by guests from two countries (a wedding venue on the Han River, Seoul)](/images/international-bride-hairpiece-01.jpg)
+![The bride waiting for the vows — a ceremony watched by guests from two countries (Villa de Noche, Sevit Island 2F)](/images/international-bride-hairpiece-01.jpg)
 
-![A reception with a Korean pungmul performance — two cultures meeting in one hall (a wedding venue on the Han River, Seoul)](/images/international-reception-pungmul-01.jpg)
+![A reception with a Korean pungmul performance — two cultures meeting in one hall (Villa de Noche, Sevit Island 2F)](/images/international-reception-pungmul-01.jpg)
 
 *Where these photographs were taken: Villa de Noche, on the 2nd floor of the Sevit Island convention building. Villa de Noche takes bookings for Friday evening weddings only, and the running order and staging can be customised.*
 
@@ -45,9 +45,9 @@ Blend both expectations into one running order and both sides feel awkward. Inst
 
 Divided this way, the Korean elders see the formal wedding they know in part one, and the overseas family enjoys the party they know in part two. Neither side gives up the wedding they know.
 
-![Greeting both sets of parents — with an embrace in place of a formal bow (a wedding venue on the Han River, Seoul)](/images/international-parents-embrace-01.jpg)
+![Greeting both sets of parents — with an embrace in place of a formal bow (Villa de Noche, Sevit Island 2F)](/images/international-parents-embrace-01.jpg)
 
-![The first dance — the second-part reception with guests seated around (a wedding venue on the Han River, Seoul)](/images/international-first-dance-01.jpg)
+![The first dance — the second-part reception with guests seated around (Villa de Noche, Sevit Island 2F)](/images/international-first-dance-01.jpg)
 
 ## Languages: not both at once, but in turn
 
@@ -58,7 +58,7 @@ The most common mistake in a bilingual wedding is repeating every sentence in tw
 - **Vows in your mother tongue**: handle translation in the programme or on screen. One added sentence in the other language is moving enough.
 - **Get translations of the toasts in advance** and show them on screen. Live interpreting breaks the rhythm.
 
-![Dancing with guests — a reception is time shared together (a wedding venue on the Han River, Seoul)](/images/international-reception-dance-01.jpg)
+![Dancing with guests — a reception is time shared together (Villa de Noche, Sevit Island 2F)](/images/international-reception-dance-01.jpg)
 
 ## Food and drink should be ready as standard
 
