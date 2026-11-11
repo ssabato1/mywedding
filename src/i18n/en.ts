@@ -345,9 +345,9 @@ export const en: Dict = {
       estTitle: "Self quote",
       estVenue: { convention: "Floating Island Convention", rooftop: "Rooftop Garden Wedding", marina: "Marina Park Wedding" },
       venueTabs: [
-        { key: "convention", name: "Floating Island Convention", sub: "Indoor · 13 m ceiling · 500 seats" },
-        { key: "rooftop", name: "Rooftop Garden Wedding", sub: "Sevit Island 5F · night river view" },
-        { key: "marina", name: "Marina Park Wedding", sub: "Garden · yacht marina" },
+        { key: "convention", name: "Floating Island Convention", sub: "Indoor · 13 m ceiling · min. 300 guests" },
+        { key: "rooftop", name: "Rooftop Garden Wedding", sub: "Sevit Island 5F · min. 100 guests" },
+        { key: "marina", name: "Marina Park Wedding", sub: "Garden · min. 50 guests" },
       ],
       pickVenue: "1. Choose a quotation",
       pickDate: "2. Tap the date you want",

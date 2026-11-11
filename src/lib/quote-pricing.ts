@@ -6,7 +6,7 @@
  */
 export const PRICING = {
   convention: {
-    minGuests: 1,
+    minGuests: 300,
     coursePerGuest: 130_000, // Wedding Course (Buffet)
     drinkPerGuestWeekday: 1_000, // Free Drink: soft drink + juice + beer
     drinkPerGuestStandard: 1_000,
@@ -22,9 +22,9 @@ export const PRICING = {
     cake: 450_000,
     weekdayFreeExtras: false,
   },
-  /** 세빛섬 5층 루프탑 가든 — 플로팅아일랜드 계약서 단가 준용(확인 전 임시) */
+  /** 세빛섬 5층 루프탑 가든 — 단가는 컨벤션과 동일, 최소 보증인원 100명 */
   rooftop: {
-    minGuests: 1,
+    minGuests: 100,
     coursePerGuest: 130_000, // Wedding Course (Buffet)
     drinkPerGuestWeekday: 1_000, // Free Drink: soft drink + juice + beer
     drinkPerGuestStandard: 1_000,
@@ -158,7 +158,7 @@ export function estimate(input: EstimateInput): Estimate | null {
   const en = input.lang === "en";
   const parsed = parseInt(input.guests.replace(/[^\d]/g, ""), 10);
   const hasGuests = Number.isFinite(parsed) && parsed > 0;
-  const guests = Math.max(P.minGuests, hasGuests ? parsed : venue === "marina" ? 50 : venue === "rooftop" ? 100 : 200);
+  const guests = Math.max(P.minGuests, hasGuests ? parsed : P.minGuests);
   const pd = parseDate(input.date);
   const weekday = pd ? pd.day >= 1 && pd.day <= 5 : null;
   const benefit = weekday === true;
@@ -258,9 +258,6 @@ export function estimate(input: EstimateInput): Estimate | null {
     notes.push(en ? `No guest count given — calculated for ${guests} guests.` : `하객 수가 없어 ${guests}명 기준으로 계산했습니다.`);
   } else if (parsed < P.minGuests) {
     notes.push(en ? `Calculated at the minimum guarantee of ${P.minGuests} guests.` : `최소 보증인원 ${P.minGuests}명 기준으로 계산했습니다.`);
-  }
-  if (venue === "rooftop") {
-    notes.push(en ? "The rooftop garden estimate uses the Floating Island price list; your coordinator will confirm the rooftop figures." : "루프탑 가든 견적은 플로팅아일랜드 단가를 기준으로 계산했습니다. 루프탑 세부 금액은 담당자가 확인해 드립니다.");
   }
   if (venue === "marina") {
     if (weekday === null) {

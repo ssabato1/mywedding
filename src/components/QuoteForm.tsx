@@ -292,7 +292,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       <section>
         <h3 className={step}>{f.pickOptions}</h3>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
-          <label className={label}>{f.guests}<input name="guests" type="text" inputMode="numeric" placeholder={venueKey === "marina" ? "50" : venueKey === "rooftop" ? "100" : "200"} className={input} /></label>
+          <label className={label}>{f.guests}<input name="guests" type="text" inputMode="numeric" placeholder={String(PRICING[venueKey].minGuests)} className={input} /></label>
           <label className={label}>{f.flower}
             <select name="flower" defaultValue="standard" className={input}>
               {f.flowerOptions.map((o, i) => <option key={o} value={["standard", "luxury", "special"][i]}>{o}</option>)}

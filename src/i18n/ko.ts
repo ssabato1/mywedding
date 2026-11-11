@@ -343,9 +343,9 @@ export const ko = {
       estTitle: "셀프 견적서",
       estVenue: { convention: "플로팅아일랜드 컨벤션", rooftop: "루프탑 가든 웨딩", marina: "마리나파크 웨딩" },
       venueTabs: [
-        { key: "convention", name: "플로팅아일랜드 컨벤션", sub: "실내 · 13미터 층고 · 500석" },
-        { key: "rooftop", name: "루프탑 가든 웨딩", sub: "세빛섬 5층 · 한강 야경" },
-        { key: "marina", name: "마리나파크 웨딩", sub: "가든 · 요트 마리나" },
+        { key: "convention", name: "플로팅아일랜드 컨벤션", sub: "실내 · 13미터 층고 · 최소 300명" },
+        { key: "rooftop", name: "루프탑 가든 웨딩", sub: "세빛섬 5층 · 최소 100명" },
+        { key: "marina", name: "마리나파크 웨딩", sub: "가든 · 최소 50명" },
       ],
       pickVenue: "1. 견적서를 선택하세요",
       pickDate: "2. 원하는 날짜를 누르세요",
