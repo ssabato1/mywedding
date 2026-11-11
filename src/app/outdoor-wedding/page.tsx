@@ -135,6 +135,27 @@ export default async function OutdoorWeddingPage() {
                 ))}
               </ul>
 
+              <div className="mt-16">
+                <p className="eyebrow mb-3">{o.marinaInternational.eyebrow}</p>
+                <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.marinaInternational.title}</h3>
+                <div className="mt-5 max-w-2xl space-y-4 text-lg leading-relaxed text-ink-sub">
+                  {o.marinaInternational.paras.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+                <ul className="mt-8 grid gap-4 md:grid-cols-5">
+                  <li className="md:col-span-2">
+                    <ImageSlot ratio="3/2" label={o.marinaInternational.photos[0]} src="/images/marinapark-international-01.jpg" />
+                  </li>
+                  <li>
+                    <ImageSlot ratio="3/4" label={o.marinaInternational.photos[1]} src="/images/marinapark-international-02.jpg" />
+                  </li>
+                  <li className="md:col-span-2">
+                    <ImageSlot ratio="3/2" label={o.marinaInternational.photos[2]} src="/images/marinapark-international-03.jpg" />
+                  </li>
+                </ul>
+              </div>
+
               <div className="mt-16 grid items-start gap-10 md:grid-cols-5">
                 <div className="md:order-2 md:col-span-2">
                   <div className="overflow-hidden rounded-card border border-line bg-card">

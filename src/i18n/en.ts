@@ -291,6 +291,19 @@ export const en: Dict = {
       "Autumn garden wedding — pampas grass and yellow-toned florals",
       "A ceremony at sunset",
     ],
+    marinaInternational: {
+      eyebrow: "International Couples",
+      title: "International couples at Marina Park",
+      paras: [
+        "Marina Park is a floating convention venue on the Han River in Banpo-dong, Seocho-gu, Seoul, with Namsan in view. With yachts crossing the river in front of it, the setting feels far from the city, and many couples from abroad have chosen it for their destination wedding in Seoul.",
+        "These photographs are from a wedding with 150 guests from overseas. With a generous time slot, the ceremony flowed into a second-part party and games, and it was a beautiful day.",
+      ],
+      photos: [
+        "The bride on a petal-strewn aisle — Marina Park Garden",
+        "The couple greeting guests with the Han River at sunset behind them",
+        "A game at the second-part party — an evening of laughter under the string lights",
+      ],
+    },
     marinaGalleryMore: [
       "Vows at sunset — the couple in white suits under a pastel floral arch",
       "A garden banquet facing the Han River — pink-ribboned chairs, round tables and the city beyond the bridge",
