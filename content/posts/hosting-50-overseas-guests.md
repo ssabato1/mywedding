@@ -3,10 +3,14 @@ title: "해외 하객 50명을 초대할 때: 숙박·이동·식사 현실 가�
 description: "비행기를 타고 오는 하객은 예식 한 시간을 보러 오지 않습니다. 호텔 룸블록, 공항 이동, 웰컴 파티, 식사까지 해외 하객을 맞는 순서를 시점별로 정리했습니다."
 date: 2026-11-13
 tags: [국제결혼, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: https://floatingisland.co.kr/images/2649b2_28eff81768df47c9ac05f98ecae63c57f000.jpg
+thumbnail: https://images.unsplash.com/photo-1522199873717-bc67b1a5e32b?w=1600&q=80&auto=format&fit=crop
 ---
 
 해외에서 하객 50명이 온다면 결혼식은 하루 행사가 아니라 2박 3일짜리 손님맞이가 됩니다. 비행기를 타고 온 가족에게 한 시간짜리 예식만 보여 주고 돌려보낼 수는 없기 때문입니다. 미국 The Knot과 Joy의 가이드를 바탕으로 숙박·이동·식사를 시점별로 정리했습니다.
+
+![공항 전광판 앞에 선 여행자](https://images.unsplash.com/photo-1522199873717-bc67b1a5e32b?w=1600&q=80&auto=format&fit=crop)
+
+*사진: [Anete Lūsiņa](https://unsplash.com/photos/man-standing-inside-airport-looking-at-led-flight-schedule-bulletin-board-rFKBUwLg_WQ) / [Unsplash](https://unsplash.com)*
 
 ## 숙박: 룸블록은 9~12개월 전에
 

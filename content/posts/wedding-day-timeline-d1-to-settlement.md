@@ -3,7 +3,7 @@ title: "예식 당일 D-1과 당일: 도착 시간부터 정산까지"
 description: "전날 저녁 가방 하나부터 예식 다음 날 정산까지, 48시간을 시각 순서로 적었습니다. 홀마다 숫자는 다르지만 순서는 같습니다."
 date: 2026-11-19
 tags: [준비, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: https://floatingisland.co.kr/images/2649b2_c38a145f9e354b64a62be4b98620e917.jpg
+thumbnail: https://images.unsplash.com/photo-1682226335318-f1911fdef7c1?w=1600&q=80&auto=format&fit=crop
 ---
 
 결혼 준비 6개월 중 가장 짧고 가장 바쁜 시간이 마지막 48시간입니다. 이 글은 전날 저녁부터 다음 날 정산까지를 시각 순서로 적은 것입니다. 시간 숫자는 서울의 한 웨딩홀이 실제로 안내하는 기준이고, 홀마다 조금씩 다르니 계약서와 D-2 최종 확인 때 받은 시간으로 바꿔 쓰세요.
@@ -26,6 +26,10 @@ thumbnail: https://floatingisland.co.kr/images/2649b2_c38a145f9e354b64a62be4b986
 **해외 가족이 왔다면** 이날 저녁 식사를 짧게 함께합니다. 길게 잡지 말고, 다음 날 셔틀 시각과 복장만 다시 알립니다.
 
 **잠자리.** 야외 예식이면 자기 전에 다음 날 일기예보를 한 번 더 보고, 실내 전환 결정 시점을 홀과 확인합니다. 이미 결정했다면 더 보지 않습니다.
+
+![예식 준비 중인 신부](https://images.unsplash.com/photo-1682226335318-f1911fdef7c1?w=1600&q=80&auto=format&fit=crop)
+
+*사진: [Jens Lindner](https://unsplash.com/photos/a-woman-in-a-wedding-dress-getting-ready-for-her-wedding--BPwR5_GSe0) / [Unsplash](https://unsplash.com)*
 
 ## 당일 — 예식 전
 
@@ -53,6 +57,8 @@ thumbnail: https://floatingisland.co.kr/images/2649b2_c38a145f9e354b64a62be4b986
 - **총괄 친구 1명**: 사회자·홀 담당자·사진팀 사이의 연락. 커플은 당일 전화를 받지 않습니다.
 - **봉투·접수 담당 2명**: 접수대, 축의금 보관, 식권. 예식 후 봉투함을 혼주에게 전달.
 - **해외 하객 안내 1명**: 영어가 되는 친구. 셔틀 도착 확인, 테이블 안내, 메뉴 설명.
+
+![예식 중 — 식순 진행은 사회자와 홀 담당자에게 맡기고 두 사람은 시간을 보지 않습니다 (서울 한강의 한 웨딩홀)](/images/convention-wedding-03.jpg)
 
 ## 당일 — 예식 후
 

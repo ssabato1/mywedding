@@ -3,10 +3,14 @@ title: "세계의 웨딩 플로리스트 5인: 그들의 스타일과 한국에�
 description: "Vogue, Brides, The Knot이 2025년 이후 소개한 플로리스트 5인의 설계 원리와 국내 제철 꽃·공간 조건에 맞춘 재현법을 정리했습니다."
 date: 2026-11-21
 tags: ["해외 트렌드", "플로팅아일랜드", "플로팅아일랜드웨딩", "세빛섬웨딩", "세빛섬"]
-thumbnail: "https://floatingisland.co.kr/images/2649b2_77f9713e03dc409cadf3235963ec3626.jpg"
+thumbnail: https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop
 ---
 
 해외 웨딩 매체가 2025년 이후 소개한 다섯 플로리스트의 작업에서, 한국 예식에 옮길 수 있는 것은 꽃의 목록보다 장소를 읽고 형태를 설계하는 방법입니다. (2026년 11월 기준)
+
+![꽃으로 꾸민 리셉션 테이블](https://images.unsplash.com/photo-1751257547111-9641cb540f4d?w=1600&q=80&auto=format&fit=crop)
+
+*사진: [Hồng Xuân Văn](https://unsplash.com/photos/a-beautiful-wedding-table-decorated-with-flowers-P_BkpLj5hTM) / [Unsplash](https://unsplash.com)*
 
 ## 1. 가브리엘라 살라자르: 땅에서 자란 듯한 장면
 

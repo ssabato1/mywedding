@@ -3,10 +3,14 @@ title: "웨딩드레스는 왜 흰색일까: 빅토리아 여왕부터 2026년�
 description: "빅토리아 여왕이 흰 드레스를 대중화한 1840년의 배경부터 2026년 레이스·코르셋·변형 가능한 룩까지, 두 곳 이상에서 교차 확인한 역사입니다."
 date: 2026-11-22
 tags: ["웨딩 문화", "플로팅아일랜드", "플로팅아일랜드웨딩", "세빛섬웨딩", "세빛섬"]
-thumbnail: "https://floatingisland.co.kr/images/2649b2_0c38784a7be548199fa50e6c66e9b4ea.jpg"
+thumbnail: https://images.unsplash.com/photo-1662833835232-07db8a7f1570?w=1600&q=80&auto=format&fit=crop
 ---
 
 흰 웨딩드레스는 오래된 보편 규칙이 아니라 1840년의 왕실 이미지가 산업·매체·소비문화와 만나 넓어진 서구식 관습입니다. (2026년 11월 기준)
+
+![흰 드레스](https://images.unsplash.com/photo-1662833835232-07db8a7f1570?w=1600&q=80&auto=format&fit=crop)
+
+*사진: [Gemali Martinez](https://unsplash.com/photos/a-person-in-a-white-dress-TjH8K0vKjcA) / [Unsplash](https://unsplash.com)*
 
 ## 1840년 전에는 ‘가장 좋은 옷’을 입었다
 
