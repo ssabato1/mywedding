@@ -117,6 +117,7 @@ export const en: Dict = {
     riveGaucheTitle: "Small weddings at Rive Gauche, 3F",
     riveGaucheBody: "A small wedding at Rive Gauche on the third floor, where light comes through the glass wall and every guest sits at one long table. The ceremony and the meal happen in the same place.",
     riveGaucheLabels: ["Rive Gauche small wedding — a long table and crystal candelabra by the glass wall", "Rive Gauche small wedding — pink florals and table setting"],
+    riveGaucheGreenery: "A small wedding at Rive Gauche — a greenery concept in white and green florals",
     accessEyebrow: "Getting here",
     accessTitle: "South end of Banpo Bridge, beside the Rainbow Fountain",
     address: "Some Sevit, 650 Banpo-dong, Seocho-gu, Seoul, Korea",

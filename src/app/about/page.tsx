@@ -161,6 +161,7 @@ export default async function AboutPage() {
             <li><ImageSlot ratio="3/2" label={a.riveGaucheLabels[0]} src="/images/rive-gauche-small-wedding-01.jpg" /></li>
             <li><ImageSlot ratio="3/2" label={a.riveGaucheLabels[1]} src="/images/rive-gauche-small-wedding-02.jpg" /></li>
           </ul>
+          <ImageSlot ratio="1242/1218" label={a.riveGaucheGreenery} src="/images/rive-gauche-greenery.jpg" className="mx-auto mt-6 max-w-2xl" />
         </div>
       </section>
 

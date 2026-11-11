@@ -115,6 +115,7 @@ export const ko = {
     riveGaucheTitle: "3층 리브고쉬의 스몰 웨딩",
     riveGaucheBody: "통창으로 빛이 드는 3층 리브고쉬에서 긴 테이블 하나에 하객 전원이 앉는 스몰 웨딩. 세리모니와 식사가 같은 자리에서 이어집니다.",
     riveGaucheLabels: ["리브고쉬 스몰 웨딩 — 통창 앞 롱 테이블과 크리스털 캔들", "리브고쉬 스몰 웨딩 — 핑크 플라워와 테이블 세팅"],
+    riveGaucheGreenery: "리브고쉬의 스몰 웨딩 — 화이트 & 그린 플라워의 그리너리 콘셉트 웨딩",
     accessEyebrow: "오시는 길",
     accessTitle: "반포대교 남단, 무지개분수 옆",
     address: "서울 서초구 반포동 650번지 세빛섬",
