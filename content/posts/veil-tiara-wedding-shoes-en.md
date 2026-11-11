@@ -30,6 +30,14 @@ Who What Wear goes a step further, naming wide-brimmed hats, pillbox hats, lace 
 
 ![A tiara and long veil — a bride at an autumn garden wedding (a wedding venue on the Han River in Seoul)](/images/marinapark-ceremony-04.jpg)
 
+![A blusher veil worn over the face with a bow headpiece — satin gown](/images/veil-blusher-bow-01.jpg)
+
+![A sheer veil around the face — fine tulle that lets the light through](/images/veil-sheer-bw-01.jpg)
+
+![A full, gathered tulle veil with a tiara — off-shoulder tulle gown](/images/veil-tulle-tiara-01.jpg)
+
+![A net veil dotted with pearls — the birdcage style drawn out long](/images/veil-pearl-net-01.jpg)
+
 ## The tiara: from a king's headdress to the bride's
 
 The word "tiara" comes from Latin by way of Greek and originally meant the high, peaked headdress of Persian kings. According to the auction platform Barnebys' [history of the tiara](https://www.barnebys.com/blog/not-just-for-royals-a-history-of-the-tiara), the Greek diadema means "headband", a strip of cloth tied on Olympic victors, which became a symbol of authority for the kings of Persia, Egypt and the Hellenistic world.

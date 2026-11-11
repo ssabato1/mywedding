@@ -28,6 +28,14 @@ Who What Wear는 한 걸음 더 나가 [2026 브라이덜 액세서리 트렌드
 
 ![티아라와 긴 베일 — 가을 가든 웨딩의 신부 (서울 한강의 한 웨딩홀)](/images/marinapark-ceremony-04.jpg)
 
+![얼굴 앞으로 내린 블러셔 베일과 리본 헤드피스 — 새틴 드레스](/images/veil-blusher-bow-01.jpg)
+
+![얼굴을 감싸는 시어 베일 — 빛이 통과하는 얇은 튤](/images/veil-sheer-bw-01.jpg)
+
+![풍성하게 부풀린 튤 베일과 티아라 — 오프숄더 튤 드레스](/images/veil-tulle-tiara-01.jpg)
+
+![진주를 단 네트 베일 — 버드케이지 스타일을 길게 풀어낸 디자인](/images/veil-pearl-net-01.jpg)
+
 ## 티아라: 왕의 머리 장식에서 신부의 것으로
 
 "티아라"라는 말은 그리스어를 거쳐 라틴어에서 왔고, 본래 페르시아 왕이 쓰던 높고 뾰족한 머리 장식을 가리켰습니다. 경매 플랫폼 Barnebys의 [티아라의 역사](https://www.barnebys.com/blog/not-just-for-royals-a-history-of-the-tiara)에 따르면 그리스의 디아데마는 "머리띠"라는 뜻으로, 올림픽 승자에게 둘러 주던 천이었습니다. 이것이 페르시아와 이집트, 헬레니즘 왕들의 권위의 상징이 되었습니다.
