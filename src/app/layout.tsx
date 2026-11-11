@@ -7,12 +7,30 @@ import Footer from "@/components/Footer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await i18n();
+  const title = `${siteConfig.company.name} — ${t.company.tagline}`;
+  const v = process.env;
   return {
-    title: {
-      default: `${siteConfig.company.name} — ${t.company.tagline}`,
-      template: `%s | ${siteConfig.company.name}`,
-    },
+    metadataBase: new URL("https://www.floatingislandwedding.com"),
+    title: { default: title, template: `%s | ${siteConfig.company.name}` },
     description: t.company.description,
+    keywords: ["플로팅아일랜드 웨딩", "플로팅아일랜드웨딩", "세빛섬 웨딩", "세빛섬웨딩", "세빛섬 결혼식", "마리나파크 웨딩", "한강 웨딩", "한강 야외 웨딩", "국제결혼 예식", "Floating Island Wedding", "Sevit Island wedding", "Marina Park wedding Seoul"],
+    openGraph: {
+      type: "website",
+      siteName: siteConfig.company.name,
+      title,
+      description: t.company.description,
+      url: "https://www.floatingislandwedding.com",
+      locale: t.htmlLang === "en" ? "en_US" : "ko_KR",
+      images: [{ url: "/images/hero-poster.jpg", alt: "세빛섬 플로팅아일랜드 야경" }],
+    },
+    twitter: { card: "summary_large_image", title, description: t.company.description, images: ["/images/hero-poster.jpg"] },
+    // 검색엔진 소유 확인 코드 — Vercel 환경변수에 넣으면 자동으로 들어갑니다.
+    verification: {
+      google: v.GOOGLE_SITE_VERIFICATION,
+      other: {
+        ...(v.NAVER_SITE_VERIFICATION ? { "naver-site-verification": v.NAVER_SITE_VERIFICATION } : {}),
+      },
+    },
   };
 }
 
@@ -30,6 +48,29 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EventVenue",
+              name: "Floating Island Wedding (플로팅아일랜드 웨딩 · 세빛섬 웨딩)",
+              alternateName: ["플로팅아일랜드 웨딩", "세빛섬 웨딩", "마리나파크 웨딩", "Sevit Island Wedding"],
+              url: "https://www.floatingislandwedding.com",
+              image: "https://www.floatingislandwedding.com/images/hero-poster.jpg",
+              telephone: siteConfig.contact.phoneIntl,
+              email: siteConfig.contact.email,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "반포동 650 세빛섬",
+                addressLocality: "서초구",
+                addressRegion: "서울",
+                addressCountry: "KR",
+              },
+              sameAs: Object.values(siteConfig.links),
+            }),
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
