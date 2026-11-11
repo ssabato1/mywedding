@@ -12,7 +12,7 @@ thumbnail: /images/convention-wedding-03.jpg
 
 웨딩 플랫폼 Joy의 [홀 고르는 법 가이드](https://withjoy.com/blog/how-to-choose-wedding-venue/)는 최종 명단이 없어도 **20명 안팎의 오차로 추정한 숫자**면 홀을 걸러 내기에 충분하다고 말합니다. 그리고 여유를 둡니다. 하객이 90명쯤이면 100~110명이 편하게 들어가는 홀을 보라는 것입니다.
 
-반대 방향의 실수도 짚습니다. 200명 홀에 80명을 앉히면 비어 보이고, 100명 홀에 140명을 넣으면 하객에게 힘든 경험이 됩니다.
+반대 방향의 실수도 짚습니다. 200명 홀에 80명을 앉히면 비어 보이고, 100명 홀에 140명이 들어가면 하객이 불편해집니다.
 
 초대 인원과 참석 인원은 다릅니다. 미국의 한 웨딩 베뉴가 정리한 [수용 인원 가이드](https://www.mayfairfarms.com/how-many-wedding-guests-is-too-many-for-the-venue/)는 참석률을 이렇게 봅니다.
 

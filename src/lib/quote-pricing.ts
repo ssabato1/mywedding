@@ -22,6 +22,24 @@ export const PRICING = {
     cake: 450_000,
     weekdayFreeExtras: false,
   },
+  /** 세빛섬 5층 루프탑 가든 — 플로팅아일랜드 계약서 단가 준용(확인 전 임시) */
+  rooftop: {
+    minGuests: 1,
+    coursePerGuest: 130_000, // Wedding Course (Buffet)
+    drinkPerGuestWeekday: 1_000, // Free Drink: soft drink + juice + beer
+    drinkPerGuestStandard: 1_000,
+    venueFee: 3_000_000, // 전관독점 사용료
+    venueFeeWaivedOnWeekday: false,
+    ceremony: 2_200_000, // 영상·조명연출·혼구용품·메뉴카드·웰컴드링크·플라워 세레모니·웨딩카·1부 전문사회
+    flower: { standard: 8_000_000, luxury: 10_000_000, special: 12_000_000 },
+    photo: 1_500_000, // 본식사진(2인 촬영) — 필수
+    video: 800_000,
+    winePerBottle: 60_000, // 하우스 와인 — 5인당 1병 기준
+    guestsPerWineBottle: 5,
+    champagne: 120_000,
+    cake: 450_000,
+    weekdayFreeExtras: false,
+  },
   marina: {
     minGuests: 50,
     coursePerGuest: 120_000, // Wedding Course (Western)
@@ -80,7 +98,7 @@ export const MENU_GROUPS = [
   { key: "halal", ko: "할랄 코스", en: "Halal course" },
   { key: "buffet", ko: "뷔페", en: "Buffet" },
 ] as const;
-export const DEFAULT_MENU: Record<string, string> = { convention: "buffet-a", marina: "western-c" };
+export const DEFAULT_MENU: Record<string, string> = { convention: "buffet-a", rooftop: "western-c", marina: "western-c" };
 
 /** 공간별 예식 시작 시간 */
 export const CEREMONY_TIMES: Record<string, string[]> = {
@@ -89,9 +107,10 @@ export const CEREMONY_TIMES: Record<string, string[]> = {
   marina: ["12:00", "18:00"],
 };
 
-export type VenueKey = "convention" | "marina";
+export type VenueKey = "convention" | "rooftop" | "marina";
 export type FlowerTier = "standard" | "luxury" | "special";
-export type EstimateLine = { label: string; detail?: string; amount: number };
+export type Section = "fnb" | "venue" | "ceremony" | "flower" | "others";
+export type EstimateLine = { section: Section; label: string; detail?: string; qty?: number; unit?: number; amount: number };
 export type Estimate = {
   venue: VenueKey;
   guests: number;
@@ -117,7 +136,7 @@ export type EstimateInput = {
 };
 
 export function isEstimableVenue(key: string): key is VenueKey {
-  return key === "convention" || key === "marina";
+  return key === "convention" || key === "rooftop" || key === "marina";
 }
 
 /** "2027-04-30" 같은 날짜에서 요일(0=일)과 월. 해석 못 하면 null. */
@@ -139,7 +158,7 @@ export function estimate(input: EstimateInput): Estimate | null {
   const en = input.lang === "en";
   const parsed = parseInt(input.guests.replace(/[^\d]/g, ""), 10);
   const hasGuests = Number.isFinite(parsed) && parsed > 0;
-  const guests = Math.max(P.minGuests, hasGuests ? parsed : venue === "marina" ? 50 : 200);
+  const guests = Math.max(P.minGuests, hasGuests ? parsed : venue === "marina" ? 50 : venue === "rooftop" ? 100 : 200);
   const pd = parseDate(input.date);
   const weekday = pd ? pd.day >= 1 && pd.day <= 5 : null;
   const benefit = weekday === true;
@@ -168,58 +187,69 @@ export function estimate(input: EstimateInput): Estimate | null {
   const mealPerGuest: number = menu.price;
   const lines: EstimateLine[] = [
     {
+      section: "fnb",
       label: `${en ? "Meal" : "식사"} — ${en ? menu.en : menu.ko}`,
-      detail: `${won(mealPerGuest)} × ${guests}`,
+      qty: guests,
+      unit: mealPerGuest,
       amount: mealPerGuest * guests,
     },
     ...(mealDiscountReason
       ? [{
+          section: "fnb" as const,
           label: mealDiscountReason,
           detail: `−${PRICING.offSeasonMealDiscount * 100}%`,
           amount: -Math.round(mealPerGuest * guests * PRICING.offSeasonMealDiscount),
         }]
       : []),
     {
+      section: "fnb",
+      qty: guests,
+      unit: drink,
       label:
-        venue === "convention"
+        venue !== "marina"
           ? en ? "Free drink (soft drinks, juice, beer)" : "프리 드링크 (소프트드링크·주스·맥주)"
           : en ? "Free drink (wine, beer, soft drinks)" : "프리 드링크 (와인·맥주·소프트드링크)",
-      detail: `${won(drink)} × ${guests}`,
       amount: drink * guests,
     },
   ];
   if (input.wine && P.winePerBottle > 0) {
     const bottles = Math.ceil(guests / P.guestsPerWineBottle);
     lines.push({
+      section: "fnb",
       label: en ? "House wine" : "하우스 와인",
-      detail: `${won(P.winePerBottle)} × ${bottles}${en ? " bottles" : "병"}`,
+      qty: bottles,
+      unit: P.winePerBottle,
+      detail: en ? "1 bottle per 5 guests" : "5인당 1병",
       amount: P.winePerBottle * bottles,
     });
   }
   if (input.champagne) {
-    lines.push({ label: en ? "Champagne for the toast" : "건배용 샴페인", detail: extrasFree ? free : undefined, amount: extrasFree ? 0 : P.champagne });
+    lines.push({ section: "fnb", qty: 1, unit: P.champagne, label: en ? "Champagne for the toast" : "건배용 샴페인", detail: extrasFree ? free : undefined, amount: extrasFree ? 0 : P.champagne });
   }
   if (input.cake) {
-    lines.push({ label: en ? "Wedding cake" : "웨딩 케이크", detail: extrasFree ? free : undefined, amount: extrasFree ? 0 : P.cake });
+    lines.push({ section: "fnb", qty: 1, unit: P.cake, label: en ? "Wedding cake" : "웨딩 케이크", detail: extrasFree ? free : undefined, amount: extrasFree ? 0 : P.cake });
   }
   lines.push(
     {
+      section: "venue",
+      unit: P.venueFee,
       label: en ? "Exclusive venue fee" : "전관 독점 사용료 (대관료)",
       detail: feeWaivedReason ?? undefined,
       amount: feeWaived ? 0 : P.venueFee,
     },
-    { label: en ? "Wedding ceremony package" : "웨딩 세레모니 (연출·세팅)", amount: P.ceremony },
-    { label: `${en ? "Flower decoration" : "플라워 데코레이션"} — ${cap(tier)}`, amount: P.flower[tier] },
-    { label: en ? "Ceremony photography (2 photographers)" : "본식 사진 (2인 촬영)", amount: P.photo },
+    { section: "ceremony", label: en ? "Wedding ceremony package" : "웨딩 세레모니 (연출·세팅)", amount: P.ceremony },
+    { section: "flower", label: `${en ? "Flower decoration" : "플라워 데코레이션"} — ${cap(tier)}`, amount: P.flower[tier] },
+    { section: "others", label: en ? "Ceremony photography (2 photographers)" : "본식 사진 (2인 촬영)", detail: en ? "required" : "필수", amount: P.photo },
   );
   if (input.bridalFlower) {
     lines.push({
+      section: "flower",
       label: en ? "Bridal room flowers — custom colours" : "신부대기실 플라워 커스터마이징 (컬러 선택)",
       detail: en ? "from" : "부터",
       amount: PRICING.bridalRoomFlowerFrom,
     });
   }
-  if (input.video) lines.push({ label: en ? "Video" : "영상 촬영", amount: P.video });
+  if (input.video) lines.push({ section: "others", label: en ? "Video" : "영상 촬영", detail: en ? "optional" : "선택", amount: P.video });
 
   const subtotal = lines.reduce((s, l) => s + l.amount, 0);
   const vat = Math.round(subtotal * PRICING.vatRate);
@@ -228,6 +258,9 @@ export function estimate(input: EstimateInput): Estimate | null {
     notes.push(en ? `No guest count given — calculated for ${guests} guests.` : `하객 수가 없어 ${guests}명 기준으로 계산했습니다.`);
   } else if (parsed < P.minGuests) {
     notes.push(en ? `Calculated at the minimum guarantee of ${P.minGuests} guests.` : `최소 보증인원 ${P.minGuests}명 기준으로 계산했습니다.`);
+  }
+  if (venue === "rooftop") {
+    notes.push(en ? "The rooftop garden estimate uses the Floating Island price list; your coordinator will confirm the rooftop figures." : "루프탑 가든 견적은 플로팅아일랜드 단가를 기준으로 계산했습니다. 루프탑 세부 금액은 담당자가 확인해 드립니다.");
   }
   if (venue === "marina") {
     if (weekday === null) {
@@ -249,8 +282,8 @@ export function estimate(input: EstimateInput): Estimate | null {
 
 export function estimateToText(e: Estimate): string {
   return [
-    `[자동 예상 견적 — ${e.venue === "marina" ? "마리나파크" : "플로팅아일랜드 컨벤션"}, ${e.guests}명]`,
-    ...e.lines.map((l) => `- ${l.label}${l.detail ? ` (${l.detail})` : ""}: ${won(l.amount)}원`),
+    `[셀프 견적서 — ${e.venue === "marina" ? "마리나파크 웨딩" : e.venue === "rooftop" ? "루프탑 가든 웨딩" : "플로팅아일랜드 컨벤션"}, ${e.guests}명]`,
+    ...e.lines.map((l) => `- ${l.label}${l.qty && l.unit ? ` (${won(l.unit)} × ${l.qty})` : ""}${l.detail ? ` (${l.detail})` : ""}: ${won(l.amount)}원`),
     `소계: ${won(e.subtotal)}원 / 부가세: ${won(e.vat)}원 / 합계: ${won(e.total)}원`,
   ].join("\n");
 }
