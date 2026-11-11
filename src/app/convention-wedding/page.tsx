@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@config";
 import { i18n } from "@/i18n";
+import Image from "next/image";
 import ImageSlot from "@/components/ImageSlot";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,6 +28,25 @@ export default async function ConventionWeddingPage() {
 
       <section className="container-page pb-8">
         <ImageSlot ratio="3/4" label={t.convention.title} src="/images/convention-wedding-01.jpg" className="mx-auto max-w-md" />
+      </section>
+
+      <section className="container-page border-t border-line py-16">
+        <h2 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{t.convention.flowerTitle}</h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-sub">{t.convention.flowerBody}</p>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {["blue-hydrangea", "purple-aisle", "something-blue", "lavender-dream"].map((name, i) => (
+            <li key={name} className="overflow-hidden rounded-card border border-line">
+              <Image
+                src={`/images/convention-flower-${name}.jpg`}
+                alt={t.convention.flowerAlts[i]}
+                width={1080}
+                height={1350}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                className="h-auto w-full"
+              />
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
