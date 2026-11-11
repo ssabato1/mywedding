@@ -22,6 +22,21 @@ export const en: Dict = {
   },
   about: {
     title: "About",
+    uniqueEyebrow: "Unique Venue",
+    uniqueTitle: "Sevit Island — the unique venue that symbolises Seoul",
+    uniqueBody: [
+      "Sevit Island is three islands floating on the Han River. Gabit, Chaebit and Solbit sit beside the Rainbow Fountain at the south end of Banpo Bridge. By day their glass architecture mirrors river and sky; by night the whole island glows, one of the signature views of Seoul.",
+      "Neither a hotel ballroom nor a conventional wedding hall, it is Seoul's signature MICE unique venue, host to international events and global gatherings. Wherever your guests fly in from, we prepare the ceremony so they go home remembering a wedding that could only have happened in Seoul.",
+    ],
+    uniqueGallery: [
+      "Sevit Island at dusk — glass architecture mirroring river and sky",
+      "Han River sunset — the backdrop of an evening ceremony",
+      "Vista and the Convention Hall by night",
+      "The three islands — Gabit, Chaebit and Solbit — at night",
+      "Chaebit Island and the lotus lanterns on the river",
+      "Sevit Island by day, seen from Banpo Hangang Park",
+    ],
+    uniqueFlyer: "A premier unique venue representing Seoul — Floating Island",
     historyEyebrow: "History",
     historyTitle: "The story of Sevit Island",
     history: [

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@config";
 import { i18n } from "@/i18n";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import ImageSlot from "@/components/ImageSlot";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,6 +26,35 @@ export default async function AboutPage() {
           {t.company.tagline}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-sub">{t.company.description}</p>
+      </section>
+
+      {/* 유니크 베뉴 */}
+      <section className="container-page py-16">
+        <SectionHeading eyebrow={a.uniqueEyebrow} title={a.uniqueTitle} />
+        <div className="grid gap-10 md:grid-cols-5">
+          <div className="space-y-5 text-lg leading-relaxed text-ink-sub md:col-span-3">
+            {a.uniqueBody.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
+          <div className="overflow-hidden rounded-card border border-line bg-card md:col-span-2">
+            <Image src="/images/sevit-unique-venue-flyer.jpg" alt={a.uniqueFlyer} width={1389} height={2000} sizes="(min-width: 768px) 40vw, 100vw" className="h-auto w-full" />
+          </div>
+        </div>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            "/images/sevit-dusk-01.jpg",
+            "/images/hangang-sunset-01.jpg",
+            "/images/sevit-night-02.jpg",
+            "/images/sevit-night-03.jpg",
+            "/images/sevit-chavit-night.jpg",
+            "/images/sevit-day-01.jpg",
+          ].map((src, i) => (
+            <li key={src}>
+              <ImageSlot ratio="3/2" label={a.uniqueGallery[i]} src={src} />
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* 히스토리 */}
