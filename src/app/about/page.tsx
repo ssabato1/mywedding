@@ -98,7 +98,7 @@ export default async function AboutPage() {
         </ul>
         <div className="mb-10 flex flex-wrap gap-3 text-sm">
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Some+Sevit+2085-14+Olympic-daero+Seocho-gu+Seoul"
+            href="https://www.google.com/maps/search/?api=1&query=Some+Sevit+650+Banpo-dong+Seocho-gu+Seoul"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-line px-4 py-2 text-ink hover:border-line-dark hover:text-primary"

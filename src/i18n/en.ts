@@ -68,7 +68,7 @@ export const en: Dict = {
     ],
     accessEyebrow: "Getting here",
     accessTitle: "South end of Banpo Bridge, beside the Rainbow Fountain",
-    address: "Some Sevit, 2085-14 Olympic-daero, Seocho-gu, Seoul, Korea",
+    address: "Some Sevit, 650 Banpo-dong, Seocho-gu, Seoul, Korea",
     phone: "Tel",
     email: "Email",
     accessNote: "Shuttle from Express Bus Terminal. Parking for 800+ cars, coaches welcome.",
@@ -102,7 +102,7 @@ export const en: Dict = {
       {
         title: "From Incheon Airport",
         lines: [
-          "By taxi about 60 minutes — show the driver “세빛섬, 서초구 올림픽대로 2085-14”",
+          "By taxi about 60 minutes — show the driver “세빛섬, 서초구 반포동 650번지”",
         ],
       },
     ],
