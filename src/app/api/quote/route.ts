@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
+import { estimate as calcEstimate, estimateToText } from "@/lib/quote-pricing";
 
 export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; method: string; budget: string; message: string; lang: string;
+  time: string; venue: string; venueKey: string; flower: string; video: string; wine: string; champagne: string; cake: string; method: string; budget: string; message: string; lang: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "method", "budget", "message", "lang"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "video", "wine", "champagne", "cake", "method", "budget", "message", "lang"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -62,8 +63,13 @@ export async function POST(req: Request) {
   }
 
   const to = process.env.QUOTE_TO || siteConfig.contact.email;
+  // 자동 예상 견적: 단가를 알고 있는 공간(플로팅아일랜드 컨벤션·마리나파크)만 계산한다.
+  const estimate = calcEstimate({
+    venueKey: q.venueKey, guests: q.guests, date: q.date, flower: q.flower,
+    video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", lang: q.lang,
+  });
   const subject = buildSubject(q);
-  const text = buildBody(q);
+  const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");
   const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
 
   // 1) Resend
@@ -80,7 +86,7 @@ export async function POST(req: Request) {
           text,
         }),
       });
-      if (r.ok) return NextResponse.json({ ok: true, via: "resend" });
+      if (r.ok) return NextResponse.json({ ok: true, via: "resend", estimate });
     } catch {
       /* fall through */
     }
@@ -97,12 +103,13 @@ export async function POST(req: Request) {
         _replyto: q.email || undefined,
         희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
         선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
+        자동견적: estimate ? estimateToText(estimate) : "해당 없음",
       }),
     });
-    if (r.ok) return NextResponse.json({ ok: true, via: "formsubmit" });
+    if (r.ok) return NextResponse.json({ ok: true, via: "formsubmit", estimate });
   } catch {
     /* fall through */
   }
 
-  return NextResponse.json({ ok: false, mailto }, { status: 502 });
+  return NextResponse.json({ ok: false, mailto, estimate }, { status: 502 });
 }

@@ -39,7 +39,7 @@ export const siteConfig: SiteConfig = {
   cta: {
     // 6.3 「Bluekiwi 하네스 도구 소개 (SNS발행)」에서 구현·활성화하는 확장 슬롯
     enabled: true,
-    label: "견적 받기",
+    label: "셀프 견적서",
     href: "/contact",
   },
   hero: {
