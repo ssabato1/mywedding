@@ -10,7 +10,7 @@ export default async function Hero() {
       <HeroMedia />
       {/* 가독성 오버레이 */}
       <div className="absolute inset-0 -z-10 bg-black/25" />
-      <div className="container-page flex min-h-[52vh] flex-col justify-center pt-10 pb-10 sm:min-h-[54vh] md:pt-[20vh]">
+      <div className="container-page flex min-h-[52vh] flex-col justify-center pt-10 pb-10 sm:min-h-[54vh] md:pt-[15vh]">
         <p className="mb-4 text-sm font-bold tracking-[0.2em] text-accent-light">
           {siteConfig.company.name}
         </p>

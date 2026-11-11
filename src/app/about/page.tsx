@@ -78,6 +78,45 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* 한눈에 보는 플로팅아일랜드 (브로슈어 요약) */}
+      <section className="container-page py-16">
+        <SectionHeading eyebrow={a.glanceEyebrow} title={a.glanceTitle} />
+        <p className="-mt-4 mb-10 max-w-2xl text-lg leading-relaxed text-ink-sub">{a.glanceIntro}</p>
+        <div className="grid gap-6 lg:grid-cols-3">
+          <div className="rounded-card border border-line bg-card p-6">
+            <h3 className="font-display text-lg font-bold text-primary">{a.glanceLocationTitle}</h3>
+            <dl className="mt-4 divide-y divide-line text-sm">
+              {a.glanceLocationRows.map((r) => (
+                <div key={r.label} className="flex justify-between gap-4 py-2">
+                  <dt className="text-ink">{r.label}</dt>
+                  <dd className="shrink-0 text-right text-ink-sub">{r.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-4 text-sm font-semibold text-accent">{a.glanceParking}</p>
+          </div>
+          <div className="rounded-card border border-line bg-card p-6">
+            <h3 className="font-display text-lg font-bold text-primary">{a.glanceFountainTitle}</h3>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink-sub">
+              {a.glanceFountainBody.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-card border border-line bg-card p-6">
+            <h3 className="font-display text-lg font-bold text-primary">{a.glanceSpacesTitle}</h3>
+            <ul className="mt-4 space-y-4 text-sm">
+              {a.glanceSpaces.map((s) => (
+                <li key={s.name}>
+                  <p className="font-semibold text-ink">{s.name}</p>
+                  <p className="mt-1 leading-relaxed text-ink-sub">{s.body}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* 가치 */}
       <section className="container-page py-16">
         <SectionHeading eyebrow={a.valuesEyebrow} title={a.valuesTitle} />
