@@ -90,6 +90,7 @@ function Calendar({ f, lang, value, onPick }: { f: F; lang: Lang; value: string;
         <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-gold" />{f.calLegendMeal}</span>
         <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-ink-sub" />{f.calLegendFee}</span>
       </div>
+      <p className="mt-2 text-xs text-ink-muted">{f.calWeekendNote}</p>
     </div>
   );
 }
@@ -173,12 +174,13 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [venueKey, setVenueKey] = useState<VenueKey>("convention");
   const [date, setDate] = useState("");
   const [tick, setTick] = useState(0);
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   const [flower, setFlower] = useState("standard");
   const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
   const cuisine = menuKey.split("-")[0];
   const tierOf = (k: string) => k.split("-")[1];
-  const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTick((t) => t + 1); };
+  const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
   const min = PRICING[venueKey].minGuests;
   const guestSteps = { convention: [300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey];
 
@@ -197,9 +199,9 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
         bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", lang,
       }),
     );
-    setDateLabel(date ? `${date}${d.time && d.time !== f.timeOptions[0] ? ` ${d.time}` : ""}` : f.calNone);
+    setDateLabel(date ? `${date}${time ? ` ${time}` : ""}` : f.calNone);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [venueKey, date, tick, lang, guests, flower, menuKey]);
+  }, [venueKey, date, tick, lang, guests, flower, menuKey, time]);
 
   function downloadExcel() {
     const table = document.getElementById("quote-sheet");
@@ -291,13 +293,26 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           <div className="space-y-5">
             <div className="rounded-card border border-line bg-card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">{f.calSelected}</p>
-              <p className="mt-1 font-display text-2xl text-gold">{date || f.calNone}</p>
+              <p className="mt-1 font-display text-2xl text-gold">{date ? `${date}${time ? ` · ${time}` : ""}` : f.calNone}</p>
             </div>
-            <label className={label}>{f.time}
-              <select key={venueKey} name="time" className={input}>
-                {[f.timeOptions[0], ...(CEREMONY_TIMES[venueKey] ?? [])].map((o) => <option key={o} value={o}>{o}</option>)}
-              </select>
-            </label>
+            <div>
+              <p className={label}>{f.time}</p>
+              <input type="hidden" name="time" value={time || f.timeOptions[0]} />
+              {date ? (
+                <div className="mt-2.5 grid grid-cols-3 gap-3">
+                  {(CEREMONY_TIMES[venueKey] ?? []).map((o) => {
+                    const on = time === o;
+                    return (
+                      <button key={o} type="button" aria-pressed={on} onClick={() => setTime(on ? "" : o)} className={`rounded-card border px-3 py-3 text-center font-display text-lg font-semibold tabular-nums transition-colors ${on ? "border-gold bg-gold/10 text-gold" : "border-line bg-card text-ink hover:border-gold/60"}`}>
+                        {o}
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="mt-2.5 rounded-card border border-dashed border-line px-4 py-3 text-sm text-ink-muted">{f.timeHint}</p>
+              )}
+            </div>
           </div>
         </div>
       </section>

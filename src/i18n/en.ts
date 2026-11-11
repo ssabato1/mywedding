@@ -332,6 +332,8 @@ export const en: Dict = {
       guests: "Estimated guests",
       time: "Preferred ceremony time",
       timeOptions: ["Undecided"],
+      timeHint: "Tap a date to choose the ceremony time.",
+      calWeekendNote: "Every day can be selected, including Saturdays and Sundays.",
       venue: "Space of interest",
       venueOptions: ["Undecided", "Floating Island Convention Hall (indoor, large)", "Marina Park", "Sevit Island Rooftop Garden", "Anniversary Hall / private halls", "Party or reception only"],
       venueKeys: ["undecided", "convention", "marina", "rooftop", "anniversary", "party"],

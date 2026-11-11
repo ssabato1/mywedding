@@ -330,6 +330,8 @@ export const ko = {
       guests: "예상 하객 수",
       time: "선호 예식 시간",
       timeOptions: ["미정"],
+      timeHint: "날짜를 누르면 예식 시간을 고를 수 있습니다.",
+      calWeekendNote: "평일은 물론 토요일·일요일도 모두 선택할 수 있습니다.",
       venue: "관심 있는 공간",
       venueOptions: ["미정", "플로팅아일랜드 컨벤션홀 (실내·대규모)", "마리나파크", "세빛섬 루프탑 가든", "애니버셔리홀·프라이빗홀", "파티·리셉션만"],
       venueKeys: ["undecided", "convention", "marina", "rooftop", "anniversary", "party"],
