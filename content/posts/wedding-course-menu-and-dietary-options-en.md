@@ -5,7 +5,7 @@ date: 2026-11-30
 lang: en
 translationOf: wedding-course-menu-and-dietary-options
 tags: [Planning, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/canape-reception-02.jpg
+thumbnail: /images/menu-course-table-01.jpg
 ---
 
 Ask guests how a wedding was and they usually start with the food. The meal is where guests spend the most time, and at an international couple's wedding it is where guests of different religions and diets sit at one table. Based on overseas guides, here is how to choose a service style and prepare alternative menus. (As of November 2026)
@@ -33,7 +33,7 @@ The skeleton of a Western wedding meal is starter → main → dessert. Add cana
 - **Main**: meat or fish, or both on one plate. Prepare a separate vegetarian main.
 - **Dessert**: decide whether the wedding cake is the dessert or a separate one is served.
 
-![A Western course laid out — starter, soup, salad, main, dessert and a menu card in two languages (a wedding venue on the Han River in Seoul)](/images/menu-course-a.jpg)
+![A Western course laid out — starter, soup, salad, main, dessert and a menu card in two languages (a wedding venue on the Han River in Seoul)](/images/menu-course-table-01.jpg)
 
 With many Korean guests, adding one familiar dish such as banquet noodles or rice cake makes a real difference to older guests.
 
