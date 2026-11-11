@@ -72,6 +72,8 @@ Today a tiara is a hair ornament rather than a family jewel. There are two crite
 
 ![With a dress that has bold shoulder detail, keep the headpiece small — Sposabella](/images/sposabella-dress-02.jpg)
 
+![Three tiaras — a tall crown style, a classic tiara on an updo, and a small tiara paired with a necklace](/images/tiara-styles-01.jpg)
+
 ## Wedding shoes: what was hidden is now seen
 
 Shoes once hidden under a long dress now appear in photographs as dresses shorten and second dresses become common. THE WED lists ten [bridal shoe trends for 2026](https://thewed.com/magazine/major-bridal-shoe-trends-for-2026). Those most relevant to the wedding itself:
