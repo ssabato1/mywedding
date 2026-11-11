@@ -16,7 +16,7 @@ export const PRICING = {
     flower: { standard: 8_000_000, luxury: 10_000_000, special: 12_000_000 },
     photo: 1_500_000, // 본식사진(2인 촬영) — 필수
     video: 800_000,
-    winePerBottle: 60_000, // 하우스 와인 — 5인당 1병 기준
+    winePerBottle: 70_000, // 하우스 와인(프랑스산) — 5인당 1병 기준
     guestsPerWineBottle: 5,
     champagne: 120_000,
     cake: 450_000,
@@ -34,7 +34,7 @@ export const PRICING = {
     flower: { standard: 8_000_000, luxury: 10_000_000, special: 12_000_000 },
     photo: 1_500_000, // 본식사진(2인 촬영) — 필수
     video: 800_000,
-    winePerBottle: 60_000, // 하우스 와인 — 5인당 1병 기준
+    winePerBottle: 70_000, // 하우스 와인(프랑스산) — 5인당 1병 기준
     guestsPerWineBottle: 5,
     champagne: 120_000,
     cake: 450_000,
@@ -48,7 +48,7 @@ export const PRICING = {
     venueFee: 3_000_000,
     venueFeeWaivedOnWeekday: true,
     ceremony: 2_000_000, // 음향·조명·웨딩 세팅·혼구용품·신부대기실
-    flower: { standard: 7_000_000, luxury: 8_000_000, special: 9_000_000 },
+    flower: { standard: 8_000_000, luxury: 10_000_000, special: 12_000_000 },
     photo: 1_500_000,
     video: 800_000,
     winePerBottle: 0, // 프리 드링크에 포함
@@ -60,6 +60,8 @@ export const PRICING = {
   vatRate: 0.1,
   /** 신부대기실 플라워 커스터마이징(컬러 선택) — 100만원부터 */
   bridalRoomFlowerFrom: 1_000_000,
+  /** 부케 */
+  bouquet: 200_000,
   /** 비수기(1·2·7·8월): 대관료 면제 + 식사비 할인 */
   offSeasonMonths: [1, 2, 7, 8],
   offSeasonMealDiscount: 0.1,
@@ -124,6 +126,7 @@ export type EstimateInput = {
   champagne: boolean;
   cake: boolean;
   bridalFlower?: boolean;
+  bouquet?: boolean;
   lang: string;
 };
 
@@ -208,7 +211,7 @@ export function estimate(input: EstimateInput): Estimate | null {
     const bottles = Math.ceil(guests / P.guestsPerWineBottle);
     lines.push({
       section: "fnb",
-      label: en ? "House wine" : "하우스 와인",
+      label: en ? "House wine (French)" : "하우스 와인 (프랑스산)",
       qty: bottles,
       unit: P.winePerBottle,
       detail: en ? "1 bottle per 5 guests" : "5인당 1병",
@@ -230,8 +233,8 @@ export function estimate(input: EstimateInput): Estimate | null {
       amount: feeWaived ? 0 : P.venueFee,
     },
     { section: "ceremony", label: en ? "Wedding ceremony package" : "웨딩 세레모니 (연출·세팅)", amount: P.ceremony },
-    { section: "flower", label: `${en ? "Flower decoration" : "플라워 데코레이션"} — ${cap(tier)}`, amount: P.flower[tier] },
-    { section: "others", label: en ? "Ceremony photography (2 photographers)" : "본식 사진 (2인 촬영)", detail: en ? "required" : "필수", amount: P.photo },
+    { section: "flower", label: `${en ? "Flower decoration" : "플라워 장식"} — ${en ? cap(tier) : { standard: "스탠다드", luxury: "럭셔리", special: "스페셜" }[tier]}`, detail: tier === "special" ? (en ? "from" : "부터") : undefined, amount: P.flower[tier] },
+    { section: "others", label: en ? "Photography — formal portraits and snapshots, 2 photographers, original files on CD" : "사진 — 원판·스냅, 2인 촬영, 원본 CD 포함", detail: en ? "required" : "필수", amount: P.photo },
   );
   if (input.bridalFlower) {
     lines.push({
@@ -241,6 +244,7 @@ export function estimate(input: EstimateInput): Estimate | null {
       amount: PRICING.bridalRoomFlowerFrom,
     });
   }
+  if (input.bouquet) lines.push({ section: "flower", label: en ? "Bridal bouquet" : "부케", amount: PRICING.bouquet });
   if (input.video) lines.push({ section: "others", label: en ? "Video" : "영상 촬영", detail: en ? "optional" : "선택", amount: P.video });
 
   const subtotal = lines.reduce((s, l) => s + l.amount, 0);

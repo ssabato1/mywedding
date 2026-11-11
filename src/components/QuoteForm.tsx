@@ -186,7 +186,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       calcEstimate({
         venueKey, date, guests: d.guests ?? "", flower: d.flower ?? "standard", menu: d.menu ?? DEFAULT_MENU[venueKey],
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
-        bridalFlower: d.bridalFlower === "on", lang,
+        bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", lang,
       }),
     );
     setDateLabel(date ? `${date}${d.time && d.time !== f.timeOptions[0] ? ` ${d.time}` : ""}` : f.calNone);
@@ -323,6 +323,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
               <label className={check}><input type="checkbox" name="champagne" defaultChecked className={box} />{f.champagne}</label>
               <label className={check}><input type="checkbox" name="cake" defaultChecked className={box} />{f.cake}</label>
               <label className={check}><input type="checkbox" name="video" className={box} />{f.video}</label>
+              <label className={check}><input type="checkbox" name="bouquet" className={box} />{f.bouquet}</label>
               <label className={check}><input type="checkbox" name="bridalFlower" className={box} />{f.bridalFlower}</label>
             </div>
           </fieldset>
