@@ -103,6 +103,25 @@ export default async function OutdoorWeddingPage() {
               </ul>
 
               <div className="mt-16 grid items-start gap-10 md:grid-cols-5">
+                <div className="md:order-2 md:col-span-2">
+                  <div className="overflow-hidden rounded-card border border-line bg-card">
+                    <Image
+                      src="/images/marinapark-white-green.jpg"
+                      alt={o.marinaWhiteGreen.alt}
+                      width={779}
+                      height={975}
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </div>
+                <div className="md:order-1 md:col-span-3">
+                  <h3 className="font-display text-2xl font-semibold text-gold sm:text-3xl">{o.marinaWhiteGreen.title}</h3>
+                  <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.marinaWhiteGreen.body}</p>
+                </div>
+              </div>
+
+              <div className="mt-16 grid items-start gap-10 md:grid-cols-5">
                 <div className="overflow-hidden rounded-card border border-line bg-card md:col-span-2">
                   <Image
                     src="/images/marinapark-after-party-flyer.jpg"
