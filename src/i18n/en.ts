@@ -184,6 +184,10 @@ export const en: Dict = {
       ],
       link: "Visit the Marina Park site",
     },
+    rooftopGallery: [
+      "Sevit Island garden wedding — an aisle of lavender and blue hydrangea and delphinium, gazebo ceremony",
+      "Sevit Island garden wedding — the gazebo and Han River skyline beyond a floral arch",
+    ],
     marinaGallery: [
       "Garden ceremony — stone arch, coral and white florals, the ridgeline beyond the Han",
       "Bride and bridesmaids in front of the garden arch",

@@ -55,6 +55,17 @@ export default async function OutdoorWeddingPage() {
             <ImageSlot ratio="3/2" label={s.title} src={s.image} />
           </div>
 
+          {!s.marina && (
+            <ul className="mt-12 grid gap-4 md:grid-cols-5">
+              <li className="md:col-span-2">
+                <ImageSlot ratio="2/3" label={o.rooftopGallery[0]} src="/images/sevit-garden-01.jpg" />
+              </li>
+              <li className="md:col-span-3">
+                <ImageSlot ratio="3/2" label={o.rooftopGallery[1]} src="/images/sevit-garden-02.jpg" />
+              </li>
+            </ul>
+          )}
+
           {s.marina && (
             <>
               <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
