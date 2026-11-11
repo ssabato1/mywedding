@@ -140,6 +140,10 @@ export default async function OutdoorWeddingPage() {
                   <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-sub">{o.marinaAfterParty.body}</p>
                 </div>
               </div>
+              <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                <li><ImageSlot ratio="3/2" label={o.marinaPartyPhotos[0]} src="/images/marinapark-wedding-party.jpg" /></li>
+                <li><ImageSlot ratio="3/2" label={o.marinaPartyPhotos[1]} src="/images/marinapark-standing-party.jpg" /></li>
+              </ul>
 
               <div className="mt-16 grid items-start gap-10 md:grid-cols-5">
                 <div className="md:order-2 md:col-span-2">

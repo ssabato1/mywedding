@@ -213,6 +213,7 @@ export const en: Dict = {
       body: "An aisle filled only with white blooms and green leaves, opening onto the Han River and the sky. With the river as its natural backdrop, Marina Park has appeared many times as the wedding location in Korean dramas.",
       alt: "Marina Park white and green floral wedding — a garden aisle of white blooms at sunset",
     },
+    marinaPartyPhotos: ["A wedding party at Marina Park — the garden under the last of the sunset", "3F Garden standing party — an evening with the Han River and Namsan in view"],
     marinaAfterParty: {
       title: "The Marina Park wedding after-party",
       body: "Loved by international couples as a destination-wedding venue, Marina Park carries the day on in the same garden: once the ceremony ends, the after-party begins against the Han River sunset and the city lights. Garden wedding, indoor wedding, private reception and small wedding, all in one place.",
