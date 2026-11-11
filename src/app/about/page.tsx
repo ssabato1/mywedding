@@ -154,6 +154,14 @@ export default async function AboutPage() {
             <p className="mt-4 text-lg leading-relaxed text-ink-sub">{a.engagementBody}</p>
           </div>
         </div>
+        <div className="mt-14">
+          <h3 className="font-display text-2xl font-semibold text-gold">{a.riveGaucheTitle}</h3>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-sub">{a.riveGaucheBody}</p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            <li><ImageSlot ratio="3/2" label={a.riveGaucheLabels[0]} src="/images/rive-gauche-small-wedding-01.jpg" /></li>
+            <li><ImageSlot ratio="3/2" label={a.riveGaucheLabels[1]} src="/images/rive-gauche-small-wedding-02.jpg" /></li>
+          </ul>
+        </div>
       </section>
 
       {/* 오시는 길 */}
