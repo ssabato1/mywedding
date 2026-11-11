@@ -406,6 +406,10 @@ export const ko = {
       guestUnit: "명",
       guestLocked: "250명은 1·2·7·8월 일요일 저녁 6시 예식에서만 선택할 수 있습니다.",
       selfQuoteBenefit: "셀프 견적으로 견적을 받고 계약까지 진행하시는 커플께는 특별 혜택을 드립니다.",
+      canape: "애프터 파티 카나페",
+      canapeOptions: ["선택 안 함", "1인당 3만원", "1인당 5만원", "1인당 7만원", "1인당 9만원"],
+      afterGuests: "애프터 파티 인원",
+      otherEventsNote: "예식이 아닌 웨딩 파티나 돌잔치는 별도로 문의해 주세요.",
       guestHint: "숫자를 직접 적거나 아래에서 고르세요. 최소 보증인원은 {min}명입니다.",
       flowerCards: [
         { name: "스탠다드", price: "800만원", sub: "시즌 컬러" },

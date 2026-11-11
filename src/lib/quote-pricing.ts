@@ -62,6 +62,8 @@ export const PRICING = {
   bridalRoomFlowerFrom: 1_000_000,
   /** 잔치국수·떡 — 1인당 */
   noodlesPerGuest: 3_000,
+  /** 애프터 파티 카나페 — 1인당 */
+  canapePerGuest: { "30": 30_000, "50": 50_000, "70": 70_000, "90": 90_000 } as Record<string, number>,
   riceCakePerGuest: 3_000,
   /** 사회자 · 연주 */
   mc: { part1: 200_000, both: 300_000 },
@@ -154,6 +156,8 @@ export type EstimateInput = {
   stringQuartet?: boolean;
   drink?: boolean;
   noodles?: boolean;
+  canape?: string;
+  afterGuests?: string;
   riceCake?: boolean;
   lang: string;
 };
@@ -254,6 +258,12 @@ export function estimate(input: EstimateInput): Estimate | null {
       amount: drink * guests,
     }]),
   ];
+  const canapeUnit = PRICING.canapePerGuest[input.canape ?? ""];
+  if (canapeUnit) {
+    const ag = parseInt((input.afterGuests ?? "").replace(/[^\d]/g, ""), 10);
+    const afterQty = Number.isFinite(ag) && ag > 0 ? ag : guests;
+    lines.push({ section: "fnb", label: en ? "After-party canapés" : "애프터 파티 카나페", qty: afterQty, unit: canapeUnit, detail: en ? "optional" : "선택", amount: canapeUnit * afterQty });
+  }
   if (input.noodles) lines.push({ section: "fnb", label: en ? "Janchi-guksu (banquet noodles)" : "잔치국수", qty: guests, unit: PRICING.noodlesPerGuest, amount: PRICING.noodlesPerGuest * guests });
   if (input.riceCake) lines.push({ section: "fnb", label: en ? "Tteok (rice cake)" : "떡", qty: guests, unit: PRICING.riceCakePerGuest, amount: PRICING.riceCakePerGuest * guests });
   if (input.wine && P.winePerBottle > 0) {

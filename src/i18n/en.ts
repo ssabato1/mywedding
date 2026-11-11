@@ -408,6 +408,10 @@ export const en: Dict = {
       guestUnit: "",
       guestLocked: "250 guests is available only for Sunday 18:00 weddings in January, February, July and August.",
       selfQuoteBenefit: "Couples who receive a self quote and go on to sign a contract receive a special benefit.",
+      canape: "After-party canapés",
+      canapeOptions: ["None", "KRW 30,000 per guest", "KRW 50,000 per guest", "KRW 70,000 per guest", "KRW 90,000 per guest"],
+      afterGuests: "After-party guests",
+      otherEventsNote: "For wedding parties without a ceremony or first-birthday celebrations, please contact us separately.",
       guestHint: "Type a number or choose below. The minimum guarantee is {min} guests.",
       flowerCards: [
         { name: "Standard", price: "KRW 8,000,000", sub: "Seasonal colours" },

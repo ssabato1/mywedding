@@ -167,6 +167,7 @@ function Sheet({ f, e, dateLabel, id }: { f: F; e: Estimate; dateLabel: string; 
         {e.notes.map((n) => <li key={n}>{n}</li>)}
       </ul>
       <p className="mt-5 rounded-card border border-gold/40 px-5 py-4 text-center text-sm leading-relaxed text-gold">{f.selfQuoteBenefit}</p>
+      <p className="mt-3 text-center text-xs leading-relaxed text-ink-muted">{f.otherEventsNote}</p>
     </div>
   );
 }
@@ -203,7 +204,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       calcEstimate({
         venueKey, date, time, guests, flower, menu: menuKey,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
-        bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", mc: d.mc ?? "", maleQuartet: d.maleQuartet === "on", stringQuartet: d.stringQuartet === "on", drink: d.drink === "on", noodles: d.noodles === "on", riceCake: d.riceCake === "on", lang,
+        bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", mc: d.mc ?? "", maleQuartet: d.maleQuartet === "on", stringQuartet: d.stringQuartet === "on", drink: d.drink === "on", noodles: d.noodles === "on", canape: d.canape ?? "", afterGuests: d.afterGuests ?? "", riceCake: d.riceCake === "on", lang,
       }),
     );
     setDateLabel(date ? `${date}${time ? ` ${time}` : ""}` : f.calNone);
@@ -416,6 +417,13 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 </select>
               </label>
               <label className={check}><input type="checkbox" name="bouquet" className={box} />{f.bouquet}</label>
+              <label className={`${check} sm:col-span-2 flex-wrap`}>
+                <span className="shrink-0">{f.canape}</span>
+                <select name="canape" defaultValue="" className="rounded-ui border border-line bg-card px-3 py-1.5 text-sm text-ink">
+                  {f.canapeOptions.map((o, i) => <option key={o} value={["", "30", "50", "70", "90"][i]}>{o}</option>)}
+                </select>
+                <input name="afterGuests" type="text" inputMode="numeric" placeholder={f.afterGuests} className="w-36 rounded-ui border border-line bg-card px-3 py-1.5 text-sm text-ink" />
+              </label>
             </div>
           </fieldset>
         </div>
