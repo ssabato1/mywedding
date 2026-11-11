@@ -43,7 +43,7 @@ export const PRICING = {
   marina: {
     minGuests: 50,
     coursePerGuest: 130_000, // Wedding Course C
-    drinkPerGuestWeekday: 12_000, // Free Drink: 와인·맥주·소프트드링크 — 평일 혜택가
+    drinkPerGuestWeekday: 15_000, // Free Drink: 와인·맥주·소프트드링크
     drinkPerGuestStandard: 15_000,
     venueFee: 3_000_000,
     venueFeeWaivedOnWeekday: true,

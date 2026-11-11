@@ -344,7 +344,7 @@ export const en: Dict = {
       video: "Video — KRW 800,000",
       bouquet: "Bridal bouquet — KRW 200,000",
       drink: "Free drink (beer, juice, cola, lemon-lime soda) — KRW 15,000 per guest",
-      drinkMarina: "Free drink (wine, beer, soft drinks) — KRW 15,000 per guest, KRW 12,000 on weekdays",
+      drinkMarina: "Free drink (wine, beer, soft drinks) — KRW 15,000 per guest",
       noodles: "Janchi-guksu (banquet noodles) — KRW 3,000 per guest",
       riceCake: "Tteok (rice cake) — KRW 3,000 per guest",
       bridalFlower: "Bridal room flowers, custom colours — from KRW 1,000,000",
