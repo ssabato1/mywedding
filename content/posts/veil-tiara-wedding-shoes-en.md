@@ -38,6 +38,8 @@ Who What Wear goes a step further, naming wide-brimmed hats, pillbox hats, lace 
 
 ![A net veil dotted with pearls — the birdcage style drawn out long](/images/veil-pearl-net-01.jpg)
 
+![A long lace-edged veil with a gold tiara — mantilla style](/images/veil-lace-mantilla-01.jpg)
+
 ## The tiara: from a king's headdress to the bride's
 
 The word "tiara" comes from Latin by way of Greek and originally meant the high, peaked headdress of Persian kings. According to the auction platform Barnebys' [history of the tiara](https://www.barnebys.com/blog/not-just-for-royals-a-history-of-the-tiara), the Greek diadema means "headband", a strip of cloth tied on Olympic victors, which became a symbol of authority for the kings of Persia, Egypt and the Hellenistic world.
