@@ -389,7 +389,7 @@ export const ko = {
       noodles: "잔치국수 — 1인당 3,000원",
       riceCake: "떡 — 1인당 3,000원",
       wine: "하우스 와인 — 프랑스산, 1병 7만원 (5인당 1병)",
-      champagne: "건배용 샴페인",
+      champagne: "건배용 샴페인 — 120,000원",
       cake: "웨딩 케이크",
       options: "선택 옵션",
       estHint: "공간·인원·옵션을 고르면 아래 예상 견적이 바로 바뀝니다.",

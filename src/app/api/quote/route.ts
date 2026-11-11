@@ -122,7 +122,7 @@ export async function POST(req: Request) {
   const to = process.env.QUOTE_TO || siteConfig.contact.email;
   // 자동 예상 견적: 단가를 알고 있는 공간(플로팅아일랜드 컨벤션·마리나파크)만 계산한다.
   const estimate = calcEstimate({
-    venueKey: q.venueKey, guests: q.guests, date: q.date, flower: q.flower, menu: q.menu,
+    venueKey: q.venueKey, guests: q.guests, date: q.date, time: q.time, flower: q.flower, menu: q.menu,
     video: q.video === "on", wine: q.wine === "on", champagne: q.champagne === "on", cake: q.cake === "on", bridalFlower: q.bridalFlower === "on", bouquet: q.bouquet === "on", mc: q.mc, maleQuartet: q.maleQuartet === "on", stringQuartet: q.stringQuartet === "on", drink: q.drink === "on", noodles: q.noodles === "on", riceCake: q.riceCake === "on", lang: q.lang,
   });
   const subject = buildSubject(q);

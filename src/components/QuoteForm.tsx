@@ -9,6 +9,7 @@ import {
   MENUS,
   MENU_GROUPS,
   PRICING,
+  minGuestsFor,
   estimate as calcEstimate,
   type Estimate,
   type Section,
@@ -182,8 +183,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const cuisine = menuKey.split("-")[0];
   const tierOf = (k: string) => k.split("-")[1];
   const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
-  const min = PRICING[venueKey].minGuests;
-  const guestSteps = { convention: [300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey];
+  const min = minGuestsFor(venueKey, date, time);
+  const guestSteps = min === 200 && venueKey === "convention" ? [200, 250, 300, 350, 400] : { convention: [300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey] as number[];
 
   const read = (): Record<string, string> =>
     formRef.current ? (Object.fromEntries(new FormData(formRef.current).entries()) as Record<string, string>) : {};
@@ -195,7 +196,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     const d = read();
     setEstimate(
       calcEstimate({
-        venueKey, date, guests, flower, menu: menuKey,
+        venueKey, date, time, guests, flower, menu: menuKey,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
         bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", mc: d.mc ?? "", maleQuartet: d.maleQuartet === "on", stringQuartet: d.stringQuartet === "on", drink: d.drink === "on", noodles: d.noodles === "on", riceCake: d.riceCake === "on", lang,
       }),

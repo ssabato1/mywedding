@@ -138,6 +138,7 @@ export type EstimateInput = {
   venueKey: string;
   guests: string;
   date: string;
+  time?: string;
   flower: string;
   menu?: string;
   video: boolean;
@@ -168,6 +169,19 @@ export function parseDate(date: string): { day: number; month: number } | null {
   return { day: d.getUTCDay(), month: d.getUTCMonth() + 1 };
 }
 
+/**
+ * 컨벤션 1·2·3월 일요일 저녁 6시 예식 특전: 최소 보증인원 200명, 웨딩연출료 면제.
+ */
+export const SUNDAY_EVENING = { months: [1, 2, 3], time: "18:00", minGuests: 200 } as const;
+export function isSundayEveningPromo(venueKey: string, date: string, time?: string): boolean {
+  if (venueKey !== "convention" || !(time ?? "").startsWith(SUNDAY_EVENING.time)) return false;
+  const pd = parseDate(date);
+  return !!pd && pd.day === 0 && (SUNDAY_EVENING.months as readonly number[]).includes(pd.month);
+}
+export function minGuestsFor(venueKey: VenueKey, date: string, time?: string): number {
+  return isSundayEveningPromo(venueKey, date, time) ? SUNDAY_EVENING.minGuests : PRICING[venueKey].minGuests;
+}
+
 const won = (n: number) => n.toLocaleString("ko-KR");
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 
@@ -178,7 +192,9 @@ export function estimate(input: EstimateInput): Estimate | null {
   const en = input.lang === "en";
   const parsed = parseInt(input.guests.replace(/[^\d]/g, ""), 10);
   const hasGuests = Number.isFinite(parsed) && parsed > 0;
-  const guests = Math.max(P.minGuests, hasGuests ? parsed : P.minGuests);
+  const promo = isSundayEveningPromo(venue, input.date, input.time);
+  const minGuests = minGuestsFor(venue, input.date, input.time);
+  const guests = Math.max(minGuests, hasGuests ? parsed : minGuests);
   const pd = parseDate(input.date);
   const weekday = pd ? pd.day >= 1 && pd.day <= 5 : null;
   const benefit = weekday === true;
@@ -259,7 +275,7 @@ export function estimate(input: EstimateInput): Estimate | null {
       detail: feeWaivedReason ?? undefined,
       amount: feeWaived ? 0 : P.venueFee,
     },
-    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", amount: P.ceremony },
+    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", detail: promo ? (en ? "waived — Sunday 18:00, Jan–Mar" : "1·2·3월 일요일 저녁 6시 예식 면제") : undefined, amount: promo ? 0 : P.ceremony },
     { section: "flower", label: `${en ? "Flower decoration" : "플라워 장식"} — ${en ? cap(tier) : { standard: "스탠다드", luxury: "럭셔리", special: "스페셜" }[tier]}`, detail: tier === "special" ? (en ? "from" : "부터") : undefined, amount: P.flower[tier] },
     { section: "others", label: en ? "Photography — formal portraits and snapshots, 2 photographers, original files on CD" : "사진 — 원판·스냅, 2인 촬영, 원본 CD 포함", detail: en ? "required" : "필수", amount: P.photo },
   );
@@ -283,8 +299,11 @@ export function estimate(input: EstimateInput): Estimate | null {
   const notes: string[] = [];
   if (!hasGuests) {
     notes.push(en ? `No guest count given — calculated for ${guests} guests.` : `하객 수가 없어 ${guests}명 기준으로 계산했습니다.`);
-  } else if (parsed < P.minGuests) {
-    notes.push(en ? `Calculated at the minimum guarantee of ${P.minGuests} guests.` : `최소 보증인원 ${P.minGuests}명 기준으로 계산했습니다.`);
+  } else if (parsed < minGuests) {
+    notes.push(en ? `Calculated at the minimum guarantee of ${minGuests} guests.` : `최소 보증인원 ${minGuests}명 기준으로 계산했습니다.`);
+  }
+  if (promo) {
+    notes.push(en ? "Sunday 18:00 weddings in January, February and March: available from 200 guests, wedding production fee waived." : "1·2·3월 일요일 저녁 6시 예식 특전을 적용했습니다: 200명부터 가능, 웨딩연출료 면제.");
   }
   if (venue === "marina") {
     if (weekday === null) {
