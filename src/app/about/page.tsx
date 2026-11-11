@@ -165,6 +165,86 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* MICE·컨벤션 소개 (회사 브로슈어) */}
+      <section className="container-page py-16">
+        <SectionHeading eyebrow={a.brochureEyebrow} title={a.brochureTitle} />
+        <p className="-mt-4 mb-10 max-w-2xl text-lg leading-relaxed text-ink-sub">{a.brochureIntro}</p>
+        <div className="grid gap-6 sm:grid-cols-3">
+          {a.brochureStrengths.map((v) => (
+            <div key={v.name} className="rounded-card border border-line bg-card p-6">
+              <h3 className="font-display text-lg font-semibold text-gold">{v.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-sub">{v.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2">
+          <div>
+            <h3 className="font-display text-2xl font-semibold text-gold">{a.brochureHallTitle}</h3>
+            <ul className="mt-5 space-y-3 text-ink-sub">
+              {a.brochureHall.map((t) => (
+                <li key={t} className="border-t border-line pt-3 leading-relaxed">{t}</li>
+              ))}
+            </ul>
+            <h3 className="mt-10 font-display text-2xl font-semibold text-gold">{a.brochureServiceTitle}</h3>
+            <ul className="mt-5 space-y-3 text-ink-sub">
+              {a.brochureService.map((t) => (
+                <li key={t} className="border-t border-line pt-3 leading-relaxed">{t}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-6">
+            <ImageSlot ratio="3/2" label={t.convention.grandLabel} src="/images/convention-wedding-02.jpg" />
+            <div className="rounded-card border border-line bg-card p-6">
+              <h3 className="font-display text-lg font-semibold text-gold">{a.brochureEventsTitle}</h3>
+              <ul className="mt-4 space-y-1.5 text-sm text-ink-sub">
+                {a.brochureEvents.map((e) => (
+                  <li key={e}>{e}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-10 md:grid-cols-2">
+          <div>
+            <h3 className="font-display text-2xl font-semibold text-gold">{a.brochureMarinaTitle}</h3>
+            <p className="mt-5 leading-relaxed text-ink-sub">{a.brochureMarinaBody}</p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr>
+                    {a.brochureMarinaCols.map((c) => (
+                      <th key={c} className="border-b border-line-dark px-2 py-2 text-left font-semibold text-gold first:pl-0">{c}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {a.brochureMarinaRows.map((r) => (
+                    <tr key={r[0]}>
+                      {r.map((c, i) => (
+                        <td key={i} className="border-b border-line px-2 py-2 text-ink-sub first:pl-0 first:text-ink">{c}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <ImageSlot ratio="3/2" label={t.outdoor.marinaPartyPhotos[1]} src="/images/marinapark-standing-party.jpg" />
+            <div className="rounded-card border border-line bg-card p-6">
+              <h3 className="font-display text-lg font-semibold text-gold">{a.brochureMarinaEventsTitle}</h3>
+              <ul className="mt-4 space-y-1.5 text-sm text-ink-sub">
+                {a.brochureMarinaEvents.map((e) => (
+                  <li key={e}>{e}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 오시는 길 */}
       <section className="container-page py-16">
         <SectionHeading eyebrow={a.accessEyebrow} title={a.accessTitle} />
