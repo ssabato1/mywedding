@@ -23,6 +23,8 @@ All four share a thin base. Nothing is heavily covered, and there is only one po
 
 ![A thin base and an accented lip — a low bun dressed with fresh flowers](/images/bridal-hair-flowers-profile-01.jpg)
 
+*Dress, hair and make-up: @스포사벨라드레스 [@sposabella.official](https://www.instagram.com/sposabella.official/) @칼라빈메이크업 @3thmind*
+
 ## Hair: sculpted and neat, or short
 
 The same article names three directions in hair.

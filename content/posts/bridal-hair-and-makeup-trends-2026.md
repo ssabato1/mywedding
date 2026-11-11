@@ -21,6 +21,8 @@ THE WED의 [Major Bridal Beauty Trends for 2026](https://thewed.com/magazine/maj
 
 ![얇은 베이스와 포인트 립 — 생화로 장식한 로우 번](/images/bridal-hair-flowers-profile-01.jpg)
 
+*드레스·헤어·메이크업: @스포사벨라드레스 [@sposabella.official](https://www.instagram.com/sposabella.official/) @칼라빈메이크업 @3thmind*
+
 ## 헤어: 단정하게 조각하거나, 짧게
 
 같은 기사가 꼽은 헤어 흐름은 세 가지입니다.
