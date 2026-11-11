@@ -184,7 +184,11 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const tierOf = (k: string) => k.split("-")[1];
   const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
   const min = minGuestsFor(venueKey, date, time);
-  const guestSteps = min === 200 && venueKey === "convention" ? [200, 250, 300, 350, 400] : { convention: [300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey] as number[];
+  useEffect(() => {
+    if (guests && Number(guests) < min && Number(guests) >= 250) setGuests("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [min]);
+  const guestSteps = { convention: [250, 300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey] as number[];
 
   const read = (): Record<string, string> =>
     formRef.current ? (Object.fromEntries(new FormData(formRef.current).entries()) as Record<string, string>) : {};
@@ -331,14 +335,15 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <div className="mt-2.5 flex flex-wrap gap-2">
               {guestSteps.map((n) => {
                 const on = guests === String(n);
+                const locked = n < min;
                 return (
-                  <button key={n} type="button" aria-pressed={on} onClick={() => setGuests(String(n))} className={`${chip} ${on ? chipOn : chipOff}`}>
+                  <button key={n} type="button" aria-pressed={on} disabled={locked} title={locked ? f.guestLocked : undefined} onClick={() => setGuests(String(n))} className={`${chip} ${on && !locked ? chipOn : chipOff} ${locked ? "cursor-not-allowed opacity-40" : ""}`}>
                     {n}{f.guestUnit}
                   </button>
                 );
               })}
             </div>
-            <p className={hint}>{f.guestHint.replace("{min}", String(min))}</p>
+            <p className={hint}>{f.guestHint.replace("{min}", String(min))}{venueKey === "convention" ? ` ${f.guestLocked}` : ""}</p>
           </div>
 
           {/* 꽃장식 */}

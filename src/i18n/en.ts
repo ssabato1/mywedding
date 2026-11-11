@@ -406,6 +406,7 @@ export const en: Dict = {
       pickDate: "2. Tap the date you want",
       pickOptions: "3. Choose guests, flowers and menu",
       guestUnit: "",
+      guestLocked: "250 guests is available only for Sunday 18:00 weddings in January, February, July and August.",
       guestHint: "Type a number or choose below. The minimum guarantee is {min} guests.",
       flowerCards: [
         { name: "Standard", price: "KRW 8,000,000", sub: "Seasonal colours" },

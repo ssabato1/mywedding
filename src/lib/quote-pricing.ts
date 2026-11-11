@@ -170,9 +170,9 @@ export function parseDate(date: string): { day: number; month: number } | null {
 }
 
 /**
- * 컨벤션 1·2·3월 일요일 저녁 6시 예식 특전: 최소 보증인원 200명, 웨딩연출료 면제.
+ * 컨벤션 1·2·7·8월 일요일 저녁 6시 예식 특전: 최소 보증인원 250명, 웨딩연출료 면제.
  */
-export const SUNDAY_EVENING = { months: [1, 2, 3], time: "18:00", minGuests: 200 } as const;
+export const SUNDAY_EVENING = { months: [1, 2, 7, 8], time: "18:00", minGuests: 250 } as const;
 export function isSundayEveningPromo(venueKey: string, date: string, time?: string): boolean {
   if (venueKey !== "convention" || !(time ?? "").startsWith(SUNDAY_EVENING.time)) return false;
   const pd = parseDate(date);
@@ -275,7 +275,7 @@ export function estimate(input: EstimateInput): Estimate | null {
       detail: feeWaivedReason ?? undefined,
       amount: feeWaived ? 0 : P.venueFee,
     },
-    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", detail: promo ? (en ? "waived — Sunday 18:00, Jan–Mar" : "1·2·3월 일요일 저녁 6시 예식 면제") : undefined, amount: promo ? 0 : P.ceremony },
+    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", detail: promo ? (en ? "waived — Sunday 18:00 in Jan, Feb, Jul, Aug" : "1·2·7·8월 일요일 저녁 6시 예식 면제") : undefined, amount: promo ? 0 : P.ceremony },
     { section: "flower", label: `${en ? "Flower decoration" : "플라워 장식"} — ${en ? cap(tier) : { standard: "스탠다드", luxury: "럭셔리", special: "스페셜" }[tier]}`, detail: tier === "special" ? (en ? "from" : "부터") : undefined, amount: P.flower[tier] },
     { section: "others", label: en ? "Photography — formal portraits and snapshots, 2 photographers, original files on CD" : "사진 — 원판·스냅, 2인 촬영, 원본 CD 포함", detail: en ? "required" : "필수", amount: P.photo },
   );
@@ -303,7 +303,7 @@ export function estimate(input: EstimateInput): Estimate | null {
     notes.push(en ? `Calculated at the minimum guarantee of ${minGuests} guests.` : `최소 보증인원 ${minGuests}명 기준으로 계산했습니다.`);
   }
   if (promo) {
-    notes.push(en ? "Sunday 18:00 weddings in January, February and March: available from 200 guests, wedding production fee waived." : "1·2·3월 일요일 저녁 6시 예식 특전을 적용했습니다: 200명부터 가능, 웨딩연출료 면제.");
+    notes.push(en ? "Sunday 18:00 weddings in January, February, July and August: available from 250 guests, wedding production fee waived." : "1·2·7·8월 일요일 저녁 6시 예식 특전을 적용했습니다: 250명부터 가능, 웨딩연출료 면제.");
   }
   if (venue === "marina") {
     if (weekday === null) {
