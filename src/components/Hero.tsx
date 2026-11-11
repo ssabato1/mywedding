@@ -10,8 +10,8 @@ export default async function Hero() {
       <HeroMedia />
       {/* 가독성 오버레이 */}
       <div className="absolute inset-0 -z-10 bg-black/25" />
-      <div className="container-page flex min-h-[52vh] flex-col justify-center pt-10 pb-10 sm:min-h-[54vh] md:justify-start md:pt-8">
-        <p className="mb-4 text-sm font-bold tracking-[0.2em] text-gold">
+      <div className="container-page flex min-h-[52vh] flex-col justify-start pt-5 pb-10 sm:min-h-[54vh] md:pt-3">
+        <p className="mb-2 text-sm font-bold tracking-[0.2em] text-gold">
           {siteConfig.company.name}
         </p>
         <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-primary sm:text-6xl">
@@ -23,10 +23,10 @@ export default async function Hero() {
             </span>
           ))}
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary/80">
+        <p className="mt-3 max-w-xl text-lg leading-relaxed text-primary/80">
           {t.company.description}
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
           <CtaSlot label={t.nav.contact} />
           <a href={`tel:${siteConfig.contact.phoneIntl}`} className="font-sans text-lg font-semibold tracking-wide text-primary hover:text-gold">
             {siteConfig.contact.phone}
