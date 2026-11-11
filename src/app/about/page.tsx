@@ -80,6 +80,48 @@ export default async function AboutPage() {
       {/* 오시는 길 */}
       <section className="container-page py-16">
         <SectionHeading eyebrow={a.accessEyebrow} title={a.accessTitle} />
+        <p className="mb-8 max-w-2xl text-ink-sub">{a.accessIntro}</p>
+        <ul className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {a.accessWays.map((w) => (
+            <li key={w.title} className="rounded-card border border-line bg-card p-5">
+              <h3 className="font-display text-lg font-bold text-primary">{w.title}</h3>
+              <ol className="mt-3 space-y-2 text-sm leading-relaxed text-ink-sub">
+                {w.lines.map((line, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="shrink-0 text-accent">{i + 1}.</span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          ))}
+        </ul>
+        <div className="mb-10 flex flex-wrap gap-3 text-sm">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Some+Sevit+2085-14+Olympic-daero+Seocho-gu+Seoul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-line px-4 py-2 text-ink hover:border-line-dark hover:text-primary"
+          >
+            {a.mapLinks.google}
+          </a>
+          <a
+            href="https://map.naver.com/p/search/%EC%84%B8%EB%B9%9B%EC%84%AC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-line px-4 py-2 text-ink hover:border-line-dark hover:text-primary"
+          >
+            {a.mapLinks.naver}
+          </a>
+          <a
+            href="/docs/anniversary-arrival-guide.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-line px-4 py-2 text-ink hover:border-line-dark hover:text-primary"
+          >
+            {a.mapLinks.pdf}
+          </a>
+        </div>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-3 text-ink-sub">
             <p>{a.address}</p>

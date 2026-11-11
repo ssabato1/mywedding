@@ -72,6 +72,49 @@ export const en: Dict = {
     phone: "Tel",
     email: "Email",
     accessNote: "Shuttle from Express Bus Terminal. Parking for 800+ cars, coaches welcome.",
+    accessIntro: "Sevit Island sits inside Banpo Hangang Park at the south end of Banpo Bridge. Whether you come by subway, shuttle, bus or car, Express Bus Terminal is the landmark.",
+    accessWays: [
+      {
+        title: "Subway + walk",
+        lines: [
+          "Take Line 3, 7 or 9 to Express Bus Terminal Station",
+          "Follow the underground passage toward Exit 5 and come out at the Banpo Hangang Park exit",
+          "Walk straight toward the river, pass under Jamsu Bridge and continue to Sevit Island — about 10–15 minutes",
+        ],
+      },
+      {
+        title: "Shuttle bus",
+        lines: [
+          "Departs in front of Exit 5, Express Bus Terminal Station",
+          "Runs every 10–15 minutes from 90 minutes before the ceremony",
+          "About 5 minutes to the Sevit Island entrance. Return shuttles leave from the same spot after the event",
+        ],
+      },
+      {
+        title: "City bus",
+        lines: [
+          "Bus 405 or 740 to the Banpo Hangang Park stop",
+          "Walk down toward the river and cross the footbridge to Sevit Island",
+        ],
+      },
+      {
+        title: "By car · parking",
+        lines: [
+          "Navigation: search “Banpo Hangang Park Parking Lot 2” or “Some Sevit”",
+          "Olympic-daero → Banpo Hangang Park entrance → Jamsu Bridge roundabout → past the toll booth, keep right",
+          "Banpo Hangang Park Lots 2 & 3 and Seorae Naru lot (800+ spaces). Guests park free for 3 hours, the couple's parents for 6",
+          "Coaches for group guests are welcome — confirm the drop-off point with your coordinator in advance",
+        ],
+      },
+      {
+        title: "From Incheon Airport",
+        lines: [
+          "Airport limousine bus 6020 or 6000 to Express Bus Terminal, then the shuttle (about 70–90 minutes)",
+          "By taxi about 60 minutes — show the driver “세빛섬, 서초구 올림픽대로 2085-14”",
+        ],
+      },
+    ],
+    mapLinks: { google: "Open in Google Maps", naver: "Open in Naver Map", pdf: "Anniversary Hall arrival guide (PDF)" },
     partners: "Family brands",
     partnerNames: {
       floatingisland: "Floating Island",
