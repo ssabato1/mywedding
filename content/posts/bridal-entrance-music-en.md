@@ -5,29 +5,33 @@ date: 2026-11-19
 lang: en
 translationOf: bridal-entrance-music
 tags: [Wedding Music, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/bride-veil-subcut.jpg
+thumbnail: https://i.ytimg.com/vi/7brnQY0UHqY/maxresdefault.jpg
 ---
 
 When the doors open and the bride takes her first step, what the guests hear is music. The entrance piece is the one that most people listen to most quietly, and the sound that stays in the film for life. Based on the ten bridal entrance pieces of ArtM Studio Sounds, which produces its own classical arrangements, here is the character of each piece and how to choose. (As of November 2026)
 
+![ArtM Studio Sounds, "Bridal Entrance — Classical Best 10": ten classical pieces for the walk down the aisle](https://i.ytimg.com/vi/7brnQY0UHqY/maxresdefault.jpg)
+
+*Music: ArtM Studio Sounds — [YouTube @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [artmstudiosounds.com](https://artmstudiosounds.com)*
+
 ## The ten classical pieces most often chosen
 
-ArtM Studio Sounds covers these ten in its bridal entrance videos on [YouTube](https://www.youtube.com/@artmstudiosounds). Each can be previewed in a short clip.
+ArtM Studio Sounds covers these ten in its video ["Bridal Entrance — Classical Best 10"](https://youtu.be/7brnQY0UHqY). The title of each piece opens the full video at the point where that piece begins; "Listen" opens a one-minute preview.
 
-| Piece | Mood | Suits |
-| --- | --- | --- |
-| [Wagner, Bridal Chorus](https://www.youtube.com/shorts/VxZ5Gg7vnHQ) | The most familiar and traditional | A formal ceremony with many elders |
-| [Pachelbel, Canon in D](https://www.youtube.com/shorts/1d93ol4G_1U) | Calmly building harmony | Any hall; especially a long aisle |
-| [Bach, "Jesu, Joy of Man's Desiring"](https://www.youtube.com/shorts/KV4oM4_651Q) | Gentle and devout | A chapel mood, a daytime ceremony |
-| [Schubert, "Ave Maria"](https://www.youtube.com/shorts/cDyNlCrHnKs) | Slow and lyrical | A small hall, a quiet entrance |
-| [Clarke, Trumpet Voluntary](https://www.youtube.com/shorts/Yny6UEahRP8) | Brilliant and confident | A high-ceilinged large hall |
-| [Purcell, Trumpet Tune](https://www.youtube.com/shorts/won2QUGukV8) | A bright, lively fanfare | A convention hall, a daytime ceremony |
-| [Elgar, "Salut d'Amour"](https://www.youtube.com/shorts/WPnKL3T3yqA) | Affectionate and warm | Garden and outdoor, small weddings |
-| [Handel, "The Arrival of the Queen of Sheba"](https://www.youtube.com/shorts/VqN_GZzqR3Y) | Quick and vivid | Entering together; a bright ceremony |
-| [Liszt, "Liebestraum" No. 3](https://www.youtube.com/shorts/PLb9uX3aIQA) | Romantic and full | An evening ceremony, live piano |
-| [Chopin, Nocturne Op. 9 No. 2](https://www.youtube.com/shorts/oE9cUPhasdE) | Still and elegant | An evening ceremony with a night view, a small wedding |
+| No. | Piece (opens the full video at this track) | Start | Mood | Suits | One-minute preview |
+| --- | --- | --- | --- | --- | --- |
+| 01 | [Wagner, Bridal Chorus](https://youtu.be/7brnQY0UHqY?t=0) | 0:00 | The most familiar and traditional | A formal ceremony with many elders | [Listen](https://www.youtube.com/shorts/VxZ5Gg7vnHQ) |
+| 02 | [Pachelbel, Canon in D](https://youtu.be/7brnQY0UHqY?t=129) | 2:09 | Calmly building harmony | Any hall; especially a long aisle | [Listen](https://www.youtube.com/shorts/1d93ol4G_1U) |
+| 03 | [Clarke, Trumpet Voluntary](https://youtu.be/7brnQY0UHqY?t=452) | 7:32 | Brilliant and confident | A high-ceilinged large hall | [Listen](https://www.youtube.com/shorts/Yny6UEahRP8) |
+| 04 | [Chopin, Nocturne Op. 9 No. 2](https://youtu.be/7brnQY0UHqY?t=642) | 10:42 | Still and elegant | An evening ceremony with a night view, a small wedding | [Listen](https://www.youtube.com/shorts/oE9cUPhasdE) |
+| 05 | [Liszt, "Liebestraum" No. 3](https://youtu.be/7brnQY0UHqY?t=924) | 15:24 | Romantic and full | An evening ceremony, live piano | [Listen](https://www.youtube.com/shorts/PLb9uX3aIQA) |
+| 06 | [Schubert, "Ave Maria"](https://youtu.be/7brnQY0UHqY?t=1231) | 20:31 | Slow and lyrical | A small hall, a quiet entrance | [Listen](https://www.youtube.com/shorts/cDyNlCrHnKs) |
+| 07 | [Purcell, Trumpet Tune](https://youtu.be/7brnQY0UHqY?t=1561) | 26:01 | A bright, lively fanfare | A convention hall, a daytime ceremony | [Listen](https://www.youtube.com/shorts/won2QUGukV8) |
+| 08 | [Bach, "Jesu, Joy of Man's Desiring"](https://youtu.be/7brnQY0UHqY?t=1689) | 28:09 | Gentle and devout | A chapel mood, a daytime ceremony | [Listen](https://www.youtube.com/shorts/KV4oM4_651Q) |
+| 09 | [Handel, "The Arrival of the Queen of Sheba"](https://youtu.be/7brnQY0UHqY?t=1936) | 32:16 | Quick and vivid | Entering together; a bright ceremony | [Listen](https://www.youtube.com/shorts/VqN_GZzqR3Y) |
+| 10 | [Elgar, "Salut d'Amour"](https://youtu.be/7brnQY0UHqY?t=2138) | 35:38 | Affectionate and warm | Garden and outdoor, small weddings | [Listen](https://www.youtube.com/shorts/WPnKL3T3yqA) |
 
-![A bride in a long veil — the entrance piece is the sound that stays in the film for life](/images/bride-veil-subcut.jpg)
+Play all: [Bridal entrance — classical best 10 (YouTube)](https://youtu.be/7brnQY0UHqY), about 39 minutes. For original piano entrance pieces, see also the [30-minute bridal entrance piano selection](https://youtu.be/w49uPm6a0MM).
 
 ## How not to go wrong
 
@@ -41,15 +45,11 @@ ArtM Studio Sounds covers these ten in its bridal entrance videos on [YouTube](h
 
 **5. Let the entrances rise in steps.** A gentle piece for the parents, a strong one for the groom, the most beautiful of the day for the bride. Play the three in sequence and check nothing repeats.
 
-![An aisle in the garden — outdoors, a piece a single piano can carry suits (a wedding venue on the Han River in Seoul)](/images/marinapark-ceremony-06.jpg)
-
 ## Widening to the whole ceremony
 
 The bride's entrance is one piece of the ceremony's music. ArtM Studio Sounds' ["21 pieces in ceremony order"](https://youtu.be/ckgocda-R2Q) runs from the guests' arrival to the cake: quiet pieces by Satie, Bach, Debussy and Schumann before the ceremony; the Triumphal March from Verdi's Aida for the groom; Pachelbel's Canon at the vows; Handel's Largo at the declaration; the Bach–Gounod "Ave Maria" and Liszt's "Liebestraum" where a song would go; Mendelssohn's Wedding March for the recessional; the Radetzky March for the re-entrance; The Blue Danube for the cake; and Boccherini's Minuet and Mozart's Eine kleine Nachtmusik during the meal.
 
 If you choose the Canon for the bride's entrance, change the piece at the vows, so each piece belongs to one scene only.
-
-![A convention wedding — in a high-ceilinged hall a big-sounding piece fills the space (a wedding venue on the Han River in Seoul)](/images/convention-flower-something-blue.jpg)
 
 ## What to check when applying this in Korea
 
@@ -74,6 +74,7 @@ For example, at Sevit Island on the Han River in Seoul, ArtM Studio Sounds, part
 ## Sources
 
 - [ArtM Studio Sounds website](https://artmstudiosounds.com)
+- [ArtM Studio Sounds, Bridal Entrance — Classical Best 10 (YouTube)](https://youtu.be/7brnQY0UHqY)
 - [ArtM Studio Sounds on YouTube — bridal entrance series](https://www.youtube.com/@artmstudiosounds)
 - [ArtM Studio Sounds, 21 pieces in ceremony order (YouTube)](https://youtu.be/ckgocda-R2Q)
 - [ArtM Studio Sounds on Instagram (@artmstudiosounds)](https://www.instagram.com/artmstudiosounds/)

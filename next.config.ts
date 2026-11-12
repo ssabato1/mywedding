@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.floatingisland.co.kr" },
       { protocol: "https", hostname: "www.marinapark.co.kr" },
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "i.ytimg.com" },
     ],
   },
 };

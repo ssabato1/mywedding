@@ -3,29 +3,33 @@ title: "신부 입장곡 고르는 법: 클래식 10곡과 실패 없는 기준"
 description: "바그너의 결혼행진곡만 있는 것이 아닙니다. 신부 입장에 가장 많이 선택되는 클래식 10곡을 분위기별로 나누고, 홀과 드레스, 걷는 시간에 맞춰 고르는 기준을 정리했습니다."
 date: 2026-11-19
 tags: [웨딩 음악, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/bride-veil-subcut.jpg
+thumbnail: https://i.ytimg.com/vi/7brnQY0UHqY/maxresdefault.jpg
 ---
 
 문이 열리고 신부가 첫 걸음을 떼는 순간, 하객이 듣는 것은 음악입니다. 신부 입장곡은 예식에서 가장 많은 사람이 가장 조용히 듣는 한 곡이고, 영상에 평생 남는 소리입니다. 클래식 편곡 음원을 직접 제작하는 아트엠 스튜디오 사운즈(ArtM Studio Sounds)의 신부 입장곡 10선을 바탕으로, 곡의 성격과 고르는 기준을 정리했습니다. (2026년 11월 기준)
 
+![ArtM Studio Sounds 「40분 신부입장곡 | 결혼식 클래식 BEST 10」 — 버진로드를 걷는 순간을 위한 클래식 10곡](https://i.ytimg.com/vi/7brnQY0UHqY/maxresdefault.jpg)
+
+*음악: ArtM Studio Sounds — [유튜브 @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [홈페이지 artmstudiosounds.com](https://artmstudiosounds.com)*
+
 ## 신부 입장에 가장 많이 선택되는 클래식 10곡
 
-아트엠 스튜디오 사운즈는 [「40분 신부입장곡 | 결혼식 클래식 BEST 10」](https://www.youtube.com/@artmstudiosounds)과 「30분 신부입장곡 | 결혼식 피아노 10선」에서 아래 열 곡을 다룹니다. 곡마다 짧은 영상으로 미리 들어 볼 수 있습니다.
+아트엠 스튜디오 사운즈는 [「40분 신부입장곡 | 결혼식 클래식 BEST 10」](https://youtu.be/7brnQY0UHqY)에서 아래 열 곡을 다룹니다. 곡 이름을 누르면 전체 영상의 그 곡이 시작되는 지점이 열리고, ‘듣기’를 누르면 1분 미리듣기 영상이 열립니다.
 
-| 곡 | 분위기 | 어울리는 예식 |
-| --- | --- | --- |
-| [바그너 「결혼행진곡」](https://www.youtube.com/shorts/VxZ5Gg7vnHQ) | 가장 익숙한 정통 | 양가 어른이 많은 격식 있는 예식 |
-| [파헬벨 「캐논 D장조」](https://www.youtube.com/shorts/1d93ol4G_1U) | 차분히 쌓여 가는 화음 | 어느 홀에나. 긴 버진로드에 특히 좋습니다 |
-| [바흐 「예수, 인간 소망의 기쁨」](https://www.youtube.com/shorts/KV4oM4_651Q) | 잔잔하고 경건함 | 채플 분위기, 낮 예식 |
-| [슈베르트 「아베 마리아」](https://www.youtube.com/shorts/cDyNlCrHnKs) | 느리고 서정적 | 작은 홀, 조용한 입장 |
-| [클라크 「트럼펫 볼런터리」](https://www.youtube.com/shorts/Yny6UEahRP8) | 화려하고 당당함 | 층고 높은 대형 홀 |
-| [퍼셀 「트럼펫 튠」](https://www.youtube.com/shorts/won2QUGukV8) | 밝고 경쾌한 팡파르 | 컨벤션홀, 낮 예식 |
-| [엘가 「사랑의 인사」](https://www.youtube.com/shorts/WPnKL3T3yqA) | 다정하고 따뜻함 | 가든·야외, 소규모 예식 |
-| [헨델 「시바 여왕의 도착」](https://www.youtube.com/shorts/VqN_GZzqR3Y) | 빠르고 생기 있음 | 동시 입장, 밝은 분위기의 예식 |
-| [리스트 「사랑의 꿈 3번」](https://www.youtube.com/shorts/PLb9uX3aIQA) | 낭만적이고 풍성함 | 저녁 예식, 피아노 라이브 |
-| [쇼팽 「녹턴 Op.9 No.2」](https://www.youtube.com/shorts/oE9cUPhasdE) | 고요하고 우아함 | 야경이 보이는 저녁 예식, 스몰 웨딩 |
+| 번호 | 곡 (전체 영상에서 바로 듣기) | 시작 | 분위기 | 어울리는 예식 | 1분 미리듣기 |
+| --- | --- | --- | --- | --- | --- |
+| 01 | [바그너 「결혼행진곡」](https://youtu.be/7brnQY0UHqY?t=0) | 0:00 | 가장 익숙한 정통 | 양가 어른이 많은 격식 있는 예식 | [듣기](https://www.youtube.com/shorts/VxZ5Gg7vnHQ) |
+| 02 | [파헬벨 「캐논 D장조」](https://youtu.be/7brnQY0UHqY?t=129) | 2:09 | 차분히 쌓여 가는 화음 | 어느 홀에나. 긴 버진로드에 특히 좋습니다 | [듣기](https://www.youtube.com/shorts/1d93ol4G_1U) |
+| 03 | [클라크 「트럼펫 볼런터리」](https://youtu.be/7brnQY0UHqY?t=452) | 7:32 | 화려하고 당당함 | 층고 높은 대형 홀 | [듣기](https://www.youtube.com/shorts/Yny6UEahRP8) |
+| 04 | [쇼팽 「녹턴 Op.9 No.2」](https://youtu.be/7brnQY0UHqY?t=642) | 10:42 | 고요하고 우아함 | 야경이 보이는 저녁 예식, 스몰 웨딩 | [듣기](https://www.youtube.com/shorts/oE9cUPhasdE) |
+| 05 | [리스트 「사랑의 꿈 3번」](https://youtu.be/7brnQY0UHqY?t=924) | 15:24 | 낭만적이고 풍성함 | 저녁 예식, 피아노 라이브 | [듣기](https://www.youtube.com/shorts/PLb9uX3aIQA) |
+| 06 | [슈베르트 「아베 마리아」](https://youtu.be/7brnQY0UHqY?t=1231) | 20:31 | 느리고 서정적 | 작은 홀, 조용한 입장 | [듣기](https://www.youtube.com/shorts/cDyNlCrHnKs) |
+| 07 | [퍼셀 「트럼펫 튠」](https://youtu.be/7brnQY0UHqY?t=1561) | 26:01 | 밝고 경쾌한 팡파르 | 컨벤션홀, 낮 예식 | [듣기](https://www.youtube.com/shorts/won2QUGukV8) |
+| 08 | [바흐 「예수, 인간 소망의 기쁨」](https://youtu.be/7brnQY0UHqY?t=1689) | 28:09 | 잔잔하고 경건함 | 채플 분위기, 낮 예식 | [듣기](https://www.youtube.com/shorts/KV4oM4_651Q) |
+| 09 | [헨델 「시바 여왕의 도착」](https://youtu.be/7brnQY0UHqY?t=1936) | 32:16 | 빠르고 생기 있음 | 동시 입장, 밝은 분위기의 예식 | [듣기](https://www.youtube.com/shorts/VqN_GZzqR3Y) |
+| 10 | [엘가 「사랑의 인사」](https://youtu.be/7brnQY0UHqY?t=2138) | 35:38 | 다정하고 따뜻함 | 가든·야외, 소규모 예식 | [듣기](https://www.youtube.com/shorts/WPnKL3T3yqA) |
 
-![긴 베일의 신부 — 입장곡은 영상에 평생 남는 소리입니다](/images/bride-veil-subcut.jpg)
+전체 듣기: [신부 입장곡 클래식 BEST 10 연속 재생 (YouTube)](https://youtu.be/7brnQY0UHqY) — 약 39분입니다. 피아노로 만든 오리지널 입장곡을 찾는다면 [「30분 신부입장곡 | 결혼식 피아노 10선」](https://youtu.be/w49uPm6a0MM)도 함께 들어 보세요.
 
 ## 실패 없이 고르는 기준
 
@@ -39,15 +43,11 @@ thumbnail: /images/bride-veil-subcut.jpg
 
 **5. 혼주·신랑 입장곡과 단계가 올라가게.** 혼주 입장에 잔잔한 곡, 신랑 입장에 힘 있는 곡, 신부 입장에 그날 가장 아름다운 곡. 세 곡을 이어 들어 보고 겹치는 곡이 없는지 확인합니다.
 
-![가든의 버진로드 — 야외에서는 피아노 한 대로 충분한 곡이 어울립니다 (서울 한강의 한 웨딩홀)](/images/marinapark-ceremony-06.jpg)
-
 ## 예식 전체로 넓혀 보기
 
 신부 입장곡은 예식 음악의 한 곡입니다. 아트엠 스튜디오 사운즈의 [「70분 예식 순서별 음악 21곡」](https://youtu.be/ckgocda-R2Q)은 하객 맞이부터 케이크 커팅까지를 순서대로 배치합니다. 식전에는 사티·바흐·드뷔시·슈만의 조용한 곡, 신랑 입장에 베르디 「아이다」 개선행진곡, 서약에 파헬벨 캐논, 성혼 선언에 헨델 라르고, 축가 자리에 바흐·구노 「아베 마리아」와 리스트 「사랑의 꿈」, 퇴장에 멘델스존 「축혼행진곡」, 재입장에 라데츠키 행진곡, 케이크 커팅에 「아름답고 푸른 도나우」, 식사 시간에 보케리니 미뉴에트와 모차르트 「아이네 클라이네 나흐트무지크」입니다.
 
 이 순서에서 신부 입장곡으로 캐논을 고르면 서약 음악을 다른 곡으로 바꾸는 식으로, 한 곡이 한 장면만 맡게 조정합니다.
-
-![컨벤션 웨딩 — 층고가 높은 홀은 소리가 큰 곡이 공간을 채웁니다 (서울 한강의 한 웨딩홀)](/images/convention-flower-something-blue.jpg)
 
 ## 한국에서 적용할 때 확인할 조건
 
@@ -73,5 +73,7 @@ thumbnail: /images/bride-veil-subcut.jpg
 
 - [ArtM Studio Sounds 홈페이지](https://artmstudiosounds.com)
 - [ArtM Studio Sounds 유튜브 채널 — 신부입장곡 시리즈](https://www.youtube.com/@artmstudiosounds)
+- [ArtM Studio Sounds, 40분 신부입장곡 클래식 BEST 10 (YouTube)](https://youtu.be/7brnQY0UHqY)
+- [ArtM Studio Sounds, 30분 신부입장곡 피아노 10선 (YouTube)](https://youtu.be/w49uPm6a0MM)
 - [ArtM Studio Sounds, 70분 예식 순서별 음악 21곡 (YouTube)](https://youtu.be/ckgocda-R2Q)
 - [ArtM Studio Sounds 인스타그램 (@artmstudiosounds)](https://www.instagram.com/artmstudiosounds/)
