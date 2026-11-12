@@ -275,7 +275,7 @@ export const en: Dict = {
     flowerTitle: "Convention wedding florals",
     flowerBody: "An aisle lined with flowers beneath a 13-metre ceiling — blue hydrangea, lavender, blue and white, styled in the couple's own colours.",
     flowerAlts: ["Blue Hydrangea — an aisle of blue hydrangea", "Purple Aisle — an aisle in shades of purple", "Something Blue — blue and white styling", "Lavender Dream — lavender wedding florals"],
-    body: "A grand wedding in the Floating Island Convention Hall on Sevit Island. The hall is a white dome with a 13-metre ceiling, onto which images 45 metres wide by 12 metres are projected. 500 guests are seated together for one ceremony, with the hall and lobby entirely yours for a generous time slot. A formal ceremony flows into a relaxed reception.",
+    body: "A grand wedding in the Floating Island Convention Hall on Sevit Island. The hall is a white dome with a 13-metre ceiling, onto which images 45 metres wide by 12 metres are projected. A seated wedding for 500 guests is possible, with the hall and lobby entirely yours for a generous time slot. A formal ceremony flows into a relaxed reception.",
   },
   outdoor: {
     title: "Outdoor Wedding",
