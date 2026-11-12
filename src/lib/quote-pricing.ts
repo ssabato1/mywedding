@@ -243,11 +243,12 @@ export function docLangFor(nationality: string, groom: string, bride: string, ph
   return detectQuoteLang(groom, bride, phone, siteLang);
 }
 
-/** 답변 메일 언어: 한국인은 한국어, 중국인은 중국어, 일본인은 일본어, 그 외 외국인은 영어. */
-export function mailLangFor(nationality: string, groom: string, bride: string, phone: string, siteLang: string): "ko" | "en" | "zh" | "ja" {
+/** 국적별 답변 메일 언어 (그 나라의 말). 미국·싱가포르와 그 외 국가는 영어. */
+const MAIL_LANG_BY_NATIONALITY: Record<string, MailLang> = { kr: "ko", cn: "zh", jp: "ja", vn: "vi", my: "ms", fr: "fr", de: "de", it: "it", in: "hi" };
+export type MailLang = "ko" | "en" | "zh" | "ja" | "vi" | "ms" | "fr" | "de" | "it" | "hi";
+export function mailLangFor(nationality: string, groom: string, bride: string, phone: string, siteLang: string): MailLang {
   const n = asNationality(nationality);
-  if (n === "cn") return "zh";
-  if (n === "jp") return "ja";
+  if (n) return MAIL_LANG_BY_NATIONALITY[n] ?? "en";
   return docLangFor(nationality, groom, bride, phone, siteLang);
 }
 

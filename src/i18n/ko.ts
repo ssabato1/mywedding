@@ -395,7 +395,7 @@ export const ko = {
       nationality: "국적",
       nationalityPick: "선택해 주세요",
       nationalityOtherHint: "국가 이름 (예: 영국, 호주)",
-      nationalityHint: "국적에 따라 답변 메일을 한국어·영어·중국어·일본어로 보내 드립니다.",
+      nationalityHint: "국적에 맞는 언어로 답변 메일을 보내 드립니다. 견적서는 국문 또는 영문입니다.",
       groom: "신랑 이름",
       bride: "신부 이름",
       phone: "전화번호",

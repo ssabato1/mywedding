@@ -46,7 +46,7 @@ export function buildBody(q: Quote): string {
     "추가 내용:",
     q.message || "(없음)",
     "",
-    `답변 메일 언어: ${({ ko: "한국어", en: "영어", zh: "중국어", ja: "일본어" } as Record<string, string>)[q.mailLang] || "한국어"} · 견적서 언어: ${q.lang === "en" ? "영문" : "국문"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
+    `답변 메일 언어: ${MAIL_LANG_KO[q.mailLang] || "한국어"} · 견적서 언어: ${q.lang === "en" ? "영문" : "국문"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
   ].join("\n");
 }
 
@@ -78,6 +78,104 @@ function depositText(venueKey: string, lang: string): string {
       ].join("\n");
 }
 
+/** 한국어·영어 외 언어의 고객 안내 메일 문구 (엑셀 견적서는 영문으로 나간다) */
+type MailText = {
+  greet: (groom: string, bride: string) => string; intro: string; xlsx: string; recheck: string;
+  visitTitle: string; visitReq: string; visitTbd: string; visitConfirm: string;
+  date: string; dateTbd: string; allIn: string; questions: string; sign: string; subject: string;
+};
+const MAIL_TEXT: Record<string, MailText> = {
+  zh: {
+    greet: (g, b) => `${g} · ${b} 您好，`,
+    intro: "您好！我是 Floating Island 婚礼团队的 Rachel。感谢您咨询婚礼事宜。您填写的报价单已制作成 Excel 文件，请查收。",
+    xlsx: "报价单（Excel，英文）下载",
+    recheck: "※ 您希望的日期和时间段是否仍可预订，将由预订部再次确认后通知您。",
+    visitTitle: "■ 到访咨询预约", visitReq: "您申请的到访时间", visitTbd: "日期待定",
+    visitConfirm: "咨询确定后，我们会通过手机或邮件再次告知确认的日期和时间。",
+    date: "婚礼日期", dateTbd: "待定",
+    allIn: "各项目、金额、定金及汇款账户均已列在 Excel 报价单中。负责人将在一个工作日内与您联系。",
+    questions: "咨询", sign: "Rachel | 婚礼团队", subject: "自助报价单",
+  },
+  ja: {
+    greet: (g, b) => `${g} 様 · ${b} 様`,
+    intro: "こんにちは。Floating Island ウェディングチームのレイチェルでございます。この度はご結婚式についてお問い合わせいただき、誠にありがとうございます。ご作成いただいたお見積書を Excel ファイルでお送りいたします。",
+    xlsx: "お見積書（Excel・英語）のダウンロード",
+    recheck: "※ ご希望の日時のご予約可否につきましては、予約担当より改めて確認のうえご案内いたします。",
+    visitTitle: "■ ご来館相談のご予約", visitReq: "ご希望の来館日時", visitTbd: "日程未定",
+    visitConfirm: "ご相談日が確定しましたら、お電話またはメールにて確定した日時を改めてご連絡いたします。",
+    date: "挙式日時", dateTbd: "未定",
+    allIn: "各項目・金額・内金・お振込先はすべて Excel のお見積書に記載しております。担当者より1営業日以内にご連絡いたします。",
+    questions: "お問い合わせ", sign: "レイチェル | ウェディングチーム", subject: "セルフお見積書",
+  },
+  vi: {
+    greet: (g, b) => `Kính gửi anh ${g} và chị ${b},`,
+    intro: "Xin chào! Tôi là Rachel thuộc đội ngũ tiệc cưới của Floating Island. Cảm ơn anh chị đã liên hệ về lễ cưới. Bảng báo giá anh chị đã lập được gửi dưới dạng tệp Excel.",
+    xlsx: "Tải bảng báo giá (Excel, tiếng Anh)",
+    recheck: "※ Bộ phận đặt chỗ sẽ kiểm tra lại xem ngày và giờ anh chị mong muốn còn trống hay không và sẽ thông báo cho anh chị.",
+    visitTitle: "■ Đặt lịch tham quan và tư vấn", visitReq: "Thời gian anh chị đề nghị", visitTbd: "chưa xác định ngày",
+    visitConfirm: "Khi lịch tư vấn được xác nhận, chúng tôi sẽ gửi lại ngày giờ chính thức qua điện thoại hoặc email.",
+    date: "Ngày cưới", dateTbd: "chưa xác định",
+    allIn: "Tất cả hạng mục, số tiền, tiền đặt cọc và tài khoản chuyển khoản đều có trong bảng báo giá Excel. Nhân viên phụ trách sẽ liên hệ với anh chị trong vòng một ngày làm việc.",
+    questions: "Liên hệ", sign: "Rachel | Đội ngũ tiệc cưới", subject: "Bảng báo giá tự lập",
+  },
+  ms: {
+    greet: (g, b) => `Kepada ${g} & ${b},`,
+    intro: "Salam sejahtera. Saya Rachel daripada pasukan perkahwinan Floating Island. Terima kasih atas pertanyaan anda mengenai majlis perkahwinan. Sebut harga yang anda sediakan disertakan dalam bentuk fail Excel.",
+    xlsx: "Muat turun sebut harga (Excel, bahasa Inggeris)",
+    recheck: "※ Pejabat tempahan kami akan menyemak semula sama ada tarikh dan masa pilihan anda masih tersedia dan akan memaklumkan kepada anda.",
+    visitTitle: "■ Tempahan lawatan dan konsultasi", visitReq: "Tarikh dan masa yang dimohon", visitTbd: "tarikh belum ditetapkan",
+    visitConfirm: "Setelah konsultasi anda disahkan, kami akan menghantar semula tarikh dan masa yang disahkan melalui telefon bimbit atau e-mel.",
+    date: "Tarikh majlis", dateTbd: "belum ditetapkan",
+    allIn: "Semua butiran, jumlah, deposit dan akaun bank terdapat dalam fail sebut harga Excel. Penyelaras anda akan menghubungi anda dalam masa satu hari bekerja.",
+    questions: "Pertanyaan", sign: "Rachel | Pasukan Perkahwinan", subject: "Sebut harga kendiri",
+  },
+  fr: {
+    greet: (g, b) => `Bonjour ${g} et ${b},`,
+    intro: "Je suis Rachel, de l'équipe mariage de Floating Island. Nous vous remercions de votre demande concernant votre mariage. Vous trouverez ci-dessous le devis que vous avez établi, au format Excel.",
+    xlsx: "Télécharger le devis (Excel, en anglais)",
+    recheck: "※ Notre service des réservations vérifiera de nouveau la disponibilité de la date et de l'horaire souhaités et vous en informera.",
+    visitTitle: "■ Visite et rendez-vous de conseil", visitReq: "Date et heure souhaitées", visitTbd: "date à définir",
+    visitConfirm: "Dès que votre rendez-vous sera confirmé, nous vous communiquerons de nouveau la date et l'heure définitives par téléphone ou par e-mail.",
+    date: "Date du mariage", dateTbd: "à définir",
+    allIn: "Toutes les prestations, les montants, l'acompte et les coordonnées bancaires figurent dans le devis Excel. Votre coordinatrice vous contactera sous un jour ouvré.",
+    questions: "Contact", sign: "Rachel | Équipe mariage", subject: "Votre devis en ligne",
+  },
+  de: {
+    greet: (g, b) => `Guten Tag ${g} und ${b},`,
+    intro: "mein Name ist Rachel vom Hochzeitsteam von Floating Island. Vielen Dank für Ihre Anfrage zu Ihrer Hochzeit. Das von Ihnen erstellte Angebot erhalten Sie nachstehend als Excel-Datei.",
+    xlsx: "Angebot herunterladen (Excel, auf Englisch)",
+    recheck: "※ Unser Reservierungsbüro prüft noch einmal, ob Ihr Wunschtermin und Ihre Wunschzeit verfügbar sind, und gibt Ihnen Bescheid.",
+    visitTitle: "■ Besichtigung und Beratungstermin", visitReq: "Gewünschter Termin", visitTbd: "Datum noch offen",
+    visitConfirm: "Sobald Ihr Beratungstermin bestätigt ist, teilen wir Ihnen Datum und Uhrzeit nochmals telefonisch oder per E-Mail mit.",
+    date: "Hochzeitstermin", dateTbd: "noch offen",
+    allIn: "Alle Positionen, Beträge, die Anzahlung und die Bankverbindung finden Sie im Excel-Angebot. Ihre Ansprechpartnerin meldet sich innerhalb eines Werktags bei Ihnen.",
+    questions: "Kontakt", sign: "Rachel | Hochzeitsteam", subject: "Ihr Online-Angebot",
+  },
+  it: {
+    greet: (g, b) => `Gentili ${g} e ${b},`,
+    intro: "sono Rachel, del team matrimoni di Floating Island. Vi ringraziamo per la richiesta relativa al vostro matrimonio. Di seguito trovate il preventivo che avete compilato, in formato Excel.",
+    xlsx: "Scarica il preventivo (Excel, in inglese)",
+    recheck: "※ Il nostro ufficio prenotazioni verificherà nuovamente la disponibilità della data e dell'orario desiderati e vi informerà.",
+    visitTitle: "■ Visita e consulenza", visitReq: "Data e ora richieste", visitTbd: "data da definire",
+    visitConfirm: "Non appena la consulenza sarà confermata, vi comunicheremo nuovamente la data e l'ora definitive per telefono o via e-mail.",
+    date: "Data del matrimonio", dateTbd: "da definire",
+    allIn: "Tutte le voci, gli importi, l'acconto e le coordinate bancarie sono riportati nel preventivo Excel. La vostra coordinatrice vi contatterà entro un giorno lavorativo.",
+    questions: "Contatti", sign: "Rachel | Team matrimoni", subject: "Il vostro preventivo online",
+  },
+  hi: {
+    greet: (g, b) => `प्रिय ${g} और ${b},`,
+    intro: "नमस्ते! मैं फ़्लोटिंग आइलैंड की वेडिंग टीम से रेचल हूँ। अपने विवाह के बारे में पूछताछ करने के लिए धन्यवाद। आपके द्वारा तैयार किया गया कोटेशन एक्सेल फ़ाइल के रूप में भेज रही हूँ।",
+    xlsx: "कोटेशन डाउनलोड करें (एक्सेल, अंग्रेज़ी में)",
+    recheck: "※ आपकी पसंद की तारीख़ और समय उपलब्ध है या नहीं, इसकी हमारा आरक्षण कार्यालय दोबारा जाँच करके आपको सूचित करेगा।",
+    visitTitle: "■ भेंट और परामर्श की बुकिंग", visitReq: "आपके द्वारा चुना गया समय", visitTbd: "तारीख़ तय नहीं",
+    visitConfirm: "परामर्श की पुष्टि होते ही हम मोबाइल या ईमेल से पक्की तारीख़ और समय दोबारा भेजेंगे।",
+    date: "विवाह की तारीख़", dateTbd: "तय नहीं",
+    allIn: "सभी मदें, राशि, अग्रिम राशि और बैंक खाते का विवरण एक्सेल कोटेशन में दिया गया है। हमारे समन्वयक एक कार्यदिवस के भीतर आपसे संपर्क करेंगे।",
+    questions: "संपर्क", sign: "रेचल | वेडिंग टीम", subject: "आपका सेल्फ़ कोटेशन",
+  },
+};
+const MAIL_LANG_KO: Record<string, string> = { ko: "한국어", en: "영어", zh: "중국어", ja: "일본어", vi: "베트남어", ms: "말레이어", fr: "프랑스어", de: "독일어", it: "이탈리아어", hi: "힌디어" };
+
 /** 고객에게 보내는 견적서 메일 본문 (견적 + 계약금·계좌 + 계약 규정) */
 export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
   const en = q.lang === "en";
@@ -93,55 +191,25 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       ).toString()}`
     : "";
   const c = siteConfig.contact;
-  if (q.mailLang === "zh") {
+  const T = MAIL_TEXT[q.mailLang];
+  if (T) {
     return [
-      `${q.groom} · ${q.bride} 您好，`,
+      T.greet(q.groom, q.bride),
       "",
-      "您好！我是 Floating Island 婚礼团队的 Rachel。感谢您咨询婚礼事宜。您填写的报价单已制作成 Excel 文件，请查收。",
-      ...(xlsxLink ? ["", `报价单（Excel，英文）下载：${xlsxLink}`] : []),
+      T.intro,
+      ...(xlsxLink ? ["", `${T.xlsx}: ${xlsxLink}`] : []),
       "",
-      "※ 您希望的日期和时间段是否仍可预订，将由预订部再次确认后通知您。",
+      T.recheck,
       "",
       ...(q.visitDate || q.visitTime
-        ? [
-            "■ 到访咨询预约",
-            `您申请的到访时间：${q.visitDate || "日期待定"} ${q.visitTime || ""}`.trim(),
-            "咨询确定后，我们会通过手机或邮件再次告知确认的日期和时间。",
-            "",
-          ]
+        ? [T.visitTitle, `${T.visitReq}: ${q.visitDate || T.visitTbd} ${q.visitTime || ""}`.trim(), T.visitConfirm, ""]
         : []),
-      `婚礼日期：${q.date || "待定"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
-      "各项目、金额、定金及汇款账户均已列在 Excel 报价单中。负责人将在一个工作日内与您联系。",
+      `${T.date}: ${q.date || T.dateTbd}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
+      T.allIn,
       "",
-      `咨询：${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
+      `${T.questions}: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
       "",
-      "Rachel | 婚礼团队",
-      "Floating Island Wedding — https://www.floatingislandwedding.com",
-    ].join("\n");
-  }
-  if (q.mailLang === "ja") {
-    return [
-      `${q.groom} 様 · ${q.bride} 様`,
-      "",
-      "こんにちは。Floating Island ウェディングチームのレイチェルでございます。この度はご結婚式についてお問い合わせいただき、誠にありがとうございます。ご作成いただいたお見積書を Excel ファイルでお送りいたします。",
-      ...(xlsxLink ? ["", `お見積書（Excel・英語）のダウンロード：${xlsxLink}`] : []),
-      "",
-      "※ ご希望の日時のご予約可否につきましては、予約担当より改めて確認のうえご案内いたします。",
-      "",
-      ...(q.visitDate || q.visitTime
-        ? [
-            "■ ご来館相談のご予約",
-            `ご希望の来館日時：${q.visitDate || "日程未定"} ${q.visitTime || ""}`.trim(),
-            "ご相談日が確定しましたら、お電話またはメールにて確定した日時を改めてご連絡いたします。",
-            "",
-          ]
-        : []),
-      `挙式日時：${q.date || "未定"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
-      "各項目・金額・内金・お振込先はすべて Excel のお見積書に記載しております。担当者より1営業日以内にご連絡いたします。",
-      "",
-      `お問い合わせ：${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
-      "",
-      "レイチェル | ウェディングチーム",
+      T.sign,
       "Floating Island Wedding — https://www.floatingislandwedding.com",
     ].join("\n");
   }
@@ -219,10 +287,9 @@ export async function POST(req: Request) {
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");
   const wantsCopy = q.sendCopy === "on" && EMAIL_RE.test(q.email);
-  const customerSubject = q.mailLang === "zh"
-    ? `[Floating Island Wedding] 自助报价单 — ${q.date || "日期待定"}`
-    : q.mailLang === "ja"
-    ? `[Floating Island Wedding] セルフお見積書 — ${q.date || "日程未定"}`
+  const MT = MAIL_TEXT[q.mailLang];
+  const customerSubject = MT
+    ? `[Floating Island Wedding] ${MT.subject} — ${q.date || MT.dateTbd}`
     : q.lang === "en"
     ? `[Floating Island Wedding] Your self quote — ${q.date || "date undecided"}`
     : `[Floating Island Wedding] 셀프 견적서 — ${q.date || "날짜 미정"}`;
@@ -276,7 +343,7 @@ export async function POST(req: Request) {
       _replyto: q.email || undefined,
       ...(wantsCopy ? { _cc: q.email } : {}),
       희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 국적: nationalityLabel(q), 예상하객: q.guests,
-      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 답변메일언어: q.mailLang, 견적서언어: q.lang,
+      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 답변메일언어: MAIL_LANG_KO[q.mailLang] || q.mailLang, 견적서언어: q.lang,
       자동견적: estimate ? estimateToText(estimate) : "해당 없음",
       ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
       // 웨딩팀(레이첼)이 엑셀 견적서를 다시 만들어 첨부 답장할 때 쓰는 원본 선택값

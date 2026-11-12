@@ -397,7 +397,7 @@ export const en: Dict = {
       nationality: "Nationality",
       nationalityPick: "Please select",
       nationalityOtherHint: "Country (e.g. United Kingdom, Australia)",
-      nationalityHint: "We reply in Korean, English, Chinese or Japanese according to your nationality.",
+      nationalityHint: "We reply in the language of your country. The quote sheet is in Korean or English.",
       groom: "Groom's name",
       bride: "Bride's name",
       phone: "Phone",
