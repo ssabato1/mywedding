@@ -23,14 +23,14 @@ function respond(raw: Record<string, unknown>) {
   if (!usesXlsxTemplate(input.venueKey)) return NextResponse.json({ ok: false, error: "no template for this venue" }, { status: 400 });
   const buf = buildQuoteXlsx(input, {
     groom: s(raw.groom, 40), bride: s(raw.bride, 40), phone: s(raw.phone, 30), date: input.date, time: input.time,
-    account: process.env.DEPOSIT_ACCOUNT_FLOATING?.trim(), lang,
+    account: (input.venueKey === "marina" ? process.env.DEPOSIT_ACCOUNT_MARINA : process.env.DEPOSIT_ACCOUNT_FLOATING)?.trim(), lang,
   });
   if (!buf) return NextResponse.json({ ok: false, error: "cannot build" }, { status: 400 });
-  const name = quoteFileName(input.date, lang);
+  const name = quoteFileName(input.date, lang, input.venueKey);
   return new NextResponse(new Uint8Array(buf), {
     headers: {
       "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "Content-Disposition": `attachment; filename="${quoteFileName(input.date, "en")}"; filename*=UTF-8''${encodeURIComponent(name)}`,
+      "Content-Disposition": `attachment; filename="${quoteFileName(input.date, "en", input.venueKey)}"; filename*=UTF-8''${encodeURIComponent(name)}`,
       "Cache-Control": "no-store",
     },
   });

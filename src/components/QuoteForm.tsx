@@ -215,7 +215,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
 
   async function downloadExcel() {
     // 컨벤션·루프탑 가든은 계약서 양식(xlsx) 그대로 내려받는다
-    if (venueKey === "convention" || venueKey === "rooftop") {
+    if (venueKey === "convention" || venueKey === "rooftop" || venueKey === "marina") {
       try {
         const data = read();
         const r = await fetch("/api/quote/xlsx", {
@@ -227,7 +227,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           const url = URL.createObjectURL(await r.blob());
           const a = document.createElement("a");
           a.href = url;
-          a.download = quoteFileName(date, detectQuoteLang(String(data.groom ?? ""), String(data.bride ?? ""), String(data.phone ?? ""), lang));
+          a.download = quoteFileName(date, detectQuoteLang(String(data.groom ?? ""), String(data.bride ?? ""), String(data.phone ?? ""), lang), venueKey);
           a.click();
           URL.revokeObjectURL(url);
           return;

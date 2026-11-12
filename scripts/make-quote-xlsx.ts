@@ -23,13 +23,13 @@ if (!usesXlsxTemplate(input.venueKey)) {
   console.log(JSON.stringify({ ok: false, reason: "no-template", venueKey: input.venueKey, lang }));
   process.exit(0);
 }
-const buf = buildQuoteXlsx(input, { groom: s(raw.groom), bride: s(raw.bride), phone: s(raw.phone), date: input.date, time: input.time, lang, account: process.env.DEPOSIT_ACCOUNT_FLOATING });
+const buf = buildQuoteXlsx(input, { groom: s(raw.groom), bride: s(raw.bride), phone: s(raw.phone), date: input.date, time: input.time, lang, account: input.venueKey === "marina" ? process.env.DEPOSIT_ACCOUNT_MARINA : process.env.DEPOSIT_ACCOUNT_FLOATING });
 if (!buf) {
   console.log(JSON.stringify({ ok: false, reason: "build-failed", lang }));
   process.exit(0);
 }
 mkdirSync(outDir, { recursive: true });
-const file = join(outDir, quoteFileName(input.date, lang));
+const file = join(outDir, quoteFileName(input.date, lang, input.venueKey));
 writeFileSync(file, buf);
 const e = estimate({ ...input, lang });
 console.log(JSON.stringify({ ok: true, file, lang, guests: e?.guests, total: e ? Math.round(e.total) : null }));

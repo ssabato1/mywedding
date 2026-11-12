@@ -1,9 +1,9 @@
 import { unzip, zip } from "./zip";
-import { QUOTE_SHADE_EN, QUOTE_SHADE_KO, QUOTE_TEMPLATE_EN_B64, QUOTE_TEMPLATE_KO_B64 } from "./quote-template-b64";
-import { estimate, MENUS, type EstimateInput } from "./quote-pricing";
+import { QUOTE_TEMPLATES } from "./quote-template-b64";
+import { estimate, MENUS, PRICING, type EstimateInput, type VenueKey } from "./quote-pricing";
 
-/** 엑셀 양식(「CONTRACT SHEET」)을 쓰는 공간 */
-export const XLSX_VENUES = ["convention", "rooftop"] as const;
+/** 엑셀 견적서 양식을 쓰는 공간 (마리나파크는 회사명·주소·계좌가 다른 별도 양식) */
+export const XLSX_VENUES = ["convention", "rooftop", "marina"] as const;
 export function usesXlsxTemplate(venueKey: string): boolean {
   return (XLSX_VENUES as readonly string[]).includes(venueKey);
 }
@@ -65,11 +65,13 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
     const i = eK.lines.findIndex((l) => re.test(l.label));
     return i < 0 ? undefined : eL.lines[i];
   };
-  const entries = unzip(Buffer.from(en ? QUOTE_TEMPLATE_EN_B64 : QUOTE_TEMPLATE_KO_B64, "base64"));
+  const marina = input.venueKey === "marina";
+  const tpl = QUOTE_TEMPLATES[`${marina ? "mp" : "fi"}-${en ? "en" : "ko"}`];
+  const entries = unzip(Buffer.from(tpl.b64, "base64"));
   const sheetEntry = entries.find((x) => x.name === "xl/worksheets/sheet1.xml");
   if (!sheetEntry) return null;
   const sh = new Sheet(sheetEntry.data.toString("utf8"));
-  const SHADE = en ? QUOTE_SHADE_EN : QUOTE_SHADE_KO;
+  const SHADE = tpl.shade;
   const g = eK.guests;
   const T = (ko: string, e: string) => (en ? e : ko);
   const tbd = T("미정", "to be decided");
@@ -83,7 +85,9 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
       ? new Date(Date.UTC(+y, +m - 1, +d)).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
       : `${y}년 ${+m}월 ${+d}일 (${"일월화수목금토"[new Date(Date.UTC(+y, +m - 1, +d)).getUTCDay()]})`
     : tbd;
-  const venueName = input.venueKey === "rooftop" ? T("세빛섬 5층 루프탑 가든", "Sevit Island 5F Rooftop Garden") : T("플로팅아일랜드 컨벤션홀", "Floating Island Convention Hall");
+  const venueName = marina
+    ? T("마리나파크 (반포한강공원 서래나루)", "Marina Park (Seoraenaru, Banpo Hangang Park)")
+    : input.venueKey === "rooftop" ? T("세빛섬 5층 루프탑 가든", "Sevit Island 5F Rooftop Garden") : T("플로팅아일랜드 컨벤션홀", "Floating Island Convention Hall");
   const issued = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
   sh.str("A4", `${T("예식명", "Event")} :  ${names ? T(`${names} 님 예식`, `Wedding of ${names}`) : ""}`);
   sh.str("D4", `${T("참석 예상 인원", "Expected guests")} :  ${Math.round(g * 1.1)}${T("명", "")}`);
@@ -130,8 +134,10 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
   };
   const fee = single(26, line(/^전관 독점 사용료/)!);
   const ceremonyLine = eL.lines[eK.lines.findIndex((l) => l.section === "ceremony")];
-  sh.num("C29", 2200000);
-  const ceremony = single(29, ceremonyLine, T("영상 · 조명 연출 · 혼구용품 · 메뉴카드 · 웰컴드링크 · 플라워 세레모니 · 웨딩카", "Video · lighting · ceremony items · menu cards · welcome drink · flower ceremony · wedding car"));
+  sh.num("C29", PRICING[input.venueKey as VenueKey].ceremony);
+  const ceremony = single(29, ceremonyLine, marina
+    ? T("음향 · 조명 · 웨딩 세팅 · 혼구용품 · 신부대기실", "Sound · lighting · wedding setting · ceremony items · bridal room")
+    : T("영상 · 조명 연출 · 혼구용품 · 메뉴카드 · 웰컴드링크 · 플라워 세레모니 · 웨딩카", "Video · lighting · ceremony items · menu cards · welcome drink · flower ceremony · wedding car"));
 
   // ── 플라워: 고른 타입 한 줄만 합산
   const flowerLine = line(/^플라워 장식/)!;

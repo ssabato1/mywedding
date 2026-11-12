@@ -195,9 +195,12 @@ export function minGuestsFor(venueKey: VenueKey, date: string, time?: string): n
 }
 
 /** 내려받는 파일 이름 — 예식 희망일을 앞에 둔다 */
-export function quoteFileName(date: string, lang: string): string {
+export function quoteFileName(date: string, lang: string, venueKey = ""): string {
   const d = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : lang === "en" ? "date-tbd" : "날짜미정";
-  return lang === "en" ? `${d}-floating-island-wedding-quotation.xlsx` : `${d}-플로팅아일랜드-웨딩-견적서.xlsx`;
+  const marina = venueKey === "marina";
+  return lang === "en"
+    ? `${d}-${marina ? "marina-park" : "floating-island"}-wedding-quotation.xlsx`
+    : `${d}-${marina ? "마리나파크" : "플로팅아일랜드"}-웨딩-견적서.xlsx`;
 }
 
 /**
