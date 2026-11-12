@@ -51,7 +51,7 @@ Style Me Pretty suggests grouping guests into small units to make a large guest 
 | Length of the slot | Three hours or more, with no overlap with the next wedding |
 | Location of the bridal room and VIP room | So the parents' waiting area and the guest flow do not cross |
 
-For example, the Floating Island Convention Hall at Sevit Island on the Han River in Seoul seats 500 beneath a 13-metre ceiling with a large ceiling projection, 45 metres wide by 12 metres, and a lobby, offers parking for 900 cars, coach drop-off and a shuttle from the Express Bus Terminal, and runs ceremony and banquet as one sequence within a generous time slot. At any venue, whether it can answer the seven rows above with numbers is the test of whether it can take a large wedding.
+For example, the Floating Island Convention Hall at Sevit Island on the Han River in Seoul is a white dome with a 13-metre ceiling that seats 500, with images 45 metres wide by 12 metres projected overhead and a lobby; it offers parking for 900 cars, coach drop-off and a shuttle from the Express Bus Terminal, and runs ceremony and banquet as one sequence within a generous time slot. At any venue, whether it can answer the seven rows above with numbers is the test of whether it can take a large wedding.
 
 ![The Han River at night after the wedding — Sevit Island](/images/sevit-night-02.jpg)
 
