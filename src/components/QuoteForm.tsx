@@ -500,6 +500,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 <option value="">{f.nationalityPick}</option>
                 <option value="kr">{f.nationalityKr}</option>
                 <option value="cn">{f.nationalityCn}</option>
+                <option value="jp">{f.nationalityJp}</option>
                 <option value="other">{f.nationalityOther}</option>
               </select>
             </label>

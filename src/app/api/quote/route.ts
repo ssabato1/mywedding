@@ -24,6 +24,7 @@ export function buildSubject(q: Quote): string {
 function nationalityLabel(q: Quote): string {
   if (q.nationality === "kr") return "대한민국";
   if (q.nationality === "cn") return "중국";
+  if (q.nationality === "jp") return "일본";
   if (q.nationality === "other") return q.nationalityOther ? `그 외 (${q.nationalityOther})` : "그 외 국가";
   return "미입력";
 }
@@ -48,7 +49,7 @@ export function buildBody(q: Quote): string {
     "추가 내용:",
     q.message || "(없음)",
     "",
-    `답변 메일 언어: ${({ ko: "한국어", en: "영어", zh: "중국어" } as Record<string, string>)[q.mailLang] || "한국어"} · 견적서 언어: ${q.lang === "en" ? "영문" : "국문"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
+    `답변 메일 언어: ${({ ko: "한국어", en: "영어", zh: "중국어", ja: "일본어" } as Record<string, string>)[q.mailLang] || "한국어"} · 견적서 언어: ${q.lang === "en" ? "영문" : "국문"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
   ].join("\n");
 }
 
@@ -118,6 +119,32 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       `咨询：${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
       "",
       "Rachel | 婚礼团队",
+      "Floating Island Wedding — https://www.floatingislandwedding.com",
+    ].join("\n");
+  }
+  if (q.mailLang === "ja") {
+    return [
+      `${q.groom} 様 · ${q.bride} 様`,
+      "",
+      "こんにちは。Floating Island ウェディングチームのレイチェルでございます。この度はご結婚式についてお問い合わせいただき、誠にありがとうございます。ご作成いただいたお見積書を Excel ファイルでお送りいたします。",
+      ...(xlsxLink ? ["", `お見積書（Excel・英語）のダウンロード：${xlsxLink}`] : []),
+      "",
+      "※ ご希望の日時のご予約可否につきましては、予約担当より改めて確認のうえご案内いたします。",
+      "",
+      ...(q.visitDate || q.visitTime
+        ? [
+            "■ ご来館相談のご予約",
+            `ご希望の来館日時：${q.visitDate || "日程未定"} ${q.visitTime || ""}`.trim(),
+            "ご相談日が確定しましたら、お電話またはメールにて確定した日時を改めてご連絡いたします。",
+            "",
+          ]
+        : []),
+      `挙式日時：${q.date || "未定"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
+      "各項目・金額・内金・お振込先はすべて Excel のお見積書に記載しております。担当者より1営業日以内にご連絡いたします。",
+      "",
+      `お問い合わせ：${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
+      "",
+      "レイチェル | ウェディングチーム",
       "Floating Island Wedding — https://www.floatingislandwedding.com",
     ].join("\n");
   }
@@ -197,6 +224,8 @@ export async function POST(req: Request) {
   const wantsCopy = q.sendCopy === "on" && EMAIL_RE.test(q.email);
   const customerSubject = q.mailLang === "zh"
     ? `[Floating Island Wedding] 自助报价单 — ${q.date || "日期待定"}`
+    : q.mailLang === "ja"
+    ? `[Floating Island Wedding] セルフお見積書 — ${q.date || "日程未定"}`
     : q.lang === "en"
     ? `[Floating Island Wedding] Your self quote — ${q.date || "date undecided"}`
     : `[Floating Island Wedding] 셀프 견적서 — ${q.date || "날짜 미정"}`;
