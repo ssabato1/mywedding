@@ -110,7 +110,7 @@ function readDoc(collection: Collection, filename: string): ContentDoc | null {
   if (!fs.existsSync(filePath)) return null;
   try {
     const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
-    if (!data.title || !data.description || !data.date) {
+    if (!data.title || data.description === undefined || !data.date) {
       console.warn(`[content] ${collection}/${filename} 스킵 — 필수 필드(title·description·date) 누락`);
       return null;
     }

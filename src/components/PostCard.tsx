@@ -29,7 +29,7 @@ export default function PostCard({ post }: { post: ContentMeta }) {
           {post.tags[0] && <span className="text-gold-dark">{post.tags[0]}</span>}
         </div>
         <h3 className="mt-2 font-display text-xl font-semibold leading-snug text-gold group-hover:text-gold-dark">{post.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink-sub">{post.description}</p>
+        {post.description && <p className="mt-2 text-sm leading-relaxed text-ink-sub">{post.description}</p>}
       </div>
     </Link>
   );

@@ -52,7 +52,7 @@ export default async function PostPage(
           {post.tags[0] && <span className="text-gold-dark">{post.tags[0]}</span>}
         </div>
         <h1 className="mt-4 font-display text-3xl font-semibold leading-snug text-gold sm:text-[2.6rem] sm:leading-[1.25]">{post.title}</h1>
-        <p className="mt-5 text-[17px] leading-relaxed text-ink-sub">{post.description}</p>
+        {post.description && <p className="mt-5 text-[17px] leading-relaxed text-ink-sub">{post.description}</p>}
       </header>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
       {html.includes("data-yt=") && <YouTubeTracks />}
