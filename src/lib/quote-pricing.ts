@@ -272,7 +272,7 @@ export function estimate(input: EstimateInput): Estimate | null {
     const afterQty = Number.isFinite(ag) && ag > 0 ? ag : guests;
     lines.push({ section: "fnb", label: en ? "After-party canapés" : "애프터 파티 카나페", qty: afterQty, unit: canapeUnit, detail: en ? "optional" : "선택", amount: canapeUnit * afterQty });
   }
-  if (input.noodles) lines.push({ section: "fnb", label: en ? "Janchi-guksu (banquet noodles)" : "잔치국수", qty: guests, unit: PRICING.noodlesPerGuest, amount: PRICING.noodlesPerGuest * guests });
+  if (input.noodles) lines.push({ section: "fnb", label: en ? "Wedding noodle" : "잔치국수", qty: guests, unit: PRICING.noodlesPerGuest, amount: PRICING.noodlesPerGuest * guests });
   if (input.riceCake) lines.push({ section: "fnb", label: en ? "Tteok (rice cake)" : "떡", qty: guests, unit: PRICING.riceCakePerGuest, amount: PRICING.riceCakePerGuest * guests });
   if (input.wine && P.winePerBottle > 0) {
     const bottles = Math.ceil(guests / P.guestsPerWineBottle);
