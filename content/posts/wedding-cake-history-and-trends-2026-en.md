@@ -5,12 +5,12 @@ date: 2026-12-17
 lang: en
 translationOf: wedding-cake-history-and-trends-2026
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/wedding-cake-ruffle-blush-01.jpg
+thumbnail: /images/wedding-cake-ruffle-blush-02.jpg
 ---
 
 At a wedding the cake is a scene before it is a dessert. The moment when two people hold one knife and cut the first slice appears in almost every wedding album. But why a cake, why white, and why in tiers? Here is how the wedding cake came to look the way it does, where its design is heading in 2026, and what to check when you choose one. The story of the white dress is told separately in [Why Wedding Dresses Are White](/blog/why-wedding-dresses-are-white-en).
 
-![A four-tier blush pink wedding cake with petal ruffles and sugar roses](/images/wedding-cake-ruffle-blush-01.jpg)
+![A five-tier blush pink wedding cake with petal ruffles, a monogram and sugar roses](/images/wedding-cake-ruffle-blush-02.jpg)
 
 ## The beginning: a kiss over a pile of buns
 
@@ -36,9 +36,7 @@ The tiered cake has a well-known story. In 1703 Thomas Rich, a baker's apprentic
 
 The early tiers, however, were decoration that could not be eaten. Wikipedia notes that the cake at Prince Leopold's wedding in 1882 was the first to be entirely edible: each tier was coated in a dense icing that hardened enough to carry the weight above. Pillars between the tiers appeared about twenty years later, and the earliest ones were broomsticks covered in icing.
 
-![A four-tier wedding cake draped with pearl piping and sugar flowers](/images/wedding-cake-pearl-roses-01.jpg)
-
-*Photo: Cotton & Crumbs*
+![A four-tier ivory wedding cake with piped vines, pearl borders and white roses, set on a reception table among candles](/images/wedding-cake-ivory-roses-01.jpg)
 
 ## Cutting the cake, and the top tier
 
@@ -63,7 +61,7 @@ Saving the top tier comes from nineteenth century Europe. Fruitcake keeps well, 
 
 The trends named by overseas media for 2026 run in two directions: a return to the old, and the cake treated as sculpture. This summary draws on Tasting Table's [seven wedding cake trends for 2026](https://www.tastingtable.com/2101411/wedding-cake-trends-2026/) and The Wed's [ten major cake trends for 2026](https://thewed.com/magazine/major-cake-trends-for-2026).
 
-- **Vintage decoration returns**: ruffles, old-school piping, swans and bride-and-groom toppers are back. The petal ruffles and pearl piping in the photos above belong to this trend.
+- **Vintage decoration returns**: ruffles, old-school piping, swans and bride-and-groom toppers are back. The petal ruffles and pearl borders in the photos above belong to this trend.
 - **Edible lace**: fine piping that imitates lace and crochet carries the fabric of the dress onto the cake.
 - **Long, horizontal cakes**: cakes that run along the table instead of rising upward, doubling as the centrepiece of a long table.
 - **Sculptural cakes**: conical and abstract forms inspired by architecture and fashion.
