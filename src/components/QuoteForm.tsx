@@ -240,14 +240,30 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, lang }),
       });
-      const j = (await r.json()) as { ok: boolean; mailto?: string; copy?: string };
+      const j = (await r.json()) as { ok: boolean; mailto?: string; copy?: string; relay?: { url: string; payload: Record<string, unknown>; copy: string } };
       if (j.ok) setStatus(j.copy === "sent" ? "copied" : j.copy === "requested" ? "requested" : "done");
+      else if (j.relay && (await relaySend(j.relay))) setStatus(j.relay.copy === "requested" ? "requested" : "done");
       else if (j.mailto) {
         setStatus("mail");
         window.location.href = j.mailto;
       } else setStatus("error");
     } catch {
       setStatus("error");
+    }
+  }
+
+  /** FormSubmit 은 브라우저 요청만 받으므로 여기서 직접 보낸다. 성공 응답일 때만 true. */
+  async function relaySend(relay: { url: string; payload: Record<string, unknown> }): Promise<boolean> {
+    try {
+      const r = await fetch(relay.url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(relay.payload),
+      });
+      const j = (await r.json()) as { success?: string | boolean };
+      return r.ok && String(j.success) === "true";
+    } catch {
+      return false;
     }
   }
 

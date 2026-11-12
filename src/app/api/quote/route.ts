@@ -173,26 +173,21 @@ export async function POST(req: Request) {
     }
   }
 
-  // 2) FormSubmit
-  try {
-    const r = await fetch(`https://formsubmit.co/ajax/${to}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        _subject: subject,
-        _template: "box",
-        _replyto: q.email || undefined,
-        ...(wantsCopy ? { _cc: q.email } : {}),
-        희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
-        선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
-        자동견적: estimate ? estimateToText(estimate) : "해당 없음",
-        ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
-      }),
-    });
-    if (r.ok) return NextResponse.json({ ok: true, via: "formsubmit", copy: wantsCopy ? "requested" : "none", estimate });
-  } catch {
-    /* fall through */
-  }
-
-  return NextResponse.json({ ok: false, mailto, estimate }, { status: 502 });
+  // 2) FormSubmit — 서버에서 보내면 FormSubmit 이 거절하므로(브라우저 요청만 허용),
+  //    보낼 내용을 만들어 돌려주고 브라우저(QuoteForm)가 직접 전송한다.
+  const relay = {
+    url: `https://formsubmit.co/ajax/${to}`,
+    payload: {
+      _subject: subject,
+      _template: "box",
+      _replyto: q.email || undefined,
+      ...(wantsCopy ? { _cc: q.email } : {}),
+      희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
+      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
+      자동견적: estimate ? estimateToText(estimate) : "해당 없음",
+      ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
+    },
+    copy: wantsCopy ? "requested" : "none",
+  };
+  return NextResponse.json({ ok: false, relay, mailto, estimate });
 }
