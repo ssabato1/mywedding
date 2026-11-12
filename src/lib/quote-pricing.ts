@@ -121,7 +121,7 @@ export const MENU_GROUPS = [
   { key: "vegetarian", ko: "베지테리언 코스", en: "Vegetarian course" },
   { key: "fish", ko: "피시 코스", en: "Fish course" },
 ];
-export const DEFAULT_MENU: Record<string, string> = { convention: "western-c", rooftop: "western-c", marina: "western-c" };
+export const DEFAULT_MENU: Record<string, string> = { convention: "western-a", rooftop: "western-a", marina: "western-a" };
 
 /** 공간별 예식 시작 시간 */
 export const CEREMONY_TIMES: Record<string, string[]> = {
