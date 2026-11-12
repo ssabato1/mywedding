@@ -134,7 +134,7 @@ export const en: Dict = {
     ],
     brochureHallTitle: "Convention Hall",
     brochureHall: [
-      "A 762 m² hall beneath a 13-metre dome with no pillars — a wide-open canvas for projection.",
+      "A 762 m² hall beneath a 13-metre white dome with no pillars — the dome ceiling becomes a canvas for images 45 metres wide by 12 metres.",
       "The standard configuration includes a 45-metre-wide screen, 20,000-ANSI projection and high-quality audio.",
       "A lift raises cars directly into the hall, for vehicle launches, automotive exhibitions and immersive brand experiences.",
       "From banquets for 500 to international symposia, gala dinners, fashion shows and music showcases, the space adapts to the event.",
