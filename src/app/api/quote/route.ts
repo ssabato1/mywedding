@@ -82,7 +82,7 @@ function depositText(venueKey: string, lang: string): string {
 type MailText = {
   greet: (groom: string, bride: string) => string; intro: string; xlsx: string; recheck: string;
   visitTitle: string; visitReq: string; visitTbd: string; visitConfirm: string;
-  date: string; dateTbd: string; allIn: string; questions: string; sign: string; subject: string;
+  date: string; dateTbd: string; allIn: string; noQuote: string; questions: string; sign: string; subject: string;
 };
 const MAIL_TEXT: Record<string, MailText> = {
   zh: {
@@ -94,6 +94,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "咨询确定后，我们会通过手机或邮件再次告知确认的日期和时间。",
     date: "婚礼日期", dateTbd: "待定",
     allIn: "各项目、金额、定金及汇款账户均已列在 Excel 报价单中。负责人将在一个工作日内与您联系。",
+    noQuote: "我们将根据您的需求制作报价单，由负责人在一个工作日内与您联系。",
     questions: "咨询", sign: "Rachel | 婚礼团队", subject: "自助报价单",
   },
   ja: {
@@ -105,6 +106,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "ご相談日が確定しましたら、お電話またはメールにて確定した日時を改めてご連絡いたします。",
     date: "挙式日時", dateTbd: "未定",
     allIn: "各項目・金額・内金・お振込先はすべて Excel のお見積書に記載しております。担当者より1営業日以内にご連絡いたします。",
+    noQuote: "ご希望の内容に合わせてお見積書を作成し、担当者より1営業日以内にご連絡いたします。",
     questions: "お問い合わせ", sign: "レイチェル | ウェディングチーム", subject: "セルフお見積書",
   },
   vi: {
@@ -116,6 +118,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "Khi lịch tư vấn được xác nhận, chúng tôi sẽ gửi lại ngày giờ chính thức qua điện thoại hoặc email.",
     date: "Ngày cưới", dateTbd: "chưa xác định",
     allIn: "Tất cả hạng mục, số tiền, tiền đặt cọc và tài khoản chuyển khoản đều có trong bảng báo giá Excel. Nhân viên phụ trách sẽ liên hệ với anh chị trong vòng một ngày làm việc.",
+    noQuote: "Chúng tôi sẽ lập bảng báo giá theo nội dung anh chị mong muốn và nhân viên phụ trách sẽ liên hệ trong vòng một ngày làm việc.",
     questions: "Liên hệ", sign: "Rachel | Đội ngũ tiệc cưới", subject: "Bảng báo giá tự lập",
   },
   ms: {
@@ -127,6 +130,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "Setelah konsultasi anda disahkan, kami akan menghantar semula tarikh dan masa yang disahkan melalui telefon bimbit atau e-mel.",
     date: "Tarikh majlis", dateTbd: "belum ditetapkan",
     allIn: "Semua butiran, jumlah, deposit dan akaun bank terdapat dalam fail sebut harga Excel. Penyelaras anda akan menghubungi anda dalam masa satu hari bekerja.",
+    noQuote: "Kami akan menyediakan sebut harga mengikut apa yang anda rancangkan, dan penyelaras anda akan menghubungi anda dalam masa satu hari bekerja.",
     questions: "Pertanyaan", sign: "Rachel | Pasukan Perkahwinan", subject: "Sebut harga kendiri",
   },
   fr: {
@@ -138,6 +142,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "Dès que votre rendez-vous sera confirmé, nous vous communiquerons de nouveau la date et l'heure définitives par téléphone ou par e-mail.",
     date: "Date du mariage", dateTbd: "à définir",
     allIn: "Toutes les prestations, les montants, l'acompte et les coordonnées bancaires figurent dans le devis Excel. Votre coordinatrice vous contactera sous un jour ouvré.",
+    noQuote: "Nous établirons un devis selon vos souhaits et votre coordinatrice vous contactera sous un jour ouvré.",
     questions: "Contact", sign: "Rachel | Équipe mariage", subject: "Votre devis en ligne",
   },
   de: {
@@ -149,6 +154,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "Sobald Ihr Beratungstermin bestätigt ist, teilen wir Ihnen Datum und Uhrzeit nochmals telefonisch oder per E-Mail mit.",
     date: "Hochzeitstermin", dateTbd: "noch offen",
     allIn: "Alle Positionen, Beträge, die Anzahlung und die Bankverbindung finden Sie im Excel-Angebot. Ihre Ansprechpartnerin meldet sich innerhalb eines Werktags bei Ihnen.",
+    noQuote: "Wir erstellen ein Angebot nach Ihren Wünschen; Ihre Ansprechpartnerin meldet sich innerhalb eines Werktags bei Ihnen.",
     questions: "Kontakt", sign: "Rachel | Hochzeitsteam", subject: "Ihr Online-Angebot",
   },
   it: {
@@ -160,6 +166,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "Non appena la consulenza sarà confermata, vi comunicheremo nuovamente la data e l'ora definitive per telefono o via e-mail.",
     date: "Data del matrimonio", dateTbd: "da definire",
     allIn: "Tutte le voci, gli importi, l'acconto e le coordinate bancarie sono riportati nel preventivo Excel. La vostra coordinatrice vi contatterà entro un giorno lavorativo.",
+    noQuote: "Prepareremo un preventivo in base ai vostri desideri e la vostra coordinatrice vi contatterà entro un giorno lavorativo.",
     questions: "Contatti", sign: "Rachel | Team matrimoni", subject: "Il vostro preventivo online",
   },
   hi: {
@@ -171,6 +178,7 @@ const MAIL_TEXT: Record<string, MailText> = {
     visitConfirm: "परामर्श की पुष्टि होते ही हम मोबाइल या ईमेल से पक्की तारीख़ और समय दोबारा भेजेंगे।",
     date: "विवाह की तारीख़", dateTbd: "तय नहीं",
     allIn: "सभी मदें, राशि, अग्रिम राशि और बैंक खाते का विवरण एक्सेल कोटेशन में दिया गया है। हमारे समन्वयक एक कार्यदिवस के भीतर आपसे संपर्क करेंगे।",
+    noQuote: "आपकी योजना के अनुसार हम कोटेशन तैयार करेंगे और हमारे समन्वयक एक कार्यदिवस के भीतर आपसे संपर्क करेंगे।",
     questions: "संपर्क", sign: "रेचल | वेडिंग टीम", subject: "आपका सेल्फ़ कोटेशन",
   },
 };
@@ -205,7 +213,7 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
         ? [T.visitTitle, `${T.visitReq}: ${q.visitDate || T.visitTbd} ${q.visitTime || ""}`.trim(), T.visitConfirm, ""]
         : []),
       `${T.date}: ${q.date || T.dateTbd}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
-      T.allIn,
+      xlsxLink ? T.allIn : T.noQuote,
       "",
       `${T.questions}: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
       "",
@@ -217,8 +225,12 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
     en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
     "",
     en
-      ? "Hello, this is Rachel from the Floating Island wedding team. Thank you for your wedding inquiry. Please find your quote in the Excel sheet below."
-      : "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 예식 문의해 주셔서 감사합니다. 작성하신 견적서를 엑셀 파일로 보내 드립니다.",
+      ? xlsxLink
+        ? "Hello, this is Rachel from the Floating Island wedding team. Thank you for your wedding inquiry. Please find your quote in the Excel sheet below."
+        : "Hello, this is Rachel from the Floating Island wedding team. Thank you for your inquiry. Here is a summary of what you sent us."
+      : xlsxLink
+        ? "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 예식 문의해 주셔서 감사합니다. 작성하신 견적서를 엑셀 파일로 보내 드립니다."
+        : "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 문의해 주셔서 감사합니다. 보내 주신 내용을 아래와 같이 확인했습니다.",
     ...(xlsxLink ? ["", en ? `Quote sheet (Excel): ${xlsxLink}` : `견적서 엑셀 파일 받기: ${xlsxLink}`] : []),
     "",
     en
@@ -239,8 +251,12 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       : []),
     en ? `Date: ${q.date || "undecided"}${q.time ? ` ${q.time}` : ""} · ${q.venue}` : `예식 일시: ${q.date || "미정"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
     en
-      ? "All items, amounts, the deposit and the account are in the Excel quote sheet. Your coordinator will contact you within one business day."
-      : "항목·금액·계약금·입금 계좌는 엑셀 견적서에 모두 들어 있습니다. 담당자가 영업일 기준 1일 안에 연락드립니다.",
+      ? xlsxLink
+        ? "All items, amounts, the deposit and the account are in the Excel quote sheet. Your coordinator will contact you within one business day."
+        : "We will prepare a quotation for what you have in mind, and your coordinator will contact you within one business day."
+      : xlsxLink
+        ? "항목·금액·계약금·입금 계좌는 엑셀 견적서에 모두 들어 있습니다. 담당자가 영업일 기준 1일 안에 연락드립니다."
+        : "원하시는 내용에 맞춰 견적서를 만들어, 담당자가 영업일 기준 1일 안에 연락드립니다.",
     "",
     en
       ? `Questions: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`

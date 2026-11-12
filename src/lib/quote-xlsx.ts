@@ -3,7 +3,7 @@ import { QUOTE_TEMPLATES } from "./quote-template-b64";
 import { estimate, wireAccount, accountNumber, MENUS, PRICING, type EstimateInput, type VenueKey } from "./quote-pricing";
 
 /** 엑셀 견적서 양식을 쓰는 공간 (마리나파크는 회사명·주소·계좌가 다른 별도 양식) */
-export const XLSX_VENUES = ["convention", "rooftop", "marina"] as const;
+export const XLSX_VENUES = ["convention", "rooftop", "marina", "party"] as const;
 export function usesXlsxTemplate(venueKey: string): boolean {
   return (XLSX_VENUES as readonly string[]).includes(venueKey);
 }
@@ -96,19 +96,22 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
       ? new Date(Date.UTC(+y, +m - 1, +d)).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
       : `${y}년 ${+m}월 ${+d}일 (${"일월화수목금토"[new Date(Date.UTC(+y, +m - 1, +d)).getUTCDay()]})`
     : tbd;
+  const party = input.venueKey === "party";
   const venueName = marina
     ? T("마리나파크 (반포한강공원 서래나루)", "Marina Park (Seoraenaru, Banpo Hangang Park)")
     : input.venueKey === "rooftop" ? T("세빛섬 5층 루프탑 가든", "Sevit Island 5F Rooftop Garden") : T("플로팅아일랜드 컨벤션홀", "Floating Island Convention Hall");
+  // 웨딩파티(예식 없이 피로연만): 제목과 항목 이름을 파티용으로 바꾼다
+  if (party) sh.str("A3", T("웨딩파티 견적서   ·   Floating Island Wedding", "Wedding Reception Quotation   ·   Floating Island Wedding"));
   const issued = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
-  sh.str("A4", `${T("예식명", "Event")} :  ${names ? T(`${names} 님 예식`, `Wedding of ${names}`) : ""}`);
+  sh.str("A4", `${T("예식명", "Event")} :  ${names ? (party ? T(`${names} 님 웨딩파티`, `Wedding reception of ${names}`) : T(`${names} 님 예식`, `Wedding of ${names}`)) : ""}`);
   sh.str("D4", `${T("참석 예상 인원", "Expected guests")} :  ${Math.round(g * 1.1)}${T("명", "")}`);
-  sh.str("A5", `${T("예식 일시", "Date / time")} :  ${dateText}${info.time ? `  ${info.time}` : `  (${T("시간 미정", "time to be decided")})`}`);
+  sh.str("A5", `${party ? T("파티 일시", "Date / time") : T("예식 일시", "Date / time")} :  ${dateText}${info.time ? `  ${info.time}` : `  (${T("시간 미정", "time to be decided")})`}`);
   sh.str("D5", `${T("지불 보증인원", "Guaranteed guests")} :  ${g}${T("명", "")}`);
   sh.str("A6", `${T("신랑", "Groom")} :  ${info.groom ?? ""}${info.phone ? `     ${T("연락처", "Phone")} :  ${info.phone}` : ""}`);
   sh.str("A7", `${T("신부", "Bride")} :  ${info.bride ?? ""}`);
   sh.str("D7", `${T("입금 계좌", "Wire transfer")} :  ${(en ? wireAccount(info.account, input.venueKey === "marina") : info.account) || T("담당자가 안내해 드립니다", "your coordinator will send it with the contract")}`);
   if (en) sh.str("A69", `Account no. :  ${accountNumber(info.account) || "your coordinator will send it with the contract"}`);
-  sh.str("A8", `${T("예식 공간", "Venue")} :  ${venueName}`);
+  sh.str("A8", `${T("행사 공간", "Venue")} :  ${venueName}`);
   sh.str("D8", `${T("견적일", "Date of issue")} :  ${issued}`);
 
   // ── 식음료 12~22행. 수량이 들어간 줄만 합산되고 칠해진다
@@ -145,9 +148,12 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
     return l.amount;
   };
   const fee = single(26, line(/^전관 독점 사용료/)!);
-  const ceremonyLine = eL.lines[eK.lines.findIndex((l) => l.section === "ceremony")];
+  const ceremonyIdx = eK.lines.findIndex((l) => l.section === "ceremony");
+  const ceremonyLine = ceremonyIdx < 0 ? { amount: 0 } : eL.lines[ceremonyIdx];
   sh.num("C29", PRICING[input.venueKey as VenueKey].ceremony);
-  const ceremony = single(29, ceremonyLine, marina
+  const ceremony = single(29, ceremonyLine, party
+    ? T("예식 연출은 포함되지 않습니다 (예식 없이 피로연만)", "Wedding production is not included (reception only)")
+    : marina
     ? T("음향 · 조명 · 웨딩 세팅 · 혼구용품 · 신부대기실", "Sound · lighting · wedding setting · ceremony items · bridal room")
     : T("영상 · 조명 연출 · 혼구용품 · 메뉴카드 · 웰컴드링크 · 플라워 세레모니 · 웨딩카", "Video · lighting · ceremony items · menu cards · welcome drink · flower ceremony · wedding car"));
 

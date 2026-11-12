@@ -13,6 +13,7 @@ import {
   docLangFor,
   NATIONALITIES,
   minGuestsFor,
+  isInquiryOnly,
   estimate as calcEstimate,
   type Estimate,
   type Section,
@@ -183,7 +184,7 @@ function Sheet({ f, e, dateLabel, id }: { f: F; e: Estimate; dateLabel: string; 
 export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "copied" | "requested" | "mail" | "error">("idle");
-  const [venueKey, setVenueKey] = useState<VenueKey>("convention");
+  const [venueKey, setVenueKey] = useState<string>("convention");
   const [date, setDate] = useState("");
   const [tick, setTick] = useState(0);
   const [time, setTime] = useState("");
@@ -197,13 +198,22 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
   const cuisine = menuKey.split("-")[0];
   const tierOf = (k: string) => k.split("-")[1];
-  const pickVenue = (v: VenueKey) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
-  const min = minGuestsFor(venueKey, date, time);
+  const pickVenue = (v: string) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
+  // 프러포즈 이벤트·상견례는 단가가 정해져 있지 않아 담당자가 직접 견적을 보낸다
+  const inquiry = isInquiryOnly(venueKey);
+  const min = inquiry ? 0 : minGuestsFor(venueKey as VenueKey, date, time);
   useEffect(() => {
     if (guests && Number(guests) < min && Number(guests) >= 250) setGuests("");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [min]);
-  const guestSteps = { convention: [250, 300, 350, 400, 450, 500], rooftop: [100, 150, 200, 250, 300], marina: [50, 80, 100, 150, 200] }[venueKey] as number[];
+  const guestSteps = ({
+    convention: [250, 300, 350, 400, 450, 500],
+    rooftop: [100, 150, 200, 250, 300],
+    marina: [50, 80, 100, 150, 200],
+    party: [30, 50, 80, 100, 150, 200],
+    proposal: [2, 4, 6, 8, 10],
+    meeting: [4, 6, 8, 10, 12, 20],
+  } as Record<string, number[]>)[venueKey] ?? [];
 
   const read = (): Record<string, string> =>
     formRef.current ? (Object.fromEntries(new FormData(formRef.current).entries()) as Record<string, string>) : {};
@@ -226,7 +236,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
 
   async function downloadExcel() {
     // 컨벤션·루프탑 가든은 계약서 양식(xlsx) 그대로 내려받는다
-    if (venueKey === "convention" || venueKey === "rooftop" || venueKey === "marina") {
+    if (["convention", "rooftop", "marina", "party"].includes(venueKey)) {
       try {
         const data = read();
         const r = await fetch("/api/quote/xlsx", {
@@ -267,7 +277,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     const data = read();
     data.venueKey = venueKey;
     data.date = date;
-    data.venue = f.estVenue[venueKey];
+    data.venue = (f.estVenue as Record<string, string>)[venueKey];
     setStatus("sending");
     try {
       const r = await fetch("/api/quote", {
@@ -333,7 +343,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 key={v.key}
                 type="button"
                 aria-pressed={on}
-                onClick={() => pickVenue(v.key as VenueKey)}
+                onClick={() => pickVenue(v.key)}
                 className={`rounded-card border p-4 text-left transition-colors ${on ? "border-gold bg-gold/10" : "border-line bg-card hover:border-gold/60"}`}
               >
                 <span className={`block font-display text-base font-semibold ${on ? "text-gold" : "text-ink"}`}>{v.name}</span>
@@ -378,12 +388,12 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
 
       {/* 3. 인원·메뉴·옵션 */}
       <section>
-        <h3 className={step}>{f.pickOptions}</h3>
+        <h3 className={step}>{inquiry ? f.pickGuests : f.pickOptions}</h3>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
           {/* 인원 */}
           <div className="sm:col-span-2">
             <label className={label}>{f.guests}
-              <input name="guests" type="text" inputMode="numeric" value={guests} onChange={(e) => setGuests(e.target.value.replace(/[^0-9]/g, ""))} placeholder={String(min)} className={`${input} block sm:max-w-xs`} />
+              <input name="guests" type="text" inputMode="numeric" value={guests} onChange={(e) => setGuests(e.target.value.replace(/[^0-9]/g, ""))} placeholder={inquiry ? "" : String(min)} className={`${input} block sm:max-w-xs`} />
             </label>
             <div className="mt-2.5 flex flex-wrap gap-2">
               {guestSteps.map((n) => {
@@ -396,9 +406,16 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 );
               })}
             </div>
-            <p className={hint}>{f.guestHint.replace("{min}", String(min))}{venueKey === "convention" ? ` ${f.guestLocked}` : ""}</p>
+            <p className={hint}>{inquiry ? f.inquiryGuestHint : f.guestHint.replace("{min}", String(min))}{!inquiry && venueKey === "convention" ? ` ${f.guestLocked}` : ""}</p>
           </div>
 
+          {inquiry && (
+            <div className="sm:col-span-2 rounded-card border border-gold/40 bg-card p-5">
+              <p className="text-sm leading-relaxed text-ink-sub">{f.inquiryNote}</p>
+            </div>
+          )}
+
+          {!inquiry && <>
           {/* 꽃장식 */}
           <div className="sm:col-span-2">
             <p className={label}>{f.flower}</p>
@@ -477,6 +494,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
               </label>
             </div>
           </fieldset>
+          </>}
         </div>
       </section>
 

@@ -40,6 +40,24 @@ export const PRICING = {
     cake: 450_000,
     weekdayFreeExtras: false,
   },
+  /** 웨딩파티(예식 없이 피로연만) — 단가는 컨벤션과 같고 웨딩연출료가 없다 */
+  party: {
+    minGuests: 30,
+    coursePerGuest: 130_000,
+    drinkPerGuestWeekday: 15_000,
+    drinkPerGuestStandard: 15_000,
+    venueFee: 3_000_000,
+    venueFeeWaivedOnWeekday: false,
+    ceremony: 0, // 예식 연출 없음
+    flower: { standard: 8_000_000, luxury: 10_000_000, special: 12_000_000 },
+    photo: 1_500_000,
+    video: 800_000,
+    winePerBottle: 70_000,
+    guestsPerWineBottle: 5,
+    champagne: 120_000,
+    cake: 450_000,
+    weekdayFreeExtras: false,
+  },
   marina: {
     minGuests: 50,
     coursePerGuest: 130_000, // Wedding Course C
@@ -121,16 +139,23 @@ export const MENU_GROUPS = [
   { key: "vegetarian", ko: "베지테리언 코스", en: "Vegetarian course" },
   { key: "fish", ko: "피시 코스", en: "Fish course" },
 ];
-export const DEFAULT_MENU: Record<string, string> = { convention: "western-a", rooftop: "western-a", marina: "western-a" };
+export const DEFAULT_MENU: Record<string, string> = { convention: "western-a", rooftop: "western-a", marina: "western-a", party: "western-a" };
 
 /** 공간별 예식 시작 시간 */
 export const CEREMONY_TIMES: Record<string, string[]> = {
   convention: ["11:30", "15:00", "18:00"],
   rooftop: ["12:00", "18:00"],
   marina: ["12:00", "18:00"],
+  party: ["12:00", "18:00"],
 };
 
-export type VenueKey = "convention" | "rooftop" | "marina";
+export type VenueKey = "convention" | "rooftop" | "marina" | "party";
+
+/** 단가가 정해지지 않아 담당자가 직접 견적을 보내는 상품 (자동 계산·엑셀 없음) */
+export const INQUIRY_KINDS = ["proposal", "meeting"] as const;
+export function isInquiryOnly(key: string): boolean {
+  return (INQUIRY_KINDS as readonly string[]).includes(key);
+}
 export type FlowerTier = "standard" | "luxury" | "special";
 export type Section = "fnb" | "venue" | "ceremony" | "flower" | "others";
 export type EstimateLine = { section: Section; label: string; detail?: string; qty?: number; unit?: number; amount: number };
@@ -169,7 +194,7 @@ export type EstimateInput = {
 };
 
 export function isEstimableVenue(key: string): key is VenueKey {
-  return key === "convention" || key === "rooftop" || key === "marina";
+  return key === "convention" || key === "rooftop" || key === "marina" || key === "party";
 }
 
 /** "2027-04-30" 같은 날짜에서 요일(0=일)과 월. 해석 못 하면 null. */
@@ -197,6 +222,7 @@ export function minGuestsFor(venueKey: VenueKey, date: string, time?: string): n
 /** 내려받는 파일 이름 — 예식 희망일을 앞에 둔다 */
 export function quoteFileName(date: string, lang: string, venueKey = ""): string {
   const d = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : lang === "en" ? "date-tbd" : "날짜미정";
+  if (venueKey === "party") return lang === "en" ? `${d}-floating-island-wedding-reception-quotation.xlsx` : `${d}-플로팅아일랜드-웨딩파티-견적서.xlsx`;
   const marina = venueKey === "marina";
   return lang === "en"
     ? `${d}-${marina ? "marina-park" : "floating-island"}-wedding-quotation.xlsx`
@@ -357,7 +383,9 @@ export function estimate(input: EstimateInput): Estimate | null {
       detail: feeWaivedReason ?? undefined,
       amount: feeWaived ? 0 : P.venueFee,
     },
-    { section: "ceremony", label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", detail: promo ? (en ? "waived — Sunday 18:00 in Jan, Feb, Jul, Aug" : "1·2·7·8월 일요일 저녁 6시 예식 면제") : undefined, amount: promo ? 0 : P.ceremony },
+    ...(P.ceremony > 0
+      ? [{ section: "ceremony" as const, label: en ? "Wedding production (video, sound, lighting, hosting)" : "웨딩연출 (영상·음향·조명·진행)", detail: promo ? (en ? "waived — Sunday 18:00 in Jan, Feb, Jul, Aug" : "1·2·7·8월 일요일 저녁 6시 예식 면제") : undefined, amount: promo ? 0 : P.ceremony }]
+      : []),
     { section: "flower", label: `${en ? "Flower decoration" : "플라워 장식"} — ${en ? cap(tier) : { standard: "스탠다드", luxury: "럭셔리", special: "스페셜" }[tier]}`, detail: tier === "special" ? (en ? "from" : "부터") : undefined, amount: P.flower[tier] },
     { section: "others", label: en ? "Photography — formal portraits and snapshots, 2 photographers, original files on CD" : "사진 — 원판·스냅, 2인 촬영, 원본 CD 포함", detail: en ? "required" : "필수", amount: P.photo },
   );
