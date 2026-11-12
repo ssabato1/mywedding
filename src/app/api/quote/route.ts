@@ -94,6 +94,10 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       : "예식 문의해 주셔서 감사합니다. 작성하신 견적서와 안내문을 함께 보내 드립니다.",
     ...(xlsxLink ? ["", en ? `Quote sheet (Excel): ${xlsxLink}` : `견적서 엑셀 파일 받기: ${xlsxLink}`] : []),
     "",
+    en
+      ? "※ Whether your preferred date and time are still available will be checked again by our reservations office, who will let you know."
+      : "※ 원하신 날짜와 시간대의 예약 마감 여부는 예약실에서 다시 확인해 안내해 드립니다.",
+    "",
     en ? "■ Next steps" : "■ 진행 안내",
     en ? "1. Your coordinator will check the date and time and contact you within one business day." : "1. 담당자가 예식 날짜와 시간이 가능한지 확인한 뒤 영업일 기준 1일 안에 연락드립니다.",
     en ? "2. Visit the venue for a tour and consultation, and adjust the quote to your wishes." : "2. 방문 상담과 홀 투어를 하시면서 견적 내용을 원하시는 대로 조정합니다.",
