@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { buildQuoteXlsx, usesXlsxTemplate } from "../src/lib/quote-xlsx";
-import { detectQuoteLang, estimate, quoteFileName, type EstimateInput } from "../src/lib/quote-pricing";
+import { docLangFor, estimate, quoteFileName, type EstimateInput } from "../src/lib/quote-pricing";
 
 const raw = JSON.parse(process.argv[2] ?? "{}") as Record<string, string>;
 const outDir = process.argv[3] ?? ".";
@@ -18,7 +18,7 @@ const input: EstimateInput = {
   mc: s(raw.mc), maleQuartet: on(raw.maleQuartet), stringQuartet: on(raw.stringQuartet), drink: on(raw.drink),
   noodles: on(raw.noodles), riceCake: on(raw.riceCake), canape: s(raw.canape), afterGuests: s(raw.afterGuests), lang: "ko",
 };
-const lang = detectQuoteLang(s(raw.groom), s(raw.bride), s(raw.phone), s(raw.lang));
+const lang = docLangFor(s(raw.nationality), s(raw.groom), s(raw.bride), s(raw.phone), s(raw.lang));
 if (!usesXlsxTemplate(input.venueKey)) {
   console.log(JSON.stringify({ ok: false, reason: "no-template", venueKey: input.venueKey, lang }));
   process.exit(0);

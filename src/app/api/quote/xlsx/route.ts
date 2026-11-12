@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { buildQuoteXlsx, usesXlsxTemplate } from "@/lib/quote-xlsx";
-import { detectQuoteLang, quoteFileName, type EstimateInput } from "@/lib/quote-pricing";
+import { docLangFor, quoteFileName, type EstimateInput } from "@/lib/quote-pricing";
 
 export const runtime = "nodejs";
 
@@ -19,7 +19,7 @@ function toInput(raw: Record<string, unknown>): EstimateInput {
 function respond(raw: Record<string, unknown>) {
   const input = toInput(raw);
   // 링크에 lang 이 명시되면 그대로, 아니면 이름·전화번호로 판단
-  const lang = s(raw.docLang) === "en" || s(raw.docLang) === "ko" ? (s(raw.docLang) as "ko" | "en") : detectQuoteLang(s(raw.groom), s(raw.bride), s(raw.phone), s(raw.lang));
+  const lang = s(raw.docLang) === "en" || s(raw.docLang) === "ko" ? (s(raw.docLang) as "ko" | "en") : docLangFor(s(raw.nationality), s(raw.groom), s(raw.bride), s(raw.phone), s(raw.lang));
   if (!usesXlsxTemplate(input.venueKey)) return NextResponse.json({ ok: false, error: "no template for this venue" }, { status: 400 });
   const buf = buildQuoteXlsx(input, {
     groom: s(raw.groom, 40), bride: s(raw.bride, 40), phone: s(raw.phone, 30), date: input.date, time: input.time,

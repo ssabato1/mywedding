@@ -10,7 +10,7 @@ import {
   MENU_GROUPS,
   PRICING,
   quoteFileName,
-  detectQuoteLang,
+  docLangFor,
   minGuestsFor,
   estimate as calcEstimate,
   type Estimate,
@@ -187,6 +187,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [tick, setTick] = useState(0);
   const [time, setTime] = useState("");
   // 방문 상담 예약: 날짜와 시간
+  const [nationality, setNationality] = useState("");
   const [visitDate, setVisitDate] = useState("");
   const [visitTime, setVisitTime] = useState("");
   const VISIT_TIMES = ["10:00", "11:00", "14:00", "15:00", "17:00", "18:00"];
@@ -236,7 +237,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           const url = URL.createObjectURL(await r.blob());
           const a = document.createElement("a");
           a.href = url;
-          a.download = quoteFileName(date, detectQuoteLang(String(data.groom ?? ""), String(data.bride ?? ""), String(data.phone ?? ""), lang), venueKey);
+          a.download = quoteFileName(date, docLangFor(String(data.nationality ?? ""), String(data.groom ?? ""), String(data.bride ?? ""), String(data.phone ?? ""), lang), venueKey);
           a.click();
           URL.revokeObjectURL(url);
           return;
@@ -493,6 +494,20 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
           <label className={label}>{f.groom}{req}<input name="groom" required className={input} /></label>
           <label className={label}>{f.bride}{req}<input name="bride" required className={input} /></label>
+          <div>
+            <label className={label}>{f.nationality}{req}
+              <select name="nationality" required value={nationality} onChange={(e) => setNationality(e.target.value)} className={input}>
+                <option value="">{f.nationalityPick}</option>
+                <option value="kr">{f.nationalityKr}</option>
+                <option value="cn">{f.nationalityCn}</option>
+                <option value="other">{f.nationalityOther}</option>
+              </select>
+            </label>
+            {nationality === "other" && (
+              <input name="nationalityOther" placeholder={f.nationalityOtherHint} className={`${input} mt-2`} />
+            )}
+            <p className={hint}>{f.nationalityHint}</p>
+          </div>
           <label className={label}>{f.phone}{req}<input name="phone" type="tel" required className={input} /></label>
           <div>
             <label className={label}>{f.email}{req}<input name="email" type="email" required className={input} /></label>

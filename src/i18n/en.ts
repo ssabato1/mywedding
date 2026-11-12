@@ -394,6 +394,13 @@ export const en: Dict = {
     f: {
       date: "Preferred wedding date",
       dateHint: "If undecided, a month or weekday is fine",
+      nationality: "Nationality",
+      nationalityPick: "Please select",
+      nationalityKr: "Korea",
+      nationalityCn: "China",
+      nationalityOther: "Other country",
+      nationalityOtherHint: "Country (e.g. United States, Japan)",
+      nationalityHint: "We reply in Korean, English or Chinese according to your nationality.",
       groom: "Groom's name",
       bride: "Bride's name",
       phone: "Phone",

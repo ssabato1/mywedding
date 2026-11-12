@@ -216,6 +216,25 @@ export function detectQuoteLang(groom: string, bride: string, phone: string, sit
   return siteLang === "en" ? "en" : "ko";
 }
 
+/** 국적 값: kr(대한민국) · cn(중국) · other(그 외 국가) */
+export type Nationality = "kr" | "cn" | "other" | "";
+export const asNationality = (v: unknown): Nationality => (v === "kr" || v === "cn" || v === "other" ? v : "");
+
+/** 견적서(엑셀) 언어: 한국인은 국문, 그 외는 영문. 국적을 고르지 않았으면 이름·전화번호로 판단한다. */
+export function docLangFor(nationality: string, groom: string, bride: string, phone: string, siteLang: string): "ko" | "en" {
+  const n = asNationality(nationality);
+  if (n === "kr") return "ko";
+  if (n === "cn" || n === "other") return "en";
+  return detectQuoteLang(groom, bride, phone, siteLang);
+}
+
+/** 답변 메일 언어: 한국인은 한국어, 중국인은 중국어, 그 외 외국인은 영어. */
+export function mailLangFor(nationality: string, groom: string, bride: string, phone: string, siteLang: string): "ko" | "en" | "zh" {
+  const n = asNationality(nationality);
+  if (n === "cn") return "zh";
+  return docLangFor(nationality, groom, bride, phone, siteLang);
+}
+
 const won = (n: number) => n.toLocaleString("ko-KR");
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 

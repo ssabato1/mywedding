@@ -392,6 +392,13 @@ export const ko = {
     f: {
       date: "희망 예식 날짜",
       dateHint: "미정이면 월·요일만 적어 주셔도 됩니다",
+      nationality: "국적",
+      nationalityPick: "선택해 주세요",
+      nationalityKr: "대한민국",
+      nationalityCn: "중국",
+      nationalityOther: "그 외 국가",
+      nationalityOtherHint: "국가 이름 (예: 미국, 일본)",
+      nationalityHint: "국적에 따라 답변 메일을 한국어·영어·중국어로 보내 드립니다.",
       groom: "신랑 이름",
       bride: "신부 이름",
       phone: "전화번호",

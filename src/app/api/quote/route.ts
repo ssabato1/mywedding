@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
-import { detectQuoteLang, wireAccount, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
+import { docLangFor, mailLangFor, asNationality, wireAccount, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
 import { DEPOSIT, termsToText } from "@/lib/quote-terms";
 import { usesXlsxTemplate } from "@/lib/quote-xlsx";
 
@@ -8,10 +8,10 @@ export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; mc: string; maleQuartet: string; stringQuartet: string; drink: string; noodles: string; canape: string; afterGuests: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string; visitDate: string; visitTime: string;
+  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; mc: string; maleQuartet: string; stringQuartet: string; drink: string; noodles: string; canape: string; afterGuests: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string; nationality: string; nationalityOther: string; mailLang: string; visitDate: string; visitTime: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "canape", "afterGuests", "riceCake", "method", "budget", "message", "lang", "sendCopy", "visitDate", "visitTime"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "canape", "afterGuests", "riceCake", "method", "budget", "message", "lang", "sendCopy", "visitDate", "visitTime", "nationality", "nationalityOther"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -19,6 +19,13 @@ function clean(v: unknown, max = 500): string {
 
 export function buildSubject(q: Quote): string {
   return `[견적 요청] ${q.date || "날짜 미정"} · ${q.groom} & ${q.bride} · ${q.guests || "?"}명`;
+}
+
+function nationalityLabel(q: Quote): string {
+  if (q.nationality === "kr") return "대한민국";
+  if (q.nationality === "cn") return "중국";
+  if (q.nationality === "other") return q.nationalityOther ? `그 외 (${q.nationalityOther})` : "그 외 국가";
+  return "미입력";
 }
 
 export function buildBody(q: Quote): string {
@@ -30,6 +37,7 @@ export function buildBody(q: Quote): string {
     `신부: ${q.bride}`,
     `전화: ${q.phone}`,
     `이메일: ${q.email}`,
+    `국적: ${nationalityLabel(q)}`,
     `예상 하객: ${q.guests || "미정"}`,
     `선호 시간: ${q.time || "미정"}`,
     `관심 공간: ${q.venue || "미정"}`,
@@ -40,7 +48,7 @@ export function buildBody(q: Quote): string {
     "추가 내용:",
     q.message || "(없음)",
     "",
-    `언어: ${q.lang || "ko"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
+    `답변 메일 언어: ${({ ko: "한국어", en: "영어", zh: "중국어" } as Record<string, string>)[q.mailLang] || "한국어"} · 견적서 언어: ${q.lang === "en" ? "영문" : "국문"} · 접수 시각: ${new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}`,
   ].join("\n");
 }
 
@@ -87,6 +95,32 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       ).toString()}`
     : "";
   const c = siteConfig.contact;
+  if (q.mailLang === "zh") {
+    return [
+      `${q.groom} · ${q.bride} 您好，`,
+      "",
+      "您好！我是 Floating Island 婚礼团队的 Rachel。感谢您咨询婚礼事宜。您填写的报价单已制作成 Excel 文件，请查收。",
+      ...(xlsxLink ? ["", `报价单（Excel，英文）下载：${xlsxLink}`] : []),
+      "",
+      "※ 您希望的日期和时间段是否仍可预订，将由预订部再次确认后通知您。",
+      "",
+      ...(q.visitDate || q.visitTime
+        ? [
+            "■ 到访咨询预约",
+            `您申请的到访时间：${q.visitDate || "日期待定"} ${q.visitTime || ""}`.trim(),
+            "咨询确定后，我们会通过手机或邮件再次告知确认的日期和时间。",
+            "",
+          ]
+        : []),
+      `婚礼日期：${q.date || "待定"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
+      "各项目、金额、定金及汇款账户均已列在 Excel 报价单中。负责人将在一个工作日内与您联系。",
+      "",
+      `咨询：${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
+      "",
+      "Rachel | 婚礼团队",
+      "Floating Island Wedding — https://www.floatingislandwedding.com",
+    ].join("\n");
+  }
   return [
     en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
     "",
@@ -144,7 +178,10 @@ export async function POST(req: Request) {
   const q = Object.fromEntries(FIELDS.map((k) => [k, clean(raw[k], k === "message" ? 2000 : 200)])) as Quote;
   // 답변 메일과 견적서의 언어: 영문 이름·해외 전화번호면 영문, 한글 이름이면 국문
   const siteLang = q.lang;
-  q.lang = detectQuoteLang(q.groom, q.bride, q.phone, siteLang);
+  q.nationality = asNationality(q.nationality);
+  // 견적서(엑셀)는 국문·영문 두 가지, 메일은 한국어·영어·중국어 세 가지
+  q.lang = docLangFor(q.nationality, q.groom, q.bride, q.phone, siteLang);
+  q.mailLang = mailLangFor(q.nationality, q.groom, q.bride, q.phone, siteLang);
   if (!q.groom || !q.bride || !q.phone || !EMAIL_RE.test(q.email)) {
     return NextResponse.json({ ok: false, error: "missing required" }, { status: 400 });
   }
@@ -158,7 +195,9 @@ export async function POST(req: Request) {
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");
   const wantsCopy = q.sendCopy === "on" && EMAIL_RE.test(q.email);
-  const customerSubject = q.lang === "en"
+  const customerSubject = q.mailLang === "zh"
+    ? `[Floating Island Wedding] 自助报价单 — ${q.date || "日期待定"}`
+    : q.lang === "en"
     ? `[Floating Island Wedding] Your self quote — ${q.date || "date undecided"}`
     : `[Floating Island Wedding] 셀프 견적서 — ${q.date || "날짜 미정"}`;
   const customerText = buildCustomerText(q, estimate);
@@ -210,8 +249,8 @@ export async function POST(req: Request) {
       _template: "box",
       _replyto: q.email || undefined,
       ...(wantsCopy ? { _cc: q.email } : {}),
-      희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
-      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 언어: q.lang,
+      희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 국적: nationalityLabel(q), 예상하객: q.guests,
+      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 답변메일언어: q.mailLang, 견적서언어: q.lang,
       자동견적: estimate ? estimateToText(estimate) : "해당 없음",
       ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
       // 웨딩팀(레이첼)이 엑셀 견적서를 다시 만들어 첨부 답장할 때 쓰는 원본 선택값
