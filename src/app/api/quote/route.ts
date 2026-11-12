@@ -8,10 +8,10 @@ export const runtime = "nodejs";
 
 type Quote = {
   date: string; groom: string; bride: string; phone: string; email: string; guests: string;
-  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; mc: string; maleQuartet: string; stringQuartet: string; drink: string; noodles: string; canape: string; afterGuests: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string;
+  time: string; venue: string; venueKey: string; flower: string; menu: string; video: string; wine: string; champagne: string; cake: string; bridalFlower: string; bouquet: string; mc: string; maleQuartet: string; stringQuartet: string; drink: string; noodles: string; canape: string; afterGuests: string; riceCake: string; method: string; budget: string; message: string; lang: string; sendCopy: string; visitDate: string; visitTime: string;
 };
 
-const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "canape", "afterGuests", "riceCake", "method", "budget", "message", "lang", "sendCopy"];
+const FIELDS: (keyof Quote)[] = ["date", "groom", "bride", "phone", "email", "guests", "time", "venue", "venueKey", "flower", "menu", "video", "wine", "champagne", "cake", "bridalFlower", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "canape", "afterGuests", "riceCake", "method", "budget", "message", "lang", "sendCopy", "visitDate", "visitTime"];
 
 function clean(v: unknown, max = 500): string {
   return typeof v === "string" ? v.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
@@ -35,6 +35,7 @@ export function buildBody(q: Quote): string {
     `관심 공간: ${q.venue || "미정"}`,
     `선호 연락 방법: ${q.method || "미정"}`,
     `예산: ${q.budget || "미정"}`,
+    `방문 상담 희망: ${q.visitDate || q.visitTime ? `${q.visitDate || "날짜 미정"} ${q.visitTime || "시간 미정"}` : "신청 안 함"}`,
     "",
     "추가 내용:",
     q.message || "(없음)",
@@ -98,6 +99,18 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
       ? "※ Whether your preferred date and time are still available will be checked again by our reservations office, who will let you know."
       : "※ 원하신 날짜와 시간대의 예약 마감 여부는 예약실에서 다시 확인해 안내해 드립니다.",
     "",
+    ...(q.visitDate || q.visitTime
+      ? [
+          en ? "■ Visit and consultation" : "■ 방문 상담 예약",
+          en
+            ? `Requested: ${q.visitDate || "date to be decided"} ${q.visitTime || ""}`.trim()
+            : `신청하신 방문 일시: ${q.visitDate || "날짜 미정"} ${q.visitTime || ""}`.trim(),
+          en
+            ? "Once your consultation is confirmed, we will send the confirmed date and time again by mobile or email."
+            : "예식 상담이 확정되면 핸드폰이나 메일로 상담 시간과 확정 날짜를 다시 보내 드립니다.",
+          "",
+        ]
+      : []),
     en ? "■ Next steps" : "■ 진행 안내",
     en ? "1. Your coordinator will check the date and time and contact you within one business day." : "1. 담당자가 예식 날짜와 시간이 가능한지 확인한 뒤 영업일 기준 1일 안에 연락드립니다.",
     en ? "2. Visit the venue for a tour and consultation, and adjust the quote to your wishes." : "2. 방문 상담과 홀 투어를 하시면서 견적 내용을 원하시는 대로 조정합니다.",
@@ -211,7 +224,7 @@ export async function POST(req: Request) {
       _replyto: q.email || undefined,
       ...(wantsCopy ? { _cc: q.email } : {}),
       희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 예상하객: q.guests,
-      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
+      선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 언어: q.lang,
       자동견적: estimate ? estimateToText(estimate) : "해당 없음",
       ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
       // 웨딩팀(레이첼)이 엑셀 견적서를 다시 만들어 첨부 답장할 때 쓰는 원본 선택값
@@ -219,7 +232,7 @@ export async function POST(req: Request) {
         venueKey: q.venueKey, guests: q.guests, date: q.date, time: q.time, flower: q.flower, menu: q.menu,
         video: q.video, wine: q.wine, champagne: q.champagne, cake: q.cake, bouquet: q.bouquet, mc: q.mc,
         maleQuartet: q.maleQuartet, stringQuartet: q.stringQuartet, drink: q.drink, noodles: q.noodles, riceCake: q.riceCake,
-        canape: q.canape, afterGuests: q.afterGuests, groom: q.groom, bride: q.bride, phone: q.phone, email: q.email, lang: q.lang,
+        canape: q.canape, afterGuests: q.afterGuests, groom: q.groom, bride: q.bride, phone: q.phone, email: q.email, lang: q.lang, visitDate: q.visitDate, visitTime: q.visitTime,
       }),
     },
     copy: wantsCopy ? "requested" : "none",

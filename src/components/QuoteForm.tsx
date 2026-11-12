@@ -181,6 +181,11 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [date, setDate] = useState("");
   const [tick, setTick] = useState(0);
   const [time, setTime] = useState("");
+  // 방문 상담 예약: 날짜와 시간
+  const [visitDate, setVisitDate] = useState("");
+  const [visitTime, setVisitTime] = useState("");
+  const VISIT_TIMES = ["10:00", "11:00", "14:00", "15:00", "17:00", "18:00"];
+  const todayIso = new Date().toLocaleDateString("sv-SE");
   const [guests, setGuests] = useState("");
   const [flower, setFlower] = useState("standard");
   const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
@@ -503,6 +508,31 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           <div className="sm:col-span-2">
             <label className={label}>{f.message}<textarea name="message" rows={4} className={input} /></label>
             <p className={hint}>{f.messageHint}</p>
+          </div>
+          <div className="sm:col-span-2 rounded-card border border-gold/40 bg-card p-5">
+            <p className="font-display text-base font-semibold text-gold">{f.visitTitle}</p>
+            <p className={hint}>{f.visitHint}</p>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <label className={label}>
+                {f.visitDate}
+                <input type="date" name="visitDate" min={todayIso} value={visitDate} onChange={(e) => setVisitDate(e.target.value)} className={input} />
+              </label>
+              <div>
+                <p className={label}>{f.visitTime}</p>
+                <input type="hidden" name="visitTime" value={visitTime} />
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {VISIT_TIMES.map((tm) => {
+                    const on = visitTime === tm;
+                    return (
+                      <button key={tm} type="button" aria-pressed={on} onClick={() => setVisitTime(on ? "" : tm)} className={`${chip} ${on ? chipOn : chipOff}`}>
+                        {tm}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-ink-sub">{f.visitNote}</p>
           </div>
           <details className="sm:col-span-2 rounded-card border border-line bg-card p-5">
             <summary className="cursor-pointer text-sm font-semibold text-gold">{f.termsTitle}</summary>

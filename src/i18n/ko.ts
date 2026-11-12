@@ -440,6 +440,11 @@ export const ko = {
       canapeOptions: ["선택 안 함", "1인당 3만원", "1인당 5만원", "1인당 7만원", "1인당 9만원"],
       afterGuests: "애프터 파티 인원",
       otherEventsNote: "예식이 아닌 웨딩 파티나 돌잔치는 별도로 문의해 주세요.",
+      visitTitle: "방문 상담 예약하기",
+      visitHint: "홀을 직접 보시고 상담받으실 날짜와 시간을 골라 주세요. 선택 사항입니다.",
+      visitDate: "방문 희망 날짜",
+      visitTime: "방문 희망 시간",
+      visitNote: "예식 상담이 확정되면 핸드폰이나 메일로 상담 시간과 확정 날짜를 다시 보내 드립니다.",
       guestHint: "숫자를 직접 적거나 아래에서 고르세요. 최소 보증인원은 {min}명입니다.",
       flowerCards: [
         { name: "스탠다드", price: "800만원", sub: "시즌 컬러" },
