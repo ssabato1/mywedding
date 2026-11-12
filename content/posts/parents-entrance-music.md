@@ -23,7 +23,7 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 | 05 | [모차르트 클라리넷 협주곡 K.622 2악장](https://youtu.be/fbmkcnU5rdI?t=625) | 10:25 | — |
 | 06 | [엘가 「사랑의 인사」 Op.12](https://youtu.be/fbmkcnU5rdI?t=772) | 12:52 | — |
 | 07 | [마스카니 「카발레리아 루스티카나」 간주곡](https://youtu.be/fbmkcnU5rdI?t=947) | 15:47 | — |
-| 08 | [바흐 「아리오소」 BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | — |
+| 08 | [바흐 「아리오소」 BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | [듣기](https://youtu.be/o-1KQpMTyt4) |
 | 09 | [브람스 「왈츠」 Op.39 No.15](https://youtu.be/fbmkcnU5rdI?t=1286) | 21:26 | [듣기](https://youtu.be/0K8aSvmfCUw) |
 | 10 | [파헬벨 「캐논」 D장조](https://youtu.be/fbmkcnU5rdI?t=1442) | 24:02 | [듣기](https://youtu.be/MefXga9itA0) |
 

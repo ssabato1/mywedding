@@ -25,7 +25,7 @@ When a Korean ceremony begins, the first people to walk are neither the groom no
 | 05 | [Mozart, Clarinet Concerto K. 622, second movement](https://youtu.be/fbmkcnU5rdI?t=625) | 10:25 | — |
 | 06 | [Elgar, "Salut d'Amour" Op. 12](https://youtu.be/fbmkcnU5rdI?t=772) | 12:52 | — |
 | 07 | [Mascagni, Intermezzo from "Cavalleria rusticana"](https://youtu.be/fbmkcnU5rdI?t=947) | 15:47 | — |
-| 08 | [Bach, "Arioso" BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | — |
+| 08 | [Bach, "Arioso" BWV 1056](https://youtu.be/fbmkcnU5rdI?t=1115) | 18:35 | [Listen](https://youtu.be/o-1KQpMTyt4) |
 | 09 | [Brahms, Waltz Op. 39 No. 15](https://youtu.be/fbmkcnU5rdI?t=1286) | 21:26 | [Listen](https://youtu.be/0K8aSvmfCUw) |
 | 10 | [Pachelbel, Canon in D](https://youtu.be/fbmkcnU5rdI?t=1442) | 24:02 | [Listen](https://youtu.be/MefXga9itA0) |
 
