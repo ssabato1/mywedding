@@ -5,6 +5,8 @@ import { i18n } from "@/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const SITE = "https://www.floatingislandwedding.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await i18n();
   const title = `${siteConfig.company.name} — ${t.company.tagline}`;
@@ -53,21 +55,59 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "EventVenue",
-              name: "Floating Island Wedding (플로팅아일랜드 웨딩 · 세빛섬 웨딩)",
-              alternateName: ["플로팅아일랜드 웨딩", "세빛섬 웨딩", "마리나파크 웨딩", "Sevit Island Wedding"],
-              url: "https://www.floatingislandwedding.com",
-              image: "https://www.floatingislandwedding.com/images/hero-poster.jpg",
-              telephone: siteConfig.contact.phoneIntl,
-              email: siteConfig.contact.email,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "반포동 650 세빛섬",
-                addressLocality: "서초구",
-                addressRegion: "서울",
-                addressCountry: "KR",
-              },
-              sameAs: Object.values(siteConfig.links),
+              "@graph": [
+                {
+                  // 사이트 이름 — 검색 결과에 표시되는 사이트명
+                  "@type": "WebSite",
+                  "@id": `${SITE}/#website`,
+                  url: SITE,
+                  name: "Floating Island Wedding",
+                  alternateName: ["플로팅아일랜드 웨딩", "플로팅 아일랜드 웨딩", "플로팅아일랜드웨딩", "세빛섬 웨딩"],
+                  inLanguage: ["ko", "en"],
+                  publisher: { "@id": `${SITE}/#organization` },
+                },
+                {
+                  // 공식 사이트·공식 SNS 선언
+                  "@type": "Organization",
+                  "@id": `${SITE}/#organization`,
+                  name: "Floating Island Wedding",
+                  alternateName: ["플로팅아일랜드 웨딩", "플로팅 아일랜드 웨딩", "세빛섬 웨딩", "Sevit Island Wedding"],
+                  url: SITE,
+                  logo: `${SITE}/images/logo-white.png`,
+                  image: `${SITE}/images/hero-poster.jpg`,
+                  description: "서울 한강 세빛섬 플로팅아일랜드·마리나파크의 웨딩 공식 사이트. 컨벤션 웨딩, 루프탑 가든 웨딩, 마리나파크 야외 웨딩과 국제 커플 예식.",
+                  telephone: siteConfig.contact.phoneIntl,
+                  email: siteConfig.contact.email,
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "reservations",
+                    telephone: siteConfig.contact.phoneIntl,
+                    email: siteConfig.contact.email,
+                    availableLanguage: ["Korean", "English"],
+                  },
+                  // 이 브랜드 자신의 공식 계정만 (패밀리 브랜드는 parentOrganization·subjectOf 로 구분)
+                  sameAs: [siteConfig.links.instagram],
+                  parentOrganization: { "@type": "Organization", name: "플로팅아일랜드 (Floating Island)", url: siteConfig.links.floatingisland },
+                },
+                {
+                  "@type": "EventVenue",
+                  "@id": `${SITE}/#venue`,
+                  name: "Floating Island Wedding (플로팅아일랜드 웨딩 · 세빛섬 웨딩)",
+                  alternateName: ["플로팅아일랜드 웨딩", "세빛섬 웨딩", "마리나파크 웨딩", "Sevit Island Wedding"],
+                  url: SITE,
+                  image: `${SITE}/images/hero-poster.jpg`,
+                  telephone: siteConfig.contact.phoneIntl,
+                  email: siteConfig.contact.email,
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "반포동 650 세빛섬",
+                    addressLocality: "서초구",
+                    addressRegion: "서울",
+                    addressCountry: "KR",
+                  },
+                  sameAs: [siteConfig.links.instagram, siteConfig.links.floatingisland, siteConfig.links.marinapark],
+                },
+              ],
             }),
           }}
         />
