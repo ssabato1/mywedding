@@ -211,7 +211,29 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [venueKey, date, tick, lang, guests, flower, menuKey, time]);
 
-  function downloadExcel() {
+  async function downloadExcel() {
+    // 컨벤션·루프탑 가든은 계약서 양식(xlsx) 그대로 내려받는다
+    if (venueKey === "convention" || venueKey === "rooftop") {
+      try {
+        const data = read();
+        const r = await fetch("/api/quote/xlsx", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data, venueKey, date, time }),
+        });
+        if (r.ok) {
+          const url = URL.createObjectURL(await r.blob());
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `${date || "date-tbd"}-floating-island-wedding-quote-${venueKey}.xlsx`;
+          a.click();
+          URL.revokeObjectURL(url);
+          return;
+        }
+      } catch {
+        /* 아래 간이 양식으로 대체 */
+      }
+    }
     const table = document.getElementById("quote-sheet");
     if (!table || !estimate) return;
     const notes = estimate.notes.map((n) => `<tr><td colspan="5">${n}</td></tr>`).join("");

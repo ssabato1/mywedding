@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
 import { estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
 import { DEPOSIT, termsToText } from "@/lib/quote-terms";
+import { usesXlsxTemplate } from "@/lib/quote-xlsx";
 
 export const runtime = "nodejs";
 
@@ -73,13 +74,30 @@ function depositText(venueKey: string, lang: string): string {
 /** 고객에게 보내는 견적서 메일 본문 (견적 + 계약금·계좌 + 계약 규정) */
 export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
   const en = q.lang === "en";
+  // 컨벤션·루프탑 가든: 계약서 양식 엑셀을 받는 링크 (개인정보 없이 선택 내용만 담는다)
+  const xlsxLink = usesXlsxTemplate(q.venueKey)
+    ? `https://www.floatingislandwedding.com/api/quote/xlsx?${new URLSearchParams(
+        Object.fromEntries(
+          (["venueKey", "guests", "date", "time", "flower", "menu", "video", "wine", "champagne", "cake", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "canape", "afterGuests"] as const)
+            .map((k) => [k, q[k]] as [string, string])
+            .filter(([, v]) => v),
+        ),
+      ).toString()}`
+    : "";
   const c = siteConfig.contact;
   return [
     en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
     "",
     en
-      ? "Thank you for your interest in Floating Island Wedding. Here is the self quote you created."
-      : "Floating Island Wedding 셀프 견적서를 이용해 주셔서 감사합니다. 작성하신 견적서를 보내 드립니다.",
+      ? "Thank you for your wedding inquiry. Here is the quote you created, together with our guide to the next steps."
+      : "예식 문의해 주셔서 감사합니다. 작성하신 견적서와 안내문을 함께 보내 드립니다.",
+    ...(xlsxLink ? ["", en ? `Quote sheet (Excel): ${xlsxLink}` : `견적서 엑셀 파일 받기: ${xlsxLink}`] : []),
+    "",
+    en ? "■ Next steps" : "■ 진행 안내",
+    en ? "1. Your coordinator will check the date and time and contact you within one business day." : "1. 담당자가 예식 날짜와 시간이 가능한지 확인한 뒤 영업일 기준 1일 안에 연락드립니다.",
+    en ? "2. Visit the venue for a tour and consultation, and adjust the quote to your wishes." : "2. 방문 상담과 홀 투어를 하시면서 견적 내용을 원하시는 대로 조정합니다.",
+    en ? "3. The date is confirmed once the contract is signed and the deposit is received." : "3. 계약서 작성과 계약금 입금이 확인되면 예식일이 확정됩니다.",
+    en ? "This quote is an estimate; the final amount is set in the contract." : "이 견적서는 예상 금액이며, 최종 금액은 계약서에서 확정됩니다.",
     "",
     en ? `Date: ${q.date || "undecided"}${q.time ? ` ${q.time}` : ""}` : `예식 일시: ${q.date || "미정"}${q.time ? ` ${q.time}` : ""}`,
     en ? `Space: ${q.venue}` : `공간: ${q.venue}`,
