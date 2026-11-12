@@ -10,9 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: p === "" ? 1 : 0.8,
   }));
+  const today = new Date().toISOString().slice(0, 10);
   const posts = getAll("posts").map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
-    lastModified: p.date,
+    // 글의 date 는 정렬용이라 미래 날짜일 수 있다. 검색엔진에는 오늘보다 늦은 날짜를 내보내지 않는다.
+    lastModified: p.date > today ? today : p.date,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

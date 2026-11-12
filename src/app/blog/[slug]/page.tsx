@@ -48,7 +48,6 @@ export default async function PostPage(
       )}
       <header className="mb-12">
         <div className="flex items-center gap-3 text-xs text-ink-muted">
-          <time>{post.date}</time>
           {post.tags[0] && <span className="text-gold-dark">{post.tags[0]}</span>}
         </div>
         <h1 className="mt-4 font-display text-3xl font-semibold leading-snug text-gold sm:text-[2.6rem] sm:leading-[1.25]">{post.title}</h1>
