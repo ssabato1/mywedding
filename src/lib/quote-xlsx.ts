@@ -1,6 +1,6 @@
 import { unzip, zip } from "./zip";
 import { QUOTE_TEMPLATES } from "./quote-template-b64";
-import { estimate, MENUS, PRICING, type EstimateInput, type VenueKey } from "./quote-pricing";
+import { estimate, wireAccount, MENUS, PRICING, type EstimateInput, type VenueKey } from "./quote-pricing";
 
 /** 엑셀 견적서 양식을 쓰는 공간 (마리나파크는 회사명·주소·계좌가 다른 별도 양식) */
 export const XLSX_VENUES = ["convention", "rooftop", "marina"] as const;
@@ -106,7 +106,7 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
   sh.str("D5", `${T("지불 보증인원", "Guaranteed guests")} :  ${g}${T("명", "")}`);
   sh.str("A6", `${T("신랑", "Groom")} :  ${info.groom ?? ""}${info.phone ? `     ${T("연락처", "Phone")} :  ${info.phone}` : ""}`);
   sh.str("A7", `${T("신부", "Bride")} :  ${info.bride ?? ""}`);
-  sh.str("D7", `${T("입금 계좌", "Account")} :  ${info.account || T("담당자가 안내해 드립니다", "your coordinator will send it with the contract")}`);
+  sh.str("D7", `${T("입금 계좌", "Wire transfer")} :  ${(en ? wireAccount(info.account, input.venueKey === "marina") : info.account) || T("담당자가 안내해 드립니다", "your coordinator will send it with the contract")}`);
   sh.str("A8", `${T("예식 공간", "Venue")} :  ${venueName}`);
   sh.str("D8", `${T("견적일", "Date of issue")} :  ${issued}`);
 

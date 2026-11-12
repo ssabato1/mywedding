@@ -395,3 +395,21 @@ export function estimateToText(e: Estimate): string {
     `소계: ${won(e.subtotal)}원 / 부가세: ${won(e.vat)}원 / 합계: ${won(e.total)}원`,
   ].join("\n");
 }
+
+/**
+ * 영문 견적서·영문 메일용 해외 송금 표기.
+ * 환경변수의 국문 계좌 표기("하나은행 000-… (예금주 …)")에서 계좌번호만 읽어
+ * 은행 영문명·SWIFT 코드·수취인 영문명과 함께 한 줄로 만든다. (계좌번호는 코드에 두지 않는다)
+ */
+const WIRE_BANKS: { ko: string; en: string; swift: string }[] = [
+  { ko: "하나은행", en: "KEB Hana Bank", swift: "KOEXKRSE" },
+  { ko: "신한은행", en: "Shinhan Bank", swift: "SHBKKRSE" },
+];
+export function wireAccount(account: string | undefined, marina: boolean): string | undefined {
+  if (!account) return undefined;
+  const bank = WIRE_BANKS.find((b) => account.includes(b.ko));
+  const no = account.match(/\d[\d-]{6,}\d/)?.[0];
+  if (!bank || !no) return account;
+  const beneficiary = marina ? "Marinapark Inc." : "Floating Island Co., Ltd.";
+  return `${bank.en} · SWIFT ${bank.swift} · A/C ${no} · ${beneficiary}`;
+}

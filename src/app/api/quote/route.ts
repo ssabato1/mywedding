@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
-import { detectQuoteLang, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
+import { detectQuoteLang, wireAccount, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
 import { DEPOSIT, termsToText } from "@/lib/quote-terms";
 import { usesXlsxTemplate } from "@/lib/quote-xlsx";
 
@@ -61,7 +61,7 @@ function depositText(venueKey: string, lang: string): string {
     ? [
         "■ Deposit",
         `Deposit: KRW ${won(DEPOSIT)}. Your date is confirmed once the deposit is received.`,
-        account ? `Account for ${name}: ${account}` : `Account for ${name}: your coordinator will send it with the contract.`,
+        account ? `Wire transfer (${name}): ${wireAccount(account, marina)}` : `Account for ${name}: your coordinator will send it with the contract.`,
         "Please check the date with your coordinator before sending the deposit.",
       ].join("\n")
     : [
