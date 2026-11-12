@@ -3,12 +3,12 @@ title: "화관(플라워 크라운)과 헤드피스 고르기: 야외·실내별
 description: "생화·드라이·조화 화관과 콤·티아라를 야외·실내 환경, 헤어스타일, 베일, 바람·알레르기 조건에 맞춰 고르는 방법입니다."
 date: 2026-12-16
 tags: ["스타일", "플로팅아일랜드", "플로팅아일랜드웨딩", "세빛섬웨딩", "세빛섬"]
-thumbnail: "/images/bridal-hair-flowers-profile-01.jpg"
+thumbnail: "/images/flower-crown-bride-friends-01.jpg"
 ---
 
 화관과 헤드피스는 얼굴 가까이에 놓이는 장식이라 꽃 종류만큼 고정력, 무게, 베일과의 간격이 중요합니다. 야외에서는 더위·바람·습도, 실내에서는 조명과 드레스 장식의 균형을 먼저 봅니다.
 
-![화이트 생화를 한쪽에 모아 낮은 시뇽과 연결한 브라이덜 헤어](/images/bridal-hair-flowers-profile-01.jpg)
+![생화 화관을 쓴 신부와 화관을 맞춘 웨딩 파티](/images/flower-crown-bride-friends-01.jpg)
 
 ## 야외와 실내: 선택 기준이 다르다
 
