@@ -3,12 +3,14 @@ title: "베일·티아라·웨딩슈즈: 2026 트렌드"
 description: "2026년에는 긴 베일과 블러셔가 돌아오고, 티아라는 가벼워지며, 구두는 사진에 나오는 물건이 되었습니다. 세 가지 액세서리의 흐름과 홀에 맞춰 고르는 기준을 정리했습니다."
 date: 2026-12-03
 tags: [스타일, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/bride-lace-sash-garden-01.jpg
+thumbnail: /images/bridal-accessories-pearl-headband-01.jpg
 ---
 
 베일과 티아라와 구두는 2026년에 셋 모두 "정해진 답"에서 벗어나는 중입니다. 해외 매체들이 꼽은 흐름을 정리하고, 홀에 맞춰 고르는 기준을 덧붙였습니다. 베일과 티아라가 어디에서 시작되었는지는 [베일의 유래와 종류](/blog/bridal-veil-history-and-types)와 [티아라의 유래](/blog/tiara-history-and-how-to-wear)에서 다뤘습니다. (2026년 12월 기준)
 
 ![레이스 캡 소매 드레스에 크리스털 새시 벨트와 귀걸이 — 베일 없이 액세서리만으로 완성한 가든 웨딩 스타일](/images/bride-lace-sash-garden-01.jpg)
+
+![진주 헤드밴드와 레이스 초커 — 베일 없이 머리와 목에 포인트를 둔 웨딩 액세서리 스타일](/images/bridal-accessories-pearl-headband-01.jpg)
 
 ## 베일: 길어지고, 겹치고, 색이 생기다
 
@@ -81,3 +83,7 @@ Who What Wear는 한 걸음 더 나가 [2026 브라이덜 액세서리 트렌드
 - [Wedded Wonderland, Top 10 Bridal Veil Trends for the 2026 Bride](https://weddedwonderland.com/top-10-bridal-veil-trends-2026-bride)
 - [Who What Wear, Bridal Accessory Trends 2026](https://www.whowhatwear.com/uk/living/wedding/bridal-accessory-trends-2026)
 - [THE WED, Major Bridal Shoe Trends for 2026](https://thewed.com/magazine/major-bridal-shoe-trends-for-2026)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

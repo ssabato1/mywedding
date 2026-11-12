@@ -97,3 +97,7 @@ thumbnail: /images/veil-pearl-net-01.jpg
 - [The List, Inside the History of the Bridal Veil](https://www.thelist.com/913170/inside-the-history-of-the-bridal-veil)
 - [WeddingWire, The Wedding Veil, Unveiled](https://www.weddingwire.com/wedding-ideas/wedding-veil-meaning)
 - [Wikipedia, Veil](https://en.wikipedia.org/wiki/Veil)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -117,3 +117,7 @@ thumbnail: "/images/flower-crown-wedding-party-02.jpg"
 - [Britten Weddings, How to Wear a Veil with Your Hair Down](https://www.brittenweddings.com/en-us/blogs/news/how-to-wear-a-veil-with-your-hair-down)
 - [Brides, 16 Dried Wedding Flower Ideas](https://www.brides.com/dried-wedding-flower-ideas-6747541)
 - [Brides, 21 Flower Crown Wedding Hairstyles](https://www.brides.com/flower-crown-wedding-hairstyles-4797565)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

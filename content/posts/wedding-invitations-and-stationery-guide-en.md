@@ -126,3 +126,7 @@ From the [invitation trends](https://www.theknot.com/content/wedding-invitation-
 | Personal information | If a mobile invitation carries an account number or phone numbers, decide who can see it and close the page after the wedding |
 
 The invitation is the first scene of the wedding and the thank-you card is the last. You do not need every piece of paper in between. Choose what your wedding needs, and make what you choose look like one set.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

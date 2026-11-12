@@ -93,3 +93,7 @@ For example, at venues where river and sky are the backdrop, such as the Sevit I
 - [Blooming Haus, Best Bouquet Shape for Your Wedding Dress](https://bloominghaus.com/wedding-flowers/best-bouquet-shape-for-wedding-dress/)
 - [THE WED, The Ultimate Guide to Choosing a Bridal Bouquet](https://thewed.com/magazine/ultimate-guide-to-choosing-a-bridal-bouquet)
 - [Belmond, 2026 Wedding Trends to Look Out For](https://www.belmond.com/en/stories/wedding-trends-2026) — colourful bouquet searches up 267% (Hitched data)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

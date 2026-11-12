@@ -87,3 +87,7 @@ Wedding planning is hard not because there is so much to do but because nobody t
 | D-1 | One bag, a short family dinner, rest |
 
 The D-90 meeting, D-10 guarantee and D-2 balance in this table are the schedule one wedding venue in Seoul actually uses, but most venues move at similar intervals. When you receive your contract, write the dates into this table and put it on the fridge.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

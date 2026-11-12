@@ -86,3 +86,7 @@ Belmond의 2026 트렌드 정리에 따르면 영국 Hitched에서 "컬러풀 �
 - [Blooming Haus, Best Bouquet Shape for Your Wedding Dress](https://bloominghaus.com/wedding-flowers/best-bouquet-shape-for-wedding-dress/)
 - [THE WED, The Ultimate Guide to Choosing a Bridal Bouquet](https://thewed.com/magazine/ultimate-guide-to-choosing-a-bridal-bouquet)
 - [Belmond, 2026 Wedding Trends to Look Out For](https://www.belmond.com/en/stories/wedding-trends-2026) — 컬러 부케 검색 267% 증가(Hitched 데이터)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -68,3 +68,7 @@ thumbnail: /images/sposabella-dress-02.jpg
 - [Vogue, The Top Wedding Dress Trends From New York Bridal Fashion Week](https://www.vogue.com/article/wedding-dress-trends-new-york-bridal-fashion-week-spring-2026)
 - [Martha Stewart, The Wedding Dress Trends That Will Define 2026—and Beyond](https://www.marthastewart.com/wedding-dress-trends-2026-11829544)
 - [Junebug Weddings, 2026 Wedding Trend Forecast](https://junebugweddings.com/wedding-blog/2026-wedding-trend-forecast-immersive-venues-intimate-gatherings-end-of-tradition/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -86,3 +86,7 @@ Some venues now offer a self-quote page that shows the figure for each line as s
 
 - [The Knot, The Wedding Budget Breakdown You Need, Backed By Data](https://www.theknot.com/content/wedding-budget-ways-to-save-money)
 - [Joy, Wedding Budget Breakdown by Percentage](https://withjoy.com/blog/wedding-budget-breakdown-by-percentage/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

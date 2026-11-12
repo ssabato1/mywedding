@@ -84,3 +84,7 @@ One wedding venue on the Han River in Seoul, for example, is close to the Expres
 
 - [Joy, How to Plan a Destination Wedding: The Complete Guide](https://withjoy.com/blog/how-to-plan-a-destination-wedding-the-complete-guide/)
 - [THE WED, Destination Wedding Etiquette](https://thewed.com/magazine/destination-wedding-etiquette)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

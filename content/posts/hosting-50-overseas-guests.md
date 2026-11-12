@@ -86,3 +86,7 @@ The Knot은 예식 웹사이트를 **모든 정보의 중심**으로 두고, 청
 ---
 
 *In English:* Fifty guests flying in means a three-day welcome, not a one-hour ceremony. Block hotel rooms 9–12 months out, publish airport-to-hotel and hotel-to-venue transport in English, plan three meals (welcome dinner, reception, next-day brunch), and confirm halal, vegetarian and alcohol-free options are standard at the venue. A venue with its own shuttle point and coach parking takes most of the logistics off the couple.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

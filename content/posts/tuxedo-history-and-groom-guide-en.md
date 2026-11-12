@@ -71,3 +71,7 @@ Asking the shop where the dress was chosen about the tone of the groom's outfit 
 ## Sources
 
 - [Wikipedia, Black tie](https://en.wikipedia.org/wiki/Black_tie)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

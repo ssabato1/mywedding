@@ -70,3 +70,7 @@ Bustle은 요즘의 변화도 짚습니다. 옷을 똑같이 맞추기보다 색
 
 - [Mental Floss, 21 Historical Roles and Responsibilities of the Wedding Party](https://www.mentalfloss.com/article/57821/21-historical-roles-and-responsibilities-wedding-party)
 - [Bustle, Where Did The Tradition Of Bridesmaids Come From?](https://www.bustle.com/p/where-did-the-tradition-of-bridesmaids-come-from-the-history-behind-wedding-parties-18758745)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

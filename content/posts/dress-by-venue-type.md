@@ -31,6 +31,8 @@ thumbnail: /images/dress-classic-salon-01.jpg
 
 ![통창 배경에는 단순한 선 — 스포사벨라](/images/sposabella-dress-02.jpg)
 
+![통창·실내 홀 드레스 참고 — 장식적인 시스 실루엣과 은은한 광택의 새틴, 등 라인을 강조한 디자인](/images/dress-reference-satin-back-01.jpg)
+
 ## 3. 대형 LED·컨벤션홀: 공간의 규모를 받아내는 볼륨
 
 [Joy의 2026 실루엣 가이드](https://withjoy.com/blog/wedding-dress-styles-2026-every-silhouette-trend-and-how-to-choose-yours/)는 그랜드 볼룸·대성당처럼 큰 공간에 **볼가운이나 드라마틱한 A라인**을 권합니다. 공간이 크면 드레스도 그 규모를 받아내야 사진에서 작아 보이지 않습니다. Azazie는 볼룸에 새틴·미카도의 광택, 채플~커시드럴 트레인, 절제된 비딩을 권합니다.
@@ -41,6 +43,10 @@ thumbnail: /images/dress-classic-salon-01.jpg
 - 반짝이는 비딩은 LED 빛을 받으면 과해 보일 수 있습니다. 비딩은 상의 한 곳에만.
 
 ![컨벤션홀의 규모를 받아내는 볼륨 드레스 (서울 한강의 한 웨딩홀)](/images/convention-wedding-02.jpg)
+
+![대형 홀 드레스 참고 — 레이스 보디스와 풍성한 튤 스커트가 만드는 드라마틱한 A라인](/images/dress-reference-lace-a-line-01.jpg)
+
+![롱 트레인 참고 — 머메이드 실루엣에서 길게 이어지는 레이스 트레인은 넓고 긴 입장 동선에서 형태가 잘 드러납니다](/images/wedding-dress-long-train-01.jpg)
 
 ## 계절까지 한 번에
 
@@ -61,3 +67,7 @@ Joy는 계절별 원단도 권합니다. 봄은 시폰·가벼운 레이스에 �
 - [Kleinfeld Bridal, Wedding Dress Styles Best for Outdoor Weddings](https://www.kleinfeldbridal.com/blog/wedding-dress-styles-best-for-outdoor-weddings/)
 - [Azazie, How Do I Choose the Right Wedding Dress for My Wedding Venue?](https://www.azazie.com/blog/how-do-i-choose-the-right-wedding-dress-for-my-wedding-venue/)
 - [Joy, Wedding Dress Styles 2026: Every Silhouette, Trend, and How to Choose Yours](https://withjoy.com/blog/wedding-dress-styles-2026-every-silhouette-trend-and-how-to-choose-yours/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

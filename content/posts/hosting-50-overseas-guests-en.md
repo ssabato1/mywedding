@@ -84,3 +84,7 @@ For example, Sevit Island on the Han River in Seoul runs a shuttle from the Expr
 - [The Knot, How to Make Out-of-Town Guests Feel at Home](https://www.theknot.com/content/how-to-make-out-of-town-guests-feel-at-home)
 - [Joy, How to Book a Hotel Room Block for Your Wedding (2026 Guide)](https://withjoy.com/blog/how-to-book-a-hotel-room-block-for-your-wedding-2026-guide/)
 - [Zola, The First Look Report 2026](https://www.zola.com/expert-advice/the-first-look-report-2026) — 37% hold an extra event
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -63,3 +63,7 @@ Woolmark의 [Wool Tailoring and Suiting](https://www.woolmark.com/z.archive/arch
 - [Debrett’s, Events and Dress Codes](https://debretts.com/etiquette-category/events-and-dress-codes)
 - [Norton & Sons, The Guide to Black Tie](https://nortonandsons.co.uk/blogs/news/the-norton-sons-guide-to-black-tie)
 - [Woolmark, Wool Tailoring and Suiting](https://www.woolmark.com/z.archive/archive-industry/suiting)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

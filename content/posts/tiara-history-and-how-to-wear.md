@@ -92,3 +92,7 @@ thumbnail: /images/tiara-classic-01.jpg
 
 - [Barnebys, Not Just for Royals: A History of the Tiara](https://www.barnebys.com/blog/not-just-for-royals-a-history-of-the-tiara)
 - [Wikipedia, Tiara](https://en.wikipedia.org/wiki/Tiara)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

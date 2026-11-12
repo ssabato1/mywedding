@@ -94,3 +94,7 @@ thumbnail: /images/international-first-dance-01.jpg
 ---
 
 *In English:* When two families expect two different weddings, do not blend them into one running order — split the day. Part one is a 40-minute ceremony with the family rituals Korean parents expect; part two is a two-hour-plus reception with the toasts, first dance and after-party overseas guests expect. The one venue condition that makes this work: a hall that gives you a generous time slot and lets you set your own timeline.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

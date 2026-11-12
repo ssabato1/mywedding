@@ -3,12 +3,14 @@ title: "신부대기실"
 description: ""
 date: 2026-12-16
 tags: [웨딩 문화, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
-thumbnail: /images/bridal-room-flower-board.jpg
+thumbnail: /images/bridal-room-bride-01.jpg
 ---
 
 예식 당일 신부가 가장 오래 머무는 곳은 예식장이 아니라 신부대기실입니다. 드레스를 입고 문이 열리기를 기다리는 한 시간 남짓, 그 방은 준비실이자 응접실이고 작은 사진 스튜디오이기도 합니다. 이 방을 어떻게 쓰고, 그 안에서 마음을 어떻게 다루며, 사진은 어떻게 남기면 좋은지 정리했습니다. (2026년 11월 기준)
 
 ![신부대기실 플라워 연출 예시 — 핑크, 화이트, 바이올렛 등 색에 따라 달라지는 방의 분위기 (애니버셔리플라워)](/images/bridal-room-flower-board.jpg)
+
+![화이트·그린 플라워와 자연광으로 연출한 신부대기실 — 소파 앞에 드레스 자락을 넓게 펼친 단독 사진 구도](/images/bridal-room-bride-01.jpg)
 
 ## 신부대기실은 무엇을 하는 방인가
 
@@ -77,3 +79,7 @@ The Knot은 [예식 당일 긴장을 줄이는 방법](https://www.theknot.com/c
 - [The Knot, Getting Ready Wedding Photos Tips](https://www.theknot.com/content/getting-ready-wedding-photos-tips)
 - [The Knot, Ways to Stay Relaxed on Your Wedding Day](https://www.theknot.com/content/ways-to-stay-relaxed-wedding-day)
 - [SLR Lounge, Bride Getting Ready Photography](https://www.slrlounge.com/bride-getting-ready-photography/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -98,3 +98,7 @@ Along with the settlement, send thanks to the coordinator, MC, singers and photo
 | Whether the bouquet and flowers can be kept | Whether you take the flowers or the venue disposes of them |
 
 For example, Sevit Island and Marina Park on the Han River in Seoul ask the couple and parents to arrive 90 minutes before the ceremony, the reception desk one hour before and the MC and singers 50 minutes before, with a 10% allowance over the guarantee and drinks settled by consumption on the day. Other venues differ only in the numbers, so change the times in this table and put it on the fridge.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

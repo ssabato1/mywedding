@@ -104,3 +104,7 @@ thumbnail: "/images/bridesmaids-bouquets-01.jpg"
 - [The Knot, Bridesmaid Dress Colors: Color Palettes & Seasonal Ideas](https://www.theknot.com/content/what-color-bridesmaid-dresses-should-you-have)
 - [The Knot, Garden Wedding Bridesmaid Dresses](https://www.theknot.com/content/garden-wedding-bridesmaid-dresses)
 - [The Knot, Where to Get Bridesmaid Dress Swatches (& Why You Should)](https://www.theknot.com/content/bridesmaid-dress-swatches)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

@@ -113,3 +113,7 @@ If only some guests are invited, do not enclose the invitation with the wedding 
 | The next day | Repeat the ceremony time, meeting point and shuttle times in print or by message |
 
 The evening before does not make the wedding a day longer. It is the time when those who came from far away learn each other's faces, and the two families first sit at one table. With that evening behind them, the guests at the wedding are no longer strangers but people who have already said hello.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

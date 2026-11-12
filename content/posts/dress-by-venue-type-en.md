@@ -33,6 +33,8 @@ Light in a glass-walled hall differs by day and night. By day, backlight turns t
 
 ![A simple line against a wall of glass — Sposabella](/images/sposabella-dress-02.jpg)
 
+![Dress reference for a glass-walled or indoor hall — an embellished sheath silhouette in softly lustrous satin, with the back as the focal point](/images/dress-reference-satin-back-01.jpg)
+
 ## 3. Large LED and convention halls: volume to match the scale
 
 [Joy's 2026 silhouette guide](https://withjoy.com/blog/wedding-dress-styles-2026-every-silhouette-trend-and-how-to-choose-yours/) recommends a **ball gown or dramatic A-line** for large spaces such as a grand ballroom or cathedral. In a big space the dress has to hold its own or it looks small in photographs. For ballrooms Azazie recommends the sheen of satin or mikado, a chapel-to-cathedral train and restrained beading.
@@ -43,6 +45,10 @@ More to consider in a large LED hall:
 - Sparkling beading can look excessive under LED light. Keep it to one place on the bodice.
 
 ![A dress with the volume for a convention hall (a wedding venue on the Han River in Seoul)](/images/convention-wedding-02.jpg)
+
+![Dress reference for a large hall — a lace bodice and full tulle skirt create a dramatic A-line](/images/dress-reference-lace-a-line-01.jpg)
+
+![Long-train reference — a lace train extending from a mermaid silhouette reads best along a wide, long aisle](/images/wedding-dress-long-train-01.jpg)
 
 ## And the season
 
@@ -63,3 +69,7 @@ For example, the Marina Park garden (deck and grass, river wind) and the Sevit I
 - [Kleinfeld Bridal, Wedding Dress Styles Best for Outdoor Weddings](https://www.kleinfeldbridal.com/blog/wedding-dress-styles-best-for-outdoor-weddings/)
 - [Azazie, How Do I Choose the Right Wedding Dress for My Wedding Venue?](https://www.azazie.com/blog/how-do-i-choose-the-right-wedding-dress-for-my-wedding-venue/)
 - [Joy, Wedding Dress Styles 2026: Every Silhouette, Trend, and How to Choose Yours](https://withjoy.com/blog/wedding-dress-styles-2026-every-silhouette-trend-and-how-to-choose-yours/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

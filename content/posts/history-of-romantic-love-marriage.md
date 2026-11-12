@@ -63,3 +63,7 @@ University of Michigan Press의 [Modern Loves: Introduction](https://press.umich
 - [University of Houston, Courtship in Early America](https://www.digitalhistory.uh.edu/teachers/historyonline/uscourt.cfm)
 - [Northwestern University, The All-or-Nothing Marriage](https://news.northwestern.edu/stories/2014/02/opinion-nyt-finkel-marriage)
 - [University of Michigan Press, Modern Loves: Introduction](https://press.umich.edu/pdf/9780472099597-intro.pdf)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

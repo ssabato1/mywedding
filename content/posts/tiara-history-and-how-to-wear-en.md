@@ -94,3 +94,7 @@ In a hall with a high ceiling and a long aisle, such as one wedding venue on the
 
 - [Barnebys, Not Just for Royals: A History of the Tiara](https://www.barnebys.com/blog/not-just-for-royals-a-history-of-the-tiara)
 - [Wikipedia, Tiara](https://en.wikipedia.org/wiki/Tiara)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

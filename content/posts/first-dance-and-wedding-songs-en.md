@@ -99,3 +99,7 @@ If dancing feels daunting, the form can be reduced.
 | Explaining it to guests | For guests unfamiliar with the dance, have the host introduce it in a sentence |
 
 Whether it is a dance or a song, the meaning is the same: a few minutes in the middle of the wedding that belong only to the two of you. Choose the form that feels natural to you.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

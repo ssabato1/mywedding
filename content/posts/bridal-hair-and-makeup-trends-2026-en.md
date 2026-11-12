@@ -74,3 +74,7 @@ For nails the article shows crystals placed like pinpoints, French manicures rew
 ## Sources
 
 - [THE WED, Major Bridal Beauty Trends for 2026](https://thewed.com/magazine/major-bridal-beauty-trends-for-2026)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

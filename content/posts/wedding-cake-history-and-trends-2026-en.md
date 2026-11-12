@@ -92,3 +92,7 @@ The trends named by overseas media for 2026 run in two directions: a return to t
 | Photographs | Agree with the photographer on where the cutting will be shot and against what background |
 
 The cake is one of the oldest parts of the wedding. From the days of kissing over a pile of buns until now the form has changed, but the meaning of sharing food has not. Whatever shape you choose, it is the first slice the two of you cut together.
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

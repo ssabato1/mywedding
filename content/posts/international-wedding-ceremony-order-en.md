@@ -92,3 +92,7 @@ For example, the Convention Hall at Sevit Island on the Han River in Seoul runs 
 - [ ] Confirmed the venue offers a generous slot of three hours or more and a changeable running order
 - [ ] Confirmed halal, vegetarian and alcohol-free alternatives are standard
 - [ ] Sent overseas guests an English guide (accommodation, transport, dress code)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

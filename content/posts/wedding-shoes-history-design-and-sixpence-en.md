@@ -5,7 +5,7 @@ date: 2026-12-03
 lang: en
 translationOf: wedding-shoes-history-design-and-sixpence
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/wedding-shoes-lace-peeptoe-01.jpg
+thumbnail: /images/wedding-shoes-bride-bridesmaids-01.jpg
 ---
 
 Hidden by the hem and rarely seen, the shoes are what walk with the bride from the start of the day to the end: from the bridal room to the aisle, from the aisle to the guests' tables, and on to the last dance. Perhaps that is why so many Western wedding customs are about shoes. The best loved of them is a single coin placed in the bride's shoe. The stories of the veil and the tiara are in [The Bridal Veil: Its Origins and Its Types](/blog/bridal-veil-history-and-types-en) and [The Tiara: From a King's Headdress to the Bride's](/blog/tiara-history-and-how-to-wear-en), and this year's shoe designs are in [The 2026 Trends](/blog/bridal-accessory-trends-2026-en).
@@ -43,6 +43,8 @@ Some of these look strange now, but the feeling behind them is the same: a wish 
 ## Design: from shoes that were hidden to shoes that are shown
 
 For a long time wedding shoes were covered by a floor-length dress, and the rule was simple: white or ivory, the same fabric as the dress, nothing that drew the eye. As hemlines rose and second dresses became common, shoes entered the photographs and the choice widened.
+
+![Wedding shoes for the bride and bridesmaids — lace, bows and peep toes chosen to suit each dress and role](/images/wedding-shoes-bride-bridesmaids-01.jpg)
 
 | Type | Character | Works for |
 | --- | --- | --- |
@@ -106,3 +108,7 @@ The custom is not a Korean one, but a father slipping a coin into his daughter's
 - [Snopes, Wedding Shoes](https://www.snopes.com/fact-check/wedding-shoes/)
 - [The Perfect Bridal Company, Bridal Shoe Traditions](https://www.theperfectbridalcompany.com/blog/bridal-shoe-traditions)
 - [THE WED, Major Bridal Shoe Trends for 2026](https://thewed.com/magazine/major-bridal-shoe-trends-for-2026)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)

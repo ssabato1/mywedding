@@ -5,12 +5,14 @@ date: 2026-12-16
 lang: en
 translationOf: bridal-room-purpose-poses-and-photos
 tags: [Wedding Culture, FloatingIsland, FloatingIslandWedding, SevitIslandWedding, SevitIsland]
-thumbnail: /images/bridal-room-flower-board.jpg
+thumbnail: /images/bridal-room-bride-01.jpg
 ---
 
 On the wedding day, the place where a bride spends the longest is not the hall but the bridal room. For an hour or so, in her dress and waiting for the doors to open, the room is a dressing room, a reception room and a small photo studio at once. Here is how the room is used, how to look after your feelings in it and how to photograph it well. (As of November 2026)
 
 ![Examples of bridal room flowers — the mood of the room changes with pink, white or violet (Anniversary Flower)](/images/bridal-room-flower-board.jpg)
+
+![A bridal room styled with white-and-green flowers and natural light — the gown spread wide in front of the sofa for a solo portrait](/images/bridal-room-bride-01.jpg)
 
 ## What the bridal room is for
 
@@ -79,3 +81,7 @@ The bridal room is where preparation is finished, guests are received and photog
 - [The Knot, Getting Ready Wedding Photos Tips](https://www.theknot.com/content/getting-ready-wedding-photos-tips)
 - [The Knot, Ways to Stay Relaxed on Your Wedding Day](https://www.theknot.com/content/ways-to-stay-relaxed-wedding-day)
 - [SLR Lounge, Bride Getting Ready Photography](https://www.slrlounge.com/bride-getting-ready-photography/)
+
+---
+
+[스포사벨라 웨딩드레스](https://sposabella.kr/)
