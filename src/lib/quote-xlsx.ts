@@ -18,7 +18,15 @@ class Sheet {
   private re(ref: string) {
     return new RegExp(`<c r="${ref}"([^>]*?)(?:/>|>([\\s\\S]*?)</c>)`);
   }
-  private put(ref: string, build: (style: string, inner: string) => string) {
+  /**
+   * 양식은 왼쪽에 여백 열(A)을 하나 두므로 실제 내용은 B~F 열에 있다.
+   * 아래 코드는 내용 열을 A~E 로 부르고, 여기서 한 칸 오른쪽으로 옮겨 쓴다.
+   */
+  private shift(ref: string) {
+    return String.fromCharCode(ref.charCodeAt(0) + 1) + ref.slice(1);
+  }
+  private put(logical: string, build: (style: string, inner: string) => string) {
+    const ref = this.shift(logical);
     const re = this.re(ref);
     const m = re.exec(this.xml);
     if (!m) throw new Error(`quote-xlsx: cell ${ref} not found in template`);
@@ -27,21 +35,24 @@ class Sheet {
   }
   /** 견적에 합산된 줄을 연한 갈색으로 칠한다 (양식에 미리 만들어 둔 음영 스타일로 교체) */
   shade(row: number, map: Record<string, string>) {
-    for (const col of "ABCDE") {
+    for (const col of "BCDEF") {
       const ref = `${col}${row}`;
       const s = map[ref];
       if (s) this.xml = this.xml.replace(new RegExp(`(<c r="${ref}"[^>]*?\\ss=")\\d+(")`), `$1${s}$2`);
     }
   }
-  num(ref: string, n: number | null) {
-    this.put(ref, (s) => (n === null ? `<c r="${ref}"${s}/>` : `<c r="${ref}"${s}><v>${n}</v></c>`));
+  num(logical: string, n: number | null) {
+    const ref = this.shift(logical);
+    this.put(logical, (s) => (n === null ? `<c r="${ref}"${s}/>` : `<c r="${ref}"${s}><v>${n}</v></c>`));
   }
-  str(ref: string, text: string) {
-    this.put(ref, (s) => `<c r="${ref}"${s} t="inlineStr"><is><t xml:space="preserve">${esc(text)}</t></is></c>`);
+  str(logical: string, text: string) {
+    const ref = this.shift(logical);
+    this.put(logical, (s) => `<c r="${ref}"${s} t="inlineStr"><is><t xml:space="preserve">${esc(text)}</t></is></c>`);
   }
   /** 수식은 그대로 두고, 엑셀이 계산하지 않는 미리보기에서도 보이도록 계산값만 넣는다. */
-  cached(ref: string, v: number | string) {
-    this.put(ref, (s, inner) => {
+  cached(logical: string, v: number | string) {
+    const ref = this.shift(logical);
+    this.put(logical, (s, inner) => {
       const f = /<f[^>]*\/>|<f[^>]*>[\s\S]*?<\/f>/.exec(inner)?.[0] ?? "";
       return typeof v === "number"
         ? `<c r="${ref}"${s}>${f}<v>${v}</v></c>`
