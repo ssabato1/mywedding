@@ -1,6 +1,6 @@
 ---
 title: "신부대기실"
-description: "신부대기실은 무엇을 하는 방일까요. 예식 전 한 시간의 쓰임, 그 방에서 신부가 느끼는 마음을 다루는 법, 앉은 자세와 손·시선 처리, 대기실 사진을 잘 남기는 방법을 정리했습니다."
+description: ""
 date: 2026-12-16
 tags: [웨딩 문화, 플로팅아일랜드, 플로팅아일랜드웨딩, 세빛섬웨딩, 세빛섬]
 thumbnail: /images/bridal-room-flower-board.jpg
