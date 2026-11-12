@@ -1,5 +1,5 @@
 import { unzip, zip } from "./zip";
-import { QUOTE_TEMPLATE_B64 } from "./quote-template-b64";
+import { QUOTE_SHADE_EN, QUOTE_SHADE_KO, QUOTE_TEMPLATE_EN_B64, QUOTE_TEMPLATE_KO_B64 } from "./quote-template-b64";
 import { estimate, MENUS, type EstimateInput } from "./quote-pricing";
 
 /** 엑셀 양식(「CONTRACT SHEET」)을 쓰는 공간 */
@@ -8,7 +8,8 @@ export function usesXlsxTemplate(venueKey: string): boolean {
   return (XLSX_VENUES as readonly string[]).includes(venueKey);
 }
 
-export type QuoteSheetInfo = { groom?: string; bride?: string; phone?: string; date?: string; time?: string; account?: string };
+export type QuoteSheetInfo = { groom?: string; bride?: string; phone?: string; date?: string; time?: string; account?: string; lang?: string };
+
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -24,9 +25,13 @@ class Sheet {
     const style = /\ss="\d+"/.exec(m[1])?.[0] ?? "";
     this.xml = this.xml.replace(re, () => build(style, m[2] ?? ""));
   }
-  /** 양식에서 숨겨 둔 예비 행을 보이게 한다 */
-  unhide(row: number) {
-    this.xml = this.xml.replace(new RegExp(`(<row r="${row}"[^>]*?)\\s+hidden="(?:1|true)"`), "$1");
+  /** 견적에 합산된 줄을 연한 갈색으로 칠한다 (양식에 미리 만들어 둔 음영 스타일로 교체) */
+  shade(row: number, map: Record<string, string>) {
+    for (const col of "ABCDE") {
+      const ref = `${col}${row}`;
+      const s = map[ref];
+      if (s) this.xml = this.xml.replace(new RegExp(`(<c r="${ref}"[^>]*?\\ss=")\\d+(")`), `$1${s}$2`);
+    }
   }
   num(ref: string, n: number | null) {
     this.put(ref, (s) => (n === null ? `<c r="${ref}"${s}/>` : `<c r="${ref}"${s}><v>${n}</v></c>`));
@@ -45,113 +50,128 @@ class Sheet {
   }
 }
 
-/** 고객이 고른 내용으로 계약서 양식을 채운 xlsx 를 만든다. 컨벤션·루프탑 가든 전용. */
+/**
+ * 고객이 고른 내용으로 견적서 양식을 채운 xlsx 를 만든다. 컨벤션·루프탑 가든 전용.
+ * 견적에 합산된 줄만 연한 갈색으로 칠하고, 수식은 그대로 두되 계산값을 함께 넣는다.
+ */
 export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buffer | null {
   if (!usesXlsxTemplate(input.venueKey)) return null;
-  const e = estimate({ ...input, lang: "ko" });
-  if (!e) return null;
-  const line = (re: RegExp) => e.lines.find((l) => re.test(l.label));
-  const entries = unzip(Buffer.from(QUOTE_TEMPLATE_B64, "base64"));
+  const en = info.lang === "en";
+  const eK = estimate({ ...input, lang: "ko" });
+  const eL = estimate({ ...input, lang: en ? "en" : "ko" });
+  if (!eK || !eL) return null;
+  /** 한국어 라벨로 줄을 찾고, 표시는 요청 언어의 같은 줄에서 가져온다 */
+  const line = (re: RegExp) => {
+    const i = eK.lines.findIndex((l) => re.test(l.label));
+    return i < 0 ? undefined : eL.lines[i];
+  };
+  const entries = unzip(Buffer.from(en ? QUOTE_TEMPLATE_EN_B64 : QUOTE_TEMPLATE_KO_B64, "base64"));
   const sheetEntry = entries.find((x) => x.name === "xl/worksheets/sheet1.xml");
   if (!sheetEntry) return null;
   const sh = new Sheet(sheetEntry.data.toString("utf8"));
-  const g = e.guests;
+  const SHADE = en ? QUOTE_SHADE_EN : QUOTE_SHADE_KO;
+  const g = eK.guests;
+  const T = (ko: string, e: string) => (en ? e : ko);
+  const tbd = T("미정", "to be decided");
 
-  // ── 머리말
+  // ── 머리말: 신랑·신부 이름, 예식 일자, 원하는 시간대
   const names = [info.groom, info.bride].filter(Boolean).join(" · ");
-  sh.str("D6", names ? ` ${names}` : " ");
   const [y, m, d] = (info.date ?? "").split("-");
-  sh.str("D7", y && m && d ? `  ${y}년 ${Number(m)}월 ${Number(d)}일${info.time ? `  ${info.time}` : ""}` : "        년    월       일");
-  sh.num("I7", g);
-  sh.cached("I6", Math.round(g * 1.1));
-  if (info.groom) sh.str("B8", `  § 신랑 _groom : ${info.groom}`);
-  if (info.bride) sh.str("B9", `  § 신부 _bride : ${info.bride}`);
-  if (info.phone) sh.str("D8", `  § 연락처 _phone : ${info.phone}`);
-  sh.str("G9", `  § 입금 계좌 _account number :   ${info.account || "담당자가 안내해 드립니다"}`);
+  const hasDate = !!(y && m && d);
+  const dateText = hasDate
+    ? en
+      ? new Date(Date.UTC(+y, +m - 1, +d)).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+      : `${y}년 ${+m}월 ${+d}일 (${"일월화수목금토"[new Date(Date.UTC(+y, +m - 1, +d)).getUTCDay()]})`
+    : tbd;
+  const venueName = input.venueKey === "rooftop" ? T("세빛섬 5층 루프탑 가든", "Sevit Island 5F Rooftop Garden") : T("플로팅아일랜드 컨벤션홀", "Floating Island Convention Hall");
+  const issued = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
+  sh.str("A4", `${T("예식명", "Event")} :  ${names ? T(`${names} 님 예식`, `Wedding of ${names}`) : ""}`);
+  sh.str("D4", `${T("참석 예상 인원", "Expected guests")} :  ${Math.round(g * 1.1)}${T("명", "")}`);
+  sh.str("A5", `${T("예식 일시", "Date / time")} :  ${dateText}${info.time ? `  ${info.time}` : `  (${T("시간 미정", "time to be decided")})`}`);
+  sh.str("D5", `${T("지불 보증인원", "Guaranteed guests")} :  ${g}${T("명", "")}`);
+  sh.str("A6", `${T("신랑", "Groom")} :  ${info.groom ?? ""}${info.phone ? `     ${T("연락처", "Phone")} :  ${info.phone}` : ""}`);
+  sh.str("A7", `${T("신부", "Bride")} :  ${info.bride ?? ""}`);
+  sh.str("D7", `${T("입금 계좌", "Account")} :  ${info.account || T("담당자가 안내해 드립니다", "your coordinator will send it with the contract")}`);
+  sh.str("A8", `${T("예식 공간", "Venue")} :  ${venueName}`);
+  sh.str("D8", `${T("견적일", "Date of issue")} :  ${issued}`);
 
-  // ── 식음료 (13~25행). G열 = 수량 × 단가
-  const meal = line(/^식사 —/)!;
-  const menu = MENUS.find((x) => x.key === input.menu);
-  sh.num("E13", meal.unit ?? 0);
-  sh.str("I13", menu ? menu.ko : meal.label.replace(/^식사 — /, ""));
-  sh.cached("D13", g);
-  const rows: Record<number, { qty: number; unit: number }> = { 13: { qty: g, unit: meal.unit ?? 0 } };
-  const noodles = line(/^잔치국수/), rice = line(/^떡/), drink = line(/^프리 드링크/), wine = line(/^하우스 와인/), champ = line(/^건배용 샴페인/), cake = line(/^웨딩 케이크/), canape = line(/카나페/);
-  sh.num("D14", noodles ? g : null); rows[14] = { qty: noodles ? g : 0, unit: 3000 };
-  sh.num("D15", rice ? g : null); rows[15] = { qty: rice ? g : 0, unit: 3000 };
-  rows[16] = { qty: 0, unit: 6000 }; rows[17] = { qty: 0, unit: 6000 }; rows[18] = { qty: 0, unit: 8000 };
-  if (drink) sh.cached("D19", g); else sh.num("D19", null);
-  rows[19] = { qty: drink ? g : 0, unit: drink?.unit ?? 15000 };
-  sh.num("E19", rows[19].unit);
-  sh.num("D20", wine?.qty ?? null); rows[20] = { qty: wine?.qty ?? 0, unit: wine?.unit ?? 70000 };
-  // 무료 제공 항목은 단가 0으로 두고 비고에 사유를 적는다
-  const freebie = (l: typeof champ, ref: number, unit: number, note: string) => {
-    sh.num(`D${ref}`, l ? 1 : null);
-    const free = !!l && l.amount === 0;
-    sh.num(`E${ref}`, free ? 0 : unit);
-    if (free) sh.str(`I${ref}`, `${note} — ${l!.detail ?? "무료"}`);
-    rows[ref] = { qty: l ? 1 : 0, unit: free ? 0 : unit };
-  };
-  freebie(champ, 21, 120000, "파티용 고급 샴페인");
-  freebie(cake, 22, 450000, "플라워 데코레이션 웨딩케익");
-  if (canape) {
-    sh.unhide(23);
-    sh.str("B23", "애프터 파티 카나페");
-    sh.num("D23", canape.qty ?? 0);
-    sh.num("E23", canape.unit ?? 0);
-    sh.str("I23", "1인당");
-  }
-  rows[23] = { qty: canape?.qty ?? 0, unit: canape?.unit ?? 0 };
-  rows[24] = { qty: 0, unit: 0 }; rows[25] = { qty: 0, unit: 0 };
+  // ── 식음료 12~22행. 수량이 들어간 줄만 합산되고 칠해진다
   let fnb = 0;
-  for (const [r, v] of Object.entries(rows)) { const amt = v.qty * v.unit; fnb += amt; sh.cached(`G${r}`, amt); }
-  sh.cached("I26", fnb);
+  const fnbRow = (r: number, l: { qty?: number; unit?: number; amount: number; detail?: string } | undefined, remark?: string) => {
+    if (!l) { sh.cached(`D${r}`, ""); return; }
+    const free = l.amount === 0 && (l.unit ?? 0) > 0;
+    sh.num(`B${r}`, l.qty ?? 1);
+    sh.num(`C${r}`, free ? 0 : l.unit ?? 0);
+    sh.cached(`D${r}`, l.amount);
+    const note = [remark, free ? l.detail : undefined].filter(Boolean).join(" — ");
+    if (note) sh.str(`E${r}`, note);
+    fnb += l.amount;
+    sh.shade(r, SHADE);
+  };
+  const menu = MENUS.find((x) => x.key === input.menu);
+  const meal = line(/^식사 —/)!;
+  fnbRow(12, meal, menu ? T(menu.ko, menu.en) : undefined);
+  fnbRow(13, line(/^잔치국수/));
+  fnbRow(14, line(/^떡/));
+  for (const r of [15, 16, 17]) sh.cached(`D${r}`, "");
+  fnbRow(18, line(/^프리 드링크/));
+  fnbRow(19, line(/^하우스 와인/));
+  fnbRow(20, line(/^건배용 샴페인/), T("건배용 샴페인", "Champagne for the toast"));
+  fnbRow(21, line(/^웨딩 케이크/), T("플라워 데코레이션 웨딩 케이크", "Wedding cake with flower decoration"));
+  fnbRow(22, line(/카나페/), T("1인당", "per guest"));
+  sh.cached("D23", fnb);
 
-  // ── 전관 사용료 · 웨딩 세레모니 · 플라워
-  const fee = line(/^전관 독점 사용료/)!;
-  sh.num("I29", fee.amount);
-  if (fee.detail) sh.str("B29", ` 소계 _ SUB TOTAL  :   ( ${fee.detail} )`);
-  const ceremony = e.lines.find((l) => l.section === "ceremony")!;
-  sh.num("I32", ceremony.amount);
-  if (ceremony.detail) sh.str("B32", ` 소계 _ SUB TOTAL  :   ( ${ceremony.detail} )`);
-  const flower = line(/^플라워 장식/)!;
-  sh.num("I39", flower.amount);
-  sh.str("B39", ` 소계 _ SUB TOTAL  :   ( 선택 — ${flower.label.replace(/^플라워 장식 — /, "")}${flower.detail ? ` ${flower.detail}` : ""} )`);
+  // ── 전관 사용료 · 웨딩 세레모니: 면제이면 금액 없이 사유만 적는다
+  const single = (r: number, l: { amount: number; detail?: string }, baseNote?: string) => {
+    if (l.amount > 0) { sh.num(`D${r}`, l.amount); sh.shade(r, SHADE); }
+    const note = [baseNote, l.detail].filter(Boolean).join("  /  ");
+    if (note) sh.str(`E${r}`, note);
+    return l.amount;
+  };
+  const fee = single(26, line(/^전관 독점 사용료/)!);
+  const ceremonyLine = eL.lines[eK.lines.findIndex((l) => l.section === "ceremony")];
+  sh.num("C29", 2200000);
+  const ceremony = single(29, ceremonyLine, T("영상 · 조명 연출 · 혼구용품 · 메뉴카드 · 웰컴드링크 · 플라워 세레모니 · 웨딩카", "Video · lighting · ceremony items · menu cards · welcome drink · flower ceremony · wedding car"));
 
-  // ── 기타 (43~47행)
-  const photo = line(/^사진/), video = line(/^영상/), bouquet = line(/^부케/);
-  const extras = e.lines.filter((l) => /^(사회자|남성 4중주|현악 4중주)/.test(l.label));
-  sh.num("G43", photo?.amount ?? null);
-  sh.num("G44", video?.amount ?? null);
-  const opt = [...(bouquet ? [bouquet] : []), ...extras];
-  const optSum = opt.reduce((s, l) => s + l.amount, 0);
-  if (opt.length) {
-    sh.unhide(47);
-    sh.str("D47", "선택 옵션");
-    sh.num("G47", optSum);
-    sh.str("I47", opt.map((l) => `${l.label} ${(l.amount / 10000).toLocaleString("ko-KR")}만원`).join(" / "));
-  }
-  const others = (photo?.amount ?? 0) + (video?.amount ?? 0) + optSum;
-  sh.cached("I48", others);
+  // ── 플라워: 고른 타입 한 줄만 합산
+  const flowerLine = line(/^플라워 장식/)!;
+  const tierRow = { standard: 33, luxury: 34, special: 35 }[input.flower === "luxury" || input.flower === "special" ? input.flower : "standard"];
+  sh.num(`D${tierRow}`, flowerLine.amount);
+  sh.shade(tierRow, SHADE);
+  sh.cached("D36", flowerLine.amount);
 
-  // ── 합계. 식사비 할인은 「금액 프로모션」 칸(부가세 포함)에 넣는다
-  const total = fnb + fee.amount + ceremony.amount + flower.amount + others;
+  // ── 기타 40~45행
+  let others = 0;
+  const other = (r: number, l: { amount: number } | undefined, contents?: string) => {
+    if (!l) return;
+    sh.num(`C${r}`, l.amount);
+    sh.num(`D${r}`, l.amount);
+    if (contents) sh.str(`B${r}`, contents);
+    others += l.amount;
+    sh.shade(r, SHADE);
+  };
+  other(40, line(/^사진/));
+  other(41, line(/^영상/));
+  other(42, line(/^부케/));
+  other(43, line(/^사회자/), input.mc === "both" ? T("1부 + 2부", "Parts 1 and 2") : T("1부", "Part 1"));
+  other(44, line(/^남성 4중주/));
+  other(45, line(/^현악 4중주/));
+  sh.cached("D48", others);
+
+  // ── 합계. 식사비 할인은 「금액 프로모션」(부가세 포함)에 넣는다
+  const total = fnb - eK.lines.filter((l) => l.amount < 0).reduce((s, l) => s + l.amount, 0) + fee + ceremony + flowerLine.amount + others;
   const withVat = Math.round(total * 1.1);
-  const discount = e.lines.filter((l) => l.amount < 0).reduce((s, l) => s - l.amount, 0);
-  const promo = Math.round(discount * 1.1);
-  sh.cached("I50", total);
-  sh.cached("I52", withVat);
-  sh.num("I54", promo);
-  sh.cached("I56", withVat - promo);
-  sh.cached("B50", " 합계 금액 _TOTAL EXPENSE");
-  sh.cached("B52", " 합계 금액 _TOTAL EXPENSE 부가세 봉사료포함 :  ");
-  sh.cached("B54", promo ? "§ 금액 프로모션 _amount promotion : " : " ");
-  sh.cached("B56", " 총 결제 금액 _TOTAL EXPENSE :  ");
-  sh.cached("I65", 0);
-  sh.cached("I72", names || " ");
-  const year = new Date().getFullYear();
-  sh.str("C74", `${year} 년`);
-  sh.cached("H74", `${year} 년`);
+  const discountLine = eL.lines.find((l) => l.amount < 0);
+  const promo = Math.round(-eK.lines.filter((l) => l.amount < 0).reduce((s, l) => s + l.amount, 0) * 1.1);
+  sh.cached("D50", total);
+  sh.cached("D51", withVat);
+  sh.num("D52", promo || null);
+  if (promo && discountLine) sh.str("E52", `${discountLine.label} ${discountLine.detail ?? ""} (${T("부가세 포함", "incl. VAT")})`);
+  sh.cached("D53", withVat - promo);
+
+  // ── 서명
+  sh.str("D63", `${T("예식 주최자", "Organizer")} :  ${names}${names && !en ? " 님" : ""}`);
+  sh.str("A64", `${T("견적일", "Date of issue")} :  ${issued}`);
 
   sheetEntry.data = Buffer.from(sh.xml, "utf8");
   return zip(entries);

@@ -194,6 +194,25 @@ export function minGuestsFor(venueKey: VenueKey, date: string, time?: string): n
   return isSundayEveningPromo(venueKey, date, time) ? SUNDAY_EVENING.minGuests : PRICING[venueKey].minGuests;
 }
 
+/** 내려받는 파일 이름 — 예식 희망일을 앞에 둔다 */
+export function quoteFileName(date: string, lang: string): string {
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : lang === "en" ? "date-tbd" : "날짜미정";
+  return lang === "en" ? `${d}-floating-island-wedding-quotation.xlsx` : `${d}-플로팅아일랜드-웨딩-견적서.xlsx`;
+}
+
+/**
+ * 답변 메일·견적서 언어 정하기: 이름에 한글이 있으면 국문, 이름이 영문이거나 전화번호가 해외 번호이면 영문.
+ * 판단할 수 없으면 고객이 보던 화면의 언어를 따른다.
+ */
+export function detectQuoteLang(groom: string, bride: string, phone: string, siteLang: string): "ko" | "en" {
+  const names = `${groom}${bride}`;
+  if (/[\uAC00-\uD7A3]/.test(names)) return "ko";
+  const p = phone.replace(/[\s().-]/g, "");
+  const foreignPhone = (/^\+/.test(p) && !/^\+82/.test(p)) || (/^00/.test(p) && !/^0082/.test(p));
+  if (/[A-Za-z]/.test(names) || foreignPhone) return "en";
+  return siteLang === "en" ? "en" : "ko";
+}
+
 const won = (n: number) => n.toLocaleString("ko-KR");
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 

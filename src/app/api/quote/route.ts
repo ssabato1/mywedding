@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
-import { estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
+import { detectQuoteLang, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
 import { DEPOSIT, termsToText } from "@/lib/quote-terms";
 import { usesXlsxTemplate } from "@/lib/quote-xlsx";
 
@@ -74,12 +74,13 @@ function depositText(venueKey: string, lang: string): string {
 /** 고객에게 보내는 견적서 메일 본문 (견적 + 계약금·계좌 + 계약 규정) */
 export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
   const en = q.lang === "en";
-  // 컨벤션·루프탑 가든: 계약서 양식 엑셀을 받는 링크 (개인정보 없이 선택 내용만 담는다)
+  // 컨벤션·루프탑 가든: 견적서 엑셀을 받는 링크 (선택 내용과 신랑·신부 이름만 담고, 연락처·메일은 넣지 않는다)
   const xlsxLink = usesXlsxTemplate(q.venueKey)
     ? `https://www.floatingislandwedding.com/api/quote/xlsx?${new URLSearchParams(
         Object.fromEntries(
-          (["venueKey", "guests", "date", "time", "flower", "menu", "video", "wine", "champagne", "cake", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "canape", "afterGuests"] as const)
+          (["venueKey", "guests", "date", "time", "flower", "menu", "video", "wine", "champagne", "cake", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "canape", "afterGuests", "groom", "bride"] as const)
             .map((k) => [k, q[k]] as [string, string])
+            .concat([["docLang", q.lang]])
             .filter(([, v]) => v),
         ),
       ).toString()}`
@@ -135,6 +136,9 @@ export async function POST(req: Request) {
   if (clean(raw.website)) return NextResponse.json({ ok: true, via: "honeypot" });
 
   const q = Object.fromEntries(FIELDS.map((k) => [k, clean(raw[k], k === "message" ? 2000 : 200)])) as Quote;
+  // 답변 메일과 견적서의 언어: 영문 이름·해외 전화번호면 영문, 한글 이름이면 국문
+  const siteLang = q.lang;
+  q.lang = detectQuoteLang(q.groom, q.bride, q.phone, siteLang);
   if (!q.groom || !q.bride || !q.phone || !EMAIL_RE.test(q.email)) {
     return NextResponse.json({ ok: false, error: "missing required" }, { status: 400 });
   }

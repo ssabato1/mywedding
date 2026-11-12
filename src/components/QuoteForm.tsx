@@ -9,6 +9,8 @@ import {
   MENUS,
   MENU_GROUPS,
   PRICING,
+  quoteFileName,
+  detectQuoteLang,
   minGuestsFor,
   estimate as calcEstimate,
   type Estimate,
@@ -219,13 +221,13 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
         const r = await fetch("/api/quote/xlsx", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...data, venueKey, date, time }),
+          body: JSON.stringify({ ...data, venueKey, date, time, lang }),
         });
         if (r.ok) {
           const url = URL.createObjectURL(await r.blob());
           const a = document.createElement("a");
           a.href = url;
-          a.download = `${date || "date-tbd"}-floating-island-wedding-quote-${venueKey}.xlsx`;
+          a.download = quoteFileName(date, detectQuoteLang(String(data.groom ?? ""), String(data.bride ?? ""), String(data.phone ?? ""), lang));
           a.click();
           URL.revokeObjectURL(url);
           return;
