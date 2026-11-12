@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAll, getOne, renderMarkdown } from "@/lib/content";
 import { i18n } from "@/i18n";
+import YouTubeTracks from "@/components/YouTubeTracks";
 
 export const dynamicParams = true;
 
@@ -25,7 +26,7 @@ export default async function PostPage(
   const { slug } = await params;
   const post = getOne("posts", slug);
   if (!post || post.draft) notFound();
-  const html = await renderMarkdown(post.content);
+  const html = await renderMarkdown(post.content, post.lang);
   const { lang, t } = await i18n();
   const translation = post.translationOf
     ? getOne("posts", post.translationOf)
@@ -54,6 +55,7 @@ export default async function PostPage(
         <p className="mt-5 text-[17px] leading-relaxed text-ink-sub">{post.description}</p>
       </header>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
+      {html.includes("data-yt=") && <YouTubeTracks />}
       {post.tags.length > 0 && (
         <ul className="mt-12 flex flex-wrap gap-2 border-t border-line pt-6 text-sm">
           {post.tags.map((tag, i) => (

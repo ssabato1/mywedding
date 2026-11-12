@@ -8,7 +8,7 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 
 예식이 시작되면 가장 먼저 걷는 사람은 신랑도 신부도 아닌 혼주입니다. 양가 부모님이 버진로드를 걸어 들어오는 1~2분이 그날 음악의 첫인상을 정합니다. 그런데 신부 입장곡은 몇 주를 고민하면서 혼주 입장곡은 "홀에서 틀어 주는 것"으로 넘기는 경우가 많습니다. 클래식 편곡 음원을 직접 제작하는 아트엠 스튜디오 사운즈(ArtM Studio Sounds)의 예식 음악 구성을 참고해 혼주 입장곡을 고르는 기준을 정리했습니다. (2026년 11월 기준)
 
-![ArtM Studio Sounds 「Parents' Processional」 — 혼주 입장을 위한 웨딩 음악 10곡](/images/artm-parents-processional-cover.jpg)
+[![ArtM Studio Sounds 「Parents' Processional」 — 혼주 입장을 위한 웨딩 음악 10곡](/images/artm-parents-processional-cover.jpg)](https://youtu.be/fbmkcnU5rdI)
 
 *음악: ArtM Studio Sounds — [유튜브 @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [홈페이지 artmstudiosounds.com](https://artmstudiosounds.com)*
 

@@ -54,9 +54,37 @@ export function getOne(collection: Collection, slug: string): ContentDoc | null 
 }
 
 /** 마크다운 → HTML. GFM 지원, raw HTML 은 안전하게 제거. */
-export async function renderMarkdown(md: string): Promise<string> {
+export async function renderMarkdown(md: string, lang: "ko" | "en" = "ko"): Promise<string> {
   const out = await remark().use(remarkGfm).use(remarkHtml, { sanitize: true }).process(md);
-  return decorateImages(String(out));
+  return decorateImages(embedYouTube(String(out), lang));
+}
+
+const YT_CHANNEL = "https://www.youtube.com/@artmstudiosounds";
+
+/**
+ * 유튜브 영상 표지를 본문 안 플레이어로 바꾼다.
+ * - `![캡션](https://i.ytimg.com/vi/<ID>/...)` : 유튜브 썸네일 이미지
+ * - `[![캡션](/images/표지.jpg)](https://youtu.be/<ID>)` : 영상 링크를 건 로컬 표지
+ * 플레이어 아래에는 채널 구독 버튼을 둔다. 곡별 링크(youtu.be/<ID>?t=초)는
+ * YouTubeTracks 컴포넌트가 가로채 이 플레이어에서 재생한다.
+ */
+function embedYouTube(html: string, lang: "ko" | "en"): string {
+  const player = (id: string, alt: string) => {
+    const caption = alt ? `<figcaption>${alt}</figcaption>` : "";
+    const label = lang === "en" ? "Subscribe to ArtM Studio Sounds" : "아트엠 스튜디오 사운즈 구독";
+    const note = lang === "en" ? "New ceremony and banquet music every week" : "새 예식·연회 음악을 놓치지 마세요";
+    return (
+      `<figure class="post-figure yt-figure">` +
+      `<div class="yt-frame"><iframe data-yt="${id}" src="https://www.youtube.com/embed/${id}?rel=0" title="${alt}" loading="lazy" ` +
+      `allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>` +
+      caption +
+      `<div class="yt-subscribe"><a href="${YT_CHANNEL}?sub_confirmation=1" target="_blank" rel="noopener noreferrer">▶ ${label}</a><span>${note}</span></div>` +
+      `</figure>`
+    );
+  };
+  return html
+    .replace(/<p><img\s+[^>]*src="https:\/\/i\.ytimg\.com\/vi\/([\w-]{11})\/[^"]*"[^>]*><\/p>/g, (m, id: string) => player(id, /alt="([^"]*)"/.exec(m)?.[1] ?? ""))
+    .replace(/<p><a href="https:\/\/youtu\.be\/([\w-]{11})"[^>]*>(<img\s+[^>]*>)<\/a><\/p>/g, (_m, id: string, img: string) => player(id, /alt="([^"]*)"/.exec(img)?.[1] ?? ""));
 }
 
 /**

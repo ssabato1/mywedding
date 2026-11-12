@@ -59,6 +59,13 @@ p { text-wrap: pretty; }
 .post-body .post-figure.is-portrait img { @apply w-auto max-h-[80vh] mx-auto; }
 .post-body .post-figure figcaption { @apply mt-3 font-sans text-center text-[13px] leading-relaxed text-ink-muted; }
 .post-body img { @apply max-w-full h-auto rounded-ui my-6; }
+/* 본문 유튜브 플레이어 + 구독 버튼 */
+.post-body .yt-frame { @apply relative w-full overflow-hidden rounded-ui border border-line; aspect-ratio: 16 / 9; }
+.post-body .yt-frame iframe { @apply absolute inset-0 h-full w-full border-0; }
+.post-body .yt-subscribe { @apply mt-5 flex flex-col items-center gap-2 font-sans sm:flex-row sm:justify-center sm:gap-4; }
+.post-body .yt-subscribe a { @apply inline-flex items-center rounded-ui border border-gold px-5 py-2.5 text-sm font-semibold text-gold no-underline transition-colors hover:bg-gold hover:text-canvas; }
+.post-body .yt-subscribe span { @apply text-[13px] text-ink-muted; }
+.post-body a.yt-playing { @apply text-gold font-semibold; }
 
 /* 에디토리얼 레이아웃 헬퍼 (rev2) */
 .container-page { @apply w-full max-w-[1080px] mx-auto px-5 sm:px-8; }

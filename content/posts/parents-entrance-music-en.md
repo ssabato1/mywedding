@@ -10,7 +10,7 @@ thumbnail: /images/artm-parents-processional-cover.jpg
 
 When a Korean ceremony begins, the first people to walk are neither the groom nor the bride but the parents. The minute or two in which both sets of parents walk the aisle sets the first impression of the day's music. Yet couples who spend weeks on the bride's entrance often leave this one to whatever the venue plays. Using the ceremony programme of ArtM Studio Sounds, which produces its own classical arrangements, here is how to choose music for the parents' entrance. (As of November 2026)
 
-![ArtM Studio Sounds, "Parents' Processional" — ten tracks of wedding music for the parents' entrance](/images/artm-parents-processional-cover.jpg)
+[![ArtM Studio Sounds, "Parents' Processional" — ten tracks of wedding music for the parents' entrance](/images/artm-parents-processional-cover.jpg)](https://youtu.be/fbmkcnU5rdI)
 
 *Music: ArtM Studio Sounds — [YouTube @artmstudiosounds](https://www.youtube.com/@artmstudiosounds) · [artmstudiosounds.com](https://artmstudiosounds.com)*
 
