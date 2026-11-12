@@ -34,7 +34,8 @@ function benefitOf(y: number, m: number, d: number): 0 | 1 | 2 {
   return 0;
 }
 
-function Calendar({ f, lang, value, onPick }: { f: F; lang: Lang; value: string; onPick: (v: string) => void }) {
+/** plain: 혜택 표시(점·범례) 없이 날짜만 고르는 달력 — 방문 상담 예약용 */
+function Calendar({ f, lang, value, onPick, plain = false }: { f: F; lang: Lang; value: string; onPick: (v: string) => void; plain?: boolean }) {
   const today = new Date();
   const [view, setView] = useState({ y: today.getFullYear(), m: today.getMonth() });
   const first = new Date(view.y, view.m, 1).getDay();
@@ -83,18 +84,22 @@ function Calendar({ f, lang, value, onPick }: { f: F; lang: Lang; value: string;
               }`}
             >
               {d}
-              {!past && !sel && b > 0 && (
+              {!plain && !past && !sel && b > 0 && (
                 <span className={`absolute bottom-1 h-1 w-1 rounded-full ${b === 2 ? "bg-gold" : "bg-ink-sub"}`} />
               )}
             </button>
           );
         })}
       </div>
-      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink-muted">
-        <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-gold" />{f.calLegendMeal}</span>
-        <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-ink-sub" />{f.calLegendFee}</span>
-      </div>
-      <p className="mt-2 text-xs text-ink-muted">{f.calWeekendNote}</p>
+      {!plain && (
+        <>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink-muted">
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-gold" />{f.calLegendMeal}</span>
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-ink-sub" />{f.calLegendFee}</span>
+          </div>
+          <p className="mt-2 text-xs text-ink-muted">{f.calWeekendNote}</p>
+        </>
+      )}
     </div>
   );
 }
@@ -185,7 +190,6 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const [visitDate, setVisitDate] = useState("");
   const [visitTime, setVisitTime] = useState("");
   const VISIT_TIMES = ["10:00", "11:00", "14:00", "15:00", "17:00", "18:00"];
-  const todayIso = new Date().toLocaleDateString("sv-SE");
   const [guests, setGuests] = useState("");
   const [flower, setFlower] = useState("standard");
   const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
@@ -511,10 +515,13 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <p className="font-display text-base font-semibold text-gold">{f.visitTitle}</p>
             <p className={hint}>{f.visitHint}</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <label className={label}>
-                {f.visitDate}
-                <input type="date" name="visitDate" min={todayIso} value={visitDate} onChange={(e) => setVisitDate(e.target.value)} className={input} />
-              </label>
+              <div>
+                <p className={label}>{f.visitDate}</p>
+                <input type="hidden" name="visitDate" value={visitDate} />
+                <div className="mt-2">
+                  <Calendar f={f} lang={lang} value={visitDate} onPick={setVisitDate} plain />
+                </div>
+              </div>
               <div>
                 <p className={label}>{f.visitTime}</p>
                 <input type="hidden" name="visitTime" value={visitTime} />
@@ -530,7 +537,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 </div>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-ink-sub">{f.visitNote}</p>
+            <p className="mt-4 font-display text-lg text-gold">{visitDate ? `${visitDate}${visitTime ? ` · ${visitTime}` : ""}` : f.calNone}</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-sub">{f.visitNote}</p>
           </div>
           <details className="sm:col-span-2 rounded-card border border-line bg-card p-5">
             <summary className="cursor-pointer text-sm font-semibold text-gold">{f.termsTitle}</summary>
