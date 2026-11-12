@@ -405,6 +405,10 @@ const WIRE_BANKS: { ko: string; en: string; swift: string }[] = [
   { ko: "하나은행", en: "KEB Hana Bank", swift: "KOEXKRSE" },
   { ko: "신한은행", en: "Shinhan Bank", swift: "SHBKKRSE" },
 ];
+/** 국문 계좌 표기에서 계좌번호만 읽는다. */
+export function accountNumber(account: string | undefined): string | undefined {
+  return account?.match(/\d[\d-]{6,}\d/)?.[0];
+}
 export function wireAccount(account: string | undefined, marina: boolean): string | undefined {
   if (!account) return undefined;
   const bank = WIRE_BANKS.find((b) => account.includes(b.ko));
