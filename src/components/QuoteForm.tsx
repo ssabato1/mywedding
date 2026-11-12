@@ -477,10 +477,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
       {/* 견적서 */}
       {estimate && (
         <section>
-          <Sheet f={f} e={estimate} dateLabel={dateLabel} id="quote-sheet" />
-          <div className="mt-4 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
             <button type="button" onClick={downloadExcel} className={btn}>{f.downloadExcel}</button>
-            <button type="button" onClick={() => window.print()} className={btn}>{f.printSheet}</button>
           </div>
         </section>
       )}
