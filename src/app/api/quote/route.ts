@@ -90,8 +90,8 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
     en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
     "",
     en
-      ? "Thank you for your wedding inquiry. Here is the quote you created, together with our guide to the next steps."
-      : "예식 문의해 주셔서 감사합니다. 작성하신 견적서와 안내문을 함께 보내 드립니다.",
+      ? "Hello, this is Rachel from the Floating Island wedding team. Thank you for your wedding inquiry. Here is the quote you created, together with our guide to the next steps."
+      : "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 예식 문의해 주셔서 감사합니다. 작성하신 견적서와 안내문을 함께 보내 드립니다.",
     ...(xlsxLink ? ["", en ? `Quote sheet (Excel): ${xlsxLink}` : `견적서 엑셀 파일 받기: ${xlsxLink}`] : []),
     "",
     en
@@ -119,6 +119,8 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
     en
       ? `Questions: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`
       : `문의: ${c.phone} · ${c.email} · WhatsApp ${c.whatsappDisplay}`,
+    "",
+    en ? "Rachel | Wedding Team" : "레이첼 | 웨딩팀",
     "Floating Island Wedding — https://www.floatingislandwedding.com",
   ].join("\n");
 }
