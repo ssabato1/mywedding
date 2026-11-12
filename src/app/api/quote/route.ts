@@ -214,6 +214,13 @@ export async function POST(req: Request) {
       선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 추가내용: q.message, 언어: q.lang,
       자동견적: estimate ? estimateToText(estimate) : "해당 없음",
       ...(wantsCopy ? { 견적서_및_계약규정: customerText } : {}),
+      // 웨딩팀(레이첼)이 엑셀 견적서를 다시 만들어 첨부 답장할 때 쓰는 원본 선택값
+      견적데이터: JSON.stringify({
+        venueKey: q.venueKey, guests: q.guests, date: q.date, time: q.time, flower: q.flower, menu: q.menu,
+        video: q.video, wine: q.wine, champagne: q.champagne, cake: q.cake, bouquet: q.bouquet, mc: q.mc,
+        maleQuartet: q.maleQuartet, stringQuartet: q.stringQuartet, drink: q.drink, noodles: q.noodles, riceCake: q.riceCake,
+        canape: q.canape, afterGuests: q.afterGuests, groom: q.groom, bride: q.bride, phone: q.phone, email: q.email, lang: q.lang,
+      }),
     },
     copy: wantsCopy ? "requested" : "none",
   };
