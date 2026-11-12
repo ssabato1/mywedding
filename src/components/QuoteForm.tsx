@@ -448,12 +448,12 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <div key={venueKey} className="mt-2.5 grid gap-2 sm:grid-cols-2">
               <label className={check}><input type="checkbox" name="drink" defaultChecked className={box} />{venueKey === "marina" ? f.drinkMarina : f.drink}</label>
               {venueKey !== "marina" && (
-                <label className={check}><input type="checkbox" name="wine" defaultChecked className={box} />{f.wine}</label>
+                <label className={check}><input type="checkbox" name="wine" className={box} />{f.wine}</label>
               )}
               <label className={check}><input type="checkbox" name="noodles" className={box} />{f.noodles}</label>
               <label className={check}><input type="checkbox" name="riceCake" className={box} />{f.riceCake}</label>
-              <label className={check}><input type="checkbox" name="champagne" defaultChecked className={box} />{f.champagne}</label>
-              <label className={check}><input type="checkbox" name="cake" defaultChecked className={box} />{f.cake}</label>
+              <label className={check}><input type="checkbox" name="champagne" className={box} />{f.champagne}</label>
+              <label className={check}><input type="checkbox" name="cake" className={box} />{f.cake}</label>
               <label className={check}><input type="checkbox" name="video" className={box} />{f.video}</label>
               <label className={check}><input type="checkbox" name="maleQuartet" className={box} />{f.maleQuartet}</label>
               <label className={check}><input type="checkbox" name="stringQuartet" className={box} />{f.stringQuartet}</label>
