@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@config";
-import { docLangFor, mailLangFor, asNationality, wireAccount, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
+import { docLangFor, mailLangFor, asNationality, NATIONALITIES, wireAccount, estimate as calcEstimate, estimateToText, type Estimate } from "@/lib/quote-pricing";
 import { DEPOSIT, termsToText } from "@/lib/quote-terms";
 import { usesXlsxTemplate } from "@/lib/quote-xlsx";
 
@@ -22,11 +22,8 @@ export function buildSubject(q: Quote): string {
 }
 
 function nationalityLabel(q: Quote): string {
-  if (q.nationality === "kr") return "대한민국";
-  if (q.nationality === "cn") return "중국";
-  if (q.nationality === "jp") return "일본";
   if (q.nationality === "other") return q.nationalityOther ? `그 외 (${q.nationalityOther})` : "그 외 국가";
-  return "미입력";
+  return NATIONALITIES.find((n) => n.code === q.nationality)?.ko ?? "미입력";
 }
 
 export function buildBody(q: Quote): string {

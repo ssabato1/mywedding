@@ -11,6 +11,7 @@ import {
   PRICING,
   quoteFileName,
   docLangFor,
+  NATIONALITIES,
   minGuestsFor,
   estimate as calcEstimate,
   type Estimate,
@@ -498,10 +499,7 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <label className={label}>{f.nationality}{req}
               <select name="nationality" required value={nationality} onChange={(e) => setNationality(e.target.value)} className={input}>
                 <option value="">{f.nationalityPick}</option>
-                <option value="kr">{f.nationalityKr}</option>
-                <option value="cn">{f.nationalityCn}</option>
-                <option value="jp">{f.nationalityJp}</option>
-                <option value="other">{f.nationalityOther}</option>
+                {NATIONALITIES.map((n) => <option key={n.code} value={n.code}>{lang === "en" ? n.en : n.ko}</option>)}
               </select>
             </label>
             {nationality === "other" && (

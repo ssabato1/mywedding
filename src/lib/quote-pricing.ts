@@ -216,15 +216,30 @@ export function detectQuoteLang(groom: string, bride: string, phone: string, sit
   return siteLang === "en" ? "en" : "ko";
 }
 
-/** 국적 값: kr(대한민국) · cn(중국) · jp(일본) · other(그 외 국가) */
-export type Nationality = "kr" | "cn" | "jp" | "other" | "";
-export const asNationality = (v: unknown): Nationality => (v === "kr" || v === "cn" || v === "jp" || v === "other" ? v : "");
+/** 국적 선택지 (화면 표시 순서). other = 그 외 국가 */
+export const NATIONALITIES = [
+  { code: "kr", ko: "대한민국", en: "Korea" },
+  { code: "cn", ko: "중국", en: "China" },
+  { code: "jp", ko: "일본", en: "Japan" },
+  { code: "us", ko: "미국", en: "United States" },
+  { code: "vn", ko: "베트남", en: "Vietnam" },
+  { code: "my", ko: "말레이시아", en: "Malaysia" },
+  { code: "sg", ko: "싱가포르", en: "Singapore" },
+  { code: "fr", ko: "프랑스", en: "France" },
+  { code: "de", ko: "독일", en: "Germany" },
+  { code: "it", ko: "이탈리아", en: "Italy" },
+  { code: "in", ko: "인도", en: "India" },
+  { code: "other", ko: "그 외 국가", en: "Other country" },
+] as const;
+export type Nationality = (typeof NATIONALITIES)[number]["code"] | "";
+export const asNationality = (v: unknown): Nationality =>
+  (NATIONALITIES.find((n) => n.code === v)?.code ?? "") as Nationality;
 
 /** 견적서(엑셀) 언어: 한국인은 국문, 그 외는 영문. 국적을 고르지 않았으면 이름·전화번호로 판단한다. */
 export function docLangFor(nationality: string, groom: string, bride: string, phone: string, siteLang: string): "ko" | "en" {
   const n = asNationality(nationality);
   if (n === "kr") return "ko";
-  if (n === "cn" || n === "jp" || n === "other") return "en";
+  if (n) return "en";
   return detectQuoteLang(groom, bride, phone, siteLang);
 }
 
