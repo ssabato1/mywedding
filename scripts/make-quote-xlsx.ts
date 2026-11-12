@@ -16,7 +16,7 @@ const input: EstimateInput = {
   venueKey: s(raw.venueKey), guests: s(raw.guests), date: s(raw.date), time: s(raw.time), flower: s(raw.flower), menu: s(raw.menu),
   video: on(raw.video), wine: on(raw.wine), champagne: on(raw.champagne), cake: on(raw.cake), bouquet: on(raw.bouquet),
   mc: s(raw.mc), maleQuartet: on(raw.maleQuartet), stringQuartet: on(raw.stringQuartet), drink: on(raw.drink),
-  noodles: on(raw.noodles), riceCake: on(raw.riceCake), canape: s(raw.canape), afterGuests: s(raw.afterGuests), lang: "ko",
+  noodles: on(raw.noodles), riceCake: on(raw.riceCake), canape: s(raw.canape), afterGuests: s(raw.afterGuests), mealMode: s(raw.mealMode), lang: "ko",
 };
 const lang = docLangFor(s(raw.nationality), s(raw.groom), s(raw.bride), s(raw.phone), s(raw.lang));
 if (!usesXlsxTemplate(input.venueKey)) {

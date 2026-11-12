@@ -137,7 +137,7 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
   fnbRow(19, line(/^하우스 와인/));
   fnbRow(20, line(/^건배용 샴페인/), T("건배용 샴페인", "Champagne for the toast"));
   fnbRow(21, line(/^웨딩 케이크/), T("플라워 데코레이션 웨딩 케이크", "Wedding cake with flower decoration"));
-  fnbRow(22, line(/카나페/), T("1인당", "per guest"));
+  fnbRow(22, line(/카나페/), input.mealMode === "canape" && party ? T("코스 대신 카나페 · 1인당", "Canapés in place of a course meal · per guest") : T("1인당", "per guest"));
   sh.cached("D23", fnb);
 
   // ── 전관 사용료 · 웨딩 세레모니: 면제이면 금액 없이 사유만 적는다
@@ -158,10 +158,15 @@ export function buildQuoteXlsx(input: EstimateInput, info: QuoteSheetInfo): Buff
     : T("영상 · 조명 연출 · 혼구용품 · 메뉴카드 · 웰컴드링크 · 플라워 세레모니 · 웨딩카", "Video · lighting · ceremony items · menu cards · welcome drink · flower ceremony · wedding car"));
 
   // ── 플라워: 고른 타입 한 줄만 합산
-  const flowerLine = line(/^플라워 장식/)!;
-  const tierRow = { standard: 33, luxury: 34, special: 35 }[input.flower === "luxury" || input.flower === "special" ? input.flower : "standard"];
-  sh.num(`D${tierRow}`, flowerLine.amount);
-  sh.shade(tierRow, SHADE);
+  // 웨딩파티에서 플라워를 고르지 않으면 플라워 줄을 비워 둔다
+  const flowerLine = line(/^플라워 장식/) ?? { amount: 0 };
+  if (flowerLine.amount > 0) {
+    const tierRow = { standard: 33, luxury: 34, special: 35 }[input.flower === "luxury" || input.flower === "special" ? input.flower : "standard"];
+    sh.num(`D${tierRow}`, flowerLine.amount);
+    sh.shade(tierRow, SHADE);
+  } else {
+    sh.str("E33", T("플라워 장식은 선택 항목입니다 — 원하시면 담당자가 따로 안내해 드립니다", "Flower decoration is optional — your coordinator will advise on request"));
+  }
   sh.cached("D36", flowerLine.amount);
 
   // ── 기타 40~45행

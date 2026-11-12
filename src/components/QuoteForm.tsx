@@ -14,6 +14,7 @@ import {
   NATIONALITIES,
   minGuestsFor,
   isInquiryOnly,
+  spaceForGuests,
   estimate as calcEstimate,
   type Estimate,
   type Section,
@@ -195,12 +196,19 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
   const VISIT_TIMES = ["10:00", "11:00", "14:00", "15:00", "17:00", "18:00"];
   const [guests, setGuests] = useState("");
   const [flower, setFlower] = useState("standard");
+  // 웨딩파티 식사 방식: 코스 또는 카나페
+  const [mealMode, setMealMode] = useState("course");
+  const [canapeTier, setCanapeTier] = useState("30");
   const [menuKey, setMenuKey] = useState(DEFAULT_MENU.convention);
   const cuisine = menuKey.split("-")[0];
   const tierOf = (k: string) => k.split("-")[1];
-  const pickVenue = (v: string) => { setVenueKey(v); setGuests(""); setTime(""); setTick((t) => t + 1); };
+  const pickVenue = (v: string) => { setVenueKey(v); setGuests(""); setTime(""); setFlower(v === "party" ? "none" : "standard"); setMealMode("course"); setTick((t) => t + 1); };
   // 프러포즈 이벤트·상견례는 단가가 정해져 있지 않아 담당자가 직접 견적을 보낸다
   const inquiry = isInquiryOnly(venueKey);
+  const party = venueKey === "party";
+  // 웨딩파티·프러포즈·상견례: 인원에 맞는 공간을 안내한다
+  const guestNum = parseInt(guests || "0", 10) || 0;
+  const spaceName = guestNum > 0 ? spaceForGuests(guestNum, lang === "en") : "";
   const min = inquiry ? 0 : minGuestsFor(venueKey as VenueKey, date, time);
   useEffect(() => {
     if (guests && Number(guests) < min && Number(guests) >= 250) setGuests("");
@@ -225,14 +233,14 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
     const d = read();
     setEstimate(
       calcEstimate({
-        venueKey, date, time, guests, flower, menu: menuKey,
+        venueKey, date, time, guests, flower, menu: menuKey, mealMode,
         video: d.video === "on", wine: d.wine === "on", champagne: d.champagne === "on", cake: d.cake === "on",
         bridalFlower: d.bridalFlower === "on", bouquet: d.bouquet === "on", mc: d.mc ?? "", maleQuartet: d.maleQuartet === "on", stringQuartet: d.stringQuartet === "on", drink: d.drink === "on", noodles: d.noodles === "on", canape: d.canape ?? "", afterGuests: d.afterGuests ?? "", riceCake: d.riceCake === "on", lang,
       }),
     );
     setDateLabel(date ? `${date}${time ? ` ${time}` : ""}` : f.calNone);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [venueKey, date, tick, lang, guests, flower, menuKey, time]);
+  }, [venueKey, date, tick, lang, guests, flower, menuKey, time, mealMode]);
 
   async function downloadExcel() {
     // 컨벤션·루프탑 가든은 계약서 양식(xlsx) 그대로 내려받는다
@@ -409,9 +417,11 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <p className={hint}>{inquiry ? f.inquiryGuestHint : f.guestHint.replace("{min}", String(min))}{!inquiry && venueKey === "convention" ? ` ${f.guestLocked}` : ""}</p>
           </div>
 
-          {inquiry && (
+          {(inquiry || party) && (
             <div className="sm:col-span-2 rounded-card border border-gold/40 bg-card p-5">
-              <p className="text-sm leading-relaxed text-ink-sub">{f.inquiryNote}</p>
+              {spaceName && <p className="font-display text-base text-gold">{f.spaceFor.replace("{n}", String(guestNum)).replace("{space}", spaceName)}</p>}
+              <p className={`text-sm leading-relaxed text-ink-sub${spaceName ? " mt-2" : ""}`}>{f.spaceNote}</p>
+              {inquiry && <p className="mt-2 text-sm leading-relaxed text-ink-sub">{f.inquiryNote}</p>}
             </div>
           )}
 
@@ -421,6 +431,12 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
             <p className={label}>{f.flower}</p>
             <input type="hidden" name="flower" value={flower} />
             <div className="mt-2.5 grid gap-3 sm:grid-cols-3">
+              {party && (
+                <button type="button" aria-pressed={flower === "none"} onClick={() => setFlower("none")} className={`${card} ${flower === "none" ? cardOn : cardOff}`}>
+                  <span className={`block font-display text-base font-semibold ${flower === "none" ? "text-gold" : "text-ink"}`}>{f.flowerNone}</span>
+                  <span className="mt-1 block text-xs text-ink-muted">{f.flowerNoneSub}</span>
+                </button>
+              )}
               {f.flowerCards.map((c, i) => {
                 const key = ["standard", "luxury", "special"][i];
                 const on = flower === key;
@@ -439,6 +455,28 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
           <div className="sm:col-span-2">
             <p className={label}>{f.menu}</p>
             <input type="hidden" name="menu" value={menuKey} />
+            <input type="hidden" name="mealMode" value={party ? mealMode : "course"} />
+            {party && (
+              <div className="mb-3 flex flex-wrap gap-2">
+                {[["course", f.mealCourse], ["canape", f.mealCanape]].map(([k, t]) => (
+                  <button key={k} type="button" aria-pressed={mealMode === k} onClick={() => setMealMode(k)} className={`${chip} ${mealMode === k ? chipOn : chipOff}`}>{t}</button>
+                ))}
+              </div>
+            )}
+            {party && mealMode === "canape" && (
+              <div className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {f.canapeOptions.slice(1).map((o, i) => {
+                  const v = ["30", "50", "70", "90"][i];
+                  const on = canapeTier === v;
+                  return (
+                    <button key={v} type="button" aria-pressed={on} onClick={() => setCanapeTier(v)} className={`${card} ${on ? cardOn : cardOff}`}>
+                      <span className={`block text-sm ${on ? "text-gold" : "text-ink"}`}>{o}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {!(party && mealMode === "canape") && (<>
             <div className="mt-2.5 flex flex-wrap gap-2">
               {MENU_GROUPS.map((g) => {
                 const on = cuisine === g.key;
@@ -460,7 +498,8 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 );
               })}
             </div>
-            <p className={hint}>{f.menuHint}</p>
+            </>)}
+            <p className={hint}>{party && mealMode === "canape" ? f.canapeHint : f.menuHint}</p>
           </div>
           <fieldset className="sm:col-span-2">
             <legend className={label}>{f.options}</legend>
@@ -485,13 +524,14 @@ export default function QuoteForm({ f, lang }: { f: F; lang: Lang }) {
                 </select>
               </label>
               <label className={check}><input type="checkbox" name="bouquet" className={box} />{f.bouquet}</label>
-              <label className={`${check} sm:col-span-2 flex-wrap`}>
+              {party && mealMode === "canape" && <input type="hidden" name="canape" value={canapeTier} />}
+              {!(party && mealMode === "canape") && <label className={`${check} sm:col-span-2 flex-wrap`}>
                 <span className="shrink-0">{f.canape}</span>
                 <select name="canape" defaultValue="" className="rounded-ui border border-line bg-card px-3 py-1.5 text-sm text-ink">
                   {f.canapeOptions.map((o, i) => <option key={o} value={["", "30", "50", "70", "90"][i]}>{o}</option>)}
                 </select>
                 <input name="afterGuests" type="text" inputMode="numeric" placeholder={f.afterGuests} className="w-36 rounded-ui border border-line bg-card px-3 py-1.5 text-sm text-ink" />
-              </label>
+              </label>}
             </div>
           </fieldset>
           </>}

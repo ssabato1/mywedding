@@ -12,7 +12,7 @@ function toInput(raw: Record<string, unknown>): EstimateInput {
     venueKey: s(raw.venueKey), guests: s(raw.guests), date: s(raw.date), time: s(raw.time), flower: s(raw.flower), menu: s(raw.menu),
     video: on(raw.video), wine: on(raw.wine), champagne: on(raw.champagne), cake: on(raw.cake), bouquet: on(raw.bouquet),
     mc: s(raw.mc), maleQuartet: on(raw.maleQuartet), stringQuartet: on(raw.stringQuartet), drink: on(raw.drink),
-    noodles: on(raw.noodles), riceCake: on(raw.riceCake), canape: s(raw.canape), afterGuests: s(raw.afterGuests), lang: "ko",
+    noodles: on(raw.noodles), riceCake: on(raw.riceCake), canape: s(raw.canape), afterGuests: s(raw.afterGuests), mealMode: s(raw.mealMode), lang: "ko",
   };
 }
 
@@ -51,6 +51,6 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const p = new URL(req.url).searchParams;
   const raw: Record<string, unknown> = {};
-  for (const k of ["venueKey", "guests", "date", "time", "flower", "menu", "video", "wine", "champagne", "cake", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "canape", "afterGuests", "lang", "docLang", "groom", "bride"]) raw[k] = p.get(k) ?? "";
+  for (const k of ["venueKey", "guests", "date", "time", "flower", "menu", "video", "wine", "champagne", "cake", "bouquet", "mc", "maleQuartet", "stringQuartet", "drink", "noodles", "riceCake", "canape", "afterGuests", "mealMode", "lang", "docLang", "groom", "bride"]) raw[k] = p.get(k) ?? "";
   return respond(raw);
 }
