@@ -91,8 +91,8 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
     en ? `Dear ${q.groom} & ${q.bride},` : `${q.groom} · ${q.bride} 님께,`,
     "",
     en
-      ? "Hello, this is Rachel from the Floating Island wedding team. Thank you for your wedding inquiry. Here is the quote you created, together with our guide to the next steps."
-      : "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 예식 문의해 주셔서 감사합니다. 작성하신 견적서와 안내문을 함께 보내 드립니다.",
+      ? "Hello, this is Rachel from the Floating Island wedding team. Thank you for your wedding inquiry. Please find your quote in the Excel sheet below."
+      : "안녕하세요? 플로팅아일랜드의 웨딩팀 레이첼입니다. 예식 문의해 주셔서 감사합니다. 작성하신 견적서를 엑셀 파일로 보내 드립니다.",
     ...(xlsxLink ? ["", en ? `Quote sheet (Excel): ${xlsxLink}` : `견적서 엑셀 파일 받기: ${xlsxLink}`] : []),
     "",
     en
@@ -111,23 +111,10 @@ export function buildCustomerText(q: Quote, estimate: Estimate | null): string {
           "",
         ]
       : []),
-    en ? "■ Next steps" : "■ 진행 안내",
-    en ? "1. Your coordinator will check the date and time and contact you within one business day." : "1. 담당자가 예식 날짜와 시간이 가능한지 확인한 뒤 영업일 기준 1일 안에 연락드립니다.",
-    en ? "2. Visit the venue for a tour and consultation, and adjust the quote to your wishes." : "2. 방문 상담과 홀 투어를 하시면서 견적 내용을 원하시는 대로 조정합니다.",
-    en ? "3. The date is confirmed once the contract is signed and the deposit is received." : "3. 계약서 작성과 계약금 입금이 확인되면 예식일이 확정됩니다.",
-    en ? "This quote is an estimate; the final amount is set in the contract." : "이 견적서는 예상 금액이며, 최종 금액은 계약서에서 확정됩니다.",
-    "",
-    en ? `Date: ${q.date || "undecided"}${q.time ? ` ${q.time}` : ""}` : `예식 일시: ${q.date || "미정"}${q.time ? ` ${q.time}` : ""}`,
-    en ? `Space: ${q.venue}` : `공간: ${q.venue}`,
-    "",
-    estimate ? estimateToText(estimate) : "",
-    ...(estimate ? estimate.notes.map((n) => `※ ${n}`) : []),
-    "",
-    en ? "★ Couples who receive a self quote and go on to sign a contract receive a special benefit." : "★ 셀프 견적으로 견적을 받고 계약까지 진행하시는 커플께는 특별 혜택을 드립니다.",
-    "",
-    depositText(q.venueKey, q.lang),
-    "",
-    termsToText(q.lang),
+    en ? `Date: ${q.date || "undecided"}${q.time ? ` ${q.time}` : ""} · ${q.venue}` : `예식 일시: ${q.date || "미정"}${q.time ? ` ${q.time}` : ""} · ${q.venue}`,
+    en
+      ? "All items, amounts, the deposit and the account are in the Excel quote sheet. Your coordinator will contact you within one business day."
+      : "항목·금액·계약금·입금 계좌는 엑셀 견적서에 모두 들어 있습니다. 담당자가 영업일 기준 1일 안에 연락드립니다.",
     "",
     en
       ? `Questions: ${c.phoneIntl} · ${c.email} · WhatsApp ${c.whatsappDisplay}`
