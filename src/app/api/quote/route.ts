@@ -302,7 +302,12 @@ export async function POST(req: Request) {
   });
   const subject = buildSubject(q);
   const text = buildBody(q) + (estimate ? `\n\n${estimateToText(estimate)}` : "");
-  const wantsCopy = q.sendCopy === "on" && EMAIL_RE.test(q.email);
+  // 회사 수신 주소와 고객 주소가 같을 때 같은 주소를 To/CC에 중복으로 넣으면
+  // FormSubmit이 성공 응답을 주고도 메일을 전달하지 않는 경우가 있다.
+  const wantsCopy =
+    q.sendCopy === "on" &&
+    EMAIL_RE.test(q.email) &&
+    q.email.trim().toLowerCase() !== to.trim().toLowerCase();
   const MT = MAIL_TEXT[q.mailLang];
   const customerSubject = MT
     ? `[Floating Island Wedding] ${MT.subject} — ${q.date || MT.dateTbd}`
@@ -357,7 +362,9 @@ export async function POST(req: Request) {
       _subject: subject,
       _template: "box",
       _replyto: q.email || undefined,
-      ...(wantsCopy ? { _cc: q.email } : {}),
+      // 회사 메일은 항상 기본 수신자(to)로 보낸다. 고객 사본은 CC 대신
+      // FormSubmit 자동응답을 사용해 회사 메일 전달과 분리한다.
+      ...(wantsCopy ? { _autoresponse: customerText } : {}),
       희망날짜: q.date, 신랑: q.groom, 신부: q.bride, 전화: q.phone, 이메일: q.email, 국적: nationalityLabel(q), 예상하객: q.guests,
       선호시간: q.time, 관심공간: q.venue, 연락방법: q.method, 예산: q.budget, 방문상담희망: `${q.visitDate} ${q.visitTime}`.trim() || "신청 안 함", 추가내용: q.message, 답변메일언어: MAIL_LANG_KO[q.mailLang] || q.mailLang, 견적서언어: q.lang,
       자동견적: estimate ? estimateToText(estimate) : "해당 없음",
